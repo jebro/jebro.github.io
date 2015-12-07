@@ -1388,11 +1388,11 @@ header .padder .banner-text .padder .button {
 }
 
 .product-spreadstudio .overview-js .three-column-icons li:first-child .padder {
-  margin-right: 1em;
+  margin: 0 1em 0 0;
 }
 
 .product-spreadstudio .overview-js .three-column-icons li:last-child .padder {
-  margin-left: 1em;
+  margin: 0 0 0 1em;
 }
 
 .product-spreadjs header {
@@ -1459,11 +1459,11 @@ header .padder .banner-text .padder .button {
 }
 
 .product-spreadjs .overview-js .three-column-icons li:first-child .padder {
-  margin-right: 1em;
+  margin: 0 1em 0 0;
 }
 
 .product-spreadjs .overview-js .three-column-icons li:last-child .padder {
-  margin-left: 1em;
+  margin: 0 0 0 1em;
 }
 
 .product-spreadcom header {
@@ -1530,11 +1530,11 @@ header .padder .banner-text .padder .button {
 }
 
 .product-spreadcom .overview-js .three-column-icons li:first-child .padder {
-  margin-right: 1em;
+  margin: 0 1em 0 0;
 }
 
 .product-spreadcom .overview-js .three-column-icons li:last-child .padder {
-  margin-left: 1em;
+  margin: 0 0 0 1em;
 }
 
 .standard-page header {
