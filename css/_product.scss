@@ -1,0 +1,119 @@
+.product-page {
+    header {
+        font-size: 1em;
+        background: $light-grey;
+        h1 {
+            font-size: 2.8em;
+            margin-top: 0.5em;
+        }
+        img {
+            border-radius: 8px;
+        }
+        .button-light {
+            .button-inner {
+            }
+            &:hover {
+                .button-inner {
+                }
+            }
+        }
+    }
+
+    .header-bar {
+        background: darken($light-grey, 5%);
+        padding: 0.4em 0;
+        .header-bar-nav {
+            float: left;
+            li {
+                float: left;
+                a {
+                    &:hover {
+                        background: darken($light-grey, 10%);
+                    }
+                }
+                .header-bar-item {
+                    display: block;
+                    text-align: center;
+                    padding: 0.4em 1em;
+                    border-radius: 24px;
+                    margin-right: 0.4em;
+                    position: relative;
+                }
+            }
+            .header-title {
+                .header-bar-item {
+                    background: $light-grey;
+                    //border-left: solid 5px $medium-grey;
+                }
+                img {
+                    width: 18px;
+                    margin-right: 0.4em;
+                    position: relative;
+                    top: 2px;
+                }
+            }
+        }
+        .header-button {
+            float: right;
+            .button-inner {
+                padding: 0.4em 1em;
+            }
+        }
+    }    
+    .icon-values {
+        margin-left: 14px;
+        li {
+            float: left;
+            width: 25%;
+            text-align: center;
+            .padder {
+                padding: 1em 0;
+                background: $light-grey;
+                margin-right: 1em;
+                margin-bottom: 1em;
+                .lnr, i {
+                    display: inline-block;
+                    font-size: 32px;
+                    margin-bottom: 6px;
+                }
+                h3 {
+                    margin: 0;
+                    font-size: 1em;
+                }
+            }
+        }
+        .icon-value-button {
+            a {
+                background: $main-color;
+                display: block;
+                padding: 1em 0;
+                margin-right: 1em;
+                .padder {
+                    background: none;
+                    margin: 0;
+                    padding: 0;
+                    i, h3 {
+                        color: #fff;
+                    }
+                }
+                &:hover {
+                    background: lighten($main-color, 10%);   
+                }
+            }
+        }
+    }
+    .value-text {
+        float: right;
+        width: 50%;
+    }
+    .value-img {
+        float: left;
+        width: 50%;
+        .padder {
+            padding: 0 2em 0 0;
+            img {
+                width: 100%; 
+            }
+        }
+    } 
+}

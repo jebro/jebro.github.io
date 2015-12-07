@@ -1,0 +1,121 @@
+header {
+    background: $light-grey;
+    position: relative;
+    .padder {
+        padding: 6em 0;
+        position: relative;  
+        @media only screen and (max-width : 1100px) {
+            padding: 2em;
+        }         
+        .banner-img {
+            float: right;
+            width: 50%;
+            img {
+                width: 100%;
+                margin-bottom: -5px;
+            }
+        }
+        .banner-text {
+            float: left;
+            width: 50%;
+            .padder {
+                padding: 0 2em 0 0;
+                position: initial;
+                .button {
+                    margin-right: 1em;
+                }
+            }
+        }
+    }    
+}
+.companies-section {
+    text-align: center;
+    .padder {
+        padding-bottom: 0;
+    }
+    .companies-list {
+        position: relative;
+        left: 0.5em;
+        li {
+            float: left;
+            width: 16.666%;
+            text-align: center;
+            .padder {
+                padding: 2em;
+                border: solid 1px $light-grey;
+                margin-right: 1em;
+                img {
+                    width: 100%;
+                    margin-bottom: -5px;
+                }
+            }
+            &:last-child {
+                .padder {}
+            }
+        }
+    }
+}
+
+.benefits-section {
+    h2 {
+        text-align: center;
+    }
+}
+
+.quote-section {
+    text-align: center;
+    .quotes-rotator {
+        position: relative;
+        overflow: auto;
+        ul {
+            li {
+                float: left;
+                padding: 0 0 2em;
+                min-height: 125px;
+                h3 {
+                    max-width: 760px;
+                    margin: 0 auto;
+                }
+                p {
+                    max-width: none;
+                }
+            }
+        }
+        .dots {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -52px;
+            z-index: 999;
+            li {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                text-indent: -999em;
+                border: 2px solid $medium-grey;
+                border-radius: 10px;
+                &.active {
+                    background: $main-color;
+                    border-color: $main-color;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.whychooseicons-section {
+    text-align: center;
+    p {
+        margin: 0 auto 0.4em;
+    }
+}
+
+
+
+.licensing-section {
+    text-align: center;
+    p {
+        margin: 0 auto 0.4em;
+    }
+}

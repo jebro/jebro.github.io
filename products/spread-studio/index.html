@@ -1,0 +1,620 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>.NET Spreadsheet Components for Windows Forms, ASP.NET, WPF, WinRT</title>
+    <meta name="description" content="Spread Studio is our new cross-platform toolkit that includes components for Windows Forms, ASP.NET, WPF, WinRT, and Silverlight all in one package. This new package includes the new releases of Spread for WinForms and Spread for ASP.NET." name="description" />
+    <meta name="keywords" content="Spread.NET, ASP.NET, WPF, Silverlight, WinRT, .NET, spreadsheets, Data, PDF, Spreadsheet, Grid, Excel, analysis, GrapeCity, ASP.NET Spreadsheet component, .NET Spreadsheet component">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="DC.title" content="GrapeCity Spread" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Raleigh" />
+    <meta name="geo.position" content="40.458677;-79.924935" />
+    <meta name="ICBM" content="40.458677, -79.924935" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="GrapeCity Spread">
+    <meta itemprop="description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta itemprop="image" content="http://spread.grapecity.com/img/spread-photo.png">
+    <link href="https://plus.google.com/103999002053720301182/" rel="publisher" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="GrapeCity Spread">
+    <meta name="twitter:site" content="@gcspread">
+    <meta name="twitter:title" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:creator" content="@gcspread">
+    <meta name="twitter:image" content="http://spread.grapecity.com/img/spread-photo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="GrapeCity Spread" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://spread.grapecity.com/" />
+    <meta property="og:image" content="http://spread.grapecity.com/img/spread-photo.png" />
+    <meta property="og:description" content="Spreadsheet Components for .NET and JavaScript-HTML5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css?v=1" />
+
+</head>
+
+<body class="product-page product-spreadstudio">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+    <aside class="brand-section">
+        <div class="brand-inner clearfix">
+            <div class="brand-main">
+                <div class="brand-logo">
+                    <div class="padder clearfix">
+                        <h2><a href="/next/"><img src="/img/sp48x48.png" /><span class="logo-text">Spread</span> </a></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="search-container clearfix">
+                <input placeholder="Search" type="search" />
+                <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                <a class="user-trigger" href="#"><span class="lnr lnr-user"></span></a>
+            </div>
+            <nav class="nav-main">
+                <div class="nav-section">
+                    <div class="padder clearfix">
+                        <ul class="clearfix">
+                            <li class="studio">
+                                <a class="active" href="/products/spread-studio/"><img src="/img/sp-icon.svg" /><span class="menu-text">Spread Studio</span></a>
+                            </li>
+                            <li class="js">
+                                <a href="/products/spreadjs/"><img src="/img/js-icon.svg" /><span class="menu-text">SpreadJS</span></a>
+                            </li>
+                            <li class="com">
+                                <a href="/products/spread-com/"><img src="/img/com-icon.svg" /><span class="menu-text">Spread COM</span></a>
+                            </li>
+                            <li><a href="/downloads/"><span class="lnr lnr-download"></span><span class="menu-text">Downloads</span></a></li>
+                            <li><a href="/demo-gallery/"><span class="lnr lnr-cog"></span><span class="menu-text">Demo Gallery</span></a></li>
+                            <li><a href="/pricing/"><span class="lnr lnr-cart"></span><span class="menu-text">Pricing</span></a></li>
+                            <li><a href="#"><span class="lnr lnr-bubble"></span><span class="menu-text">Support & Community</span></a></li>
+                            <li><a href="/documentation/"><span class="lnr lnr-book"></span><span class="menu-text">Documentation</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="brand-container">
+                <div class="padder clearfix">
+                    <div class="brand-more">
+                        <a class="brand-more-trigger" href="javascript:void(0);"><span class="lnr lnr-menu"></span> <span class="menu-text">More Tools</span></a>
+                        <ul class="brand-more-list hidden">
+                            <li><a href="#"><span class="lnr lnr-diamond"></span> ActiveReports</a></li>
+                            <li><a href="#"><span class="lnr lnr-poop"></span> ComponentOne</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Wijmo</a></li>
+                            <li><a href="#"><span class="lnr lnr-thumbs-down"></span> Xuni</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+
+    <main class="body-section">
+        <article class="body-inner">
+            <header>
+                <div class="wrapper clearfix">
+
+                    <div class="padder clearfix">
+                        <div class="banner-img">
+                            <img src="/img/DataBar.png" alt="Data Bar" />
+                        </div>
+                        <div class="banner-text">
+                            <div class="padder">
+                                <h1>Spreadsheet and Grid Toolbox for Visual Studio and JavaScript</h1>
+
+                                <a href="#" class="button"><span class="button-inner"><span class="lnr lnr-download"></span> Download Now</span></a> <a href="#" class="button-light"><span class="button-inner"><span class="lnr lnr-screen"></span> Browse Demos</span></a>
+                            </div>
+                        </div>
+
+                    </div>
+            </header>
+
+
+            <nav class="header-bar">
+                <div class="wrapper clearfix">
+                    <ul class="header-bar-nav">
+                        <li class="header-title"><span class="header-bar-item"><img src="/img/sp-icon.svg"><span class="header-text">Spread Studio</span></span></li>
+                        <li class="active-page Overview"><a class="header-bar-item" href="/Products/SpreadStudio/">Overview</a></li>
+                        <li class="Whats-New"><a class="header-bar-item" href="/Products/SpreadStudio/Whats-New/">New Features</a></li>
+                        <li class="Full-Feature-List"><a class="header-bar-item" href="/Products/SpreadStudio/Full-Feature-List/">Full Feature List</a></li>
+                    </ul>
+                    <a class="header-button button" href="/Downloads/"><span class="button-inner"><span class="lnr lnr-download"></span> Download Free Trial</span></a>
+                </div>
+            </nav>
+
+            <div class="wrapper-sections">
+
+
+                <section id="overview-js" class="overview-js section-full-width-container-padder">
+                    <div class="wrapper">
+                        <div class="padder clearfix">
+                            <h3 class="section-title">
+                Spread Studio: A Complete Developer Toolbox</h3>
+                            <div class="wrapper">
+                                <ul class="three-column-icons clearfix">
+                                    <li>
+                                        <div class="padder">
+                                            <span class="lnr lnr-dice"></span>
+                                            <h3>Studio</h3>
+                                            <p>Full collection of .NET spreadsheet components and designers. </p>
+
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="padder">
+                                            <span class="lnr lnr-printer"></span>
+                                            <h3>SpreadJS</h3>
+                                            <p>Our high performance JavaScript spreadsheet and grid library.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="padder">
+                                            <span class="lnr lnr-keyboard"></span>
+                                            <h3>Multirow</h3>
+                                            <p>.NET grid that helps you configure multiple line row templates.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="overview-ui" class="overview-ui section-full-width-container-padder">
+                    <div class="wrapper">
+                        <div class="padder clearfix">
+                            <h3 class="section-title">
+                Excel UI, Excel Features in an Extensible Component</h3>
+                            <img src="http://placehold.it/1100x550" alt="Excel Features in a .NET Component">
+
+
+
+                            <p>Modeled after Microsoft Excel, Spread includes all the must-have spreadsheet features to create interactive data views and forms. Spread supports reading/writing native Excel files, 300+ built-in functions, charting, print/print preview, grouping, filtering, sorting, editable and graphical celltypes, conditional formatting, and data bound/unbound modes. It is also fully extensible, so you have complete control.</p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="overview-designers" class="overview-designers section-full-width-noheader">
+
+                    <h3 class="hidden">
+        Intuitive Designers</h3>
+                    <div class="wrapper">
+                        <div class="padder clearfix">
+                            <div class="value-img">
+                                <div class="padder">
+                                    <img src="http://placehold.it/550x300">
+
+                                </div>
+                            </div>
+                            <div class="value-text">
+                                <h3>Intuitive Designers</h3>
+                                <p>The easy-to-use, intuitive Spread Designers make creating detailed spreadsheets, input forms, or datagrid screens quick and painless. Design new forms or edit existingsheets using the Excel-like, visual, drag-and-drop UI—all without writing code. You can even import an Excel file to start. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="overview-formulas" class="overview-formulas section-full-width-container-padder">
+                    <div class="wrapper">
+                        <div class="padder clearfix">
+                            <h3 class="section-title">
+                Complete Formula Library &amp; Calculation Engine</h3>
+                            <img src="http://placehold.it/1100x550">
+
+                            <p>Spread includes a powerful calculation engine that allows you to quickly add formulas to your applications by using any of the 300+ pre-defined functions. Spread also supports custom functions and cross-sheet formula referencing.</p>
+
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="overview-celltypes" class="overview-celltypes section-full-width-container-padder">
+                    <div class="wrapper">
+                        <div class="padder clearfix">
+                            <h3 class="section-title">
+                All the Editable and Graphical Cell Types You Will Ever Need</h3>
+                            <p>Just like Excel, you are not limited to having the same celltype for columns only. Cell types can be set for individual cells, a range of cells, columns, rows, or an entire sheet.</p>
+
+                            <h4><i class="icon-angle-right"></i> Editable Cell Types</h4>
+                            <ul class="icon-values clearfix">
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Currency</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Date-Time</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Mask</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Number</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Percent</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Regular Expression</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Text</h3>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                            <h4><i class="icon-angle-right"></i> Graphical Cell Types</h4>
+                            <ul class="icon-values clearfix">
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Barcode</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Button</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Check Box</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Color Picker</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Combo Box</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Hyperlink</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Image</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>List Box Cell</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Multiple Option</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Progress Indicator</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Text</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><span class="lnr lnr-diamond"></span>
+                                        <h3>Slider</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style=""><span class="lnr lnr-diamond"></span>
+                                        <h3>Multiple-Column Combo Box</h3>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="overview-dataviz" class="overview-dataviz section-full-width-container-padder">
+                    <div class="wrapper">
+                        <div class="padder clearfix">
+                            <h3 class="section-title">
+                Data Visualization Controls</h3>
+                            <p>Give your data a voice with the data visualization functionality provided in Spread. Recognize trends, isolate out-of-range values, and gain a clear understanding of your data.</p>
+
+                            <img src="http://placehold.it/1100x550" alt="Data Visualization Controls">
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="overview-charts" class="overview-charts section-full-width-noheader">
+
+                    <h3 class="hidden">
+        Every Popular Chart Type</h3>
+                    <div class="padder clearfix">
+                        <!-- <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/img/screenshots/spreadsheets/spread-charts.png" alt="Charting Controls" /> -->
+
+                        <div class="wrapper">
+                            <h3>Every Popular Chart Type</h3>
+                            <p>Create impressive 2D &amp; 3D charts at design time using the Spread Designer and Chart Designer, or through code using the comprehensive Chart object model. Charts can be bound to external data sources, and you can allow end-users to make changes to the chart formatting at run time.</p>
+
+                            <ul class="icon-values clearfix">
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-c1charting"></i>
+                                        <h3>Column</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-c1chartline"></i>
+                                        <h3>Line</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-c1piechart"></i>
+                                        <h3>Pie</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-c1charting"></i>
+                                        <h3>Bar</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-c1chartarea"></i>
+                                        <h3>Area</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-c1chartscatterplot"></i>
+                                        <h3>XY</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-c1chartbubble"></i>
+                                        <h3>Bubble</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-c1candlestick"></i>
+                                        <h3>Stock</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-c1chart3d"></i>
+                                        <h3>XYZ</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-c1piechart"></i>
+                                        <h3>Doughnut</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-gear"></i>
+                                        <h3>Radar</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="padder" style="height: 56px;"><i class="icon-gear"></i>
+                                        <h3>Polar</h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="overview-sparklines" class="overview-sparklines section-full-width-noheader">
+                    <div class="wrapper">
+                        <div class="padder clearfix">
+                            <div class="value-img">
+                                <div class="padder">
+                                    <img src="http://placehold.it/550x300" alt="Sparklines">
+                                </div>
+                            </div>
+
+                            <div class="value-text">
+                                <h3>Sparklines</h3>
+                                <p>Sparklines are tiny charts drawn directly inside cells to provide a visual representation of your data, right next to the data itself. Spread supports multiple sparklines, plus the ability to import/export sparklines to Excel.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="overview-conditional-formatting" class="overview-conditional-formatting section-full-width-noheader">
+
+                    <h3 class="hidden">
+        Conditional Formatting</h3>
+                    <div class="wrapper">
+                        <div class="padder clearfix">
+                            <div class="value-img">
+                                <div class="padder">
+                                    <img src="http://placehold.it/550x300" alt="Conditional Formatting">
+                                </div>
+                            </div>
+                            <div class="value-text">
+                                <h3>Conditional Formatting</h3>
+                                <p> Change the appearance of a cell range based on conditions. Use visualizations such as data bars, color scales, and icon sets to help you visually answer specific questions about your data, highlight interesting cells or ranges of cells, and emphasize unusual values.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="overview-com hidden" class="overview-com hidden section-full-width-container-padder">
+                    <div class="wrapper">
+                        <div class="padder clearfix">
+                            <h3 class="section-title">
+                Includes Editions for JavaScript-HTML and COM at No Extra Cost</h3>
+                            <p>Our mission is to give you a complete spreadsheet development solution. In following that quest, we include license for SpreadJS, our Javascript version, and Spread COM for Visual Studio 6 users. </p>
+
+
+                            <a href="/Products/SpreadCOM/Overview/" class="button"><span>Learn About SpreadJS</span></a>
+                            <a href="/Products/SpreadJS/Overview/" class="button"><span>Learn About Spread COM</span></a>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="overview-mr" class="overview-mr section-full-width-container-padder">
+                    <div class="wrapper">
+                        <div class="padder clearfix">
+                            <h3 class="section-title">
+                MutiRow Grid Control </h3>
+                            <img src="http://placehold.it/1100x550" alt="MultiRow Grid">
+
+                            <p>MultiRow works when typical a grid view just won't do. It displays single data rows in a multi-line template you design with a Visual Studio-integrated drag-and-drop designer. This is more than a simple row template that you see in most grids. You can assign cell types to individual fields and place them anywhere you like. This makes creating complex displays and input forms easy. A common example is a Bill of Materials or invoice that may have a name and address in a header and multiple line items below. MultiRow combines the best of spreadsheets and grids by giving you control over layout, individual cell types, calculations, bound and unbound modes, data valiadation, and tabular display in a very easy to use package. </p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+
+            <section class="getstarted-section">
+                <div class="wrapper">
+                    <div class="padder clearfix">
+                        <h2>Get Started</h2>
+                        <p>Download a fully functional 30-day trial to experience the power of Spread for yourself. Our <a href="http://sphelp.grapecity.com">expert support</a> is here to help if you have questions.</p>
+
+                        <ul class="three-column-icons hidden clearfix">
+                            <li>
+                                <a href="http://sphelp.grapecity.com/groups/">
+                                    <div class="padder">
+
+                                        <span class="lnr lnr-bubble"></span>
+                                        <h3>Forums</h3>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://sphelp.grapecity.com/videos/">
+                                    <div class="padder">
+
+                                        <span class="lnr lnr-film-play"></span>
+                                        <h3>Videos</h3>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://sphelp.grapecity.com/docs/">
+                                    <div class="padder">
+
+                                        <span class="lnr lnr-book"></span>
+                                        <h3>Documentation</h3>
+
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="button"><span class="button-inner"><span class="lnr lnr-download"></span> Download Now</span></a>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <footer>
+                <div class="wrapper clearfix">
+                    <div class="footer-column footer-half">
+                        <div class="padder clearfix">
+                            <h3>About Spread Studio</h3>
+                            <p>Spread Studio is a multi-functional component that combines the utility of a grid with the power and flexibility of a spreadsheet to help developers working in Microsoft® Visual Studio and JavaScript add Microsoft® Excel functionality to their applications or websites. One package delivers a powerful formula engine, input controls, an API, full data import/export for Excel files, advanced charts, print support, and PDF export. Spread Studio is the only component you need in your toolbox for data bound and unbound WinForms, WPF, WinRT, ASP.NET, and JavaScript applications.</p>
+                            <p class="copyright-paragraph">
+                                ©
+                                <span id="ctl00_Footer_lblCurrentYear">2015</span> <img src="/img/company/grapecity_150.png" data-src="img/Company/grapecity_150.png" alt="GrapeCity">, inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="footer-column footer-column-menu">
+                        <div class="padder clearfix">
+                            <h3>Company</h3>
+                            <ul class="footer-menu clearfix">
+                                <li><a href="/Pages/AboutUs/">About Us</a></li>
+                                <li><a href="/Pages/ContactUs/">Contact Us</a></li>
+                                <li><a href="/Pages/Legal/">Legal Information</a></li>
+                                <li><a href="/Pages/Privacy/">Privacy Policy</a></li>
+                                <li><a href="/Pages/Terms/">Terms of Use</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/dist/jquery.unslider-dist.js"></script>
+    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
+    <script src="/js/dist/jquery.waypoints-dist.js"></script>
+    <script src="/js/dist/init-dist.js"></script>
+
+
+
+</body>
+
+</html>
