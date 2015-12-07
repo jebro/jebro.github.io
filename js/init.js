@@ -47,5 +47,8 @@ $(document).ready(function () {
         $(this).toggleClass('expander-active').parent().find('.expander-body').slideToggle();
         $(this).find('.expander-icon').toggleClass('lnr-plus-circle').toggleClass('lnr-circle-minus');
     });
+    
+    $('.cards .card-container').matchHeight();
+    
 
 });

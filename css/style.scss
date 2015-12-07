@@ -339,6 +339,7 @@ table {
             border-radius: 8px;
             overflow: hidden;
             margin: 0 0.5em;
+            position: relative;
             .card-header {
                 background-color: $light-grey;
                 background-size: cover;
@@ -383,9 +384,15 @@ table {
             }
             .card-body {
                 .padder {
-                    padding: 2em 1em;
+                    padding: 2em 1em 6em;
                     .button {
-                        margin-top: 2em;
+                        position: absolute;
+                        bottom: 2em;
+                        left: 50%;
+                        width: 80%;
+                        margin-left: -40%;
+                        .button-inner {
+                        }
                     }
                 }
             }

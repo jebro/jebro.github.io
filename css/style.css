@@ -857,15 +857,14 @@
 }
 
 @media only screen and (max-width: 1100px) {
-  .brand-section .brand-inner .brand-main .brand-logo .padder h2 a .lnr, .brand-section .brand-inner .brand-main .brand-logo .padder h2 a img {
-    position: relative;
-    left: -12px;
+  .brand-section .brand-inner .brand-main .brand-logo .padder h2 a .logo-text {
+    display: none;
   }
 }
 
 @media only screen and (max-width: 1100px) {
-  .brand-section .brand-inner .brand-main .brand-logo .padder h2 a .logo-text {
-    display: none;
+  .brand-section .brand-inner .brand-main .brand-logo .padder {
+    padding: 1em 0;
   }
 }
 
@@ -940,6 +939,12 @@
   vertical-align: middle;
 }
 
+@media only screen and (max-width: 1100px) {
+  .brand-section .brand-inner .nav-main .nav-section .padder ul li a .lnr, .brand-section .brand-inner .nav-main .nav-section .padder ul li a img {
+    margin: 0;
+  }
+}
+
 .brand-section .brand-inner .nav-main .nav-section .padder ul li a .menu-text {
   display: inline-block;
   vertical-align: middle;
@@ -953,6 +958,13 @@
 
 .brand-section .brand-inner .nav-main .nav-section .padder ul li a:hover {
   background: #1a1a27;
+}
+
+@media only screen and (max-width: 1100px) {
+  .brand-section .brand-inner .nav-main .nav-section .padder ul li a {
+    padding: 1em 0;
+    text-align: center;
+  }
 }
 
 .brand-section .brand-inner .nav-main .nav-section .padder ul li .active {
@@ -1197,6 +1209,12 @@ header .padder .banner-text .padder .button {
 .product-page .header-bar {
   background: #e4e4e4;
   padding: 0.4em 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  .product-page .header-bar {
+    padding: 0.4em 2em;
+  }
 }
 
 .product-page .header-bar .header-bar-nav {
@@ -1973,6 +1991,7 @@ table tr td {
   border-radius: 8px;
   overflow: hidden;
   margin: 0 0.5em;
+  position: relative;
 }
 
 .cards li .card-container .card-header {
@@ -2028,11 +2047,15 @@ table tr td {
 }
 
 .cards li .card-container .card-body .padder {
-  padding: 2em 1em;
+  padding: 2em 1em 6em;
 }
 
 .cards li .card-container .card-body .padder .button {
-  margin-top: 2em;
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  width: 80%;
+  margin-left: -40%;
 }
 
 .cards li .card-highlight {

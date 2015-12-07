@@ -22,6 +22,9 @@
     .header-bar {
         background: darken($light-grey, 5%);
         padding: 0.4em 0;
+        @media only screen and (max-width : 1100px) {
+            padding: 0.4em 2em;
+        }         
         .header-bar-nav {
             float: left;
             li {
@@ -43,7 +46,6 @@
             .header-title {
                 .header-bar-item {
                     background: $light-grey;
-                    //border-left: solid 5px $medium-grey;
                 }
                 img {
                     width: 18px;
