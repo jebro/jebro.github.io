@@ -32,7 +32,7 @@ $(document).ready(function () {
         arrows: false,
         autoplay: false
     });
- 
+
 
     $(".tab-nav a").click(function (event) {
         event.preventDefault();
@@ -42,13 +42,14 @@ $(document).ready(function () {
         $(".tab-content").not(tab).css("display", "none");
         $(tab).fadeIn();
     });
-    
-    $('.expander .expander-header').click(function(){
+
+    $('.expander .expander-header').click(function () {
         $(this).toggleClass('expander-active').parent().find('.expander-body').slideToggle();
         $(this).find('.expander-icon').toggleClass('lnr-plus-circle').toggleClass('lnr-circle-minus');
     });
-    
+
     $('.cards .card-container').matchHeight();
-    
+    $('.icon-values .padder').matchHeight();
+    $('.three-column-icons .padder').matchHeight();
 
 });

@@ -1384,14 +1384,15 @@ header .padder .banner-text .padder .button {
   border: solid 1px #f1f1f1;
   border-radius: 2px;
   height: 150px;
+  margin: 0 0.5em;
 }
 
 .product-spreadstudio .overview-js .three-column-icons li:first-child .padder {
-  margin-right: 1.5em;
+  margin-right: 1em;
 }
 
 .product-spreadstudio .overview-js .three-column-icons li:last-child .padder {
-  margin-left: 1.5em;
+  margin-left: 1em;
 }
 
 .product-spreadjs header {
@@ -1454,14 +1455,15 @@ header .padder .banner-text .padder .button {
   border: solid 1px #f1f1f1;
   border-radius: 2px;
   height: 150px;
+  margin: 0 0.5em;
 }
 
 .product-spreadjs .overview-js .three-column-icons li:first-child .padder {
-  margin-right: 1.5em;
+  margin-right: 1em;
 }
 
 .product-spreadjs .overview-js .three-column-icons li:last-child .padder {
-  margin-left: 1.5em;
+  margin-left: 1em;
 }
 
 .product-spreadcom header {
@@ -1524,14 +1526,15 @@ header .padder .banner-text .padder .button {
   border: solid 1px #f1f1f1;
   border-radius: 2px;
   height: 150px;
+  margin: 0 0.5em;
 }
 
 .product-spreadcom .overview-js .three-column-icons li:first-child .padder {
-  margin-right: 1.5em;
+  margin-right: 1em;
 }
 
 .product-spreadcom .overview-js .three-column-icons li:last-child .padder {
-  margin-left: 1.5em;
+  margin-left: 1em;
 }
 
 .standard-page header {

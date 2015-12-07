@@ -56,18 +56,18 @@
                     border: solid 1px $light-grey;
                     border-radius: 2px;
                     height: 150px;
+                    margin: 0 0.5em;
                 }
                 &:first-child {
                     .padder {
-                        margin-right: 1.5em;
+                        margin-right: 1em;
                         i {
-                            //color: #672079;
                         }
                     }
                 }
                 &:last-child {
                     .padder {
-                        margin-left: 1.5em;
+                        margin-left: 1em;
                     }
                 }
             }
