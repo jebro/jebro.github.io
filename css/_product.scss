@@ -15,28 +15,18 @@
         img {
             border-radius: 8px;
         }
-        .button {
+        .button, .button-light {
             @media only screen 
-            and (min-device-width : 768px) 
-            and (max-device-width : 1024px)  { 
-                font-size: 0.8em;
-            }            
-            .button-inner {
-                
-            }
-        }
-        .button-light {
-            @media only screen 
-            and (min-device-width : 768px) 
-            and (max-device-width : 1024px)  { 
-                font-size: 0.8em;
+            and (min-device-width : 320px) 
+            and (max-device-width : 480px) {
+                display: block;
+                margin: 0 0 1em;
             }             
-            .button-inner {
-            }
-            &:hover {
-                .button-inner {
-                }
-            }
+            @media only screen 
+            and (min-device-width : 768px) 
+            and (max-device-width : 1024px)  { 
+                font-size: 0.8em;
+            }                 
         }
     }
     img {
@@ -83,6 +73,11 @@
         .header-button {
             float: right;
             @include phone-reset;
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 480px) {
+                display: block;
+            }            
             .button-inner {
                 padding: 0.4em 1em;
             }

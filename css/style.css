@@ -1271,14 +1271,15 @@ header .padder .banner-text .padder .button {
   border-radius: 8px;
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .product-page header .button {
-    font-size: 0.8em;
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .product-page header .button, .product-page header .button-light {
+    display: block;
+    margin: 0 0 1em;
   }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .product-page header .button-light {
+  .product-page header .button, .product-page header .button-light {
     font-size: 0.8em;
   }
 }
@@ -1355,6 +1356,12 @@ header .padder .banner-text .padder .button {
   .product-page .header-bar .header-button {
     float: none;
     width: auto;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .product-page .header-bar .header-button {
+    display: block;
   }
 }
 
