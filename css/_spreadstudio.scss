@@ -3,7 +3,6 @@
         background: $spreadstudio-color;
         h1 {
             color: #fff;
-            margin-top: 0.5em;
         }
         img {
             border-radius: 8px;
@@ -55,14 +54,12 @@
                     padding: 2em;
                     border: solid 1px $light-grey;
                     border-radius: 2px;
-                    height: 150px;
                     margin: 0 0.5em;
+                    @include phone-margin;
                 }
                 &:first-child {
                     .padder {
                         margin: 0 0.5em 0 0;
-                        i {
-                        }
                     }
                 }
                 &:last-child {

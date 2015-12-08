@@ -1067,13 +1067,21 @@ header .padder {
 
 @media only screen and (max-width: 1100px) {
   header .padder {
-    padding: 2em;
+    padding: 4em 2em;
   }
 }
 
 header .padder .banner-img {
   float: right;
   width: 50%;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  header .padder .banner-img {
+    float: none;
+    width: auto;
+  }
 }
 
 header .padder .banner-img img {
@@ -1084,6 +1092,14 @@ header .padder .banner-img img {
 header .padder .banner-text {
   float: left;
   width: 50%;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  header .padder .banner-text {
+    float: none;
+    width: auto;
+  }
 }
 
 header .padder .banner-text .padder {
@@ -1093,6 +1109,56 @@ header .padder .banner-text .padder {
 
 header .padder .banner-text .padder .button {
   margin-right: 1em;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  header .padder .button, header .padder .button-light {
+    font-size: 0.8em;
+  }
+}
+
+.features-section {
+  background: #f1f1f1;
+}
+
+.features-section .features-column {
+  width: 50%;
+  float: left;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .features-section .features-column {
+    float: none;
+    width: auto;
+  }
+}
+
+.features-section .features-column .padder {
+  background: #fff;
+  padding: 2em;
+}
+
+.features-section .features-column:first-child .padder {
+  margin-right: 1em;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .features-section .features-column:first-child .padder {
+    margin: 0 0 1em 0;
+  }
+}
+
+.features-section .features-column:last-child .padder {
+  margin-left: 1em;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .features-section .features-column:last-child .padder {
+    margin: 0 0 1em 0;
+  }
 }
 
 .companies-section {
@@ -1112,12 +1178,27 @@ header .padder .banner-text .padder .button {
   float: left;
   width: 16.666%;
   text-align: center;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .companies-section .companies-list li {
+    float: none;
+    width: auto;
+  }
 }
 
 .companies-section .companies-list li .padder {
   padding: 2em;
   border: solid 1px #f1f1f1;
   margin-right: 1em;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .companies-section .companies-list li .padder {
+    margin: 0 0 1em 0;
+  }
 }
 
 .companies-section .companies-list li .padder img {
@@ -1153,29 +1234,6 @@ header .padder .banner-text .padder .button {
   max-width: none;
 }
 
-.quote-section .quotes-rotator .dots {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  margin-left: -52px;
-  z-index: 999;
-}
-
-.quote-section .quotes-rotator .dots li {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  text-indent: -999em;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
-}
-
-.quote-section .quotes-rotator .dots li.active {
-  background: #548282;
-  border-color: #548282;
-  opacity: 1;
-}
-
 .whychooseicons-section {
   text-align: center;
 }
@@ -1202,8 +1260,31 @@ header .padder .banner-text .padder .button {
   margin-top: 0.5em;
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .product-page header h1 {
+    font-size: 2.2em;
+    margin-top: 0.7em;
+  }
+}
+
 .product-page header img {
   border-radius: 8px;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .product-page header .button {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .product-page header .button-light {
+    font-size: 0.8em;
+  }
+}
+
+.product-page img {
+  max-width: 100%;
 }
 
 .product-page .header-bar {
@@ -1219,10 +1300,26 @@ header .padder .banner-text .padder .button {
 
 .product-page .header-bar .header-bar-nav {
   float: left;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .product-page .header-bar .header-bar-nav {
+    float: none;
+    width: auto;
+  }
 }
 
 .product-page .header-bar .header-bar-nav li {
   float: left;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .product-page .header-bar .header-bar-nav li {
+    float: none;
+    width: auto;
+  }
 }
 
 .product-page .header-bar .header-bar-nav li a:hover {
@@ -1251,20 +1348,32 @@ header .padder .banner-text .padder .button {
 
 .product-page .header-bar .header-button {
   float: right;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .product-page .header-bar .header-button {
+    float: none;
+    width: auto;
+  }
 }
 
 .product-page .header-bar .header-button .button-inner {
   padding: 0.4em 1em;
 }
 
-.product-page .icon-values {
-  margin-left: 14px;
-}
-
 .product-page .icon-values li {
   float: left;
   width: 25%;
   text-align: center;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .product-page .icon-values li {
+    float: none;
+    width: auto;
+  }
 }
 
 .product-page .icon-values li .padder {
@@ -1272,6 +1381,13 @@ header .padder .banner-text .padder .button {
   background: #f1f1f1;
   margin-right: 1em;
   margin-bottom: 1em;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .product-page .icon-values li .padder {
+    margin: 0 0 1em 0;
+  }
 }
 
 .product-page .icon-values li .padder .lnr, .product-page .icon-values li .padder i {
@@ -1309,11 +1425,27 @@ header .padder .banner-text .padder .button {
 .product-page .value-text {
   float: right;
   width: 50%;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .product-page .value-text {
+    float: none;
+    width: auto;
+  }
 }
 
 .product-page .value-img {
   float: left;
   width: 50%;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .product-page .value-img {
+    float: none;
+    width: auto;
+  }
 }
 
 .product-page .value-img .padder {
@@ -1330,7 +1462,6 @@ header .padder .banner-text .padder .button {
 
 .product-spreadstudio header h1 {
   color: #fff;
-  margin-top: 0.5em;
 }
 
 .product-spreadstudio header img {
@@ -1383,8 +1514,14 @@ header .padder .banner-text .padder .button {
   padding: 2em;
   border: solid 1px #f1f1f1;
   border-radius: 2px;
-  height: 150px;
   margin: 0 0.5em;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .product-spreadstudio .overview-js .three-column-icons li .padder {
+    margin: 0 0 1em 0;
+  }
 }
 
 .product-spreadstudio .overview-js .three-column-icons li:first-child .padder {
@@ -1401,7 +1538,6 @@ header .padder .banner-text .padder .button {
 
 .product-spreadjs header h1 {
   color: #fff;
-  margin-top: 0.5em;
 }
 
 .product-spreadjs header img {
@@ -1472,7 +1608,6 @@ header .padder .banner-text .padder .button {
 
 .product-spreadcom header h1 {
   color: #fff;
-  margin-top: 0.5em;
 }
 
 .product-spreadcom header img {
@@ -1622,10 +1757,26 @@ footer {
 
 footer .footer-column {
   float: left;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  footer .footer-column {
+    float: none;
+    width: auto;
+  }
 }
 
 footer .footer-column-menu {
   float: right;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  footer .footer-column-menu {
+    float: none;
+    width: auto;
+  }
 }
 
 footer .footer-column-menu .padder {
@@ -1846,10 +1997,32 @@ table tr td {
   float: left;
   width: 33.333%;
   text-align: center;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .three-column-icons li {
+    float: none;
+    width: auto;
+  }
 }
 
 .three-column-icons li .padder {
   padding: 2em 0;
+  /* Smartphones (portrait and landscape) ----------- */
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .three-column-icons li .padder {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .three-column-icons li .padder {
+    margin: 0 0 1em 0;
+  }
 }
 
 .three-column-icons li .padder h3 {
@@ -1885,32 +2058,18 @@ table tr td {
   margin-bottom: 2em;
 }
 
-.features-section {
-  background: #f1f1f1;
-}
-
-.features-section .features-column {
-  width: 50%;
-  float: left;
-}
-
-.features-section .features-column .padder {
-  background: #fff;
-  padding: 2em;
-}
-
-.features-section .features-column:first-child .padder {
-  margin-right: 1em;
-}
-
-.features-section .features-column:last-child .padder {
-  margin-left: 1em;
-}
-
 .tabs .tab-content {
   display: none;
   float: right;
   width: 70%;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .tabs .tab-content {
+    float: none;
+    width: auto;
+  }
 }
 
 .tabs .tab-content p {
@@ -1920,6 +2079,7 @@ table tr td {
 .tabs .tab-content img {
   border: solid 1px #e0e0e0;
   margin-bottom: 0.4em;
+  width: 100%;
 }
 
 .tabs .tab-content.active {
@@ -1929,6 +2089,14 @@ table tr td {
 .tabs .tab-nav {
   float: left;
   width: 30%;
+  /* Smartphones (portrait and landscape) ----------- */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .tabs .tab-nav {
+    float: none;
+    width: auto;
+  }
 }
 
 .tabs .tab-nav li {

@@ -1,3 +1,70 @@
+@mixin phone-reset {
+    /* Smartphones (portrait and landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+        float: none;
+        width: auto;
+    }   
+}
+
+@mixin phone-center {
+    /* Smartphones (portrait and landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+        text-align: center;
+    }     
+}
+
+@mixin phone-padder {
+    /* Smartphones (portrait and landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+        padding: 0;
+    }      
+}
+
+@mixin phone-padder-add {
+    /* Smartphones (portrait and landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+        padding: 1em;
+    }      
+}
+
+@mixin phone-margin {
+    /* Smartphones (portrait and landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+        margin: 0 0 1em 0;
+    }     
+}
+
+@mixin phone-hide {
+    /* Smartphones (portrait and landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+        display: none;
+    }     
+}
+
+@mixin phone-table {
+    /* Smartphones (portrait and landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+        overflow-x: auto;
+		display: block;  
+    }     
+}
+
+
+
 $main-color: #548282;
 $dark-color: #202030;
 $spreadstudio-color: #8ec1a2;
@@ -19,6 +86,7 @@ $medium-grey: #e0e0e0;
 @import '_page.scss';
 @import '_pricing.scss';
 @import '_footer.scss'; 
+
 
 * {
     margin: 0;
@@ -197,8 +265,11 @@ table {
         float: left;
         width: 33.333%;
         text-align: center;
+        @include phone-reset;
         .padder {
             padding: 2em 0;
+            @include phone-padder;
+            @include phone-margin;
             h3 {
                 margin: 0;
             }
@@ -232,39 +303,20 @@ table {
     margin-bottom: 2em;
 }
 
-.features-section {
-    background: $light-grey;
-    .features-column {
-        width: 50%;
-        float: left;
-        .padder {
-            background: #fff;
-            padding: 2em;
-        }
-        &:first-child {
-            .padder {
-                margin-right: 1em;
-            }
-        }
-        &:last-child {
-            .padder {
-                margin-left: 1em;
-            }
-        }
-    }
-}
 
 .tabs {
     .tab-content {
         display: none;
         float: right;
         width: 70%;
+        @include phone-reset;
         p {
             margin: 0;
         }
         img {
             border: solid 1px $medium-grey;
             margin-bottom: 0.4em;
+            width: 100%;
         }
         &.active {
             display: block;
@@ -273,6 +325,7 @@ table {
     .tab-nav {
         float: left;
         width: 30%;
+        @include phone-reset;
         li {
             padding: 1em;
             a {

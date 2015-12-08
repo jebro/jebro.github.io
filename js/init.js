@@ -52,4 +52,35 @@ $(document).ready(function () {
     $('.icon-values .padder').matchHeight();
     $('.three-column-icons .padder').matchHeight();
 
+    
+    var windowHeight = $(window).height();
+    var navHeight = $('.nav-main .nav-section ul').height();        
+    if ( navHeight + 199 > windowHeight) {
+        $('.nav-main .nav-section ul').css('height', windowHeight - 199);
+        $('.nav-main .nav-section ul').niceScroll({
+            cursorcolor: "#34344f",
+            cursorborder: "none", 
+            railpadding: { top: 4, right: 4, left: 0, bottom: 4 },
+        });        
+    } else {
+        $('.nav-main .nav-section ul').css('height', 'auto');
+    }    
+
+
+    $(window).resize(function(){
+        var windowHeight = $(window).height();
+        var navHeight = $('.nav-main .nav-section ul').height();        
+        if ( navHeight + 199 > windowHeight) {
+            $('.nav-main .nav-section ul').css('height', windowHeight - 199);
+            $('.nav-main .nav-section ul').niceScroll({
+                cursorcolor: "#34344f",
+                cursorborder: "none",
+                railpadding: { top: 4, right: 4, left: 0, bottom: 4 }
+            });        
+        } else {
+            $('.nav-main .nav-section ul').css('height', 'auto');
+        }
+    });
+    
+    
 });

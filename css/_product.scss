@@ -5,11 +5,32 @@
         h1 {
             font-size: 2.8em;
             margin-top: 0.5em;
+            @media only screen 
+            and (min-device-width : 768px) 
+            and (max-device-width : 1024px)  { 
+                font-size: 2.2em;
+                margin-top: 0.7em;
+            }            
         }
         img {
             border-radius: 8px;
         }
+        .button {
+            @media only screen 
+            and (min-device-width : 768px) 
+            and (max-device-width : 1024px)  { 
+                font-size: 0.8em;
+            }            
+            .button-inner {
+                
+            }
+        }
         .button-light {
+            @media only screen 
+            and (min-device-width : 768px) 
+            and (max-device-width : 1024px)  { 
+                font-size: 0.8em;
+            }             
             .button-inner {
             }
             &:hover {
@@ -18,7 +39,9 @@
             }
         }
     }
-
+    img {
+        max-width: 100%;
+    }
     .header-bar {
         background: darken($light-grey, 5%);
         padding: 0.4em 0;
@@ -27,8 +50,10 @@
         }         
         .header-bar-nav {
             float: left;
+            @include phone-reset;
             li {
                 float: left;
+                @include phone-reset;
                 a {
                     &:hover {
                         background: darken($light-grey, 10%);
@@ -57,22 +82,24 @@
         }
         .header-button {
             float: right;
+            @include phone-reset;
             .button-inner {
                 padding: 0.4em 1em;
             }
         }
     }    
     .icon-values {
-        margin-left: 14px;
         li {
             float: left;
             width: 25%;
             text-align: center;
+            @include phone-reset;
             .padder {
                 padding: 1em 0;
                 background: $light-grey;
                 margin-right: 1em;
                 margin-bottom: 1em;
+                @include phone-margin;
                 .lnr, i {
                     display: inline-block;
                     font-size: 32px;
@@ -107,10 +134,12 @@
     .value-text {
         float: right;
         width: 50%;
+        @include phone-reset;
     }
     .value-img {
         float: left;
         width: 50%;
+        @include phone-reset;
         .padder {
             padding: 0 2em 0 0;
             img {
