@@ -799,7 +799,14 @@
 }
 
 .nav-bar {
+  background: #fff;
+  border-bottom: solid 1px #f1f1f1;
   padding: 0.4em 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 998;
 }
 
 .nav-bar .search-container {
