@@ -10,33 +10,31 @@
     @media only screen 
     and (min-device-width : 320px) 
     and (max-device-width : 480px) {
-        width: 320px;
-        padding: 0.4em 2em;
+        padding: 0.4em 1em;
+        width: auto;
+        position: relative;
     }    
     .search-container {
-        float: right;
+        float: left;
         input[type=search] {
-            float: left;
+            width: 175px;
             padding: 0.4em 1em;   
-            width: 140px;
             border-radius: 24px;
-        }
-        a {
-            float: left;
-            text-align: center;
-            padding: 0.4em 1em;
-            display: block;
-            font-size: 0.9em;              
-            &:hover {
-            }
         }
         .search-trigger {
             background: $light-grey;
             display: none;
         }
-        .user-trigger {
+    } 
+    a {
+        float: right;
+        text-align: center;
+        padding: 0.4em 1em;
+        display: block;
+        font-size: 0.9em;              
+        &:hover {
         }
-    }      
+    }    
 }
 
 
@@ -57,6 +55,11 @@
         //box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
         @media only screen and (max-width : 1100px) {
             width: 60px;
+        }   
+        @media only screen 
+        and (min-device-width : 320px) 
+        and (max-device-width : 480px) {
+            left: 0.4em;
         }        
         .brand-main {
             background: $main-color;
@@ -67,6 +70,7 @@
                 text-align: center;
                 .padder {
                     padding: 1em;
+                    
                     h2 {
                         margin: 0;
                         a {
@@ -91,7 +95,7 @@
                     }
                     @media only screen and (max-width : 1100px) {
                         padding: 1em 0;
-                    }                     
+                    }            
                 }
             }
         }
