@@ -1,11 +1,9 @@
 .standard-page {
     header {
-        height: 119px;
-        line-height: 119px;
         .padder {
-            padding: 0;
+            padding: 60px 0 20px;
             @media only screen and (max-width : 1100px) {
-                padding: 0 2em;
+                padding: 62px 32px 20px;
             }            
             h1 {
                 margin: 0;
