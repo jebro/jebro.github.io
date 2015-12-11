@@ -809,6 +809,13 @@
   z-index: 998;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .nav-bar {
+    width: 320px;
+    padding: 0.4em 2em;
+  }
+}
+
 .nav-bar .search-container {
   float: right;
 }
@@ -816,6 +823,8 @@
 .nav-bar .search-container input[type=search] {
   float: left;
   padding: 0.4em 1em;
+  width: 140px;
+  border-radius: 24px;
 }
 
 .nav-bar .search-container a {
@@ -828,6 +837,7 @@
 
 .nav-bar .search-container .search-trigger {
   background: #f1f1f1;
+  display: none;
 }
 
 .brand-section {
@@ -1946,7 +1956,7 @@ ul {
 
 @media only screen and (max-width: 1100px) {
   .wrapper {
-    width: 100%;
+    width: auto;
     padding-left: 76px;
   }
 }
