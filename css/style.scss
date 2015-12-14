@@ -64,7 +64,6 @@
 }
 
 
-
 $main-color: #548282;
 $dark-color: #202030;
 $spreadstudio-color: #8ec1a2;
@@ -219,11 +218,16 @@ ul {
 .wrapper {
     width: 1100px;
     margin: 0 auto;
-    padding-left: 266px;
+    padding-left: 200px;
     @media only screen and (max-width : 1100px) {
         width: auto;
+        padding-left: 74px;
+    } 
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
         padding-left: 67px;
-    }     
+    }    
 }
 
 input[type=search] {
@@ -246,6 +250,110 @@ table {
         }
     }
 }
+
+
+header {
+    background: $light-grey;
+    position: relative;
+    @include phone-center;
+    .padder {    
+        display: table;
+        padding: 6em 0 4em;
+        @media only screen and (max-width : 1100px) {
+            padding: 6em 1em 4em;
+        }    
+        @media only screen 
+        and (min-device-width : 320px) 
+        and (max-device-width : 480px) {
+            display: block;
+            padding: 2em 1em;
+        }         
+        .banner-img {
+            display: table-cell;
+            vertical-align: middle;
+            width: 50%;
+            @media only screen 
+              and (min-device-width: 768px) 
+              and (max-device-width: 1024px) 
+              and (orientation: portrait) {
+                  display: block;
+                  width: auto;
+            }             
+            @include phone-reset;  
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 480px) {
+                  display: block;
+                  width: auto;
+            }             
+            img {
+                width: 100%;
+                margin-bottom: -5px;
+            }
+        }
+        .banner-text {
+            display: table-cell;
+            vertical-align: middle;
+            width: 50%;
+            @media only screen 
+            and (min-device-width: 768px) 
+            and (max-device-width: 1024px) 
+            and (orientation: portrait) {
+                display: block;
+                width: auto;
+                margin-bottom: 2em;
+            }  
+            @include phone-reset;  
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 480px) {
+                display: block;
+                width: auto;
+                margin-bottom: 2em;
+            }            
+            .padder {
+                padding: 0 2em 0 0;
+                @include phone-padder;
+                .button {
+                    margin-right: 1em;
+                }                               
+                .button, .button-light {   
+                    @media only screen and (max-width : 1100px) {
+                        font-size: 0.8em;
+                    }                        
+                    @media only screen 
+                    and (min-device-width : 320px) 
+                    and (max-device-width : 480px) {
+                        font-size: 1em;
+                        margin: 0 0 1em;
+                        float: none;
+                        display: block;
+                    }            
+                } 
+                .button-light {
+                    @media only screen 
+                    and (min-device-width : 320px) 
+                    and (max-device-width : 480px) {
+                        margin: 0;
+                    }                     
+                }                 
+            }           
+        }
+    }    
+    .unslider-nav ol {
+        padding-left: 250px;   
+        @media only screen and (max-width : 1100px) {
+            width: auto;
+            padding-left: 76px;
+        }        
+        @media only screen 
+        and (min-device-width : 320px) 
+        and (max-device-width : 480px) {
+            padding-left: 67px;
+        }               
+    }    
+}
+
 
 .body-section {
     width: 100%;
@@ -382,13 +490,15 @@ table {
 .cards {
     li {
         float: left;
-        text-align: center;        
+        text-align: center;      
+        @include phone-reset;
         .card-container {
             border: solid 1px $medium-grey;
             border-radius: 8px;
             overflow: hidden;
             margin: 0 0.5em;
             position: relative;
+            @include phone-margin;
             .card-header {
                 background-color: $light-grey;
                 background-size: cover;
@@ -441,6 +551,7 @@ table {
                         width: 80%;
                         margin-left: -40%;
                         .button-inner {
+                            padding: 1em;
                         }
                     }
                 }
@@ -454,12 +565,24 @@ table {
         }
         &:first-child {
             .card-container {
-                margin: 0 1em 0 0;
+                margin-right: 1em;
+                margin-left: 0;
+                @media only screen 
+                and (min-device-width : 320px) 
+                and (max-device-width : 480px) {
+                    margin-right: 0;
+                }                 
             }
         }
         &:last-child {
             .card-container {
-                margin: 0 0 0 1em;
+                margin-left: 1em;
+                margin-right: 0;
+                @media only screen 
+                and (min-device-width : 320px) 
+                and (max-device-width : 480px) {
+                    margin-left: 0;
+                }                 
             }
         }
     }
@@ -468,12 +591,14 @@ table {
 .items-3 {
     li {
         width: 33.33%;
+        @include phone-reset;
     }       
 }
 
 .items-4 {
     li {
         width: 25%;
+        @include phone-reset;
     }       
 }
 
@@ -509,3 +634,6 @@ table {
     }
 }
 
+.banner-rotator-item {
+    float: left;
+}

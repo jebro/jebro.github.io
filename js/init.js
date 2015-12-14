@@ -21,6 +21,11 @@ $(document).ready(function () {
         $('.brand-more-list', this).fadeToggle('fast');
         $(this).find('.brand-more-trigger').toggleClass('active');
     });
+    
+    $('.user-container').hover(function () {
+        $('.user-list', this).fadeToggle('fast');
+        $(this).find('.user-trigger').toggleClass('active');
+    });    
 
     $('.quotes-rotator').unslider({
         arrows: false,

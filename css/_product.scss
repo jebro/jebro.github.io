@@ -1,51 +1,21 @@
 .product-page {
     header {
-        font-size: 1em;
         background: $light-grey;
         .padder {
-            @media only screen and (max-width : 1100px) {
-                padding: 2em 1em;
-            }            
-            .banner-text {
-                h1 {
-                    font-size: 2.8em;
-                    margin-top: 0.5em;
-                    @media only screen 
-                    and (min-device-width : 768px) 
-                    and (max-device-width : 1024px)  { 
-                        font-size: 2.2em;
-                        margin-top: 0.7em;
-                    }         
-                    @media only screen 
-                    and (min-device-width : 320px) 
-                    and (max-device-width : 480px) {
-                        font-size: 2em;
-                    }             
+            .banner-text {               
+                .padder {
+                    h1 {
+                    }
+                    .button {
+                    }   
+                    .button-light {                    
+                    }
                 }
-                .button, .button-light {
-                    @media only screen 
-                    and (min-device-width : 768px) 
-                    and (max-device-width : 1024px)  { 
-                        font-size: 0.8em;
-                    }                 
-                    @media only screen 
-                    and (min-device-width : 320px) 
-                    and (max-device-width : 480px) {
-                        display: block;
-                        margin: 0 0 1em;
-                        font-size: 1em;
-                    }                      
-                }   
-                .button-light {
-                    @media only screen 
-                    and (min-device-width : 320px) 
-                    and (max-device-width : 480px) {
-                        margin: 0;
-                    }                     
-                }
-            }                
-            img {
-                border-radius: 8px;
+            }     
+            .banner-img {
+                img {
+                    border-radius: 8px;
+                }                
             }
         }            
     }
@@ -53,66 +23,72 @@
         max-width: 100%;
     }
     .header-bar {
-        background: darken($light-grey, 5%);
-        padding: 0.4em 0;
-        @media only screen and (max-width : 1100px) {
-            padding: 0.4em 1em;
-        }         
-        .header-bar-nav {
-            float: left;
-            @include phone-reset;
-            li {
-                float: left;
-                @include phone-reset;
-                a {
-                    &:hover {
-                        background: darken($light-grey, 10%);
-                    }
-                }
-                .header-bar-item {
-                    display: block;
-                    text-align: center;
-                    padding: 0.4em 1em;
-                    border-radius: 24px;
-                    margin-right: 0.4em;
-                    position: relative;
-                    @media only screen 
-                    and (min-device-width : 320px) 
-                    and (max-device-width : 480px) {
-                        margin: 0;
-                    }                    
-                }
-            }
-            .header-title {
-                .header-bar-item {
-                    background: $light-grey;
-                }
-                img {
-                    width: 18px;
-                    margin-right: 0.4em;
-                    position: relative;
-                    top: 2px;
-                }
-            }
-        }
-        .header-button {
-            float: right;
-            text-align: center;
-            @include phone-reset;
+        background: darken($light-grey, 5%);        
+        .padder {
+            padding: 0.4em 0;
+            @media only screen and (max-width : 1100px) {
+                padding: 0.4em 1em;
+            } 
             @media only screen 
             and (min-device-width : 320px) 
             and (max-device-width : 480px) {
-                display: block;
-            }            
-            .button-inner {
                 padding: 0.4em 1em;
             }
-        }
-    }    
+            .header-bar-nav {
+                float: left;
+                @include phone-reset;
+                li {
+                    float: left;
+                    @include phone-reset;
+                    a {
+                        &:hover {
+                            background: darken($light-grey, 10%);
+                        }
+                    }
+                    .header-bar-item {
+                        display: block;
+                        text-align: center;
+                        padding: 0.4em 1em;
+                        border-radius: 24px;
+                        margin-right: 0.4em;
+                        position: relative;                        
+                        @media only screen 
+                        and (min-device-width : 320px) 
+                        and (max-device-width : 480px) {
+                            margin: 0 0 0.4em;
+                        }                    
+                    }
+                }
+                .header-title {
+                    .header-bar-item {
+                        background: $light-grey;
+                    }
+                    img {
+                        width: 18px;
+                        margin-right: 0.4em;
+                        position: relative;
+                        top: 2px;
+                    }
+                }
+            }
+            .header-button {
+                float: right;
+                text-align: center;                
+                @include phone-reset;
+                @media only screen 
+                and (min-device-width : 320px) 
+                and (max-device-width : 480px) {
+                    display: block;
+                }            
+                .button-inner {
+                    padding: 0.4em 1em;
+                }
+            }
+        }    
+    }
     .icon-values {
         li {
             float: left;
-            width: 25%;
             text-align: center;
             @include phone-reset;
             .padder {

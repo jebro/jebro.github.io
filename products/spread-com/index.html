@@ -68,11 +68,20 @@
 
     <div class="nav-bar">
         <div class="nav-bar-inner">
-            <div class="wrapper clearfix">
-                <div class="search-container clearfix">
-                    <input placeholder="Search" type="search" />
-                    <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
-                    <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+            <div class="wrapper">
+                <div class="padder clearfix">
+                    <div class="search-container clearfix">
+                        <input placeholder="Search" type="search" />
+                        <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </div>
+                    <div class="user-container">
+                        <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+                        <ul class="user-list hidden">
+                            <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
+                            <li><a href="#"><span class="lnr lnr-license"></span> Licenses</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Submit An Issue</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -132,9 +141,6 @@
                 <div class="wrapper clearfix">
 
                     <div class="padder clearfix">
-                        <div class="banner-img">
-                            <img src="/img/DataBar.png" alt="Data Bar" />
-                        </div>
                         <div class="banner-text">
                             <div class="padder">
                                 <h1>The Best-selling Spreadsheet COM Component</h1>
@@ -142,21 +148,27 @@
                                 <a href="#" class="button"><span class="button-inner"><span class="lnr lnr-download"></span> Download Now</span></a> <a href="#" class="button-light"><span class="button-inner"><span class="lnr lnr-screen"></span> Browse Demos</span></a>
                             </div>
                         </div>
+                        <div class="banner-img">
+                            <img src="/img/DataBar.png" alt="Data Bar" />
+                        </div>
+
 
                     </div>
             </header>
 
 
             <nav class="header-bar">
-                <div class="wrapper clearfix">
-                    <ul class="header-bar-nav">
-                        <li class="header-title"><span class="header-bar-item"><img src="/img/com-icon.svg"><span class="header-text">Spread COM</span></span>
-                        </li>
-                        <li class="active-page Overview"><a class="header-bar-item" href="/Products/SpreadStudio/">Overview</a></li>
-                        <li class="Whats-New"><a class="header-bar-item" href="/Products/SpreadStudio/Whats-New/">New Features</a></li>
-                        <li class="Full-Feature-List"><a class="header-bar-item" href="/Products/SpreadStudio/Full-Feature-List/">Full Feature List</a></li>
-                    </ul>
-                    <a class="header-button button" href="/Downloads/"><span class="button-inner"><span class="lnr lnr-download"></span> Download Free Trial</span></a>
+                <div class="wrapper">
+                    <div class="padder clearfix">
+                        <ul class="header-bar-nav">
+                            <li class="header-title"><span class="header-bar-item"><img src="/img/com-icon.svg"><span class="header-text">Spread COM</span></span>
+                            </li>
+                            <li class="active-page Overview"><a class="header-bar-item" href="/Products/SpreadStudio/">Overview</a></li>
+                            <li class="Whats-New"><a class="header-bar-item" href="/Products/SpreadStudio/Whats-New/">New Features</a></li>
+                            <li class="Full-Feature-List"><a class="header-bar-item" href="/Products/SpreadStudio/Full-Feature-List/">Full Feature List</a></li>
+                        </ul>
+                        <a class="header-button button" href="/Downloads/"><span class="button-inner"><span class="lnr lnr-download"></span> Download Free Trial</span></a>
+                    </div>
                 </div>
             </nav>
 
