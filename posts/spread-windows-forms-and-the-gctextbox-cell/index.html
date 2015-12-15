@@ -153,8 +153,8 @@
 
                     <p>You can create a text cell that displays text and allows you to specify patterns of allowed characters. Text cells are useful if you want to restrict the type of data the user can type in the cell. The GcTextBox cell is part of the GrapeCity.Win.PluginInputMan assembly.</p>
 <pre><code class="hljs"><span class="hljs-keyword">var</span> Metalsmith  = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith'</span>),
+    metallic    = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith-metallic'</span>),
     markdown    = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith-markdown'</span>),
-    highlighter = <span class="hljs-keyword">require</span>(<span class="hljs-string">'highlighter'</span>),
     templates   = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith-templates'</span>),
     collections = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith-collections'</span>),
     permalinks  = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith-permalinks'</span>),  
@@ -174,10 +174,10 @@ Metalsmith(__dirname)
             reverse: <span class="hljs-keyword">true</span>            
         }
     }))
+    .<span class="hljs-keyword">use</span>(metallic())
     .<span class="hljs-keyword">use</span>(markdown({
         gfm: <span class="hljs-keyword">true</span>,
-        tables: <span class="hljs-keyword">true</span>,
-        highlight: highlighter()
+        tables: <span class="hljs-keyword">true</span>
     }))
     .<span class="hljs-keyword">use</span>(permalinks({
         pattern: <span class="hljs-string">':collection/:title'</span>

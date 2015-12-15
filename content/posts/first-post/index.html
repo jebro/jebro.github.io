@@ -5,8 +5,8 @@ date: 12-15-2015</p>
 <h2 id="author-gina-daniels">author: Gina Daniels</h2>
 <p>You can create a text cell that displays text and allows you to specify patterns of allowed characters. Text cells are useful if you want to restrict the type of data the user can type in the cell. The GcTextBox cell is part of the GrapeCity.Win.PluginInputMan assembly.</p>
 <pre><code>var Metalsmith  = require(&#39;metalsmith&#39;),
+    metallic    = require(&#39;metalsmith-metallic&#39;),
     markdown    = require(&#39;metalsmith-markdown&#39;),
-    highlighter = require(&#39;highlighter&#39;),
     templates   = require(&#39;metalsmith-templates&#39;),
     collections = require(&#39;metalsmith-collections&#39;),
     permalinks  = require(&#39;metalsmith-permalinks&#39;),  
@@ -26,10 +26,10 @@ Metalsmith(__dirname)
             reverse: true            
         }
     }))
+    .use(metallic())
     .use(markdown({
         gfm: true,
-        tables: true,
-        highlight: highlighter()
+        tables: true
     }))
     .use(permalinks({
         pattern: &#39;:collection/:title&#39;
