@@ -1,0 +1,112 @@
+.home {
+    header {
+        .padder {
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 480px) {
+                padding: 2em 1em 4em;
+            }             
+        }
+    }
+}
+
+.features-section {
+    background: $light-grey;
+    .features-column {
+        width: 50%;
+        float: left;
+        @include phone-reset;
+        .padder {
+            background: #fff;
+            padding: 2em;
+            
+        }
+        &:first-child {
+            .padder {
+                margin-right: 1em;
+                @include phone-margin;
+            }
+        }
+        &:last-child {
+            .padder {
+                margin-left: 1em;
+                @include phone-margin;
+            }
+        }
+    }
+}
+
+
+.companies-section {
+    text-align: center;
+    .padder {
+        padding-bottom: 0;
+    }
+    .companies-list {
+        position: relative;
+        left: 0.5em;
+        li {
+            float: left;
+            width: 16.666%;
+            text-align: center;
+            @include phone-reset;
+            .padder {
+                padding: 2em;
+                border: solid 1px $light-grey;
+                margin-right: 1em;
+                @include phone-margin;
+                img {
+                    width: 100%;
+                    margin-bottom: -5px;
+                }
+            }
+            &:last-child {
+                .padder {}
+            }
+        }
+    }
+}
+
+.benefits-section {
+    h2 {
+        text-align: center;
+    }
+}
+
+.quote-section {
+    text-align: center;
+    .quotes-rotator {
+        position: relative;
+        overflow: auto;
+        ul {
+            li {
+                float: left;
+                padding: 0 0 2em;
+                min-height: 125px;
+                h3 {
+                    max-width: 760px;
+                    margin: 0 auto;
+                }
+                p {
+                    max-width: none;
+                }
+            }
+        }
+    }
+}
+
+.whychooseicons-section {
+    text-align: center;
+    p {
+        margin: 0 auto 0.4em;
+    }
+}
+
+
+
+.licensing-section {
+    text-align: center;
+    p {
+        margin: 0 auto 0.4em;
+    }
+}

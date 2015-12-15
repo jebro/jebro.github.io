@@ -1,0 +1,87 @@
+.product-spreadcom {
+    header {
+        background: $spreadcom-color;
+        h1 {
+            color: #fff;
+        }
+        .button-light {
+            background: lighten($spreadcom-color, 5%);
+            .button-inner {
+                border-color: lighten($spreadcom-color, 3%);
+                color: lighten($spreadcom-color, 30%);
+            }
+            &:hover {
+                .button-inner {
+                    background: lighten($spreadcom-color, 3%);
+                }
+            }
+        }
+    }
+
+    .header-bar {
+        background: darken($spreadcom-color, 3%);
+        .padder {
+            .header-bar-nav {
+                li {
+                    a {
+                        color: lighten($spreadcom-color, 30%);
+                        &:hover {
+                            background: darken($spreadcom-color, 10%);
+                        }
+                    }
+                }
+                .header-title {
+                    .header-bar-item {
+                        border-left-color: $spreadcom-color;
+                    }
+                }            
+            }
+        }
+    }  
+    .overview-js {
+        .padder {
+            padding-bottom: 0;   
+        }
+        .section-title {
+            text-align: center;
+        }
+        .three-column-icons {
+            margin: 0;
+            li {
+                .padder {
+                    text-align: center;
+                    padding: 2em;
+                    border: solid 1px $light-grey;
+                    border-radius: 2px;
+                    margin: 0 0.5em;
+                    p {
+                        &:last-child {
+                            margin: 0;
+                        }    
+                    }                    
+                    @include phone-margin;       
+                    @media only screen 
+                    and (min-device-width : 320px) 
+                    and (max-device-width : 480px) {
+                        border-radius: 0;
+                    }                    
+                }
+                &:first-child {
+                    .padder {
+                        margin-right: 0.5em;                       
+                    }
+                }
+                &:last-child {
+                    .padder {
+                        margin-left: 0.5em;
+                        @media only screen 
+                        and (min-device-width : 320px) 
+                        and (max-device-width : 480px) {
+                            margin: 0;
+                        }                         
+                    }
+                }
+            }
+        }
+    }   
+}

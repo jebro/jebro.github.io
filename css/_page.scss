@@ -1,0 +1,20 @@
+.standard-page {
+    header {
+        min-height: 0;
+        .padder { 
+            padding: 5em 0 2em;
+            @media only screen and (max-width : 1100px) {
+                padding: 5em 1em 2em;
+            }    
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 480px) {
+                display: block;
+                padding: 2em 1em;
+            } 
+            h1 {
+                margin: 0;
+            }
+        }
+    }
+}
