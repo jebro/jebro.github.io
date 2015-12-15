@@ -1,0 +1,48 @@
+<hr>
+<p>template: post.hbt
+title: Spread Windows Forms and the GcTextBox Cell
+date: 12-15-2015</p>
+<h2 id="author-gina-daniels">author: Gina Daniels</h2>
+<p>You can create a text cell that displays text and allows you to specify patterns of allowed characters. Text cells are useful if you want to restrict the type of data the user can type in the cell. The GcTextBox cell is part of the GrapeCity.Win.PluginInputMan assembly.</p>
+<pre><code>var Metalsmith  = require(&#39;metalsmith&#39;),
+    markdown    = require(&#39;metalsmith-markdown&#39;),
+    highlighter = require(&#39;highlighter&#39;),
+    templates   = require(&#39;metalsmith-templates&#39;),
+    collections = require(&#39;metalsmith-collections&#39;),
+    permalinks  = require(&#39;metalsmith-permalinks&#39;),  
+    handlebars  = require(&#39;handlebars&#39;)
+
+Metalsmith(__dirname)
+    .use(collections({
+        products: {
+            pattern: &#39;content/products/*.md&#39;    
+        },
+        pages: {
+            pattern: &#39;content/pages/*.md&#39;
+        },
+        posts: {
+            pattern: &#39;content/posts/*.md&#39;,
+            sortBy: &#39;date&#39;,
+            reverse: true            
+        }
+    }))
+    .use(markdown({
+        gfm: true,
+        tables: true,
+        highlight: highlighter()
+    }))
+    .use(permalinks({
+        pattern: &#39;:collection/:title&#39;
+    }))    
+    .use(templates({
+        engine: &#39;handlebars&#39;,
+        templates: &#39;templates&#39;,
+        partials: {
+            header: &#39;partials/header&#39;,
+            menu: &#39;partials/menu&#39;,
+            footer: &#39;partials/footer&#39;
+        }
+    }))    
+    .destination(&#39;./build&#39;)
+    .build(function (err) { if(err) console.log(err) })
+</code></pre>
