@@ -4,45 +4,257 @@ title: Spread Windows Forms and the GcTextBox Cell
 date: 12-15-2015</p>
 <h2 id="author-gina-daniels">author: Gina Daniels</h2>
 <p>You can create a text cell that displays text and allows you to specify patterns of allowed characters. Text cells are useful if you want to restrict the type of data the user can type in the cell. The GcTextBox cell is part of the GrapeCity.Win.PluginInputMan assembly.</p>
-<pre><code>var Metalsmith  = require(&#39;metalsmith&#39;),
-    metallic    = require(&#39;metalsmith-metallic&#39;),
-    markdown    = require(&#39;metalsmith-markdown&#39;),
-    templates   = require(&#39;metalsmith-templates&#39;),
-    collections = require(&#39;metalsmith-collections&#39;),
-    permalinks  = require(&#39;metalsmith-permalinks&#39;),  
-    handlebars  = require(&#39;handlebars&#39;)
-
-Metalsmith(__dirname)
-    .use(collections({
-        products: {
-            pattern: &#39;content/products/*.md&#39;    
-        },
-        pages: {
-            pattern: &#39;content/pages/*.md&#39;
-        },
-        posts: {
-            pattern: &#39;content/posts/*.md&#39;,
-            sortBy: &#39;date&#39;,
-            reverse: true            
-        }
-    }))
-    .use(metallic())
-    .use(markdown({
-        gfm: true,
-        tables: true
-    }))
-    .use(permalinks({
-        pattern: &#39;:collection/:title&#39;
-    }))    
-    .use(templates({
-        engine: &#39;handlebars&#39;,
-        templates: &#39;templates&#39;,
-        partials: {
-            header: &#39;partials/header&#39;,
-            menu: &#39;partials/menu&#39;,
-            footer: &#39;partials/footer&#39;
-        }
-    }))    
-    .destination(&#39;./build&#39;)
-    .build(function (err) { if(err) console.log(err) })
+<p>The GcTextBox cell allows you to specify automatic complete mode and a custom source with the AutoCompleteMode and AutoCompleteCustomSource properties.</p>
+<p>You can set maximum limits for the cell with the MaxLength property.</p>
+<p>You can use the ShortcutKeys property to map keys to actions for the GcTextBox cell. In edit mode, these shortcut keys have precedence over the Spread input maps. The cell uses the Spread input maps when not in edit mode.</p>
+<p>The FormatString property allows you to specify specific characters that are allowed in the cell. The following Spread Designer table displays the available characters.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/formatstring.png"><img src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/formatstring.png" alt="formatstring"></a></p>
+<p>The GcTextBox cell has the following properties:</p>
+<p><table border="1" cellspacing="0" cellpadding="0"></p>
+<p><tbody></p>
+<p><tr></p>
+<p><td valign="top" width="399"><b>Name</b></td></p>
+<p><td valign="top" width="399"><b>Description</b></td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">AcceptsArrowKeys</td></p>
+<p><td valign="top" width="399">Gets or sets how arrow keys are processed by the edit control. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">AcceptsCrLf</td></p>
+<p><td valign="top" width="399">Gets or sets a value that indicates how to process the CrLf characters when copying, cutting, or pasting a string.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">AcceptsTabChar</td></p>
+<p><td valign="top" width="399">Gets or sets a value that indicates how to process the Tab characters when copying, cutting, or pasting the string.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">AllowSpace</td></p>
+<p><td valign="top" width="399">Gets or sets the allow space settings.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">AlternateText</td></p>
+<p><td valign="top" width="399">Gets the alternate text of the GcTextBox control.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">AutoComplete</td></p>
+<p><td valign="top" width="399">Gets the automatic complete related settings.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">AutoCompleteCustomSource</td></p>
+<p><td valign="top" width="399">Gets or sets a custom System.Windows.Forms.AutoCompleteStringCollection to use when the GcTextBox.AutoCompleteSource property is set to CustomSource.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">AutoCompleteMode</td></p>
+<p><td valign="top" width="399">Gets or sets an option that controls how automatic completion works for the GcTextBox control.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">AutoCompleteSource</td></p>
+<p><td valign="top" width="399">Gets or sets a value that specifies the source of strings used for automatic completion.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">AutoConvert</td></p>
+<p><td valign="top" width="399">Gets or sets whether to automatically convert the entered characters according to the input mask.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">BackgroundImage</td></p>
+<p><td valign="top" width="399">Gets or sets the background image for the cell. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">DisplayAlignment</td></p>
+<p><td valign="top" width="399">Gets or sets the text alignment when displaying the horizontal axis when the control does not have input focus.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">DropDown</td></p>
+<p><td valign="top" width="399">Gets the drop-down settings used to customize the drop-down function.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">DropDownEditor</td></p>
+<p><td valign="top" width="399">Gets the settings for the drop-down editor.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">EditMode</td></p>
+<p><td valign="top" width="399">Gets or sets the edit mode of the control. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">Ellipsis</td></p>
+<p><td valign="top" width="399">Gets or sets a value that indicates how the ellipsis character (...) appears, denoting that the GcTextBox text extends beyond the specified length of the GcTextBox cell.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">EllipsisString</td></p>
+<p><td valign="top" width="399">Gets or sets what is shown as an ellipsis when the text width is longer than the control.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">ExcelExportFormat</td></p>
+<p><td valign="top" width="399">Gets or sets the format string used by Excel when exporting to an Excel file. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">ExitOnLastChar</td></p>
+<p><td valign="top" width="399">Gets or sets whether the next control in the tab order receives the focus as soon as the control is filled with the last character. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">FocusPosition</td></p>
+<p><td valign="top" width="399">Gets or sets the initial cursor position when the editor gets focus.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">FormatString</td></p>
+<p><td valign="top" width="399">Gets or sets the input format to use in the control.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">GridLine</td></p>
+<p><td valign="top" width="399">Gets or sets a Line that indicates the grid line style for each line.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">LineSpace</td></p>
+<p><td valign="top" width="399">Gets or sets the line space between two adjacent lines.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">MaxLength</td></p>
+<p><td valign="top" width="399">Gets or sets the maximum number of characters or bytes that the control can hold.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">MaxLengthCodePage</td></p>
+<p><td valign="top" width="399">Gets or sets the code page for the encoding that is used to count the maximum length in bytes.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">MaxLengthUnit</td></p>
+<p><td valign="top" width="399">Gets or sets whether the maximum number of characters allowed in the control is handled based on bytes, characters, or text elements.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">MaxLineCount</td></p>
+<p><td valign="top" width="399">Gets or sets the maximum number of acceptable lines.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">Multiline</td></p>
+<p><td valign="top" width="399">Gets or sets whether the control can accept and display multiple lines of text.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">PasswordChar</td></p>
+<p><td valign="top" width="399">Gets or sets the character used as a placeholder for the characters typed by the user.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">PasswordRevelationMode</td></p>
+<p><td valign="top" width="399">Gets or sets the password revelation mode.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">ReadOnly</td></p>
+<p><td valign="top" width="399">Gets or sets a value that indicates whether this control is read-only. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">RecommendedValue</td></p>
+<p><td valign="top" width="399">Gets or sets the recommended value.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">ScrollBarMode</td></p>
+<p><td valign="top" width="399">Gets or sets how to display the scroll bars.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">ScrollBars</td></p>
+<p><td valign="top" width="399">Gets or sets which scroll bars appear in a multiline GcTextBox control.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">ShortcutKeys</td></p>
+<p><td valign="top" width="399">Gets the InputMan EditingControl&#39;s shortcuts. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">ShowRecommendedValue</td></p>
+<p><td valign="top" width="399">Gets or sets a value that indicates whether to show the recommended value.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">ShowTouchToolBar</td></p>
+<p><td valign="top" width="399">Gets or sets the how to show the InputManCellTypeBase.TouchToolBar. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">SideButtons</td></p>
+<p><td valign="top" width="399">Gets the side buttons of this GcTextBox control.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">Static</td></p>
+<p><td valign="top" width="399">Gets or sets whether the cell is static, which prohibits user interaction. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">SubEditor</td></p>
+<p><td valign="top" width="399">Gets or sets the subeditor. (Inherited from FarPoint.Win.Spread.CellType.BaseCellType)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">TouchContextMenuScale</td></p>
+<p><td valign="top" width="399">Gets or sets whether the factor applies to the context menu item&#39;s height while the context menu is open due to a touch action. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">TouchToolBar</td></p>
+<p><td valign="top" width="399">Gets the shown InputManCellTypeBase.TouchToolBar by touch operation. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">UseSpreadDropDownButtonRender</td></p>
+<p><td valign="top" width="399">Gets or sets a value that indicates whether to paint the drop-down button with the spread drop-down button renderer. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">UseSystemPasswordChar</td></p>
+<p><td valign="top" width="399">Gets or sets a value that indicates whether to use system password characters.</td>
+</tr></p>
+<p><tr></p>
+<p><td valign="top" width="399">WrapMode</td></p>
+<p><td valign="top" width="399">Gets or sets the wrap rule when the GcTextBox control is multiline.</td>
+</tr>
+</tbody>
+</table>
+This example uses the ShortcutKeys property. Use Alt + Enter to add a new line while the cell is in edit mode. The following image displays the list of actions that you can use.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/shortcutkeyactions.png"><img src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/shortcutkeyactions.png" alt="shortcutkeyactions"></a></p>
+<p>C#</p>
+<pre><code>// Select Alt + Enter to go to the next line
+GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType gcText = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+gcText.Multiline = true;
+gcText.ShortcutKeys.Add(Keys.Enter | Keys.Alt, &quot;InputNewLine&quot;);
+fpSpread1.Sheets[0].Cells[0, 0].CellType = gcText;
+</code></pre><p>VB</p>
+<pre><code>&#39;Select Alt + Enter to go to the next line
+Dim gcText As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType()
+gcText.Multiline = True
+gcText.ShortcutKeys.Add(Keys.Enter Or Keys.Alt, &quot;InputNewLine&quot;)
+FpSpread1.Sheets(0).Cells(0, 0).CellType = gcText
+</code></pre><p>This example sets the maximum number of characters that can be typed in the cell.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextMax.png"><img src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextMax.png" alt="SpreadWinGcTextMax"></a></p>
+<p>C#</p>
+<pre><code>GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType inputcell1 = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+inputcell1.MaxLengthUnit = GrapeCity.Win.Spread.InputMan.CellType.LengthUnit.Char;
+inputcell1.MaxLength = 10;
+fpSpread1.Sheets[0].Cells[1, 1].CellType = inputcell1;
+</code></pre><p>VB</p>
+<pre><code>Dim inputcell1 As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType
+inputcell1.MaxLengthUnit = GrapeCity.Win.Spread.InputMan.CellType.LengthUnit.Char
+inputcell1.MaxLength = 10
+FpSpread1.Sheets(0).Cells(1, 1).CellType = inputcell1
+</code></pre><p>This example creates a GcTextBox cell and cuts CrLf characters in copied, cut, or pasted strings.</p>
+<p>C#</p>
+<pre><code>GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType inputcell1 = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+inputcell1.Multiline = true;
+inputcell1.AcceptsCrLf = GrapeCity.Win.Spread.InputMan.CellType.CrLfMode.Cut;
+fpSpread1.Sheets[0].Cells[1, 1].CellType = inputcell1;
+</code></pre><p>VB</p>
+<pre><code>Dim inputcell1 As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType
+inputcell1.Multiline = True
+inputcell1.AcceptsCrLf = GrapeCity.Win.Spread.InputMan.CellType.CrLfMode.Cut
+FpSpread1.Sheets(0).Cells(1, 1).CellType = inputcell1
+</code></pre><p>This example uses password characters in place of the typed content.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextPass.png"><img src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextPass.png" alt="SpreadWinGcTextPass"></a></p>
+<p>C#</p>
+<pre><code>GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType gctext = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+gctext.PasswordChar = Convert.ToChar(&quot;A&quot;);
+fpSpread1.Sheets[0].Cells[1, 1].CellType = gctext;
+</code></pre><p>VB</p>
+<pre><code>Dim gctext As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType()
+gctext.PasswordChar = Chr(65)
+FpSpread1.Sheets(0).Cells(1, 1).CellType = gctext
+</code></pre><p>This example allows you to type symbols.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextSym.png"><img src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextSym.png" alt="SpreadWinGcTextSym"></a></p>
+<p>C#</p>
+<pre><code>GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType inputcell = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+//Symbols
+inputcell.FormatString = &quot;@&quot;;
+fpSpread1.Sheets[0].Cells[0, 0].CellType = inputcell;
+</code></pre><p>VB</p>
+<pre><code>Dim inputcell As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType()
+&#39;Symbols
+inputcell.FormatString = &quot;@&quot;
+FpSpread1.Sheets(0).Cells(0, 0).CellType = inputcell
 </code></pre>
