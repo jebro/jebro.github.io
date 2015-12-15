@@ -150,48 +150,7 @@
             <div class="padder clearfix">
                 <div class="entry">
                             <h3><a href="/posts/spread-windows-forms-and-the-gctextbox-cell">Spread Windows Forms and the GcTextBox Cell</a></h3>  
-                            <p>You can create a text cell that displays text and allows you to specify patterns of allowed characters. Text cells are useful if you want to restrict the type of data the user can type in the cell. The GcTextBox cell is part of the GrapeCity.Win.PluginInputMan assembly.</p>
-<pre><code class="hljs"><span class="hljs-keyword">var</span> Metalsmith  = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith'</span>),
-    metallic    = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith-metallic'</span>),
-    markdown    = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith-markdown'</span>),
-    templates   = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith-templates'</span>),
-    collections = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith-collections'</span>),
-    permalinks  = <span class="hljs-keyword">require</span>(<span class="hljs-string">'metalsmith-permalinks'</span>),  
-    handlebars  = <span class="hljs-keyword">require</span>(<span class="hljs-string">'handlebars'</span>)
-
-Metalsmith(__dirname)
-    .<span class="hljs-keyword">use</span>(collections({
-        products: {
-            pattern: <span class="hljs-string">'content/products/*.md'</span>    
-        },
-        pages: {
-            pattern: <span class="hljs-string">'content/pages/*.md'</span>
-        },
-        posts: {
-            pattern: <span class="hljs-string">'content/posts/*.md'</span>,
-            sortBy: <span class="hljs-string">'date'</span>,
-            reverse: <span class="hljs-keyword">true</span>            
-        }
-    }))
-    .<span class="hljs-keyword">use</span>(metallic())
-    .<span class="hljs-keyword">use</span>(markdown({
-        gfm: <span class="hljs-keyword">true</span>,
-        tables: <span class="hljs-keyword">true</span>
-    }))
-    .<span class="hljs-keyword">use</span>(permalinks({
-        pattern: <span class="hljs-string">':collection/:title'</span>
-    }))    
-    .<span class="hljs-keyword">use</span>(templates({
-        engine: <span class="hljs-string">'handlebars'</span>,
-        templates: <span class="hljs-string">'templates'</span>,
-        partials: {
-            header: <span class="hljs-string">'partials/header'</span>,
-            menu: <span class="hljs-string">'partials/menu'</span>,
-            footer: <span class="hljs-string">'partials/footer'</span>
-        }
-    }))    
-    .destination(<span class="hljs-string">'./build'</span>)
-    .build(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err)</span> </span>{ <span class="hljs-keyword">if</span>(err) console.log(err) })</code></pre>
+                            You can&#x2026;
                 </div>
             </div>
         </div>
