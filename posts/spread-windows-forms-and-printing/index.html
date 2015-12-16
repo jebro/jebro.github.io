@@ -154,266 +154,253 @@
                     <p>Spread Windows Forms supports printing to a PDF file or previewing the output before printing. This allows you to check the data and layout before printing, which can save paper.</p>
 <p>This example saves the sheets to a PDF file.</p>
 <p>C#</p>
-<pre><code class="language-csharp">private void SpreadWin1_Load(object sender, EventArgs e)
-        {
-            fpSpread1.Sheets.Count = 3;
-            fpSpread1.Sheets[0].RowCount = 10;
-            fpSpread1.Sheets[0].ColumnCount = 10;
-            fpSpread1.Sheets[1].RowCount = 10;
-            fpSpread1.Sheets[1].ColumnCount = 10;
-            fpSpread1.Sheets[2].RowCount = 10;
-            fpSpread1.Sheets[2].ColumnCount = 10;
-            fpSpread1.Sheets[0].SetClip(0, 0, 3, 3, "Sunday\tMonday\tTuesday\r\nWednesday\tThursday\tFriday\r\nSaturday\tSunday\tMonday");
-            fpSpread1.Sheets[1].SetClip(0, 0, 3, 3, "January\tFebruary\tMarch\r\nApril\tMay\tJune\r\nJuly\tAugust\tSeptember");
-            fpSpread1.Sheets[2].SetClip(0, 0, 3, 3, "2012\t2013\t2014\r\n2015\t2016\t2017\r\n2018\t2019\t2020");
+<pre><code>{
+            fpSpread1.<span class="hljs-type">Sheets</span>.<span class="hljs-type">Count</span> = <span class="hljs-number">3</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">0</span>].<span class="hljs-type">RowCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">0</span>].<span class="hljs-type">ColumnCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">1</span>].<span class="hljs-type">RowCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">1</span>].<span class="hljs-type">ColumnCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">2</span>].<span class="hljs-type">RowCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">2</span>].<span class="hljs-type">ColumnCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">0</span>].<span class="hljs-type">SetClip</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"Sunday\tMonday\tTuesday\r\nWednesday\tThursday\tFriday\r\nSaturday\tSunday\tMonday"</span>);
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">1</span>].<span class="hljs-type">SetClip</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"January\tFebruary\tMarch\r\nApril\tMay\tJune\r\nJuly\tAugust\tSeptember"</span>);
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">2</span>].<span class="hljs-type">SetClip</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"2012\t2013\t2014\r\n2015\t2016\t2017\r\n2018\t2019\t2020"</span>);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private <span class="hljs-type">void</span> button1_Click(<span class="hljs-keyword">object</span> sender, <span class="hljs-type">EventArgs</span> e)
         {
-            // Define the printer settings
-            FarPoint.Win.Spread.PrintInfo printset = new FarPoint.Win.Spread.PrintInfo();
-            printset.Header = "Print Job for GrapeCity Inc.";            
-            printset.PdfWriteTo = FarPoint.Win.Spread.PdfWriteTo.File;
-            printset.PdfWriteMode = FarPoint.Win.Spread.PdfWriteMode.Append;            
-            printset.PrintToPdf = true;
-            printset.PdfFileName = "C:\\results.pdf";
-            // Assign the printer settings to the sheet and print to PDF
-            fpSpread1.Sheets[0].PrintInfo = printset;
-            fpSpread1.Sheets[1].PrintInfo = printset;
-            fpSpread1.Sheets[2].PrintInfo = printset;
-            fpSpread1.PrintSheet(-1);
+            // <span class="hljs-type">Define</span> the printer settings
+            <span class="hljs-type">FarPoint</span>.<span class="hljs-type">Win</span>.<span class="hljs-type">Spread</span>.<span class="hljs-type">PrintInfo</span> printset = new <span class="hljs-type">FarPoint</span>.<span class="hljs-type">Win</span>.<span class="hljs-type">Spread</span>.<span class="hljs-type">PrintInfo</span>();
+            printset.<span class="hljs-type">Header</span> = <span class="hljs-string">"Print Job for GrapeCity Inc."</span>;            
+            printset.<span class="hljs-type">PdfWriteTo</span> = <span class="hljs-type">FarPoint</span>.<span class="hljs-type">Win</span>.<span class="hljs-type">Spread</span>.<span class="hljs-type">PdfWriteTo</span>.<span class="hljs-type">File</span>;
+            printset.<span class="hljs-type">PdfWriteMode</span> = <span class="hljs-type">FarPoint</span>.<span class="hljs-type">Win</span>.<span class="hljs-type">Spread</span>.<span class="hljs-type">PdfWriteMode</span>.<span class="hljs-type">Append</span>;            
+            printset.<span class="hljs-type">PrintToPdf</span> = <span class="hljs-literal">true</span>;
+            printset.<span class="hljs-type">PdfFileName</span> = <span class="hljs-string">"C:\\results.pdf"</span>;
+            // <span class="hljs-type">Assign</span> the printer settings to the sheet <span class="hljs-keyword">and</span> print to <span class="hljs-type">PDF</span>
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">0</span>].<span class="hljs-type">PrintInfo</span> = printset;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">1</span>].<span class="hljs-type">PrintInfo</span> = printset;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">2</span>].<span class="hljs-type">PrintInfo</span> = printset;
+            fpSpread1.<span class="hljs-type">PrintSheet</span>(-<span class="hljs-number">1</span>);
         }</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Private Sub SpreadWin1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FpSpread1.Sheets.Count = 3
-        FpSpread1.Sheets(0).RowCount = 10
-        FpSpread1.Sheets(0).ColumnCount = 10
-        FpSpread1.Sheets(1).RowCount = 10
-        FpSpread1.Sheets(1).ColumnCount = 10
-        FpSpread1.Sheets(2).RowCount = 10
-        FpSpread1.Sheets(2).ColumnCount = 10
-        FpSpread1.Sheets(0).SetClip(0, 0, 3, 3, "Sunday" + vbTab + "Monday" + vbTab + "Tuesday" + vbCrLf + "Wednesday" + vbTab + "Thursday" + vbTab + "Friday" + vbCrLf + "Saturday" + vbTab + "Sunday" + vbTab + "Monday")
-        FpSpread1.Sheets(1).SetClip(0, 0, 3, 3, "January" + vbTab + "February" + vbTab + "March" + vbCrLf + "April" + vbTab + "May" + vbTab + "June" + vbCrLf + "July" + vbTab + "August" + vbTab + "September")
-        FpSpread1.Sheets(2).SetClip(0, 0, 3, 3, "2012" + vbTab + "2013" + vbTab + "2014" + vbCrLf + "2015" + vbTab + "2016" + vbTab + "2017" + vbCrLf + "2018" + vbTab + "2019" + vbTab + "2020")
-    End Sub
+<pre><code>FpSpread1.Sheets.Count = <span class="hljs-number">3</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).RowCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).ColumnCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">1</span>).RowCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">1</span>).ColumnCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">2</span>).RowCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">2</span>).ColumnCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).SetClip(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"Sunday"</span> + vbTab + <span class="hljs-string">"Monday"</span> + vbTab + <span class="hljs-string">"Tuesday"</span> + vbCrLf + <span class="hljs-string">"Wednesday"</span> + vbTab + <span class="hljs-string">"Thursday"</span> + vbTab + <span class="hljs-string">"Friday"</span> + vbCrLf + <span class="hljs-string">"Saturday"</span> + vbTab + <span class="hljs-string">"Sunday"</span> + vbTab + <span class="hljs-string">"Monday"</span>)
+        FpSpread1.Sheets(<span class="hljs-number">1</span>).SetClip(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"January"</span> + vbTab + <span class="hljs-string">"February"</span> + vbTab + <span class="hljs-string">"March"</span> + vbCrLf + <span class="hljs-string">"April"</span> + vbTab + <span class="hljs-string">"May"</span> + vbTab + <span class="hljs-string">"June"</span> + vbCrLf + <span class="hljs-string">"July"</span> + vbTab + <span class="hljs-string">"August"</span> + vbTab + <span class="hljs-string">"September"</span>)
+        FpSpread1.Sheets(<span class="hljs-number">2</span>).SetClip(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"2012"</span> + vbTab + <span class="hljs-string">"2013"</span> + vbTab + <span class="hljs-string">"2014"</span> + vbCrLf + <span class="hljs-string">"2015"</span> + vbTab + <span class="hljs-string">"2016"</span> + vbTab + <span class="hljs-string">"2017"</span> + vbCrLf + <span class="hljs-string">"2018"</span> + vbTab + <span class="hljs-string">"2019"</span> + vbTab + <span class="hljs-string">"2020"</span>)
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ' Define the printer settings
-        Dim printset As New FarPoint.Win.Spread.PrintInfo()
-        printset.Header = "Print Job for GrapeCity Inc."
+    <span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> Button1_Click(sender <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>, e <span class="hljs-keyword">As</span> EventArgs) <span class="hljs-keyword">Handles</span> Button1.Click
+        <span class="hljs-comment">' Define the printer settings</span>
+        <span class="hljs-keyword">Dim</span> printset <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.PrintInfo()
+        printset.Header = <span class="hljs-string">"Print Job for GrapeCity Inc."</span>
         printset.PdfWriteTo = FarPoint.Win.Spread.PdfWriteTo.File
         printset.PdfWriteMode = FarPoint.Win.Spread.PdfWriteMode.Append
-        printset.PrintToPdf = True
-        printset.PdfFileName = "C:\results.pdf"
-        ' Assign the printer settings to the sheet And print to PDF
-        FpSpread1.Sheets(0).PrintInfo = printset
-        FpSpread1.Sheets(1).PrintInfo = printset
-        FpSpread1.Sheets(2).PrintInfo = printset
-        FpSpread1.PrintSheet(-1)
-    End Sub
-</code></pre>
+        printset.PrintToPdf = <span class="hljs-literal">True</span>
+        printset.PdfFileName = <span class="hljs-string">"C:\results.pdf"</span>
+        <span class="hljs-comment">' Assign the printer settings to the sheet And print to PDF</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).PrintInfo = printset
+        FpSpread1.Sheets(<span class="hljs-number">1</span>).PrintInfo = printset
+        FpSpread1.Sheets(<span class="hljs-number">2</span>).PrintInfo = printset
+        FpSpread1.PrintSheet(-<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span></code></pre>
 
 <p>This example uses the Preview property in the PrintInfo class to preview a sheet before printing.<figure id="attachment_665084" style="width: 913px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadWinPreview.png"><img class="size-full wp-image-665084 " alt="SpreadWinPreview" src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadWinPreview.png" width="913" height="351" /></a><figcaption class="wp-caption-text">Preview Notes and Shapes</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">private void SpreadWin1_Load(object sender, EventArgs e)
-        {
-            fpSpread1.TextTipPolicy = FarPoint.Win.Spread.TextTipPolicy.Fixed;
-            fpSpread1.Sheets[0].Cells[1, 1].NoteStyle = FarPoint.Win.Spread.NoteStyle.StickyNote;
-            fpSpread1.Sheets[0].Cells[1, 1].Note = "Printing";
-            fpSpread1.Sheets[0].Cells[5, 1].Text = "Print Shape and Note";
-            fpSpread1.AllowCellOverflow = true;
+<pre><code>{
+            fpSpread1.<span class="hljs-variable">TextTipPolicy =</span> FarPoint.Win.Spread.TextTipPolicy.Fixed;
+            fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">NoteStyle =</span> FarPoint.Win.Spread.NoteStyle.StickyNote;
+            fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">Note =</span> <span class="hljs-string">"Printing"</span>;
+            fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">5</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">Text =</span> <span class="hljs-string">"Print Shape and Note"</span>;
+            fpSpread1.<span class="hljs-variable">AllowCellOverflow =</span> <span class="hljs-constant">true</span>;
 
-            FarPoint.Win.Spread.DrawingSpace.ArrowShape arrow = new FarPoint.Win.Spread.DrawingSpace.ArrowShape();
-            arrow.BackColor = Color.Red;
-            arrow.ForeColor = Color.DarkRed;
-            arrow.SetBounds(0, 20, 100, 50);
-            fpSpread1.Sheets[0].AddShape(arrow);
+            FarPoint.Win.Spread.DrawingSpace.ArrowShape <span class="hljs-variable">arrow =</span> new FarPoint.Win.Spread.DrawingSpace.ArrowShape();
+            arrow.<span class="hljs-variable">BackColor =</span> Color.Red;
+            arrow.<span class="hljs-variable">ForeColor =</span> Color.DarkRed;
+            arrow.SetBounds(<span class="hljs-number">0</span>, <span class="hljs-number">20</span>, <span class="hljs-number">100</span>, <span class="hljs-number">50</span>);
+            fpSpread1.Sheets[<span class="hljs-number">0</span>].AddShape(arrow);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FarPoint.Win.Spread.PrintInfo printset = new FarPoint.Win.Spread.PrintInfo();            
-            printset.PrintNotes = FarPoint.Win.Spread.PrintNotes.AsDisplayed;
-            printset.PrintShapes = true;
-            printset.Preview = true;
-            fpSpread1.Sheets[0].PrintInfo = printset;
-            fpSpread1.PrintSheet(0);
-        }
-</code></pre>
+            FarPoint.Win.Spread.PrintInfo <span class="hljs-variable">printset =</span> new FarPoint.Win.Spread.PrintInfo();            
+            printset.<span class="hljs-variable">PrintNotes =</span> FarPoint.Win.Spread.PrintNotes.AsDisplayed;
+            printset.<span class="hljs-variable">PrintShapes =</span> <span class="hljs-constant">true</span>;
+            printset.<span class="hljs-variable">Preview =</span> <span class="hljs-constant">true</span>;
+            fpSpread1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-variable">PrintInfo =</span> printset;
+            fpSpread1.PrintSheet(<span class="hljs-number">0</span>);
+        }</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Private Sub SpreadWin1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FpSpread1.TextTipPolicy = FarPoint.Win.Spread.TextTipPolicy.Fixed
-        FpSpread1.Sheets(0).Cells(1, 1).NoteStyle = FarPoint.Win.Spread.NoteStyle.StickyNote
-        FpSpread1.Sheets(0).Cells(1, 1).Note = "Printing"
-        FpSpread1.Sheets(0).Cells(5, 1).Text = "Print Shape and Note"
-        FpSpread1.AllowCellOverflow = True
+<pre><code>FpSpread1.TextTipPolicy = FarPoint.Win.Spread.TextTipPolicy.Fixed
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).Cells(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>).NoteStyle = FarPoint.Win.Spread.NoteStyle.StickyNote
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).Cells(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>).Note = <span class="hljs-string">"Printing"</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).Cells(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>).<span class="hljs-keyword">Text</span> = <span class="hljs-string">"Print Shape and Note"</span>
+        FpSpread1.AllowCellOverflow = <span class="hljs-literal">True</span>
 
-        Dim arrow = New FarPoint.Win.Spread.DrawingSpace.ArrowShape()
+        <span class="hljs-keyword">Dim</span> arrow = <span class="hljs-keyword">New</span> FarPoint.Win.Spread.DrawingSpace.ArrowShape()
         arrow.BackColor = Color.Red
         arrow.ForeColor = Color.DarkRed
-        arrow.SetBounds(0, 20, 100, 50)
-        FpSpread1.Sheets(0).AddShape(arrow)
-    End Sub
+        arrow.SetBounds(<span class="hljs-number">0</span>, <span class="hljs-number">20</span>, <span class="hljs-number">100</span>, <span class="hljs-number">50</span>)
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).AddShape(arrow)
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim printset As New FarPoint.Win.Spread.PrintInfo()
+    <span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> Button1_Click(sender <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>, e <span class="hljs-keyword">As</span> EventArgs) <span class="hljs-keyword">Handles</span> Button1.Click
+        <span class="hljs-keyword">Dim</span> printset <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.PrintInfo()
         printset.PrintNotes = FarPoint.Win.Spread.PrintNotes.AsDisplayed
-        printset.PrintShapes = True
-        printset.Preview = True
-        FpSpread1.Sheets(0).PrintInfo = printset
-        FpSpread1.PrintSheet(0)
-    End Sub</code></pre>
+        printset.PrintShapes = <span class="hljs-literal">True</span>
+        printset.Preview = <span class="hljs-literal">True</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).PrintInfo = printset
+        FpSpread1.PrintSheet(<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span></code></pre>
 
 <p>This example creates headers and footers for the printed sheet.<figure id="attachment_665085" style="width: 554px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadWinpp.png"><img class="size-full wp-image-665085 " alt="SpreadWinpp" src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadWinpp.png" width="554" height="612" /></a><figcaption class="wp-caption-text">Preview with Header</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">private void SpreadWin1_Load(object sender, EventArgs e)
-{
-//Add sample data
-string conStr = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb";
-string sqlStr = "Select CompanyName, ContactName, ContactTitle, Country from Customers";
-System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);
-DataSet ds = new DataSet();
-System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
+<pre><code>{
+<span class="hljs-comment">//Add sample data</span>
+<span class="hljs-keyword">string</span> conStr = <span class="hljs-string">"Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb"</span>;
+<span class="hljs-keyword">string</span> sqlStr = <span class="hljs-string">"Select CompanyName, ContactName, ContactTitle, Country from Customers"</span>;
+System.Data.OleDb.OleDbConnection conn = <span class="hljs-keyword">new</span> System.Data.OleDb.OleDbConnection(conStr);
+DataSet ds = <span class="hljs-keyword">new</span> DataSet();
+System.Data.OleDb.OleDbDataAdapter da = <span class="hljs-keyword">new</span> System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
 da.Fill(ds);
-fpSpread1.ActiveSheet.DataAutoSizeColumns = true;
-fpSpread1.ActiveSheet.DataMember = "Patients";
+fpSpread1.ActiveSheet.DataAutoSizeColumns = <span class="hljs-keyword">true</span>;
+fpSpread1.ActiveSheet.DataMember = <span class="hljs-string">"Patients"</span>;
 fpSpread1.ActiveSheet.DataSource = ds;
 }
 
-private void button1_Click(object sender, EventArgs e)
-{
-// Create PrintInfo object and set properties.
-FarPoint.Win.Spread.PrintInfo printset = new FarPoint.Win.Spread.PrintInfo();
-printset.Colors = new Color[] { Color.Green, Color.Yellow, Color.Gold, Color.Indigo, Color.Brown };
-printset.Header = "/fn\"Book Antiqua\" /fz\"14\" Print job for GrapeCity./n ";
-printset.Footer = "/r/cl\"4\"This is page /p of /pc";
-printset.Preview = true;
-// Set the PrintInfo property for the first sheet.
-fpSpread1.Sheets[0].PrintInfo = printset;
-// Print the sheet.
-fpSpread1.PrintSheet(0);
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">button1_Click</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, EventArgs e)</span>
+</span>{
+<span class="hljs-comment">// Create PrintInfo object and set properties.</span>
+FarPoint.Win.Spread.PrintInfo printset = <span class="hljs-keyword">new</span> FarPoint.Win.Spread.PrintInfo();
+printset.Colors = <span class="hljs-keyword">new</span> Color[] { Color.Green, Color.Yellow, Color.Gold, Color.Indigo, Color.Brown };
+printset.Header = <span class="hljs-string">"/fn\"Book Antiqua\" /fz\"14\" Print job for GrapeCity./n "</span>;
+printset.Footer = <span class="hljs-string">"/r/cl\"4\"This is page /p of /pc"</span>;
+printset.Preview = <span class="hljs-keyword">true</span>;
+<span class="hljs-comment">// Set the PrintInfo property for the first sheet.</span>
+fpSpread1.Sheets[<span class="hljs-number">0</span>].PrintInfo = printset;
+<span class="hljs-comment">// Print the sheet.</span>
+fpSpread1.PrintSheet(<span class="hljs-number">0</span>);
 }</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Private Sub SpreadWin1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-Dim conStr As String = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"
-Dim sqlStr As String = "Select CompanyName, ContactName, ContactTitle, Country from Customers"
-Dim conn As New System.Data.OleDb.OleDbConnection(conStr)
-Dim ds As DataSet = New DataSet()
-Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
+<pre><code><span class="hljs-keyword">Dim</span> conStr As <span class="hljs-built_in">String</span> = <span class="hljs-string">"Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"</span>
+<span class="hljs-keyword">Dim</span> sqlStr As <span class="hljs-built_in">String</span> = <span class="hljs-string">"Select CompanyName, ContactName, ContactTitle, Country from Customers"</span>
+<span class="hljs-keyword">Dim</span> conn As <span class="hljs-keyword">New</span> System.Data.OleDb.OleDbConnection(conStr)
+<span class="hljs-keyword">Dim</span> ds As DataSet = <span class="hljs-keyword">New</span> DataSet()
+<span class="hljs-keyword">Dim</span> da As <span class="hljs-keyword">New</span> System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
 da.Fill(ds)
-FpSpread1.ActiveSheet.DataAutoSizeColumns = True
-FpSpread1.ActiveSheet.DataMember = "Patients"
+FpSpread1.ActiveSheet.DataAutoSizeColumns = <span class="hljs-literal">True</span>
+FpSpread1.ActiveSheet.DataMember = <span class="hljs-string">"Patients"</span>
 FpSpread1.ActiveSheet.DataSource = ds
-End Sub
+<span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
 
-Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-' Create PrintInfo object and set properties.
-Dim printset As New FarPoint.Win.Spread.PrintInfo()
-printset.Colors = New Color() {Color.Green, Color.Yellow, Color.Gold, Color.Indigo, Color.Brown}
-printset.Header = "/fn""Book Antiqua"" /fz""14"" Print job for GrapeCity./n "
-printset.Footer = "/g""1""/r/cl""4""This is page /p of /pc"
-' Set the PrintInfo property for the first sheet.
-printset.Preview = True
-FpSpread1.Sheets(0).PrintInfo = printset
-' Print the sheet.
-FpSpread1.PrintSheet(0)
-End Sub
-</code></pre>
+<span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+<span class="hljs-comment">' Create PrintInfo object and set properties.</span>
+<span class="hljs-keyword">Dim</span> printset As <span class="hljs-keyword">New</span> FarPoint.Win.Spread.PrintInfo()
+printset.Colors = <span class="hljs-keyword">New</span> Color() {Color.Green, Color.Yellow, Color.Gold, Color.Indigo, Color.Brown}
+printset.Header = <span class="hljs-string">"/fn""Book Antiqua"" /fz""14"" Print job for GrapeCity./n "</span>
+printset.Footer = <span class="hljs-string">"/g""1""/r/cl""4""This is page /p of /pc"</span>
+<span class="hljs-comment">' Set the PrintInfo property for the first sheet.</span>
+printset.Preview = <span class="hljs-literal">True</span>
+FpSpread1.Sheets(<span class="hljs-number">0</span>).PrintInfo = printset
+<span class="hljs-comment">' Print the sheet.</span>
+FpSpread1.PrintSheet(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span></code></pre>
 
 <p>You can also use a print dialog control to preview the printing. You can use a print preview control in the PrintPreviewShowing event or with the SetPrintPreview method.</p>
 <p>This example uses a print preview control in the Spread PrintPreviewShowing event to preview the data.</p>
 <p>C#</p>
-<pre><code class="language-csharp">private void button1_Click(object sender, EventArgs e)
-        {
-            FarPoint.Win.Spread.PrintInfo printset = new FarPoint.Win.Spread.PrintInfo();
-            printset.Preview = true;
-            printset.ShowPrintDialog = true;
-            fpSpread1.Sheets[0].PrintInfo = printset;
-            fpSpread1.PrintSheet(0);            
+<pre><code>{
+            FarPoint.Win.Spread.PrintInfo printset = <span class="hljs-keyword">new</span> FarPoint.Win.Spread.PrintInfo();
+            printset.Preview = <span class="hljs-keyword">true</span>;
+            printset.ShowPrintDialog = <span class="hljs-keyword">true</span>;
+            fpSpread1.Sheets[<span class="hljs-number">0</span>].PrintInfo = printset;
+            fpSpread1.PrintSheet(<span class="hljs-number">0</span>);            
         }
 
-        private void fpSpread1_PrintPreviewShowing(object sender, FarPoint.Win.Spread.PrintPreviewShowingEventArgs e)
-        {
-            e.Cancel = true;
-            PrintPreviewDialog printPreviewDialog1  = new PrintPreviewDialog();          
+        <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fpSpread1_PrintPreviewShowing</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, FarPoint.Win.Spread.PrintPreviewShowingEventArgs e)</span>
+        </span>{
+            e.Cancel = <span class="hljs-keyword">true</span>;
+            PrintPreviewDialog printPreviewDialog1  = <span class="hljs-keyword">new</span> PrintPreviewDialog();          
             printPreviewDialog1.Document = e.PreviewDialog.Document;            
             printPreviewDialog1.ShowDialog();
         }</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim printset As New FarPoint.Win.Spread.PrintInfo()
-        printset.Preview = True
-        printset.ShowPrintDialog = True
-        FpSpread1.Sheets(0).PrintInfo = printset
-        FpSpread1.PrintSheet(0)
-    End Sub
+<pre><code><span class="hljs-keyword">Dim</span> printset <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.PrintInfo()
+        printset.Preview = <span class="hljs-literal">True</span>
+        printset.ShowPrintDialog = <span class="hljs-literal">True</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).PrintInfo = printset
+        FpSpread1.PrintSheet(<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
 
-    Private Sub FpSpread1_PrintPreviewShowing(sender As Object, e As FarPoint.Win.Spread.PrintPreviewShowingEventArgs) Handles FpSpread1.PrintPreviewShowing
-        e.Cancel = True
-        Dim printPreviewDialog1 As New PrintPreviewDialog()
+    <span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> FpSpread1_PrintPreviewShowing(sender <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>, e <span class="hljs-keyword">As</span> FarPoint.Win.Spread.PrintPreviewShowingEventArgs) <span class="hljs-keyword">Handles</span> FpSpread1.PrintPreviewShowing
+        e.Cancel = <span class="hljs-literal">True</span>
+        <span class="hljs-keyword">Dim</span> printPreviewDialog1 <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> PrintPreviewDialog()
         printPreviewDialog1.Document = e.PreviewDialog.Document
         printPreviewDialog1.ShowDialog()
-    End Sub</code></pre>
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span></code></pre>
 
 <p>This example uses the SetPrintPreview method and sets properties for the print preview control.<figure id="attachment_665086" style="width: 400px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/10/spreadwinsetpreview.png"><img class="size-full wp-image-665086 " alt="spreadwinsetpreview" src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/spreadwinsetpreview.png" width="400" height="331" /></a><figcaption class="wp-caption-text">Custom Preview Settings</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">private void Form1_Load(object sender, EventArgs e)
-        {
-            fpSpread1.Sheets.Count = 3;
-            fpSpread1.Sheets[0].RowCount = 10;
-            fpSpread1.Sheets[0].ColumnCount = 10;
-            fpSpread1.Sheets[1].RowCount = 10;
-            fpSpread1.Sheets[1].ColumnCount = 10;
-            fpSpread1.Sheets[2].RowCount = 10;
-            fpSpread1.Sheets[2].ColumnCount = 10;
-            fpSpread1.Sheets[0].SetClip(0, 0, 3, 3, "Sunday\tMonday\tTuesday\r\nWednesday\tThursday\tFriday\r\nSaturday\tSunday\tMonday");
-            fpSpread1.Sheets[1].SetClip(0, 0, 3, 3, "January\tFebruary\tMarch\r\nApril\tMay\tJune\r\nJuly\tAugust\tSeptember");
-            fpSpread1.Sheets[2].SetClip(0, 0, 3, 3, "2012\t2013\t2014\r\n2015\t2016\t2017\r\n2018\t2019\t2020");
+<pre><code>{
+            fpSpread1.<span class="hljs-type">Sheets</span>.<span class="hljs-type">Count</span> = <span class="hljs-number">3</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">0</span>].<span class="hljs-type">RowCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">0</span>].<span class="hljs-type">ColumnCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">1</span>].<span class="hljs-type">RowCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">1</span>].<span class="hljs-type">ColumnCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">2</span>].<span class="hljs-type">RowCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">2</span>].<span class="hljs-type">ColumnCount</span> = <span class="hljs-number">10</span>;
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">0</span>].<span class="hljs-type">SetClip</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"Sunday\tMonday\tTuesday\r\nWednesday\tThursday\tFriday\r\nSaturday\tSunday\tMonday"</span>);
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">1</span>].<span class="hljs-type">SetClip</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"January\tFebruary\tMarch\r\nApril\tMay\tJune\r\nJuly\tAugust\tSeptember"</span>);
+            fpSpread1.<span class="hljs-type">Sheets</span>[<span class="hljs-number">2</span>].<span class="hljs-type">SetClip</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"2012\t2013\t2014\r\n2015\t2016\t2017\r\n2018\t2019\t2020"</span>);
          }
 
-        private void button1_Click(object sender, EventArgs e)
+        private <span class="hljs-type">void</span> button1_Click(<span class="hljs-keyword">object</span> sender, <span class="hljs-type">EventArgs</span> e)
         {            
-            PrintPreviewDialog pi = new PrintPreviewDialog();
-            pi.BackColor = Color.Cyan;
-            pi.ForeColor = Color.Red;
-            pi.Text = "My preview dialog";  
-            fpSpread1.SetPrintPreview(pi);
-            fpSpread1.ActiveSheet.PrintInfo.Preview = true;
-            fpSpread1.ActiveSheet.PrintInfo.ZoomFactor = 0.75f;
-            fpSpread1.PrintSheet(fpSpread1.ActiveSheet);
+            <span class="hljs-type">PrintPreviewDialog</span> pi = new <span class="hljs-type">PrintPreviewDialog</span>();
+            pi.<span class="hljs-type">BackColor</span> = <span class="hljs-type">Color</span>.<span class="hljs-type">Cyan</span>;
+            pi.<span class="hljs-type">ForeColor</span> = <span class="hljs-type">Color</span>.<span class="hljs-type">Red</span>;
+            pi.<span class="hljs-type">Text</span> = <span class="hljs-string">"My preview dialog"</span>;  
+            fpSpread1.<span class="hljs-type">SetPrintPreview</span>(pi);
+            fpSpread1.<span class="hljs-type">ActiveSheet</span>.<span class="hljs-type">PrintInfo</span>.<span class="hljs-type">Preview</span> = <span class="hljs-literal">true</span>;
+            fpSpread1.<span class="hljs-type">ActiveSheet</span>.<span class="hljs-type">PrintInfo</span>.<span class="hljs-type">ZoomFactor</span> = <span class="hljs-number">0</span>.<span class="hljs-number">75</span>f;
+            fpSpread1.<span class="hljs-type">PrintSheet</span>(fpSpread1.<span class="hljs-type">ActiveSheet</span>);
         }</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FpSpread1.Sheets.Count = 3
-        FpSpread1.Sheets(0).RowCount = 10
-        FpSpread1.Sheets(0).ColumnCount = 10
-        FpSpread1.Sheets(1).RowCount = 10
-        FpSpread1.Sheets(1).ColumnCount = 10
-        FpSpread1.Sheets(2).RowCount = 10
-        FpSpread1.Sheets(2).ColumnCount = 10
-        FpSpread1.Sheets(0).SetClip(0, 0, 3, 3, "Sunday" + vbTab + "Monday" + vbTab + "Tuesday" + vbCrLf + "Wednesday" + vbTab + "Thursday" + vbTab + "Friday" + vbCrLf + "Saturday" + vbTab + "Sunday" + vbTab + "Monday")
-        FpSpread1.Sheets(1).SetClip(0, 0, 3, 3, "January" + vbTab + "February" + vbTab + "March" + vbCrLf + "April" + vbTab + "May" + vbTab + "June" + vbCrLf + "July" + vbTab + "August" + vbTab + "September")
-        FpSpread1.Sheets(2).SetClip(0, 0, 3, 3, "2012" + vbTab + "2013" + vbTab + "2014" + vbCrLf + "2015" + vbTab + "2016" + vbTab + "2017" + vbCrLf + "2018" + vbTab + "2019" + vbTab + "2020")
-    End Sub
+<pre><code>FpSpread1.Sheets.Count = <span class="hljs-number">3</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).RowCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).ColumnCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">1</span>).RowCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">1</span>).ColumnCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">2</span>).RowCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">2</span>).ColumnCount = <span class="hljs-number">10</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).SetClip(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"Sunday"</span> + vbTab + <span class="hljs-string">"Monday"</span> + vbTab + <span class="hljs-string">"Tuesday"</span> + vbCrLf + <span class="hljs-string">"Wednesday"</span> + vbTab + <span class="hljs-string">"Thursday"</span> + vbTab + <span class="hljs-string">"Friday"</span> + vbCrLf + <span class="hljs-string">"Saturday"</span> + vbTab + <span class="hljs-string">"Sunday"</span> + vbTab + <span class="hljs-string">"Monday"</span>)
+        FpSpread1.Sheets(<span class="hljs-number">1</span>).SetClip(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"January"</span> + vbTab + <span class="hljs-string">"February"</span> + vbTab + <span class="hljs-string">"March"</span> + vbCrLf + <span class="hljs-string">"April"</span> + vbTab + <span class="hljs-string">"May"</span> + vbTab + <span class="hljs-string">"June"</span> + vbCrLf + <span class="hljs-string">"July"</span> + vbTab + <span class="hljs-string">"August"</span> + vbTab + <span class="hljs-string">"September"</span>)
+        FpSpread1.Sheets(<span class="hljs-number">2</span>).SetClip(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">"2012"</span> + vbTab + <span class="hljs-string">"2013"</span> + vbTab + <span class="hljs-string">"2014"</span> + vbCrLf + <span class="hljs-string">"2015"</span> + vbTab + <span class="hljs-string">"2016"</span> + vbTab + <span class="hljs-string">"2017"</span> + vbCrLf + <span class="hljs-string">"2018"</span> + vbTab + <span class="hljs-string">"2019"</span> + vbTab + <span class="hljs-string">"2020"</span>)
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim pi As New PrintPreviewDialog()
+    <span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> Button1_Click(sender <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>, e <span class="hljs-keyword">As</span> EventArgs) <span class="hljs-keyword">Handles</span> Button1.Click
+        <span class="hljs-keyword">Dim</span> pi <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> PrintPreviewDialog()
         pi.BackColor = Color.Cyan
         pi.ForeColor = Color.Red
-        pi.Text = "My preview dialog"
+        pi.<span class="hljs-keyword">Text</span> = <span class="hljs-string">"My preview dialog"</span>
         FpSpread1.SetPrintPreview(pi)
-        FpSpread1.ActiveSheet.PrintInfo.Preview = True
-        FpSpread1.ActiveSheet.PrintInfo.ZoomFactor = 0.75F
+        FpSpread1.ActiveSheet.PrintInfo.Preview = <span class="hljs-literal">True</span>
+        FpSpread1.ActiveSheet.PrintInfo.ZoomFactor = <span class="hljs-number">0.75</span>F
         FpSpread1.PrintSheet(FpSpread1.ActiveSheet)
-    End Sub</code></pre>
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span></code></pre>
 
 
 

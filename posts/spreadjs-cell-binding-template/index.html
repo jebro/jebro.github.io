@@ -164,32 +164,31 @@
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate4.png"><img class="size-full wp-image-664298 " alt="SpreadJSbindingtemplate4" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate4.png" width="1073" height="435" /></a><figcaption class="wp-caption-text">Save Options</figcaption></figure> </p>
 <p>Add code to the page that references the js file. Add code similar to the following:</p>
 <p>JavaScript</p>
-<pre><code class="language-csharp">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;SpreadJS Binding&lt;/title&gt;
-&lt;link type="text/css" href="./css/gcspread.sheets.8.40.20151.0.css" rel="stylesheet" /&gt; 
-&lt;script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="./scripts/gcspread.sheets.all.8.40.20151.0.min.js"&gt;&lt;/script&gt;
+<pre><code>&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;<span class="hljs-type">SpreadJS</span> <span class="hljs-type">Binding</span>&amp;lt;/title&amp;gt;
+&amp;lt;link <span class="hljs-keyword">type</span>=<span class="hljs-string">"text/css"</span> href=<span class="hljs-string">"./css/gcspread.sheets.8.40.20151.0.css"</span> rel=<span class="hljs-string">"stylesheet"</span> /&amp;gt; 
+&amp;lt;script src=<span class="hljs-string">"http://code.jquery.com/jquery-2.0.2.js"</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"text/javascript"</span>&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script <span class="hljs-keyword">type</span>=<span class="hljs-string">"text/javascript"</span> src=<span class="hljs-string">"./scripts/gcspread.sheets.all.8.40.20151.0.min.js"</span>&amp;gt;&amp;lt;/script&amp;gt;
 
-&lt;script type="text/javascript" src="binding.js"&gt;&lt;/script&gt;
+&amp;lt;script <span class="hljs-keyword">type</span>=<span class="hljs-string">"text/javascript"</span> src=<span class="hljs-string">"binding.js"</span>&amp;gt;&amp;lt;/script&amp;gt;
 
-&lt;script type="text/javascript"&gt;  
+&amp;lt;script <span class="hljs-keyword">type</span>=<span class="hljs-string">"text/javascript"</span>&amp;gt;  
 
         $(document).ready(function () {       
-var spread = new GcSpread.Sheets.Spread($("#ss")[0],{sheetCount:3});
-var data = { name: "bob", age: 20, gender: "Male", email: "bob@test.com", married: true }; // customer's data source.
-spread.fromJSON(binding); //Use fromJSON method to load the template, here template variable field is defined in binding.js.
-var sheet = spread.getActiveSheet();
-sheet.setDataSource(new GcSpread.Sheets.CellBindingSource(data)); //setDataSource with CellBindingSource.
+<span class="hljs-keyword">var</span> spread = new <span class="hljs-type">GcSpread</span>.<span class="hljs-type">Sheets</span>.<span class="hljs-type">Spread</span>($(<span class="hljs-string">"#ss"</span>)[<span class="hljs-number">0</span>],{sheetCount:<span class="hljs-number">3</span>});
+<span class="hljs-keyword">var</span> data = { name: <span class="hljs-string">"bob"</span>, age: <span class="hljs-number">20</span>, gender: <span class="hljs-string">"Male"</span>, email: <span class="hljs-string">"bob@test.com"</span>, married: <span class="hljs-literal">true</span> }; // customer's data source.
+spread.fromJSON(binding); //<span class="hljs-type">Use</span> fromJSON <span class="hljs-keyword">method</span> to load the <span class="hljs-keyword">template</span>, here <span class="hljs-keyword">template</span> variable field <span class="hljs-keyword">is</span> defined <span class="hljs-keyword">in</span> binding.js.
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.setDataSource(new <span class="hljs-type">GcSpread</span>.<span class="hljs-type">Sheets</span>.<span class="hljs-type">CellBindingSource</span>(data)); //setDataSource <span class="hljs-keyword">with</span> <span class="hljs-type">CellBindingSource</span>.
        });
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id="ss" style="width: 600px; height: 250px; border: 1px solid gray"&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+    &amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;<span class="hljs-keyword">div</span> id=<span class="hljs-string">"ss"</span> style=<span class="hljs-string">"width: 600px; height: 250px; border: 1px solid gray"</span>&amp;gt;
+&amp;lt;/<span class="hljs-keyword">div</span>&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;</code></pre>
 
 <p>The completed sample appears as follows:<figure id="attachment_664299" style="width: 608px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingcomplete.png"><img class="size-full wp-image-664299 " alt="SpreadJSbindingcomplete" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingcomplete.png" width="608" height="261" /></a><figcaption class="wp-caption-text">Completed Sample in Browser</figcaption></figure></p>

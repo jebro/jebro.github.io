@@ -177,24 +177,23 @@
  public Size GetPreferredSize()
  {
      return new Size(310, 200);
- }</code></pre>
+ }<pre><code class="hljs">I also had to implement the <span class="hljs-keyword">event</span> handlers <span class="hljs-keyword">for</span> changing the text <span class="hljs-keyword">in</span> the text box <span class="hljs-keyword">as</span> well <span class="hljs-keyword">as</span> clicking the buttons:
 
-<p>I also had to implement the event handlers for changing the text in the text box as well as clicking the buttons:</p>
-<pre><code class="”language-csharp”"> private void txt_TextChanged(object sender, EventArgs e)
- {
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-csharp”"</span>&gt; <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">txt_TextChanged</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, EventArgs e)</span>
+ </span>{
      Text = txt.Text;
  }
- private void okButton_Click(object sender, EventArgs e)
- {
-     if (ValueChanged != null)
-         ValueChanged(this, EventArgs.Empty);
-     if (CloseUp != null)
-         CloseUp(this, EventArgs.Empty);
+ <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">okButton_Click</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, EventArgs e)</span>
+ </span>{
+     <span class="hljs-keyword">if</span> (ValueChanged != <span class="hljs-keyword">null</span>)
+         ValueChanged(<span class="hljs-keyword">this</span>, EventArgs.Empty);
+     <span class="hljs-keyword">if</span> (CloseUp != <span class="hljs-keyword">null</span>)
+         CloseUp(<span class="hljs-keyword">this</span>, EventArgs.Empty);
  }
- private void cancelButton_Click(object sender, EventArgs e)
- {
-     if (CloseUp != null)
-         CloseUp(this, EventArgs.Empty);
+ <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cancelButton_Click</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, EventArgs e)</span>
+ </span>{
+     <span class="hljs-keyword">if</span> (CloseUp != <span class="hljs-keyword">null</span>)
+         CloseUp(<span class="hljs-keyword">this</span>, EventArgs.Empty);
  }</code></pre>
 
 <p>Once that was done, I wanted to have a text cell that had an ellipsis button in it that would open the subeditor I had just created. To do this, I implemented my version of a text cell type, with code that only overrode the GetEditorControl method of the TextCellType:</p>
@@ -203,18 +202,19 @@
      System.Windows.Forms.Control myControl = base.GetEditorControl(parent, appearance, zoomFactor);
      ((GeneralEditor)myControl).ButtonStyle = FarPoint.Win.ButtonStyle.PopUp;
      return myControl;
-  }</code></pre>
+  }<pre><code class="hljs">This completed the pieces I needed <span class="hljs-keyword">to</span> actually start putting the program together. <span class="hljs-keyword">On</span> my MainForm, I added the Spread component <span class="hljs-keyword">from</span> the toolbox <span class="hljs-keyword">and</span> docked it <span class="hljs-keyword">to</span> fit the entire form:&lt;figure id=<span class="hljs-string">"attachment_664446"</span> style=<span class="hljs-string">"width: 760px"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"wp-caption aligncenter"</span>&gt;
 
-<p>This completed the pieces I needed to actually start putting the program together. On my MainForm, I added the Spread component from the toolbox and docked it to fit the entire form:<figure id="attachment_664446" style="width: 760px" class="wp-caption aligncenter"></p>
-<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions2.png"><img class=" wp-image-664446 " alt="The main form." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions2.png" width="760" height="467" /></a><figcaption class="wp-caption-text">The main form.</figcaption></figure> </p>
-<p>To allow a cell to have the subeditor I created, I have to specify the cell type’s cell editor. In this case, I assign the first cell’s CellType and its subeditor to the celltype and subeditor I created:</p>
-<pre><code class="”language-csharp”"> MyTextCellType t = new MyTextCellType();
- t.MaxLength = 100;
- t.SubEditor = new TextSubEditor();
- fpSpread1.ActiveSheet.Cells[0, 0].CellType = t;
- fpSpread1.ActiveSheet.Cells[0, 0].Text = "This is an example cell with a subeditor.";
- fpSpread1.ActiveSheet.SetColumnWidth(0, 100);
- t.SubEditor.SetValue(fpSpread1.ActiveSheet.Cells[0, 0].Text);</code></pre>
+[&lt;img <span class="hljs-keyword">class</span>=<span class="hljs-string">" wp-image-664446 "</span> alt=<span class="hljs-string">"The main form."</span> src=<span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions2.png"</span> width=<span class="hljs-string">"760"</span> height=<span class="hljs-string">"467"</span> /&gt;][<span class="hljs-number">2</span>]&lt;figcaption <span class="hljs-keyword">class</span>=<span class="hljs-string">"wp-caption-text"</span>&gt;The main form.&lt;/figcaption&gt;&lt;/figure&gt; 
+
+<span class="hljs-keyword">To</span> allow a cell <span class="hljs-keyword">to</span> have the subeditor I created, I have <span class="hljs-keyword">to</span> specify the cell type’s cell editor. <span class="hljs-keyword">In</span> this <span class="hljs-keyword">case</span>, I assign the first cell’s CellType <span class="hljs-keyword">and</span> its subeditor <span class="hljs-keyword">to</span> the celltype <span class="hljs-keyword">and</span> subeditor I created:
+
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-csharp”"</span>&gt; MyTextCellType t = <span class="hljs-keyword">new</span> MyTextCellType();
+ t.MaxLength = <span class="hljs-number">100</span>;
+ t.SubEditor = <span class="hljs-keyword">new</span> TextSubEditor();
+ fpSpread1.ActiveSheet.Cells[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].CellType = t;
+ fpSpread1.ActiveSheet.Cells[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].<span class="hljs-keyword">Text</span> = <span class="hljs-string">"This is an example cell with a subeditor."</span>;
+ fpSpread1.ActiveSheet.SetColumnWidth(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>);
+ t.SubEditor.SetValue(fpSpread1.ActiveSheet.Cells[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].<span class="hljs-keyword">Text</span>);</code></pre>
 
 <p>Now when I enter edit mode in the first cell, I can click on the ellipsis button (specified as the PopUp button style in the Cell Type’s getEditorControl method that I overrode) and open up the subeditor for the cell. There is one problem with this however: the user might not know that they can open up the subeditor with the ellipsis button. I want a way to show them this information without having it always be visible in the sheet. I can get this functionality by using shapes.<br>Most of the time, tutorials in programs involve speech bubbles or circling certain areas of the window to direct the user’s attention. Spread allows you to create shapes and move them around, serving as the basis for this functionality. To start off, I created two shapes and set their visible property to false:</p>
 <pre><code class="”language-csharp”"> private void CreateShapes()
@@ -242,26 +242,25 @@
      squareBalloon.CanRenderText = true;
      fpSpread1.ActiveSheet.AddShape(squareBalloon, 0, 0);
      squareBalloon.Visible = false;
- }</code></pre>
+ }<pre><code class="hljs">For my custom text cell with its subeditor, I want the tutorial message to only be displayed when focus <span class="hljs-keyword">is</span> <span class="hljs-keyword">set</span> to the cell. For <span class="hljs-keyword">this</span>, I have to use the EnterCell and LeaveCell <span class="hljs-keyword">event</span> handlers:
 
-<p>For my custom text cell with its subeditor, I want the tutorial message to only be displayed when focus is set to the cell. For this, I have to use the EnterCell and LeaveCell event handlers:</p>
-<pre><code class="”language-csharp”"> private void fpSpread1_EnterCell(object sender, EnterCellEventArgs e)
- {
-     if (fpSpread1.ActiveSheet.Cells[e.Row, e.Column].CellType is MyTextCellType)
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-csharp”"</span>&gt; <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fpSpread1_EnterCell</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, EnterCellEventArgs e)</span>
+ </span>{
+     <span class="hljs-keyword">if</span> (fpSpread1.ActiveSheet.Cells[e.Row, e.Column].CellType <span class="hljs-keyword">is</span> MyTextCellType)
      {
-         fpSpread1.EditMode = true;
-         Rectangle cell = fpSpread1.GetCellRectangle(0, 0, e.Row, e.Column);
-         fpSpread1.ActiveSheet.GetShape("customTextBubble").Left = cell.X;
-         fpSpread1.ActiveSheet.GetShape("customTextBubble").Top = cell.Y;
-         fpSpread1.ActiveSheet.GetShape("customTextBubble").Visible = true;
+         fpSpread1.EditMode = <span class="hljs-keyword">true</span>;
+         Rectangle cell = fpSpread1.GetCellRectangle(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, e.Row, e.Column);
+         fpSpread1.ActiveSheet.GetShape(<span class="hljs-string">"customTextBubble"</span>).Left = cell.X;
+         fpSpread1.ActiveSheet.GetShape(<span class="hljs-string">"customTextBubble"</span>).Top = cell.Y;
+         fpSpread1.ActiveSheet.GetShape(<span class="hljs-string">"customTextBubble"</span>).Visible = <span class="hljs-keyword">true</span>;
      }
  }
 
- private void fpSpread1_LeaveCell(object sender, LeaveCellEventArgs e)
- {
-     if (fpSpread1.ActiveSheet.Cells[e.Row, e.Column].CellType is MyTextCellType)
+ <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fpSpread1_LeaveCell</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, LeaveCellEventArgs e)</span>
+ </span>{
+     <span class="hljs-keyword">if</span> (fpSpread1.ActiveSheet.Cells[e.Row, e.Column].CellType <span class="hljs-keyword">is</span> MyTextCellType)
      {
-         fpSpread1.ActiveSheet.GetShape("customTextBubble").Visible = false;
+         fpSpread1.ActiveSheet.GetShape(<span class="hljs-string">"customTextBubble"</span>).Visible = <span class="hljs-keyword">false</span>;
      }
  }</code></pre>
 
@@ -271,22 +270,21 @@
  fpSpread1.ActiveSheet.Cells[2, 0].Value = 123456;
 
  fpSpread1.TextTipPolicy = FarPoint.Win.Spread.TextTipPolicy.Floating;
- fpSpread1.TextTipDelay = 500;</code></pre>
+ fpSpread1.TextTipDelay = 500;<pre><code class="hljs">Then, I had to use the TextTipFetch <span class="hljs-keyword">event</span> handler to show the shape I created rather than the text tool tip:
 
-<p>Then, I had to use the TextTipFetch event handler to show the shape I created rather than the text tool tip:</p>
-<pre><code class="”language-csharp”"> private void fpSpread1_TextTipFetch(object sender, TextTipFetchEventArgs e)
- {
-     e.ShowTip = false;
-     if (fpSpread1.ActiveSheet.Cells[e.Row, e.Column].CellType is NumberCellType)
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-csharp”"</span>&gt; <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fpSpread1_TextTipFetch</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, TextTipFetchEventArgs e)</span>
+ </span>{
+     e.ShowTip = <span class="hljs-keyword">false</span>;
+     <span class="hljs-keyword">if</span> (fpSpread1.ActiveSheet.Cells[e.Row, e.Column].CellType <span class="hljs-keyword">is</span> NumberCellType)
      {
-         Rectangle cell = fpSpread1.GetCellRectangle(0, 0, e.Row, e.Column);
-         fpSpread1.ActiveSheet.GetShape("numberBubble").Left = cell.X;
-         fpSpread1.ActiveSheet.GetShape("numberBubble").Top = cell.Y;
-         fpSpread1.ActiveSheet.GetShape("numberBubble").Visible = true;
+         Rectangle cell = fpSpread1.GetCellRectangle(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, e.Row, e.Column);
+         fpSpread1.ActiveSheet.GetShape(<span class="hljs-string">"numberBubble"</span>).Left = cell.X;
+         fpSpread1.ActiveSheet.GetShape(<span class="hljs-string">"numberBubble"</span>).Top = cell.Y;
+         fpSpread1.ActiveSheet.GetShape(<span class="hljs-string">"numberBubble"</span>).Visible = <span class="hljs-keyword">true</span>;
      }
-     else
+     <span class="hljs-keyword">else</span>
      {
-         fpSpread1.ActiveSheet.GetShape("numberBubble").Visible = false;
+         fpSpread1.ActiveSheet.GetShape(<span class="hljs-string">"numberBubble"</span>).Visible = <span class="hljs-keyword">false</span>;
      }
  }</code></pre>
 

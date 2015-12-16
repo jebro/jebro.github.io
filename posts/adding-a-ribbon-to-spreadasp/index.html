@@ -160,32 +160,31 @@
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/Figure21.png"><img class="size-large wp-image-664971" alt="An ASP page with the Spread Component on it. " src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/Figure21-1024x675.png" width="1024" height="675" /></a><figcaption class="wp-caption-text">An ASP page with the Spread Component on it.</figcaption></figure> </p>
 <h3 id="add-the-ribbon-to-your-page">Add the Ribbon to Your Page</h3>
 <p>Add the links to the scripts found in the open source Ribbon you downloaded.</p>
-<pre><code class="language-csharp">&lt;link type="text/css" href="../../themes/base/ui.all.css" rel="stylesheet" /&gt;
-&lt;link type="text/css" href="../../themes/base/ui.tabs.css" rel="stylesheet" /&gt;
-&lt;link type="text/css" href="../../style/ui.button.css" rel="stylesheet" /&gt;
-&lt;link type="text/css" href="../../style/ui.ribbon.css" rel="stylesheet" /&gt;
-&lt;link type="text/css" href="../../style/ui.orbButton.css" rel="stylesheet" /&gt;
-&lt;link type="text/css" href="../../style/ui.ribbon.style.msoffice.css" rel="stylesheet" /&gt;
-&lt;link type="text/css" href="../../style/msoffice-icons.css" rel="stylesheet" /&gt;
+<pre><code><span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;<span class="hljs-keyword">link</span> <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/css"</span> href<span class="hljs-subst">=</span><span class="hljs-string">"../../themes/base/ui.tabs.css"</span> rel<span class="hljs-subst">=</span><span class="hljs-string">"stylesheet"</span> <span class="hljs-subst">/</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;<span class="hljs-keyword">link</span> <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/css"</span> href<span class="hljs-subst">=</span><span class="hljs-string">"../../style/ui.button.css"</span> rel<span class="hljs-subst">=</span><span class="hljs-string">"stylesheet"</span> <span class="hljs-subst">/</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;<span class="hljs-keyword">link</span> <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/css"</span> href<span class="hljs-subst">=</span><span class="hljs-string">"../../style/ui.ribbon.css"</span> rel<span class="hljs-subst">=</span><span class="hljs-string">"stylesheet"</span> <span class="hljs-subst">/</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;<span class="hljs-keyword">link</span> <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/css"</span> href<span class="hljs-subst">=</span><span class="hljs-string">"../../style/ui.orbButton.css"</span> rel<span class="hljs-subst">=</span><span class="hljs-string">"stylesheet"</span> <span class="hljs-subst">/</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;<span class="hljs-keyword">link</span> <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/css"</span> href<span class="hljs-subst">=</span><span class="hljs-string">"../../style/ui.ribbon.style.msoffice.css"</span> rel<span class="hljs-subst">=</span><span class="hljs-string">"stylesheet"</span> <span class="hljs-subst">/</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;<span class="hljs-keyword">link</span> <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/css"</span> href<span class="hljs-subst">=</span><span class="hljs-string">"../../style/msoffice-icons.css"</span> rel<span class="hljs-subst">=</span><span class="hljs-string">"stylesheet"</span> <span class="hljs-subst">/</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
 
-&lt;script type="text/javascript" src="../../jquery-1.3.2.js"&gt;&lt;/script&gt;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;script <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/javascript"</span> src<span class="hljs-subst">=</span><span class="hljs-string">"../../jquery-1.3.2.js"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/script<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
 
-&lt;script type="text/javascript" src="../../ui/ui.core.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="../../ui/ui.tabs.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="../../ui/ui.ribbon.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="../../ui/ui.orbButton.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="../../ui/ui.button.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript"&gt;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;script <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/javascript"</span> src<span class="hljs-subst">=</span><span class="hljs-string">"../../ui/ui.core.js"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/script<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;script <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/javascript"</span> src<span class="hljs-subst">=</span><span class="hljs-string">"../../ui/ui.tabs.js"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/script<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;script <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/javascript"</span> src<span class="hljs-subst">=</span><span class="hljs-string">"../../ui/ui.ribbon.js"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/script<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;script <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/javascript"</span> src<span class="hljs-subst">=</span><span class="hljs-string">"../../ui/ui.orbButton.js"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/script<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;script <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/javascript"</span> src<span class="hljs-subst">=</span><span class="hljs-string">"../../ui/ui.button.js"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/script<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;script <span class="hljs-keyword">type</span><span class="hljs-subst">=</span><span class="hljs-string">"text/javascript"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
     jQuery(function ($) {
-        $('#log').dblclick(function () { $('#log').empty(); });
-        $('.ui-button').button({ useSlidingDoors: true });
-        $('#ribbon-msoffice').wrap('&lt;div class="style-msoffice"&gt;&lt;/div&gt;');
+        $(<span class="hljs-string">'#log'</span>)<span class="hljs-built_in">.</span>dblclick(function () { $(<span class="hljs-string">'#log'</span>)<span class="hljs-built_in">.</span>empty(); });
+        $(<span class="hljs-string">'.ui-button'</span>)<span class="hljs-built_in">.</span>button({ useSlidingDoors: <span class="hljs-literal">true</span> });
+        $(<span class="hljs-string">'#ribbon-msoffice'</span>)<span class="hljs-built_in">.</span>wrap(<span class="hljs-string">'&amp;lt;div class="style-msoffice"&amp;gt;&amp;lt;/div&amp;gt;'</span>);
 
-        $('#ribbon, #ribbon-msoffice').ribbon({
-            collapsible: true
+        $(<span class="hljs-string">'#ribbon, #ribbon-msoffice'</span>)<span class="hljs-built_in">.</span>ribbon({
+            collapsible: <span class="hljs-literal">true</span>
         })
     });
-&lt;/script&gt;</code></pre>
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/script<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;</code></pre>
 
 <p>Next, set the page to display the ribbon by adding this html code to the body above the SpreadASP component:</p>
 <pre><code class="“language-csharp”">&lt;div id="ribbon-msoffice" style="width:700px; border: 1px solid gray"&gt;
@@ -196,47 +195,37 @@
         &lt;li&gt;&lt;a href="#ribbon-msofficeTabView"&gt;&lt;span&gt;&lt;label&gt;View&lt;/label&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;
-</code></pre>
+<pre><code class="hljs">You can then <span class="hljs-built_in">add</span> code <span class="hljs-keyword">for</span> each particular button by adding div elements <span class="hljs-keyword">for</span> each <span class="hljs-keyword">tab</span> in the ribbon. When <span class="hljs-keyword">a</span> <span class="hljs-keyword">tab</span> <span class="hljs-keyword">is</span> added, unordered lists within those div elements can <span class="hljs-keyword">be</span> added <span class="hljs-keyword">to</span> represent the sections with button<span class="hljs-variable">s:</span>
 
-<p>You can then add code for each particular button by adding div elements for each tab in the ribbon. When a tab is added, unordered lists within those div elements can be added to represent the sections with buttons:</p>
-<pre><code class="”language-csharp”">&lt;div id="ribbon-msofficeTabInsert"&gt;
-    &lt;ul&gt;
-        &lt;li id="groupSheet_ribbon-msofficeTabInsert"&gt;
-            &lt;div&gt;
-                &lt;button class="ui-ribbon-element ui-ribbon-control ui-button ui-ribbon-large-button" id="AddSheetButton" runat="server" onserverclick="AddSheetButton_Click"&gt;&lt;span class="ui-icon msoffice-icon-menu-new-32x32"&gt;&lt;/span&gt;&lt;span class="ui-button-label"&gt;New Sheet&lt;/span&gt;&lt;/button&gt;
-                &lt;button class="ui-ribbon-element ui-ribbon-control ui-button ui-ribbon-large-button" id="DeleteSheetButton" runat="server" onserverclick="DeleteSheetButton_Click"&gt;&lt;span class="ui-icon msoffice-icon-delete-24x24""&gt;&lt;/span&gt;&lt;span class="ui-button-label"&gt;Delete Sheet&lt;/span&gt;&lt;/button&gt;
-            &lt;/div&gt;
-            &lt;h3&gt;&lt;span&gt;Sheet&lt;/span&gt;&lt;/h3&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
+&lt;<span class="hljs-keyword">pre</span>&gt;&lt;code class=<span class="hljs-string">"”language-csharp”"</span>&gt;&amp;<span class="hljs-keyword">lt</span>;div id=<span class="hljs-string">"ribbon-msofficeTabInsert"</span>&amp;gt;
+    &amp;<span class="hljs-keyword">lt</span>;ul&amp;gt;
+        &amp;<span class="hljs-keyword">lt</span>;li id=<span class="hljs-string">"groupSheet_ribbon-msofficeTabInsert"</span>&amp;gt;
+            &amp;<span class="hljs-keyword">lt</span>;div&amp;gt;
+                &amp;<span class="hljs-keyword">lt</span>;button class=<span class="hljs-string">"ui-ribbon-element ui-ribbon-control ui-button ui-ribbon-large-button"</span> id=<span class="hljs-string">"AddSheetButton"</span> runat=<span class="hljs-string">"server"</span> onserverclick=<span class="hljs-string">"AddSheetButton_Click"</span>&amp;gt;&amp;<span class="hljs-keyword">lt</span>;span class=<span class="hljs-string">"ui-icon msoffice-icon-menu-new-32x32"</span>&amp;gt;&amp;<span class="hljs-keyword">lt</span>;/span&amp;gt;&amp;<span class="hljs-keyword">lt</span>;span class=<span class="hljs-string">"ui-button-label"</span>&amp;gt;New Sheet&amp;<span class="hljs-keyword">lt</span>;/span&amp;gt;&amp;<span class="hljs-keyword">lt</span>;/button&amp;gt;
+                &amp;<span class="hljs-keyword">lt</span>;button class=<span class="hljs-string">"ui-ribbon-element ui-ribbon-control ui-button ui-ribbon-large-button"</span> id=<span class="hljs-string">"DeleteSheetButton"</span> runat=<span class="hljs-string">"server"</span> onserverclick=<span class="hljs-string">"DeleteSheetButton_Click"</span>&amp;gt;&amp;<span class="hljs-keyword">lt</span>;span class=<span class="hljs-string">"ui-icon msoffice-icon-delete-24x24"</span><span class="hljs-string">"&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span class="</span>ui-button-label<span class="hljs-string">"&amp;gt;Delete Sheet&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;
+</span>            &amp;<span class="hljs-keyword">lt</span>;/div&amp;gt;
+            &amp;<span class="hljs-keyword">lt</span>;h3&amp;gt;&amp;<span class="hljs-keyword">lt</span>;span&amp;gt;Sheet&amp;<span class="hljs-keyword">lt</span>;/span&amp;gt;&amp;<span class="hljs-keyword">lt</span>;/h3&amp;gt;
+        &amp;<span class="hljs-keyword">lt</span>;/li&amp;gt;
+    &amp;<span class="hljs-keyword">lt</span>;/ul&amp;gt;
+&amp;<span class="hljs-keyword">lt</span>;/div&amp;gt;</code></pre>
 
 <p>The ribbon should now be displayed on the page right above the Spread component, and it should look similar to a ribbon you would see in a Microsoft Office program:<figure id="attachment_664970" style="width: 1024px" class="wp-caption alignnone"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/Figure13.png"><img class="size-large wp-image-664970" alt="The finished ASP page with Spread and a Ribbon on it." src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/Figure13-1024x858.png" width="1024" height="858" /></a><figcaption class="wp-caption-text">The finished ASP page with Spread and a Ribbon on it.</figcaption></figure> </p>
 <h3 id="make-the-buttons-work-with-spreadasp">Make the Buttons Work with SpreadASP</h3>
 <p>To add the functionality to these buttons, it must be decided whether the functions can be run in a client-side script or in server-side code. For information about what client-side functions are supported in SpreadASP, see here: <a href="http://sphelp.grapecity.com/WebHelp/SpreadNet8/ASP2/webframe.html#clientscript-members.html">http://sphelp.grapecity.com/WebHelp/SpreadNet8/ASP2/webframe.html#clientscript-members.html</a>.</p>
 <p>If a button can be controlled in a client-side script, you can define the &#8220;onclick&#8221; attribute of a button like so:</p>
-<pre><code class="language-csharp">&lt;button class="ui-ribbon-element ui-ribbon-control ui-button ui-ribbon-large-button" id="PasteButton" onclick="PasteButton_Click();"&gt;&lt;span class="ui-icon msoffice-icon-paste-32x32"&gt;&lt;/span&gt;&lt;span class="ui-button-label"&gt;Paste&lt;/span&gt;&lt;/button&gt;</code></pre>
+<pre><code>The &amp;#<span class="hljs-number">8220</span>;PasteButton_Click()&amp;#<span class="hljs-number">8221</span>; <span class="hljs-built_in">function</span> referenced <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span> button can be defined <span class="hljs-keyword">in</span> the script <span class="hljs-keyword">with</span> Spread:
 
-<p>The &#8220;PasteButton_Click()&#8221; function referenced in this button can be defined in the script with Spread:</p>
-<pre><code class="language-javascript">window.onload = function () {
-    spread = document.getElementById("&lt;%= FpSpread1.ClientID %&gt;");
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"language-javascript"</span>&gt;window.onload = <span class="hljs-built_in">function</span> () {
+    spread = document.getElementById(<span class="hljs-string">"&amp;lt;%= FpSpread1.ClientID %&amp;gt;"</span>);
 }
 
-function PasteButton_Click() {
+<span class="hljs-built_in">function</span> PasteButton_Click() {
     spread.PasteLikeExcel();
-}
-</code></pre>
+}</code></pre>
 
 <p>Whenever that paste button is clicked, that function in the script will fire on the client-side.<br>To link a button to server-side code, define the “runat” and “onserverclick” attributes of the button like so:</p>
-<pre><code class="language-csharp">&lt;button class="ui-ribbon-element ui-ribbon-control ui-button ui-ribbon-large-button" id="AddSheetButton" runat="server" onserverclick="AddSheetButton_Click"&gt;&lt;span class="ui-icon msoffice-icon-menu-new-32x32"&gt;&lt;/span&gt;&lt;span class="ui-button-label"&gt;New Sheet&lt;/span&gt;&lt;/button&gt;</code></pre>
-
-<p>In the code-behind file for the sheet, define the &#8220;AddSheetButton_Click&#8221; function:</p>
-<pre><code class="language-csharp">protected void AddSheetButton_Click(object sender, EventArgs e)
-{
-    FpSpread1.Sheets.Add(new FarPoint.Web.Spread.SheetView());
-}</code></pre>
+<pre><code><span class="hljs-keyword">In</span> the code-behind <span class="hljs-keyword">file</span> <span class="hljs-keyword">for</span> the sheet, define the &amp;<span class="hljs-string">#8220</span>;AddSheetButton_Click&amp;<span class="hljs-string">#8221</span>; <span class="hljs-function"><span class="hljs-keyword">function</span>:</span></code></pre>
 
 <p>Once the code for each button has been written, the ribbon should be connected to the Spread component on an ASP page, and the user can interact with both.</p>
 

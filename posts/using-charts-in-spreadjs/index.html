@@ -164,27 +164,25 @@ for (var i = 0; i &lt; 3; i++) {
         chartData.push(columnData);
     }
     return chartData;
-})();</code></pre>
+})();<pre><code class="hljs">Next, I created a spread component <span class="hljs-function_start"><span class="hljs-keyword">on</span></span> <span class="hljs-keyword">the</span> page <span class="hljs-keyword">and</span> placed <span class="hljs-keyword">the</span> data <span class="hljs-keyword">in</span> <span class="hljs-keyword">it</span>:
 
-<p>Next, I created a spread component on the page and placed the data in it:</p>
-<pre><code class="language-javascript">var spread = new GcSpread.Sheets.Spread($("#ss").get(0));
+&lt;pre&gt;&lt;code <span class="hljs-type">class</span>=<span class="hljs-string">"language-javascript"</span>&gt;var spread = new GcSpread.Sheets.Spread($(<span class="hljs-string">"#ss"</span>).<span class="hljs-keyword">get</span>(<span class="hljs-number">0</span>));
 activeSheet = spread.getActiveSheet();
-activeSheet.isPaintSuspended(true);
-activeSheet.setArray(0, 0, data);
-activeSheet.isPaintSuspended(false);</code></pre>
+activeSheet.isPaintSuspended(<span class="hljs-constant">true</span>);
+activeSheet.setArray(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, data);
+activeSheet.isPaintSuspended(<span class="hljs-constant">false</span>);</code></pre>
 
 <p>To add the chart, we first have to create a floating object that will contain it, and add it to the sheet:</p>
 <pre><code class="language-javascript">var floatChart = new GcSpread.Sheets.CustomFloatingObject("chart", 10, 100, 600, 200);
 floatChart.Content($("&lt;div style="background: white; border: 1px solid gray;">&lt;/div>"));
-activeSheet.addFloatingObject(floatChart);</code></pre>
+activeSheet.addFloatingObject(floatChart);<pre><code class="hljs"><span class="hljs-built_in">Now</span> that the container <span class="hljs-keyword">is</span> there, we have <span class="hljs-keyword">to</span> put a chart <span class="hljs-keyword">in</span> it. <span class="hljs-keyword">To</span> <span class="hljs-keyword">do</span> this, we have <span class="hljs-keyword">to</span> bind the CustomFloatingObjectLoaded event <span class="hljs-keyword">to</span> a <span class="hljs-keyword">new</span> handler <span class="hljs-keyword">function</span>:
 
-<p>Now that the container is there, we have to put a chart in it. To do this, we have to bind the CustomFloatingObjectLoaded event to a new handler function:</p>
-<pre><code class="language-javascript">activeSheet.bind(GcSpread.Sheets.Events.CustomFloatingObjectLoaded, function (sender, args) {
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"language-javascript"</span>&gt;activeSheet.bind(GcSpread.Sheets.Events.CustomFloatingObjectLoaded, <span class="hljs-keyword">function</span> (sender, args) {
     var chartContainer = $(args.element);
-    chartContainer.attr("id", "chart");
+    chartContainer.attr(<span class="hljs-string">"id"</span>, <span class="hljs-string">"chart"</span>);
     chart = c3.generate({
         data: {
-            columns: args.sheet.getArray(0,0,3,10)
+            columns: args.sheet.getArray(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">10</span>)
         }
     });
 });</code></pre>
@@ -195,14 +193,13 @@ activeSheet.addFloatingObject(floatChart);</code></pre>
     if (args.propertyName === "width" || args.propertyName === "height") {
         chart.resize({ width: args.floatingObject.width(), height: args.floatingObject.height() });
     }
-});</code></pre>
+});<pre><code class="hljs"><span class="hljs-type">Lastly</span>, <span class="hljs-keyword">if</span> that <span class="hljs-typedef"><span class="hljs-keyword">data</span> changes, we can have those changes reflected in the chart by binding a function to the <span class="hljs-type">ValueChanged</span> event:</span>
 
-<p>Lastly, if that data changes, we can have those changes reflected in the chart by binding a function to the ValueChanged event:</p>
-<pre><code class="language-javascript">activeSheet.bind(GcSpread.Sheets.Events.ValueChanged, function (sender, args) {
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"language-javascript"</span>&gt;activeSheet.bind(<span class="hljs-type">GcSpread</span>.<span class="hljs-type">Sheets</span>.<span class="hljs-type">Events</span>.<span class="hljs-type">ValueChanged</span>, function (sender, args) {
     chart = c3.generate({
-        data: {
-            columns: args.sheet.getArray(0, 0, 3, 10)
-        }
+        <span class="hljs-typedef"><span class="hljs-keyword">data</span>: <span class="hljs-container">{
+            <span class="hljs-title">columns</span>: <span class="hljs-title">args</span>.<span class="hljs-title">sheet</span>.<span class="hljs-title">getArray</span>(0, 0, 3, 10)
+        }</span></span>
     });
 });</code></pre>
 

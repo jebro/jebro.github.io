@@ -623,81 +623,61 @@
 <p>This example uses the ShortcutKeys property. Use Alt + Enter to add a new line while the cell is in edit mode. The following image displays the list of actions that you can use.<figure id="attachment_666024" style="width: 270px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/shortcutkeyactions.png"><img class="size-full wp-image-666024 " alt="shortcutkeyactions" src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/shortcutkeyactions.png" width="270" height="402" /></a><figcaption class="wp-caption-text">Actions</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">// Select Alt + Enter to go to the next line
-GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType gcText = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
-gcText.Multiline = true;
-gcText.ShortcutKeys.Add(Keys.Enter | Keys.Alt, "InputNewLine");
-fpSpread1.Sheets[0].Cells[0, 0].CellType = gcText;
-</code></pre>
+<pre><code>GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType <span class="hljs-variable">gcText =</span> new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+gcText.<span class="hljs-variable">Multiline =</span> <span class="hljs-constant">true</span>;
+gcText.ShortcutKeys.Add(Keys.Enter | Keys.Alt, <span class="hljs-string">"InputNewLine"</span>);
+fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">CellType =</span> gcText;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">'Select Alt + Enter to go to the next line
-Dim gcText As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType()
-gcText.Multiline = True
-gcText.ShortcutKeys.Add(Keys.Enter Or Keys.Alt, "InputNewLine")
-FpSpread1.Sheets(0).Cells(0, 0).CellType = gcText
-</code></pre>
+<pre><code>Dim gcText As New GrapeCity<span class="hljs-class">.Win</span><span class="hljs-class">.Spread</span><span class="hljs-class">.InputMan</span><span class="hljs-class">.CellType</span><span class="hljs-class">.GcTextBoxCellType</span>()
+gcText<span class="hljs-class">.Multiline</span> = True
+gcText<span class="hljs-class">.ShortcutKeys</span><span class="hljs-class">.Add</span>(Keys<span class="hljs-class">.Enter</span> Or Keys<span class="hljs-class">.Alt</span>, <span class="hljs-string">"InputNewLine"</span>)
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)</span></span><span class="hljs-class">.CellType</span> = gcText</code></pre>
 
 <p>This example sets the maximum number of characters that can be typed in the cell.<figure id="attachment_666025" style="width: 219px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextMax.png"><img class="size-full wp-image-666025 " alt="SpreadWinGcTextMax" src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextMax.png" width="219" height="84" /></a><figcaption class="wp-caption-text">Maximum Characters</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType inputcell1 = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
-inputcell1.MaxLengthUnit = GrapeCity.Win.Spread.InputMan.CellType.LengthUnit.Char;
-inputcell1.MaxLength = 10;
-fpSpread1.Sheets[0].Cells[1, 1].CellType = inputcell1;
-</code></pre>
+<pre><code>inputcell1.<span class="hljs-variable">MaxLengthUnit =</span> GrapeCity.Win.Spread.InputMan.CellType.LengthUnit.Char;
+inputcell1.<span class="hljs-variable">MaxLength =</span> <span class="hljs-number">10</span>;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">CellType =</span> inputcell1;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Dim inputcell1 As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType
-inputcell1.MaxLengthUnit = GrapeCity.Win.Spread.InputMan.CellType.LengthUnit.Char
-inputcell1.MaxLength = 10
-FpSpread1.Sheets(0).Cells(1, 1).CellType = inputcell1
-</code></pre>
+<pre><code>inputcell1<span class="hljs-class">.MaxLengthUnit</span> = GrapeCity<span class="hljs-class">.Win</span><span class="hljs-class">.Spread</span><span class="hljs-class">.InputMan</span><span class="hljs-class">.CellType</span><span class="hljs-class">.LengthUnit</span><span class="hljs-class">.Char</span>
+inputcell1<span class="hljs-class">.MaxLength</span> = <span class="hljs-number">10</span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.CellType</span> = inputcell1</code></pre>
 
 <p>This example creates a GcTextBox cell and cuts CrLf characters in copied, cut, or pasted strings.</p>
 <p>C#</p>
-<pre><code class="language-csharp">GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType inputcell1 = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
-inputcell1.Multiline = true;
-inputcell1.AcceptsCrLf = GrapeCity.Win.Spread.InputMan.CellType.CrLfMode.Cut;
-fpSpread1.Sheets[0].Cells[1, 1].CellType = inputcell1;
-</code></pre>
+<pre><code>inputcell1.<span class="hljs-variable">Multiline =</span> <span class="hljs-constant">true</span>;
+inputcell1.<span class="hljs-variable">AcceptsCrLf =</span> GrapeCity.Win.Spread.InputMan.CellType.CrLfMode.Cut;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">CellType =</span> inputcell1;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Dim inputcell1 As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType
-inputcell1.Multiline = True
-inputcell1.AcceptsCrLf = GrapeCity.Win.Spread.InputMan.CellType.CrLfMode.Cut
-FpSpread1.Sheets(0).Cells(1, 1).CellType = inputcell1
-</code></pre>
+<pre><code>inputcell1<span class="hljs-class">.Multiline</span> = True
+inputcell1<span class="hljs-class">.AcceptsCrLf</span> = GrapeCity<span class="hljs-class">.Win</span><span class="hljs-class">.Spread</span><span class="hljs-class">.InputMan</span><span class="hljs-class">.CellType</span><span class="hljs-class">.CrLfMode</span><span class="hljs-class">.Cut</span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.CellType</span> = inputcell1</code></pre>
 
 <p>This example uses password characters in place of the typed content.<figure id="attachment_666027" style="width: 219px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextPass.png"><img class="size-full wp-image-666027 " alt="SpreadWinGcTextPass" src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextPass.png" width="219" height="85" /></a><figcaption class="wp-caption-text">Password Characters</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType gctext = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
-gctext.PasswordChar = Convert.ToChar("A");
-fpSpread1.Sheets[0].Cells[1, 1].CellType = gctext;
-</code></pre>
+<pre><code>gctext.<span class="hljs-variable">PasswordChar =</span> Convert.ToChar(<span class="hljs-string">"A"</span>);
+fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">CellType =</span> gctext;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Dim gctext As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType()
-gctext.PasswordChar = Chr(65)
-FpSpread1.Sheets(0).Cells(1, 1).CellType = gctext
-</code></pre>
+<pre><code>gctext<span class="hljs-class">.PasswordChar</span> = <span class="hljs-function"><span class="hljs-title">Chr</span><span class="hljs-params">(<span class="hljs-number">65</span>)</span></span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.CellType</span> = gctext</code></pre>
 
 <p>This example allows you to type symbols.<figure id="attachment_666028" style="width: 97px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextSym.png"><img class="size-full wp-image-666028 " alt="SpreadWinGcTextSym" src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextSym.png" width="97" height="49" /></a><figcaption class="wp-caption-text">Symbols</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType inputcell = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
-//Symbols
-inputcell.FormatString = "@";
-fpSpread1.Sheets[0].Cells[0, 0].CellType = inputcell;
-</code></pre>
+<pre><code>//Symbols
+inputcell.<span class="hljs-variable">FormatString =</span> <span class="hljs-string">"@"</span>;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">CellType =</span> inputcell;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Dim inputcell As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType()
-'Symbols
-inputcell.FormatString = "@"
-FpSpread1.Sheets(0).Cells(0, 0).CellType = inputcell
-</code></pre>
+<pre><code>'Symbols
+inputcell.<span class="hljs-variable">FormatString =</span> <span class="hljs-string">"@"</span>
+FpSpread1.Sheets(<span class="hljs-number">0</span>).Cells(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>).<span class="hljs-variable">CellType =</span> inputcell</code></pre>
 
 
 

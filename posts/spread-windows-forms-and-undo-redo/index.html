@@ -166,74 +166,67 @@
 <p>The input maps include items to map the Ctrl+Z and Ctrl+Y keys to the UndoAction and RedoAction action objects, respectively. These actions make calls into the UndoManager to the Undo and Redo methods.</p>
 <p>You can use the following code to manage Undo. The first three buttons can be used to copy, cut, or paste data. The fourth button uses the Undo method. The PerformUndoAction method causes the action to occur and adds it to the list of actions that can be undone.</p>
 <p>C#</p>
-<pre><code class="language-csharp">private void button1_Click(object sender, EventArgs e)
-        {         
-            fpSpread1.Sheets[0].ClipboardCopy();           
+<pre><code>{         
+            fpSpread1.Sheets[<span class="hljs-number">0</span>].ClipboardCopy();           
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FarPoint.Win.Spread.UndoRedo.ClipboardCutUndoAction cutAction = new FarPoint.Win.Spread.UndoRedo.ClipboardCutUndoAction();
+        <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">button2_Click</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, EventArgs e)</span>
+        </span>{
+            FarPoint.Win.Spread.UndoRedo.ClipboardCutUndoAction cutAction = <span class="hljs-keyword">new</span> FarPoint.Win.Spread.UndoRedo.ClipboardCutUndoAction();
             fpSpread1.UndoManager.PerformUndoAction(cutAction);
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            FarPoint.Win.Spread.UndoRedo.ClipboardPasteUndoAction pasteAction = new FarPoint.Win.Spread.UndoRedo.ClipboardPasteUndoAction();
+        <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">button3_Click</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, EventArgs e)</span>
+        </span>{
+            FarPoint.Win.Spread.UndoRedo.ClipboardPasteUndoAction pasteAction = <span class="hljs-keyword">new</span> FarPoint.Win.Spread.UndoRedo.ClipboardPasteUndoAction();
             fpSpread1.UndoManager.PerformUndoAction(pasteAction);
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
+        <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">button4_Click</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, EventArgs e)</span>
+        </span>{
             fpSpread1.UndoManager.Undo();
-        }
-</code></pre>
+        }</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        FpSpread1.Sheets(0).ClipboardCopy()
-    End Sub
+<pre><code>FpSpread1.Sheets(<span class="hljs-number">0</span>).ClipboardCopy()
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim cutAction As New FarPoint.Win.Spread.UndoRedo.ClipboardCutUndoAction()
+    <span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> Button2_Click(sender <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>, e <span class="hljs-keyword">As</span> EventArgs) <span class="hljs-keyword">Handles</span> Button2.Click
+        <span class="hljs-keyword">Dim</span> cutAction <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.UndoRedo.ClipboardCutUndoAction()
         FpSpread1.UndoManager.PerformUndoAction(cutAction)
-    End Sub
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim pasteAction As New FarPoint.Win.Spread.UndoRedo.ClipboardPasteUndoAction()
+    <span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> Button3_Click(sender <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>, e <span class="hljs-keyword">As</span> EventArgs) <span class="hljs-keyword">Handles</span> Button3.Click
+        <span class="hljs-keyword">Dim</span> pasteAction <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.UndoRedo.ClipboardPasteUndoAction()
         FpSpread1.UndoManager.PerformUndoAction(pasteAction)
-    End Sub
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    <span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> Button4_Click(sender <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>, e <span class="hljs-keyword">As</span> EventArgs) <span class="hljs-keyword">Handles</span> Button4.Click
         FpSpread1.UndoManager.Undo()
-    End Sub
-</code></pre>
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span></code></pre>
 
 <p>This example gets the CanUndo value, the number of items in the undo list, and the undo actions and displays the result in a list box.</p>
 <p>C#</p>
-<pre><code class="language-csharp"></code>if (fpSpread1.UndoManager.CanUndo == true)
+<pre><code>{
+            listBox<span class="hljs-number">1.</span>Items.Add<span class="hljs-comment">(fpSpread1.UndoManager.CanUndo)</span>;
+            for <span class="hljs-comment">(int i = 0; i&amp;lt;=fpSpread1.UndoManager.UndoList.Count-1; i++)</span>
             {
-            listBox1.Items.Add(fpSpread1.UndoManager.CanUndo);
-            for (int i = 0; i&lt;=fpSpread1.UndoManager.UndoList.Count-1; i++)
-            {
-                listBox1.Items.Add(fpSpread1.UndoManager.UndoList.Count);
-                listBox1.Items.Add(fpSpread1.UndoManager.UndoList[i]);
-            }</pre>
+                listBox<span class="hljs-number">1.</span>Items.Add<span class="hljs-comment">(fpSpread1.UndoManager.UndoList.Count)</span>;
+                listBox<span class="hljs-number">1.</span>Items.Add<span class="hljs-comment">(fpSpread1.UndoManager.UndoList[i])</span>;
+            }&lt;/pre&gt;
 
-<p>VB</p>
-<pre><code class="language-csharp">If FpSpread1.UndoManager.CanUndo() = True Then
+VB</code></pre>If FpSpread1.UndoManager.CanUndo() = True Then
             ListBox1.Items.Add(FpSpread1.UndoManager.CanUndo())
             For i = 0 To FpSpread1.UndoManager.UndoList.Count - 1
                 ListBox1.Items.Add(FpSpread1.UndoManager.UndoList.Count)
                 ListBox1.Items.Add(FpSpread1.UndoManager.UndoList.Item(i))
             Next
         End If
-</code></pre>
+<pre><code class="hljs">You can undo actions done <span class="hljs-keyword">through</span> code, <span class="hljs-keyword">but</span> you have <span class="hljs-keyword">to</span> <span class="hljs-keyword">set</span> up <span class="hljs-keyword">the</span> UndoAction yourself. Here <span class="hljs-keyword">is</span> code <span class="hljs-keyword">to</span> show you how <span class="hljs-keyword">to</span> <span class="hljs-keyword">set</span> this up. Press <span class="hljs-keyword">the</span> button <span class="hljs-keyword">to</span> undo <span class="hljs-keyword">the</span> sort <span class="hljs-keyword">after</span> sorting <span class="hljs-keyword">the</span> column.&lt;figure <span class="hljs-property">id</span>=<span class="hljs-string">"attachment_663975"</span> style=<span class="hljs-string">"width: 302px"</span> <span class="hljs-type">class</span>=<span class="hljs-string">"wp-caption aligncenter"</span>&gt;
 
-<p>You can undo actions done through code, but you have to set up the UndoAction yourself. Here is code to show you how to set this up. Press the button to undo the sort after sorting the column.<figure id="attachment_663975" style="width: 302px" class="wp-caption aligncenter"></p>
-<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/undosort.png"><img class="size-full wp-image-663975 " alt="undosort" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/undosort.png" width="302" height="198" /></a><figcaption class="wp-caption-text">Image created from sample code</figcaption></figure> </p>
-<p>C#</p>
-<pre><code class="language-csharp">public class SortRowsAction : FarPoint.Win.Spread.UndoRedo.UndoAction
+[&lt;img <span class="hljs-type">class</span>=<span class="hljs-string">"size-full wp-image-663975 "</span> alt=<span class="hljs-string">"undosort"</span> src=<span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/07/undosort.png"</span> width=<span class="hljs-string">"302"</span> height=<span class="hljs-string">"198"</span> /&gt;][<span class="hljs-number">1</span>]&lt;figcaption <span class="hljs-type">class</span>=<span class="hljs-string">"wp-caption-text"</span>&gt;Image created <span class="hljs-keyword">from</span> sample code&lt;/figcaption&gt;&lt;/figure&gt; 
+
+C<span class="hljs-comment">#</span></code></pre>public class SortRowsAction : FarPoint.Win.Spread.UndoRedo.UndoAction
   {
 
     FarPoint.Win.Spread.SheetView sheetView;
@@ -329,86 +322,7 @@
             SortRowsAction sra = new SortRowsAction(fpSpread1.Sheets[0], si);
             fpSpread1.UndoManager.PerformUndoAction(sra);
         }
-</code></pre>
-
-<p>VB</p>
-<pre><code class="language-csharp">Public Class SortRowsAction
-        Inherits FarPoint.Win.Spread.UndoRedo.UndoAction
-
-        Dim sheetView As FarPoint.Win.Spread.SheetView
-        Dim sortinfo() As FarPoint.Win.Spread.SortInfo
-        Dim al As ArrayList
-
-        Public Sub New()
-
-        End Sub
-
-        Public Sub New(ByVal sheetView As FarPoint.Win.Spread.SheetView, ByVal si() As FarPoint.Win.Spread.SortInfo)
-            Me.sheetView = sheetView
-            Me.sortinfo = si
-        End Sub
-
-        Public Overrides Function PerformUndoAction(ByVal sender As Object) As Boolean
-            Dim spreadView As FarPoint.Win.Spread.SpreadView = Nothing
-            If TypeOf sender Is FarPoint.Win.Spread.SpreadView Then
-                spreadView = CType(sender, FarPoint.Win.Spread.SpreadView)
-            Else
-                Return False
-            End If
-
-            If sheetView Is Nothing Then
-                sheetView = spreadView.GetSheetView
-            End If
-            If (SaveUndoState()) And Not (sheetView Is Nothing) Then
-                sheetView.SortRows(0, sheetView.RowCount, Me.sortinfo)
-                Return True
-            End If
-            Return False
-        End Function
-
-        Protected Overrides Function SaveUndoState() As Boolean
-            If Not (sheetView Is Nothing) Then
-                If al Is Nothing Then
-                    al = New ArrayList
-                    For i As Integer = 0 To sheetView.RowCount - 1
-                        al.Add(sheetView.GetViewRowFromModelRow(i))
-                    Next
-                End If
-            End If
-            Return Not (al Is Nothing)
-        End Function
-
-        Public Overrides Function Undo(ByVal sender As Object) As Boolean
-            Dim spreadView As FarPoint.Win.Spread.SpreadView = Nothing
-            If TypeOf sender Is FarPoint.Win.Spread.SpreadView Then
-                spreadView = CType(sender, FarPoint.Win.Spread.SpreadView)
-            Else
-                Return False
-            End If
-
-            If Not (al Is Nothing) Then
-                For i As Integer = 0 To sheetView.RowCount - 1
-                    sheetView.Models.SetViewRowIndex(i, al(i))
-                Next
-                Return True
-            End If
-            Return False
-        End Function
-    End Class
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim si() As FarPoint.Win.Spread.SortInfo = New FarPoint.Win.Spread.SortInfo() {New FarPoint.Win.Spread.SortInfo(0, True)}
-        Dim sra As New SortRowsAction(FpSpread1.Sheets(0), si)
-        FpSpread1.UndoManager.PerformUndoAction(sra)
-    End Sub
-
-    Private Sub Undo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FpSpread1.Sheets(0).Columns(0).AllowAutoSort = True
-        FpSpread1.Sheets(0).Cells(0, 0).Text = "Z"
-        FpSpread1.Sheets(0).Cells(1, 0).Text = "A"
-        FpSpread1.Sheets(0).Cells(2, 0).Text = "C"
-    End Sub
-</code></pre>
+<pre><code class="hljs">VB</code></pre>
 
 
 

@@ -186,31 +186,29 @@
 
                            C#
 
-                           <pre><code class="language-csharp">axfpSpread1.MaxCols = 8;
-axfpSpread1.MaxRows = 12;
-axfpSpread1.ColHeaderRows = 3;
-axfpSpread1.RowHeaderCols = 2;
-axfpSpread1.AddCellSpan(1, -1000, 8, 1);
-axfpSpread1.SetText(1, -1000, &quot;Fiscal Year 2015&quot;);
-axfpSpread1.AddCellSpan(1, -999, 2, 1);
-axfpSpread1.SetText(1, -999, &quot;1st Quarter&quot;);
-axfpSpread1.AddCellSpan(3, -999, 2, 1);
-axfpSpread1.SetText(3, -999, &quot;2nd Quarter&quot;);
-axfpSpread1.AddCellSpan(5, -999, 2, 1);
-axfpSpread1.SetText(5, -999, &quot;3rd Quarter&quot;);
-axfpSpread1.AddCellSpan(7, -999, 2, 1);
-axfpSpread1.SetText(7, -999, &quot;4th Quarter&quot;);
-axfpSpread1.SetText(1, -998, &quot;East&quot;);
-axfpSpread1.SetText(2, -998, &quot;West&quot;);
-axfpSpread1.SetText(3, -998, &quot;East&quot;);
-axfpSpread1.SetText(4, -998, &quot;West&quot;);
-axfpSpread1.SetText(5, -998, &quot;East&quot;);
-axfpSpread1.SetText(6, -998, &quot;West&quot;);
-axfpSpread1.SetText(7, -998, &quot;East&quot;);
-axfpSpread1.SetText(8, -998, &quot;West&quot;);
-axfpSpread1.AddCellSpan(-1000, 1, 1, 12);
-axfpSpread1.SetText(-1000, 1, &quot;Store #&quot;);
-</code></pre><figure id="attachment_664701" style="width: 653px" class="wp-caption aligncenter">
+                           <pre><code>axfpSpread1.<span class="hljs-variable">MaxRows =</span> <span class="hljs-number">12</span>;
+axfpSpread1.<span class="hljs-variable">ColHeaderRows =</span> <span class="hljs-number">3</span>;
+axfpSpread1.<span class="hljs-variable">RowHeaderCols =</span> <span class="hljs-number">2</span>;
+axfpSpread1.AddCellSpan(<span class="hljs-number">1</span>, -<span class="hljs-number">1000</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>);
+axfpSpread1.SetText(<span class="hljs-number">1</span>, -<span class="hljs-number">1000</span>, <span class="hljs-string">&quot;Fiscal Year 2015&quot;</span>);
+axfpSpread1.AddCellSpan(<span class="hljs-number">1</span>, -<span class="hljs-number">999</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
+axfpSpread1.SetText(<span class="hljs-number">1</span>, -<span class="hljs-number">999</span>, <span class="hljs-string">&quot;1st Quarter&quot;</span>);
+axfpSpread1.AddCellSpan(<span class="hljs-number">3</span>, -<span class="hljs-number">999</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
+axfpSpread1.SetText(<span class="hljs-number">3</span>, -<span class="hljs-number">999</span>, <span class="hljs-string">&quot;2nd Quarter&quot;</span>);
+axfpSpread1.AddCellSpan(<span class="hljs-number">5</span>, -<span class="hljs-number">999</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
+axfpSpread1.SetText(<span class="hljs-number">5</span>, -<span class="hljs-number">999</span>, <span class="hljs-string">&quot;3rd Quarter&quot;</span>);
+axfpSpread1.AddCellSpan(<span class="hljs-number">7</span>, -<span class="hljs-number">999</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
+axfpSpread1.SetText(<span class="hljs-number">7</span>, -<span class="hljs-number">999</span>, <span class="hljs-string">&quot;4th Quarter&quot;</span>);
+axfpSpread1.SetText(<span class="hljs-number">1</span>, -<span class="hljs-number">998</span>, <span class="hljs-string">&quot;East&quot;</span>);
+axfpSpread1.SetText(<span class="hljs-number">2</span>, -<span class="hljs-number">998</span>, <span class="hljs-string">&quot;West&quot;</span>);
+axfpSpread1.SetText(<span class="hljs-number">3</span>, -<span class="hljs-number">998</span>, <span class="hljs-string">&quot;East&quot;</span>);
+axfpSpread1.SetText(<span class="hljs-number">4</span>, -<span class="hljs-number">998</span>, <span class="hljs-string">&quot;West&quot;</span>);
+axfpSpread1.SetText(<span class="hljs-number">5</span>, -<span class="hljs-number">998</span>, <span class="hljs-string">&quot;East&quot;</span>);
+axfpSpread1.SetText(<span class="hljs-number">6</span>, -<span class="hljs-number">998</span>, <span class="hljs-string">&quot;West&quot;</span>);
+axfpSpread1.SetText(<span class="hljs-number">7</span>, -<span class="hljs-number">998</span>, <span class="hljs-string">&quot;East&quot;</span>);
+axfpSpread1.SetText(<span class="hljs-number">8</span>, -<span class="hljs-number">998</span>, <span class="hljs-string">&quot;West&quot;</span>);
+axfpSpread1.AddCellSpan(-<span class="hljs-number">1000</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">12</span>);
+axfpSpread1.SetText(-<span class="hljs-number">1000</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&quot;Store #&quot;</span>);</code></pre><figure id="attachment_664701" style="width: 653px" class="wp-caption aligncenter">
 
                            <a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/complete.png"><img class="size-full wp-image-664701 " alt="complete" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/complete.png" width="653" height="349" /></a><figcaption class="wp-caption-text">Completed Project</figcaption></figure> 
 

@@ -159,35 +159,31 @@
 <p>This example allows grouping. Select a column header and drag the header to the group area.<figure id="attachment_664075" style="width: 578px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/BeforeBasicGroup.png"><img class="size-full wp-image-664075 " alt="BeforeBasicGroup" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/BeforeBasicGroup.png" width="578" height="360" /></a><figcaption class="wp-caption-text">No Groups</figcaption></figure> <figure id="attachment_664076" style="width: 578px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/BasicGroup.png"><img class="size-full wp-image-664076 " alt="BasicGroup" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/BasicGroup.png" width="578" height="360" /></a><figcaption class="wp-caption-text">Spread with Group</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">//Add sample data
-string conStr = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb";
-string sqlStr = "Select CompanyName, ContactName, ContactTitle, Country from Customers";
-System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);
-DataSet ds = new DataSet();
-System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
+<pre><code>string <span class="hljs-variable">conStr =</span> <span class="hljs-string">"Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb"</span>;
+string <span class="hljs-variable">sqlStr =</span> <span class="hljs-string">"Select CompanyName, ContactName, ContactTitle, Country from Customers"</span>;
+System.Data.OleDb.OleDbConnection <span class="hljs-variable">conn =</span> new System.Data.OleDb.OleDbConnection(conStr);
+DataSet <span class="hljs-variable">ds =</span> new DataSet();
+System.Data.OleDb.OleDbDataAdapter <span class="hljs-variable">da =</span> new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
 da.Fill(ds);
-fpSpread1.ActiveSheet.DataAutoSizeColumns = true;
-fpSpread1.ActiveSheet.DataSource = ds;
+fpSpread1.ActiveSheet.<span class="hljs-variable">DataAutoSizeColumns =</span> <span class="hljs-constant">true</span>;
+fpSpread1.ActiveSheet.<span class="hljs-variable">DataSource =</span> ds;
 
-FpSpread1.AllowColumnMove = true;
-FpSpread1.ActiveSheet.GroupBarInfo.Visible = true;
-FpSpread1.ActiveSheet.AllowGroup = true;
-</code></pre>
+FpSpread1.<span class="hljs-variable">AllowColumnMove =</span> <span class="hljs-constant">true</span>;
+FpSpread1.ActiveSheet.GroupBarInfo.<span class="hljs-variable">Visible =</span> <span class="hljs-constant">true</span>;
+FpSpread1.ActiveSheet.<span class="hljs-variable">AllowGroup =</span> <span class="hljs-constant">true</span>;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Dim conStr As String = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"
-Dim sqlStr As String = "Select CompanyName, ContactName, ContactTitle, Country from Customers"
-Dim conn As New System.Data.OleDb.OleDbConnection(conStr)
-Dim ds As DataSet = New DataSet()
-Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
-da.Fill(ds)
-FpSpread1.ActiveSheet.DataAutoSizeColumns = True
-FpSpread1.ActiveSheet.DataSource = ds
+<pre><code>Dim sqlStr As String = <span class="hljs-string">"Select CompanyName, ContactName, ContactTitle, Country from Customers"</span>
+Dim conn As New System<span class="hljs-class">.Data</span><span class="hljs-class">.OleDb</span><span class="hljs-class">.OleDbConnection</span>(conStr)
+Dim ds As DataSet = New <span class="hljs-function"><span class="hljs-title">DataSet</span><span class="hljs-params">()</span></span>
+Dim da As New System<span class="hljs-class">.Data</span><span class="hljs-class">.OleDb</span><span class="hljs-class">.OleDbDataAdapter</span>(sqlStr, conn)
+da.<span class="hljs-function"><span class="hljs-title">Fill</span><span class="hljs-params">(ds)</span></span>
+FpSpread1<span class="hljs-class">.ActiveSheet</span><span class="hljs-class">.DataAutoSizeColumns</span> = True
+FpSpread1<span class="hljs-class">.ActiveSheet</span><span class="hljs-class">.DataSource</span> = ds
 
-FpSpread1.AllowColumnMove = True
-FpSpread1.ActiveSheet.GroupBarInfo.Visible = True
-FpSpread1.ActiveSheet.AllowGroup = True
-</code></pre>
+FpSpread1<span class="hljs-class">.AllowColumnMove</span> = True
+FpSpread1<span class="hljs-class">.ActiveSheet</span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.Visible</span> = True
+FpSpread1<span class="hljs-class">.ActiveSheet</span><span class="hljs-class">.AllowGroup</span> = True</code></pre>
 
 <p>You can customize the appearance of the grouped rows. The following table describes the members used for customizing the appearance of grouped rows:</p>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -362,204 +358,191 @@ FpSpread1.ActiveSheet.AllowGroup = True
 <p>This example sets properties for the group bar at the top of the display.<figure id="attachment_664081" style="width: 561px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupbar.png"><img class="size-full wp-image-664081 " alt="groupbar" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupbar.png" width="561" height="292" /></a><figcaption class="wp-caption-text">Group Bar Text</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">//Add sample data
-string conStr = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb";
-string sqlStr = "Select CompanyName, ContactName, ContactTitle, Country from Customers";
-System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);
-DataSet ds = new DataSet();
-System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
+<pre><code>string <span class="hljs-variable">conStr =</span> <span class="hljs-string">"Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb"</span>;
+string <span class="hljs-variable">sqlStr =</span> <span class="hljs-string">"Select CompanyName, ContactName, ContactTitle, Country from Customers"</span>;
+System.Data.OleDb.OleDbConnection <span class="hljs-variable">conn =</span> new System.Data.OleDb.OleDbConnection(conStr);
+DataSet <span class="hljs-variable">ds =</span> new DataSet();
+System.Data.OleDb.OleDbDataAdapter <span class="hljs-variable">da =</span> new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
 da.Fill(ds);
-fpSpread1.ActiveSheet.DataAutoSizeColumns = true;
-fpSpread1.ActiveSheet.DataSource = ds;
+fpSpread1.ActiveSheet.<span class="hljs-variable">DataAutoSizeColumns =</span> <span class="hljs-constant">true</span>;
+fpSpread1.ActiveSheet.<span class="hljs-variable">DataSource =</span> ds;
 
-fpSpread1.Sheets.Count = 2;
-fpSpread1.Sheets[0].GroupBarInfo.Visible = true;
-fpSpread1.Sheets[0].GroupBarInfo.Text = "GroupBar for Sheet1";
-fpSpread1.Sheets[0].GroupBarInfo.ForeColor = Color.Green;
-fpSpread1.Sheets[0].GroupBarInfo.Font = new Font("Tahama", 10.0f, FontStyle.Bold | FontStyle.Underline);
-fpSpread1.Sheets[0].GroupBarInfo.Height = 30;
-fpSpread1.Sheets[0].GroupBarInfo.GroupVerticalIndent = 2;
-fpSpread1.Sheets[1].GroupBarInfo.Visible = true;
-fpSpread1.Sheets[1].GroupBarInfo.Text = "GroupBar for Sheet2";
-fpSpread1.Sheets[1].GroupBarInfo.BackColor = Color.GreenYellow;
-fpSpread1.Sheets[1].GroupBarInfo.ForeColor = Color.Blue;
-fpSpread1.Sheets[1].GroupBarInfo.Font = new Font("Tahama", 10.0f, FontStyle.Italic);
-fpSpread1.AllowColumnMove = true;
-fpSpread1.Sheets[0].AllowGroup = true;
-fpSpread1.Sheets[1].AllowGroup = true;
-</code></pre>
+fpSpread1.Sheets.<span class="hljs-variable">Count =</span> <span class="hljs-number">2</span>;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].GroupBarInfo.<span class="hljs-variable">Visible =</span> <span class="hljs-constant">true</span>;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].GroupBarInfo.<span class="hljs-variable">Text =</span> <span class="hljs-string">"GroupBar for Sheet1"</span>;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].GroupBarInfo.<span class="hljs-variable">ForeColor =</span> Color.Green;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].GroupBarInfo.<span class="hljs-variable">Font =</span> new Font(<span class="hljs-string">"Tahama"</span>, <span class="hljs-number">10.0</span>f, FontStyle.Bold | FontStyle.Underline);
+fpSpread1.Sheets[<span class="hljs-number">0</span>].GroupBarInfo.<span class="hljs-variable">Height =</span> <span class="hljs-number">30</span>;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].GroupBarInfo.<span class="hljs-variable">GroupVerticalIndent =</span> <span class="hljs-number">2</span>;
+fpSpread1.Sheets[<span class="hljs-number">1</span>].GroupBarInfo.<span class="hljs-variable">Visible =</span> <span class="hljs-constant">true</span>;
+fpSpread1.Sheets[<span class="hljs-number">1</span>].GroupBarInfo.<span class="hljs-variable">Text =</span> <span class="hljs-string">"GroupBar for Sheet2"</span>;
+fpSpread1.Sheets[<span class="hljs-number">1</span>].GroupBarInfo.<span class="hljs-variable">BackColor =</span> Color.GreenYellow;
+fpSpread1.Sheets[<span class="hljs-number">1</span>].GroupBarInfo.<span class="hljs-variable">ForeColor =</span> Color.Blue;
+fpSpread1.Sheets[<span class="hljs-number">1</span>].GroupBarInfo.<span class="hljs-variable">Font =</span> new Font(<span class="hljs-string">"Tahama"</span>, <span class="hljs-number">10.0</span>f, FontStyle.Italic);
+fpSpread1.<span class="hljs-variable">AllowColumnMove =</span> <span class="hljs-constant">true</span>;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-variable">AllowGroup =</span> <span class="hljs-constant">true</span>;
+fpSpread1.Sheets[<span class="hljs-number">1</span>].<span class="hljs-variable">AllowGroup =</span> <span class="hljs-constant">true</span>;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Dim conStr As String = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"
-Dim sqlStr As String = "Select CompanyName, ContactName, ContactTitle, Country from Customers"
-Dim conn As New System.Data.OleDb.OleDbConnection(conStr)
-Dim ds As DataSet = New DataSet()
-Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
-da.Fill(ds)
-FpSpread1.ActiveSheet.DataAutoSizeColumns = True
-FpSpread1.ActiveSheet.DataSource = ds
+<pre><code>Dim sqlStr As String = <span class="hljs-string">"Select CompanyName, ContactName, ContactTitle, Country from Customers"</span>
+Dim conn As New System<span class="hljs-class">.Data</span><span class="hljs-class">.OleDb</span><span class="hljs-class">.OleDbConnection</span>(conStr)
+Dim ds As DataSet = New <span class="hljs-function"><span class="hljs-title">DataSet</span><span class="hljs-params">()</span></span>
+Dim da As New System<span class="hljs-class">.Data</span><span class="hljs-class">.OleDb</span><span class="hljs-class">.OleDbDataAdapter</span>(sqlStr, conn)
+da.<span class="hljs-function"><span class="hljs-title">Fill</span><span class="hljs-params">(ds)</span></span>
+FpSpread1<span class="hljs-class">.ActiveSheet</span><span class="hljs-class">.DataAutoSizeColumns</span> = True
+FpSpread1<span class="hljs-class">.ActiveSheet</span><span class="hljs-class">.DataSource</span> = ds
 
-FpSpread1.Sheets.Count = 2
-FpSpread1.Sheets(0).GroupBarInfo.Visible = True
-FpSpread1.Sheets(0).GroupBarInfo.Text = "GroupBar for Sheet1"
-FpSpread1.Sheets(0).GroupBarInfo.ForeColor = Color.Green
-FpSpread1.Sheets(0).GroupBarInfo.Font = New Font("Tahama", 10.0F, FontStyle.Bold Or FontStyle.Underline)
-FpSpread1.Sheets(0).GroupBarInfo.Height = 30
-FpSpread1.Sheets(0).GroupBarInfo.GroupVerticalIndent = 2
-FpSpread1.Sheets(1).GroupBarInfo.Visible = True
-FpSpread1.Sheets(1).GroupBarInfo.Text = "GroupBar for Sheet2"
-FpSpread1.Sheets(1).GroupBarInfo.BackColor = Color.GreenYellow
-FpSpread1.Sheets(1).GroupBarInfo.ForeColor = Color.Blue
-FpSpread1.Sheets(1).GroupBarInfo.Font = New Font("Tahama", 10.0F, FontStyle.Italic)
-FpSpread1.AllowColumnMove = True
-FpSpread1.Sheets(0).AllowGroup = True
-FpSpread1.Sheets(1).AllowGroup = True
-</code></pre>
+FpSpread1<span class="hljs-class">.Sheets</span><span class="hljs-class">.Count</span> = <span class="hljs-number">2</span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.Visible</span> = True
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.Text</span> = <span class="hljs-string">"GroupBar for Sheet1"</span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.ForeColor</span> = Color<span class="hljs-class">.Green</span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.Font</span> = New <span class="hljs-function"><span class="hljs-title">Font</span><span class="hljs-params">(<span class="hljs-string">"Tahama"</span>, <span class="hljs-number">10.0</span>F, FontStyle.Bold Or FontStyle.Underline)</span></span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.Height</span> = <span class="hljs-number">30</span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.GroupVerticalIndent</span> = <span class="hljs-number">2</span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.Visible</span> = True
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.Text</span> = <span class="hljs-string">"GroupBar for Sheet2"</span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.BackColor</span> = Color<span class="hljs-class">.GreenYellow</span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.ForeColor</span> = Color<span class="hljs-class">.Blue</span>
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span><span class="hljs-class">.GroupBarInfo</span><span class="hljs-class">.Font</span> = New <span class="hljs-function"><span class="hljs-title">Font</span><span class="hljs-params">(<span class="hljs-string">"Tahama"</span>, <span class="hljs-number">10.0</span>F, FontStyle.Italic)</span></span>
+FpSpread1<span class="hljs-class">.AllowColumnMove</span> = True
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span><span class="hljs-class">.AllowGroup</span> = True
+FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span><span class="hljs-class">.AllowGroup</span> = True</code></pre>
 
 <p>This example specifies the properties of the grouping bar and uses GroupInfo to set colors for parent and child groups.<figure id="attachment_664083" style="width: 584px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupparentchild.png"><img class="size-full wp-image-664083 " alt="groupparentchild" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupparentchild.png" width="584" height="242" /></a><figcaption class="wp-caption-text">Group Bar</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">fpSpread1.AllowColumnMove = true;
-fpSpread1.ActiveSheet.GroupBarInfo.Visible = true;
-fpSpread1.ActiveSheet.GroupBarInfo.BackColor = Color.Aquamarine;
-fpSpread1.ActiveSheet.GroupBarInfo.Height = 75;
-fpSpread1.ActiveSheet.GroupMaximumLevel = 3;
-fpSpread1.ActiveSheet.GroupBarInfo.GroupVerticalIndent = 20;
-fpSpread1.ActiveSheet.AllowGroup = true;
+<pre><code>fpSpread1.ActiveSheet.GroupBarInfo.<span class="hljs-variable">Visible =</span> <span class="hljs-constant">true</span>;
+fpSpread1.ActiveSheet.GroupBarInfo.<span class="hljs-variable">BackColor =</span> Color.Aquamarine;
+fpSpread1.ActiveSheet.GroupBarInfo.<span class="hljs-variable">Height =</span> <span class="hljs-number">75</span>;
+fpSpread1.ActiveSheet.<span class="hljs-variable">GroupMaximumLevel =</span> <span class="hljs-number">3</span>;
+fpSpread1.ActiveSheet.GroupBarInfo.<span class="hljs-variable">GroupVerticalIndent =</span> <span class="hljs-number">20</span>;
+fpSpread1.ActiveSheet.<span class="hljs-variable">AllowGroup =</span> <span class="hljs-constant">true</span>;
 
-FarPoint.Win.Spread.GroupInfo gi = new FarPoint.Win.Spread.GroupInfo();
-gi.BackColor = Color.Yellow;
-FarPoint.Win.Spread.GroupInfo gi2 = new FarPoint.Win.Spread.GroupInfo();
-gi2.BackColor = Color.Green;
-FarPoint.Win.Spread.GroupInfoCollection gic = new FarPoint.Win.Spread.GroupInfoCollection();
+FarPoint.Win.Spread.GroupInfo <span class="hljs-variable">gi =</span> new FarPoint.Win.Spread.GroupInfo();
+gi.<span class="hljs-variable">BackColor =</span> Color.Yellow;
+FarPoint.Win.Spread.GroupInfo <span class="hljs-variable">gi2 =</span> new FarPoint.Win.Spread.GroupInfo();
+gi2.<span class="hljs-variable">BackColor =</span> Color.Green;
+FarPoint.Win.Spread.GroupInfoCollection <span class="hljs-variable">gic =</span> new FarPoint.Win.Spread.GroupInfoCollection();
 gic.AddRange(new FarPoint.Win.Spread.GroupInfo[] { gi, gi2 });
-fpSpread1.ActiveSheet.GroupInfos.Add(gic[0]);
-fpSpread1.ActiveSheet.GroupInfos.Add(gic[1]);
-</code></pre>
+fpSpread1.ActiveSheet.GroupInfos.Add(gic[<span class="hljs-number">0</span>]);
+fpSpread1.ActiveSheet.GroupInfos.Add(gic[<span class="hljs-number">1</span>]);</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">FpSpread1.AllowColumnMove = True
-FpSpread1.ActiveSheet.GroupBarInfo.Visible = True
+<pre><code>FpSpread1.ActiveSheet.GroupBarInfo.Visible = <span class="hljs-keyword">True</span>
 FpSpread1.ActiveSheet.GroupBarInfo.BackColor = Color.Aquamarine
-FpSpread1.ActiveSheet.GroupBarInfo.Height = 75
-FpSpread1.ActiveSheet.GroupMaximumLevel = 3
-FpSpread1.ActiveSheet.GroupBarInfo.GroupVerticalIndent = 20
-FpSpread1.ActiveSheet.AllowGroup = True
+FpSpread1.ActiveSheet.GroupBarInfo.Height = <span class="hljs-number">75</span>
+FpSpread1.ActiveSheet.GroupMaximumLevel = <span class="hljs-number">3</span>
+FpSpread1.ActiveSheet.GroupBarInfo.GroupVerticalIndent = <span class="hljs-number">20</span>
+FpSpread1.ActiveSheet.AllowGroup = <span class="hljs-keyword">True</span>
 
-Dim gi As New FarPoint.Win.Spread.GroupInfo
+Dim gi <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.GroupInfo
 gi.BackColor = Color.Yellow
-Dim gi2 As New FarPoint.Win.Spread.GroupInfo
+Dim gi2 <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.GroupInfo
 gi2.BackColor = Color.Green
-Dim gic As New FarPoint.Win.Spread.GroupInfoCollection()
-gic.AddRange(New FarPoint.Win.Spread.GroupInfo() {gi, gi2})
-FpSpread1.ActiveSheet.GroupInfos.Add(gic(0))
-FpSpread1.ActiveSheet.GroupInfos.Add(gic(1))
-</code></pre>
+Dim gic <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.GroupInfoCollection()
+gic.AddRange(<span class="hljs-keyword">New</span> FarPoint.Win.Spread.GroupInfo() <span class="hljs-comment">{gi, gi2}</span>)
+FpSpread1.ActiveSheet.GroupInfos.<span class="hljs-keyword">Add</span>(gic(<span class="hljs-number">0</span>))
+FpSpread1.ActiveSheet.GroupInfos.<span class="hljs-keyword">Add</span>(gic(<span class="hljs-number">1</span>))</code></pre>
 
 <p>This example uses the IsGroup method to determine whether the specified row is a group header (also called group node).</p>
 <p>C#</p>
-<pre><code class="language-csharp">//Add sample data
-string conStr = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb";
-string sqlStr = "Select CompanyName, ContactName, ContactTitle, Country from Customers";
-System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);
-DataSet ds = new DataSet();
-System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
+<pre><code><span class="hljs-keyword">string</span> conStr = <span class="hljs-string">"Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb"</span>;
+<span class="hljs-keyword">string</span> sqlStr = <span class="hljs-string">"Select CompanyName, ContactName, ContactTitle, Country from Customers"</span>;
+System.Data.OleDb.OleDbConnection conn = <span class="hljs-keyword">new</span> System.Data.OleDb.OleDbConnection(conStr);
+DataSet ds = <span class="hljs-keyword">new</span> DataSet();
+System.Data.OleDb.OleDbDataAdapter da = <span class="hljs-keyword">new</span> System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
 da.Fill(ds);
-fpSpread1.ActiveSheet.DataAutoSizeColumns = true;
+fpSpread1.ActiveSheet.DataAutoSizeColumns = <span class="hljs-keyword">true</span>;
 fpSpread1.ActiveSheet.DataSource = ds;
-fpSpread1.AllowColumnMove = true;
-fpSpread1.ActiveSheet.GroupBarInfo.Visible = true;
-fpSpread1.ActiveSheet.AllowGroup = true;
+fpSpread1.AllowColumnMove = <span class="hljs-keyword">true</span>;
+fpSpread1.ActiveSheet.GroupBarInfo.Visible = <span class="hljs-keyword">true</span>;
+fpSpread1.ActiveSheet.AllowGroup = <span class="hljs-keyword">true</span>;
 
-FarPoint.Win.Spread.GroupInfo gi = new FarPoint.Win.Spread.GroupInfo();
+FarPoint.Win.Spread.GroupInfo gi = <span class="hljs-keyword">new</span> FarPoint.Win.Spread.GroupInfo();
 gi.BackColor = Color.Yellow;
-FarPoint.Win.Spread.GroupInfo gi2 = new FarPoint.Win.Spread.GroupInfo();
+FarPoint.Win.Spread.GroupInfo gi2 = <span class="hljs-keyword">new</span> FarPoint.Win.Spread.GroupInfo();
 gi2.BackColor = Color.Green;
-FarPoint.Win.Spread.GroupInfoCollection gic = new FarPoint.Win.Spread.GroupInfoCollection();
-gic.AddRange(new FarPoint.Win.Spread.GroupInfo[] { gi, gi2 });
-fpSpread1.ActiveSheet.GroupInfos.Add(gic[0]);
-fpSpread1.ActiveSheet.GroupInfos.Add(gic[1]);
+FarPoint.Win.Spread.GroupInfoCollection gic = <span class="hljs-keyword">new</span> FarPoint.Win.Spread.GroupInfoCollection();
+gic.AddRange(<span class="hljs-keyword">new</span> FarPoint.Win.Spread.GroupInfo[] { gi, gi2 });
+fpSpread1.ActiveSheet.GroupInfos.Add(gic[<span class="hljs-number">0</span>]);
+fpSpread1.ActiveSheet.GroupInfos.Add(gic[<span class="hljs-number">1</span>]);
 
-private void fpSpread1_Grouped(object sender, EventArgs e)
-        {
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fpSpread1_Grouped</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, EventArgs e)</span>
+        </span>{
 FarPoint.Win.Spread.Model.GroupDataModel gm;
-if ((fpSpread1.ActiveSheet.Models.Data) is FarPoint.Win.Spread.Model.GroupDataModel)
+<span class="hljs-keyword">if</span> ((fpSpread1.ActiveSheet.Models.Data) <span class="hljs-keyword">is</span> FarPoint.Win.Spread.Model.GroupDataModel)
 {
     gm = (FarPoint.Win.Spread.Model.GroupDataModel)fpSpread1.ActiveSheet.Models.Data;
-    if ((gm.TargetModel) is FarPoint.Win.Spread.Model.IRangeSupport)
+    <span class="hljs-keyword">if</span> ((gm.TargetModel) <span class="hljs-keyword">is</span> FarPoint.Win.Spread.Model.IRangeSupport)
     {
         FarPoint.Win.Spread.Model.IRangeSupport im = (FarPoint.Win.Spread.Model.IRangeSupport)gm.TargetModel;
-        bool groupvalue;
-        groupvalue = gm.IsGroup(0);        
+        <span class="hljs-keyword">bool</span> groupvalue;
+        groupvalue = gm.IsGroup(<span class="hljs-number">0</span>);        
         MessageBox.Show(groupvalue.ToString());
     }
 }              
-        }
-</code></pre>
+        }</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Dim conStr As String = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"
-Dim sqlStr As String = "Select CompanyName, ContactName, ContactTitle, Country from Customers"
-Dim conn As New System.Data.OleDb.OleDbConnection(conStr)
-Dim ds As DataSet = New DataSet()
-Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
+<pre><code><span class="hljs-keyword">Dim</span> sqlStr As <span class="hljs-built_in">String</span> = <span class="hljs-string">"Select CompanyName, ContactName, ContactTitle, Country from Customers"</span>
+<span class="hljs-keyword">Dim</span> conn As <span class="hljs-keyword">New</span> System.Data.OleDb.OleDbConnection(conStr)
+<span class="hljs-keyword">Dim</span> ds As DataSet = <span class="hljs-keyword">New</span> DataSet()
+<span class="hljs-keyword">Dim</span> da As <span class="hljs-keyword">New</span> System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
 da.Fill(ds)
-FpSpread1.ActiveSheet.DataAutoSizeColumns = True
+FpSpread1.ActiveSheet.DataAutoSizeColumns = <span class="hljs-literal">True</span>
 FpSpread1.ActiveSheet.DataSource = ds
-FpSpread1.AllowColumnMove = True
-FpSpread1.ActiveSheet.GroupBarInfo.Visible = True
-FpSpread1.ActiveSheet.AllowGroup = True
+FpSpread1.AllowColumnMove = <span class="hljs-literal">True</span>
+FpSpread1.ActiveSheet.GroupBarInfo.Visible = <span class="hljs-literal">True</span>
+FpSpread1.ActiveSheet.AllowGroup = <span class="hljs-literal">True</span>
 
-Dim gi As New FarPoint.Win.Spread.GroupInfo
+<span class="hljs-keyword">Dim</span> gi As <span class="hljs-keyword">New</span> FarPoint.Win.Spread.GroupInfo
 gi.BackColor = Color.Yellow
-Dim gi2 As New FarPoint.Win.Spread.GroupInfo
+<span class="hljs-keyword">Dim</span> gi2 As <span class="hljs-keyword">New</span> FarPoint.Win.Spread.GroupInfo
 gi2.BackColor = Color.Green
 
-Dim gic As New FarPoint.Win.Spread.GroupInfoCollection()
-gic.AddRange(New FarPoint.Win.Spread.GroupInfo() {gi, gi2})
-FpSpread1.ActiveSheet.GroupInfos.Add(gic(0))
-FpSpread1.ActiveSheet.GroupInfos.Add(gic(1))
+<span class="hljs-keyword">Dim</span> gic As <span class="hljs-keyword">New</span> FarPoint.Win.Spread.GroupInfoCollection()
+gic.AddRange(<span class="hljs-keyword">New</span> FarPoint.Win.Spread.GroupInfo() {gi, gi2})
+FpSpread1.ActiveSheet.GroupInfos.Add(gic(<span class="hljs-number">0</span>))
+FpSpread1.ActiveSheet.GroupInfos.Add(gic(<span class="hljs-number">1</span>))
 
-Private Sub FpSpread1_Grouped(sender As Object, e As EventArgs) Handles FpSpread1.Grouped
-Dim gm As FarPoint.Win.Spread.Model.GroupDataModel
-If TypeOf (FpSpread1.ActiveSheet.Models.Data) Is FarPoint.Win.Spread.Model.GroupDataModel Then
+<span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> FpSpread1_Grouped(sender As Object, e As EventArgs) Handles FpSpread1.Grouped
+<span class="hljs-keyword">Dim</span> gm As FarPoint.Win.Spread.Model.GroupDataModel
+<span class="hljs-keyword">If</span> TypeOf (FpSpread1.ActiveSheet.Models.Data) <span class="hljs-keyword">Is</span> FarPoint.Win.Spread.Model.GroupDataModel <span class="hljs-keyword">Then</span>
     gm = FpSpread1.ActiveSheet.Models.Data
-    If TypeOf (gm.TargetModel) Is FarPoint.Win.Spread.Model.IRangeSupport Then
-        Dim im As FarPoint.Win.Spread.Model.IRangeSupport = gm.TargetModel
-        Dim groupvalue As Boolean
-        groupvalue = gm.IsGroup(0)
-        MsgBox(groupvalue)
-    End If
-End If
-End Sub
-</code></pre>
+    <span class="hljs-keyword">If</span> TypeOf (gm.TargetModel) <span class="hljs-keyword">Is</span> FarPoint.Win.Spread.Model.IRangeSupport <span class="hljs-keyword">Then</span>
+        <span class="hljs-keyword">Dim</span> im As FarPoint.Win.Spread.Model.IRangeSupport = gm.TargetModel
+        <span class="hljs-keyword">Dim</span> groupvalue As Boolean
+        groupvalue = gm.IsGroup(<span class="hljs-number">0</span>)
+        <span class="hljs-built_in">MsgBox</span>(groupvalue)
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span>
+<span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span>
+<span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span></code></pre>
 
 <p>The group footer is an extra row that is displayed below the group after grouping by a column header. The GroupFooterVisible property must be set to true after the group has been created. The Grouped event can be used to put information in the group footer after a user has created the group.</p>
 <p>This example uses the IsGroupFooter method to check for a group footer and returns all the group footer rows.<figure id="attachment_664088" style="width: 753px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/group.png"><img class="size-full wp-image-664088 " alt="group" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/group.png" width="753" height="363" /></a><figcaption class="wp-caption-text">Group Footer</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">fpSpread1.AllowColumnMove = true;
-fpSpread1.ActiveSheet.GroupBarInfo.Visible = true;
-fpSpread1.ActiveSheet.AllowGroup = true;
-fpSpread1.ActiveSheet.RowCount = 20;
-fpSpread1.ActiveSheet.ColumnCount = 10;
+<pre><code>fpSpread1.ActiveSheet.GroupBarInfo.<span class="hljs-variable">Visible =</span> <span class="hljs-constant">true</span>;
+fpSpread1.ActiveSheet.<span class="hljs-variable">AllowGroup =</span> <span class="hljs-constant">true</span>;
+fpSpread1.ActiveSheet.<span class="hljs-variable">RowCount =</span> <span class="hljs-number">20</span>;
+fpSpread1.ActiveSheet.<span class="hljs-variable">ColumnCount =</span> <span class="hljs-number">10</span>;
 
-FarPoint.Win.Spread.GroupInfo gi = new FarPoint.Win.Spread.GroupInfo();
-gi.Font = new Font("MS Sans Serif", 12, FontStyle.Bold);
-gi.ForeColor = Color.Red;
-gi.FooterBackColor = Color.Blue;
+FarPoint.Win.Spread.GroupInfo <span class="hljs-variable">gi =</span> new FarPoint.Win.Spread.GroupInfo();
+gi.<span class="hljs-variable">Font =</span> new Font(<span class="hljs-string">"MS Sans Serif"</span>, <span class="hljs-number">12</span>, FontStyle.Bold);
+gi.<span class="hljs-variable">ForeColor =</span> Color.Red;
+gi.<span class="hljs-variable">FooterBackColor =</span> Color.Blue;
 fpSpread1.ActiveSheet.GroupInfos.Add(gi);
-FarPoint.Win.Spread.GroupInfo gi1 = new FarPoint.Win.Spread.GroupInfo();
-gi1.Font = new Font("MS Sans Serif", 12, FontStyle.Bold);
-gi1.ForeColor = Color.Tomato;
-gi1.FooterBackColor = Color.Yellow;
+FarPoint.Win.Spread.GroupInfo <span class="hljs-variable">gi1 =</span> new FarPoint.Win.Spread.GroupInfo();
+gi1.<span class="hljs-variable">Font =</span> new Font(<span class="hljs-string">"MS Sans Serif"</span>, <span class="hljs-number">12</span>, FontStyle.Bold);
+gi1.<span class="hljs-variable">ForeColor =</span> Color.Tomato;
+gi1.<span class="hljs-variable">FooterBackColor =</span> Color.Yellow;
 fpSpread1.ActiveSheet.GroupInfos.Add(gi1);
 
-for (int rowc = 0; rowc &lt; fpSpread1.Sheets[0].RowCount; rowc++)
+for (int <span class="hljs-variable">rowc =</span> <span class="hljs-number">0</span>; rowc &amp;lt; fpSpread1.Sheets[<span class="hljs-number">0</span>].RowCount; rowc++)
 {
-    for (int colc = 0; colc &lt; fpSpread1.Sheets[0].ColumnCount; colc++)
+    for (int <span class="hljs-variable">colc =</span> <span class="hljs-number">0</span>; colc &amp;lt; fpSpread1.Sheets[<span class="hljs-number">0</span>].ColumnCount; colc++)
     {
-        fpSpread1.Sheets[0].Models.Data.SetValue(rowc, colc, colc + rowc);
+        fpSpread1.Sheets[<span class="hljs-number">0</span>].Models.Data.SetValue(rowc, colc, colc + rowc);
     }
 }      
 
@@ -567,117 +550,110 @@ private void fpSpread1_Grouped(object sender, EventArgs e)
         {
 listBox1.Items.Clear();
 FarPoint.Win.Spread.Model.GroupDataModel gdm;
-gdm = (FarPoint.Win.Spread.Model.GroupDataModel)fpSpread1.ActiveSheet.Models.Data;
-gdm.GroupFooterVisible = true;          
-FarPoint.Win.Spread.Model.Group g1 = (FarPoint.Win.Spread.Model.Group)gdm.Groups[1];
-fpSpread1.ActiveSheet.Models.Data = gdm;
+<span class="hljs-variable">gdm =</span> (FarPoint.Win.Spread.Model.GroupDataModel)fpSpread1.ActiveSheet.Models.Data;
+gdm.<span class="hljs-variable">GroupFooterVisible =</span> <span class="hljs-constant">true</span>;          
+FarPoint.Win.Spread.Model.Group <span class="hljs-variable">g1 =</span> (FarPoint.Win.Spread.Model.Group)gdm.Groups[<span class="hljs-number">1</span>];
+fpSpread1.ActiveSheet.Models.<span class="hljs-variable">Data =</span> gdm;
 
 int irow;
-for (irow = 0; irow &lt; gdm.RowCount; irow++)
+for (<span class="hljs-variable">irow =</span> <span class="hljs-number">0</span>; irow &amp;lt; gdm.RowCount; irow++)
 {
-    if (gdm.IsGroupFooter(irow) == true) {
+    <span class="hljs-keyword">if</span> (gdm.IsGroupFooter(irow) == <span class="hljs-constant">true</span>) {
    listBox1.Items.Add(irow);
         }
 }           
-        }
-</code></pre>
+        }</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">FpSpread1.AllowColumnMove = True
-FpSpread1.ActiveSheet.GroupBarInfo.Visible = True
-FpSpread1.ActiveSheet.AllowGroup = True
-FpSpread1.ActiveSheet.RowCount = 20
-FpSpread1.ActiveSheet.ColumnCount = 10
+<pre><code>FpSpread1.ActiveSheet.GroupBarInfo.Visible = <span class="hljs-literal">True</span>
+FpSpread1.ActiveSheet.AllowGroup = <span class="hljs-literal">True</span>
+FpSpread1.ActiveSheet.RowCount = <span class="hljs-number">20</span>
+FpSpread1.ActiveSheet.ColumnCount = <span class="hljs-number">10</span>
 
-Dim gi As New FarPoint.Win.Spread.GroupInfo()
-gi.Font = New Font("MS Sans Serif", 12, FontStyle.Bold)
+<span class="hljs-keyword">Dim</span> gi <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.GroupInfo()
+gi.Font = <span class="hljs-keyword">New</span> Font(<span class="hljs-string">"MS Sans Serif"</span>, <span class="hljs-number">12</span>, FontStyle.Bold)
 gi.ForeColor = Color.Red
 gi.FooterBackColor = Color.Blue
 FpSpread1.ActiveSheet.GroupInfos.Add(gi)
-Dim gi1 As New FarPoint.Win.Spread.GroupInfo()
-gi1.Font = New Font("MS Sans Serif", 12, FontStyle.Bold)
+<span class="hljs-keyword">Dim</span> gi1 <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.GroupInfo()
+gi1.Font = <span class="hljs-keyword">New</span> Font(<span class="hljs-string">"MS Sans Serif"</span>, <span class="hljs-number">12</span>, FontStyle.Bold)
 gi1.ForeColor = Color.Tomato
 gi1.FooterBackColor = Color.Yellow
 FpSpread1.ActiveSheet.GroupInfos.Add(gi1)
 
-For rowc As Integer = 0 To FpSpread1.Sheets(0).RowCount - 1
-    For colc As Integer = 0 To FpSpread1.Sheets(0).ColumnCount - 1
-        FpSpread1.Sheets(0).Models.Data.SetValue(rowc, colc, colc + rowc)
-    Next
-Next
+<span class="hljs-keyword">For</span> rowc <span class="hljs-keyword">As</span> <span class="hljs-built_in">Integer</span> = <span class="hljs-number">0</span> <span class="hljs-keyword">To</span> FpSpread1.Sheets(<span class="hljs-number">0</span>).RowCount - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">For</span> colc <span class="hljs-keyword">As</span> <span class="hljs-built_in">Integer</span> = <span class="hljs-number">0</span> <span class="hljs-keyword">To</span> FpSpread1.Sheets(<span class="hljs-number">0</span>).ColumnCount - <span class="hljs-number">1</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).Models.Data.SetValue(rowc, colc, colc + rowc)
+    <span class="hljs-keyword">Next</span>
+<span class="hljs-keyword">Next</span>
 
-Private Sub FpSpread1_Grouped(sender As Object, e As EventArgs) Handles FpSpread1.Grouped
+<span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> FpSpread1_Grouped(sender <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>, e <span class="hljs-keyword">As</span> EventArgs) <span class="hljs-keyword">Handles</span> FpSpread1.Grouped
 ListBox1.Items.Clear()
-Dim gdm As FarPoint.Win.Spread.Model.GroupDataModel
-Dim g1 As FarPoint.Win.Spread.Model.Group
-gdm = FpSpread1.Sheets(0).Models.Data
-gdm.GroupFooterVisible = True
-g1 = gdm.Groups(1)
+<span class="hljs-keyword">Dim</span> gdm <span class="hljs-keyword">As</span> FarPoint.Win.Spread.Model.GroupDataModel
+<span class="hljs-keyword">Dim</span> g1 <span class="hljs-keyword">As</span> FarPoint.Win.Spread.Model.<span class="hljs-keyword">Group</span>
+gdm = FpSpread1.Sheets(<span class="hljs-number">0</span>).Models.Data
+gdm.GroupFooterVisible = <span class="hljs-literal">True</span>
+g1 = gdm.Groups(<span class="hljs-number">1</span>)
 FpSpread1.ActiveSheet.Models.Data = gdm
 
-Dim irow As Integer
-For irow = 0 To gdm.RowCount - 1
-    If gdm.IsGroupFooter(irow) = True Then
+<span class="hljs-keyword">Dim</span> irow <span class="hljs-keyword">As</span> <span class="hljs-built_in">Integer</span>
+<span class="hljs-keyword">For</span> irow = <span class="hljs-number">0</span> <span class="hljs-keyword">To</span> gdm.RowCount - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">If</span> gdm.IsGroupFooter(irow) = <span class="hljs-literal">True</span> <span class="hljs-keyword">Then</span>
         ListBox1.Items.Add(irow)
-    End If
-Next
-End Sub
-</code></pre>
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span>
+<span class="hljs-keyword">Next</span>
+<span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span></code></pre>
 
 <p>This example sums the values in the second group and puts them in the group footer.<figure id="attachment_664090" style="width: 589px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupfootersum.png"><img class="size-full wp-image-664090 " alt="groupfootersum" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupfootersum.png" width="589" height="428" /></a><figcaption class="wp-caption-text">Group Footer with Sum</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">fpSpread1.AllowColumnMove = true;           
-fpSpread1.Sheets[0].ColumnCount = 15;
-fpSpread1.Sheets[0].GroupBarInfo.Visible = true;
-fpSpread1.Sheets[0].AllowGroup = true;
-fpSpread1.Sheets[0].GroupFooterVisible = true;
-//Value
-for (int rowc = 0; rowc &lt; fpSpread1.Sheets[0].RowCount; rowc++)
+<pre><code>fpSpread1.Sheets[<span class="hljs-number">0</span>].ColumnCount = <span class="hljs-number">15</span>;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].GroupBarInfo.Visible = <span class="hljs-keyword">true</span>;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].AllowGroup = <span class="hljs-keyword">true</span>;
+fpSpread1.Sheets[<span class="hljs-number">0</span>].GroupFooterVisible = <span class="hljs-keyword">true</span>;
+<span class="hljs-comment">//Value</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> rowc = <span class="hljs-number">0</span>; rowc &amp;lt; fpSpread1.Sheets[<span class="hljs-number">0</span>].RowCount; rowc++)
 {
-    for (int colc = 0; colc &lt; fpSpread1.Sheets[0].ColumnCount; colc++)
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> colc = <span class="hljs-number">0</span>; colc &amp;lt; fpSpread1.Sheets[<span class="hljs-number">0</span>].ColumnCount; colc++)
     {
-        fpSpread1.Sheets[0].Models.Data.SetValue(rowc, colc, colc + rowc * fpSpread1.Sheets[0].ColumnCount);
+        fpSpread1.Sheets[<span class="hljs-number">0</span>].Models.Data.SetValue(rowc, colc, colc + rowc * fpSpread1.Sheets[<span class="hljs-number">0</span>].ColumnCount);
     }
 }
 
-private void fpSpread1_Grouped(object sender, EventArgs e)
-        {
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fpSpread1_Grouped</span><span class="hljs-params">(<span class="hljs-keyword">object</span> sender, EventArgs e)</span>
+        </span>{
             FarPoint.Win.Spread.Model.GroupDataModel gdm;
             gdm = (FarPoint.Win.Spread.Model.GroupDataModel)fpSpread1.ActiveSheet.Models.Data;
-            gdm.GroupFooterVisible = true;
-            FarPoint.Win.Spread.Model.Group g1 = (FarPoint.Win.Spread.Model.Group)gdm.Groups[1];
-            ((FarPoint.Win.Spread.Model.IAggregationSupport)g1.GroupFooter.DataModel).SetCellAggregationType(0, 0, FarPoint.Win.Spread.Model.AggregationType.Sum);
+            gdm.GroupFooterVisible = <span class="hljs-keyword">true</span>;
+            FarPoint.Win.Spread.Model.Group g1 = (FarPoint.Win.Spread.Model.Group)gdm.Groups[<span class="hljs-number">1</span>];
+            ((FarPoint.Win.Spread.Model.IAggregationSupport)g1.GroupFooter.DataModel).SetCellAggregationType(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, FarPoint.Win.Spread.Model.AggregationType.Sum);
             fpSpread1.ActiveSheet.Models.Data = gdm;
-        }
-</code></pre>
+        }</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">FpSpread1.Sheets(0).RowCount = 8
-FpSpread1.Sheets(0).ColumnCount = 15
-FpSpread1.Sheets(0).GroupBarInfo.Visible = True
-FpSpread1.Sheets(0).AllowGroup = True
-FpSpread1.Sheets(0).GroupFooterVisible = True
-FpSpread1.AllowColumnMove = True
-'Value
-Dim rowc As Integer
-Dim colc As Integer
-For rowc = 0 To FpSpread1.Sheets(0).RowCount
-    For colc = 0 To FpSpread1.Sheets(0).ColumnCount
-        FpSpread1.Sheets(0).Models.Data.SetValue(rowc, colc, colc + rowc * FpSpread1.Sheets(0).ColumnCount)
-    Next colc
-Next rowc
+<pre><code>FpSpread1.Sheets(<span class="hljs-number">0</span>).ColumnCount = <span class="hljs-number">15</span>
+FpSpread1.Sheets(<span class="hljs-number">0</span>).GroupBarInfo.Visible = <span class="hljs-literal">True</span>
+FpSpread1.Sheets(<span class="hljs-number">0</span>).AllowGroup = <span class="hljs-literal">True</span>
+FpSpread1.Sheets(<span class="hljs-number">0</span>).GroupFooterVisible = <span class="hljs-literal">True</span>
+FpSpread1.AllowColumnMove = <span class="hljs-literal">True</span>
+<span class="hljs-comment">'Value</span>
+<span class="hljs-keyword">Dim</span> rowc <span class="hljs-keyword">As</span> <span class="hljs-built_in">Integer</span>
+<span class="hljs-keyword">Dim</span> colc <span class="hljs-keyword">As</span> <span class="hljs-built_in">Integer</span>
+<span class="hljs-keyword">For</span> rowc = <span class="hljs-number">0</span> <span class="hljs-keyword">To</span> FpSpread1.Sheets(<span class="hljs-number">0</span>).RowCount
+    <span class="hljs-keyword">For</span> colc = <span class="hljs-number">0</span> <span class="hljs-keyword">To</span> FpSpread1.Sheets(<span class="hljs-number">0</span>).ColumnCount
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).Models.Data.SetValue(rowc, colc, colc + rowc * FpSpread1.Sheets(<span class="hljs-number">0</span>).ColumnCount)
+    <span class="hljs-keyword">Next</span> colc
+<span class="hljs-keyword">Next</span> rowc
 
-Private Sub FpSpread1_Grouped(sender As Object, e As EventArgs) Handles FpSpread1.Grouped
-Dim gdm As FarPoint.Win.Spread.Model.GroupDataModel
-Dim g1 As FarPoint.Win.Spread.Model.Group
-gdm = FpSpread1.Sheets(0).Models.Data
-gdm.GroupFooterVisible = True
-g1 = gdm.Groups(1)
-CType(g1.GroupFooter.DataModel, FarPoint.Win.Spread.Model.IAggregationSupport).SetCellAggregationType(0, 0, FarPoint.Win.Spread.Model.AggregationType.Sum)
+<span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> FpSpread1_Grouped(sender <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>, e <span class="hljs-keyword">As</span> EventArgs) <span class="hljs-keyword">Handles</span> FpSpread1.Grouped
+<span class="hljs-keyword">Dim</span> gdm <span class="hljs-keyword">As</span> FarPoint.Win.Spread.Model.GroupDataModel
+<span class="hljs-keyword">Dim</span> g1 <span class="hljs-keyword">As</span> FarPoint.Win.Spread.Model.<span class="hljs-keyword">Group</span>
+gdm = FpSpread1.Sheets(<span class="hljs-number">0</span>).Models.Data
+gdm.GroupFooterVisible = <span class="hljs-literal">True</span>
+g1 = gdm.Groups(<span class="hljs-number">1</span>)
+<span class="hljs-built_in">CType</span>(g1.GroupFooter.DataModel, FarPoint.Win.Spread.Model.IAggregationSupport).SetCellAggregationType(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, FarPoint.Win.Spread.Model.AggregationType.Sum)
 FpSpread1.ActiveSheet.Models.Data = gdm
-End Sub
-</code></pre>
+<span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span></code></pre>
 
 
 

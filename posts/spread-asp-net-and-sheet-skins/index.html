@@ -192,32 +192,20 @@
 <p>This example code sets the sheet to use a custom skin. Use the SheetSkin object constructor, and set its parameters to specify the settings for the skin.<figure id="attachment_664404" style="width: 410px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadASPsheetcode.png"><img class="size-full wp-image-664404 " alt="SpreadASPsheetcode" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadASPsheetcode.png" width="410" height="208" /></a><figcaption class="wp-caption-text">Custom Skin</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">FarPoint.Web.Spread.SheetSkin myskin = new FarPoint.Web.Spread.SheetSkin("MySkin", System.Drawing.Color.BlanchedAlmond, System.Drawing.Color.Bisque, System.Drawing.Color.Navy, 2, 
-System.Drawing.Color.Blue, GridLines.Both, System.Drawing.Color.Beige, System.Drawing.Color.BurlyWood, 
-System.Drawing.Color.AntiqueWhite, System.Drawing.Color.Brown, System.Drawing.Color.Bisque, System.Drawing.Color.Bisque, true, true, true, true, false);
-myskin.Apply(FpSpread1.Sheets[0]);
-</code></pre>
+<pre><code>System.Drawing.<span class="hljs-built_in">Color</span>.Blue, GridLines.Both, System.Drawing.<span class="hljs-built_in">Color</span>.Beige, System.Drawing.<span class="hljs-built_in">Color</span>.BurlyWood, 
+System.Drawing.<span class="hljs-built_in">Color</span>.AntiqueWhite, System.Drawing.<span class="hljs-built_in">Color</span>.Brown, System.Drawing.<span class="hljs-built_in">Color</span>.Bisque, System.Drawing.<span class="hljs-built_in">Color</span>.Bisque, true, true, true, true, false);
+myskin.Apply(FpSpread1.Sheets[<span class="hljs-number">0</span>]);</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Dim myskin As New FarPoint.Web.Spread.SheetSkin("MySkin", System.Drawing.Color.BlanchedAlmond, System.Drawing.Color.Bisque, System.Drawing.Color.Navy, 2, System.Drawing.Color.Blue, GridLines.Both, System.Drawing.Color.Beige, System.Drawing.Color.BurlyWood, System.Drawing.Color.AntiqueWhite, System.Drawing.Color.Brown, 
-System.Drawing.Color.Bisque, System.Drawing.Color.Bisque, True, True, True, True, False)
-myskin.Apply(FpSpread1.Sheets(0))
-</code></pre>
+<pre><code>System<span class="hljs-class">.Drawing</span><span class="hljs-class">.Color</span><span class="hljs-class">.Bisque</span>, System<span class="hljs-class">.Drawing</span><span class="hljs-class">.Color</span><span class="hljs-class">.Bisque</span>, True, True, True, True, False)
+myskin.<span class="hljs-function"><span class="hljs-title">Apply</span><span class="hljs-params">(FpSpread1.Sheets(<span class="hljs-number">0</span>)</span></span>)</code></pre>
 
 <p>The following example sets the first sheet to use the Colorful2 predefined skin (built-in skin).</p>
 <p>Use the GetAt method of the DefaultSkins object to specify the index of the default skin to return, then the default skin Apply method to assign it to a specific FpSpread component, collection of sheets, or sheet.</p>
 <p>C#</p>
-<pre><code class="language-csharp">FarPoint.Web.Spread.DefaultSkins.Colorful2. Apply(FpSpread1.Sheets[0]);</code></pre>
+<pre><code>VB</code></pre>FarPoint.Web.Spread.DefaultSkins.Colorful2. Apply(FpSpread1.Sheets(0))<pre><code class="hljs">This example applies <span class="hljs-operator">the</span> built-<span class="hljs-operator">in</span> skin <span class="hljs-built_in">to</span> <span class="hljs-operator">the</span> control.
 
-<p>VB</p>
-<pre><code class="language-csharp">FarPoint.Web.Spread.DefaultSkins.Colorful2. Apply(FpSpread1.Sheets(0))</code></pre>
-
-<p>This example applies the built-in skin to the control.</p>
-<p>C#</p>
-<pre><code class="language-csharp">FarPoint.Web.Spread.DefaultSkins.Colorful2.Apply(FpSpread1);</code></pre>
-
-<p>VB</p>
-<pre><code class="language-csharp">FarPoint.Web.Spread.DefaultSkins.Colorful2.Apply(FpSpread1)</code></pre>
+C<span class="hljs-comment">#</span></code></pre>FarPoint.Web.Spread.DefaultSkins.Colorful2.Apply(FpSpread1);<pre><code class="hljs">VB</code></pre>
 
 <p>You can use the Save method to save a skin to a file or the Load method to load a sheet skin with code.</p>
 </li>

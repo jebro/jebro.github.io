@@ -32,25 +32,24 @@ categories:</li>
 </p>
 
 <p>To add or remove these cells, I only need to add a few lines of code to the ButtonClicked event, which is called whenever the “Add Semester” or “Remove Semester” buttons are clicked. In the code below, cell ranges are created to contain the copied data and to provide a location to copy the data to (after rows are added). When cells are copied, formatting, formulas, and cell types are retained.</p>
-<pre><code class="language-csharp">private void fpSpread1_ButtonClicked(object sender, FarPoint.Win.Spread.EditorNotifyEventArgs e)
-        {
+<pre><code>{
             fpSpread1.SuspendLayout();
-            if (fpSpread1.Sheets[0].ActiveCell.Row.Index == 0 && fpSpread1.Sheets[0].ActiveCell.Column.Index == 3)
+            <span class="hljs-keyword">if</span> (fpSpread1.Sheets[<span class="hljs-number">0</span>].ActiveCell.Row.<span class="hljs-variable">Index =</span>= <span class="hljs-number">0</span> &amp;&amp; fpSpread1.Sheets[<span class="hljs-number">0</span>].ActiveCell.Column.<span class="hljs-variable">Index =</span>= <span class="hljs-number">3</span>)
             {
-                fpSpread1.Sheets[0].AddRows(fpSpread1.Sheets[0].Rows.Count-1, 19);
-                FarPoint.Win.Spread.Model.CellRange cr = new FarPoint.Win.Spread.Model.CellRange(0, 0, 19, 5);
-                fpSpread1.Sheets[2].GetClipDataObject(false, cr, FarPoint.Win.Spread.ClipboardCopyOptions.All);
-                FarPoint.Win.Spread.Model.CellRange cr2 = new FarPoint.Win.Spread.Model.CellRange(fpSpread1.Sheets[0].RowCount-20, 0, 19, 5);
-                fpSpread1.Sheets[0].ClipboardPaste(FarPoint.Win.Spread.ClipboardPasteOptions.All, fpSpread1.Sheets[2].GetClipDataObject(false, cr, 
+                fpSpread1.Sheets[<span class="hljs-number">0</span>].AddRows(fpSpread1.Sheets[<span class="hljs-number">0</span>].Rows.Count-<span class="hljs-number">1</span>, <span class="hljs-number">19</span>);
+                FarPoint.Win.Spread.Model.CellRange <span class="hljs-variable">cr =</span> new FarPoint.Win.Spread.Model.CellRange(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">19</span>, <span class="hljs-number">5</span>);
+                fpSpread1.Sheets[<span class="hljs-number">2</span>].GetClipDataObject(<span class="hljs-constant">false</span>, cr, FarPoint.Win.Spread.ClipboardCopyOptions.All);
+                FarPoint.Win.Spread.Model.CellRange <span class="hljs-variable">cr2 =</span> new FarPoint.Win.Spread.Model.CellRange(fpSpread1.Sheets[<span class="hljs-number">0</span>].RowCount-<span class="hljs-number">20</span>, <span class="hljs-number">0</span>, <span class="hljs-number">19</span>, <span class="hljs-number">5</span>);
+                fpSpread1.Sheets[<span class="hljs-number">0</span>].ClipboardPaste(FarPoint.Win.Spread.ClipboardPasteOptions.All, fpSpread1.Sheets[<span class="hljs-number">2</span>].GetClipDataObject(<span class="hljs-constant">false</span>, cr, 
                                                     FarPoint.Win.Spread.ClipboardCopyOptions.All), cr2);
-                fpSpread1.Sheets[0].AddRangeGroup(fpSpread1.Sheets[0].RowCount - 19, 16, true);
-                fpSpread1.Sheets[0].Rows[fpSpread1.Sheets[0].RowCount - 2].Height = 30;
+                fpSpread1.Sheets[<span class="hljs-number">0</span>].AddRangeGroup(fpSpread1.Sheets[<span class="hljs-number">0</span>].RowCount - <span class="hljs-number">19</span>, <span class="hljs-number">16</span>, <span class="hljs-constant">true</span>);
+                fpSpread1.Sheets[<span class="hljs-number">0</span>].Rows[fpSpread1.Sheets[<span class="hljs-number">0</span>].RowCount - <span class="hljs-number">2</span>].<span class="hljs-variable">Height =</span> <span class="hljs-number">30</span>;
                 semesterCount++;
-                fpSpread1.Sheets[0].Cells[fpSpread1.Sheets[0].RowCount - 20, 0].Text = "Semester " + semesterCount;
+                fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[fpSpread1.Sheets[<span class="hljs-number">0</span>].RowCount - <span class="hljs-number">20</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Text =</span> <span class="hljs-string">"Semester "</span> + semesterCount;
             }
-            else if (fpSpread1.Sheets[0].ActiveCell.Row.Index == 0 && fpSpread1.Sheets[0].ActiveCell.Column.Index == 4)
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (fpSpread1.Sheets[<span class="hljs-number">0</span>].ActiveCell.Row.<span class="hljs-variable">Index =</span>= <span class="hljs-number">0</span> &amp;&amp; fpSpread1.Sheets[<span class="hljs-number">0</span>].ActiveCell.Column.<span class="hljs-variable">Index =</span>= <span class="hljs-number">4</span>)
             {
-                fpSpread1.Sheets[0].RemoveRows(fpSpread1.Sheets[0].Rows.Count - 20, 19);
+                fpSpread1.Sheets[<span class="hljs-number">0</span>].RemoveRows(fpSpread1.Sheets[<span class="hljs-number">0</span>].Rows.Count - <span class="hljs-number">20</span>, <span class="hljs-number">19</span>);
                 semesterCount--;
             }
             fpSpread1.ResumeLayout();
@@ -62,58 +61,22 @@ categories:</li>
 </p>
 
 <p>This is utilized in conjunction with the VLOOKUP formula:</p>
-<pre><code class="language-csharp"> VLOOKUP(RC[-1],GradeLookup,2,FALSE) </code></pre>
+<pre><code>The above table is called GradeLookup. This formula looks <span class="hljs-operator">in</span> that table <span class="hljs-keyword">for</span> <span class="hljs-operator">the</span> specified letter grade that <span class="hljs-operator">the</span> user selects <span class="hljs-built_in">from</span> <span class="hljs-operator">a</span> drop down cell <span class="hljs-operator">in</span> column C <span class="hljs-operator">and</span> places <span class="hljs-operator">the</span> <span class="hljs-built_in">result</span> <span class="hljs-operator">in</span> column D.  
+For <span class="hljs-operator">the</span> calculations <span class="hljs-operator">in</span> column E, <span class="hljs-operator">the</span> grade points are multiplied <span class="hljs-keyword">by</span> <span class="hljs-operator">the</span> <span class="hljs-built_in">number</span> <span class="hljs-operator">of</span> credits <span class="hljs-keyword">for</span> <span class="hljs-keyword">each</span> course through this formula:</code></pre>IF(ISBLANK(RC[-3]),"",RC[-3]*RC[-1])<pre><code class="hljs">All <span class="hljs-operator">of</span> this is useful, but <span class="hljs-keyword">it</span> would be better <span class="hljs-keyword">if</span> you could save <span class="hljs-operator">and</span> <span class="hljs-built_in">open</span> semesters that you have already filled out, so <span class="hljs-built_in">add</span> toolbar menu <span class="hljs-keyword">items</span> <span class="hljs-built_in">to</span> <span class="hljs-operator">the</span> Form like so:
 
-<p>The above table is called GradeLookup. This formula looks in that table for the specified letter grade that the user selects from a drop down cell in column C and places the result in column D.<br>For the calculations in column E, the grade points are multiplied by the number of credits for each course through this formula:</p>
-<pre><code class="language-csharp">IF(ISBLANK(RC[-3]),"",RC[-3]*RC[-1])</code></pre>
+&lt;p style=<span class="hljs-string">"text-align: center;"</span>&gt;
+  &lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/07/GPAFigure5.png"</span>&gt;&lt;img class=<span class="hljs-string">"wp-image-663805 aligncenter"</span> alt=<span class="hljs-string">"GPAFigure5"</span> src=<span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/07/GPAFigure5.png"</span> width=<span class="hljs-string">"336"</span> height=<span class="hljs-string">"240"</span> /&gt;&lt;/<span class="hljs-operator">a</span>&gt;
+&lt;/p&gt;
 
-<p>All of this is useful, but it would be better if you could save and open semesters that you have already filled out, so add toolbar menu items to the Form like so:</p>
-<p style="text-align: center;">
-  <a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/GPAFigure5.png"><img class="wp-image-663805 aligncenter" alt="GPAFigure5" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/GPAFigure5.png" width="336" height="240" /></a>
-</p>
+To <span class="hljs-built_in">add</span> these buttons, simply <span class="hljs-built_in">open</span> up <span class="hljs-operator">the</span> toolbox <span class="hljs-operator">in</span> Visual Studio <span class="hljs-operator">and</span> <span class="hljs-built_in">add</span> <span class="hljs-operator">the</span> “MenuStrip” component <span class="hljs-built_in">to</span> <span class="hljs-operator">the</span> top <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> form <span class="hljs-keyword">by</span> clicking <span class="hljs-keyword">it</span> <span class="hljs-operator">and</span> dragging <span class="hljs-keyword">it</span> <span class="hljs-keyword">into</span> <span class="hljs-operator">the</span> form. Once you have done that, you can give <span class="hljs-operator">the</span> buttons names <span class="hljs-keyword">by</span> clicking <span class="hljs-operator">in</span> <span class="hljs-operator">the</span> “Type Here” box <span class="hljs-operator">and</span> typing <span class="hljs-operator">a</span> name <span class="hljs-keyword">for</span> <span class="hljs-operator">the</span> button. In this example, I used “File” <span class="hljs-keyword">as</span> <span class="hljs-operator">the</span> menu header <span class="hljs-operator">and</span> added <span class="hljs-constant">two</span> menu <span class="hljs-keyword">items</span> under <span class="hljs-keyword">it</span> (“Open” <span class="hljs-operator">and</span> “Save”).  
+Once <span class="hljs-operator">the</span> buttons are laid out, I have <span class="hljs-built_in">to</span> <span class="hljs-built_in">add</span> <span class="hljs-operator">the</span> code <span class="hljs-built_in">to</span> make these buttons work. In <span class="hljs-operator">the</span> &lt;projectname&gt;.Designer.cs <span class="hljs-built_in">file</span>, <span class="hljs-operator">a</span> <span class="hljs-built_in">line</span> should be created <span class="hljs-keyword">for</span> <span class="hljs-keyword">each</span> button like so:</code></pre>private System.Windows.Forms.ToolStripMenuItem &lt;buttonname&gt;ToolStripMenuItem<pre><code class="hljs">In the case of this example, the Open <span class="hljs-tag">button</span> is referred to as:
 
-<p>To add these buttons, simply open up the toolbox in Visual Studio and add the “MenuStrip” component to the top of the form by clicking it and dragging it into the form. Once you have done that, you can give the buttons names by clicking in the “Type Here” box and typing a name for the button. In this example, I used “File” as the menu header and added two menu items under it (“Open” and “Save”).<br>Once the buttons are laid out, I have to add the code to make these buttons work. In the <projectname>.Designer.cs file, a line should be created for each button like so:</p>
-<pre><code class="language-csharp">private System.Windows.Forms.ToolStripMenuItem &lt;buttonname&gt;ToolStripMenuItem</code></pre>
-
-<p>In the case of this example, the Open button is referred to as:</p>
-<pre><code class="&quot;language-csharp”">private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem</code></pre>
+&lt;pre&gt;&lt;<span class="hljs-tag">code</span> class=<span class="hljs-string">"&amp;quot;language-csharp”"</span>&gt;private System<span class="hljs-class">.Windows</span><span class="hljs-class">.Forms</span><span class="hljs-class">.ToolStripMenuItem</span> openToolStripMenuItem</code></pre>
 
 <p>A function should be added for each button using this name and adding “_Click” on the end of it. In this example, the Open button’s function definition is the following:</p>
-<pre><code class="language-csharp">private void openToolStripMenuItem_Click(object sender, EventArgs e)</code></pre>
+<pre><code>&amp;nbsp;
 
-<p>&nbsp;</p>
-<p>In this example the save and open buttons are the only buttons that need code to make them work:</p>
-<pre><code class="language-csharp">private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string filename = "";
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "XML Files (*.xml)|*.xml|All files (*.*)|*.*";
-            DialogResult dr = ofd.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                filename = ofd.FileName;
-            }
-            if (filename != "")
-            {
-                fpSpread1.Open(filename);
-            }
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string filename = "";
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "XML Files (*.xml)|*.xml|All files (*.*)|*.*";
-            DialogResult dr = sfd.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                filename = sfd.FileName;
-            }
-            if (filename != "")
-            {
-                fpSpread1.Save(filename, false);
-            }
-        }</code></pre>
+In <span class="hljs-keyword">this</span> example the save <span class="hljs-keyword">and</span> open buttons are the only buttons <span class="hljs-literal">that</span> need code <span class="hljs-keyword">to</span> make them <span class="hljs-attribute">work</span>:</code></pre>
 
 <p>Now GPA sheets that have been created with this sample can be stored and opened at a later time.<br>This sample has demonstrated how, with little effort, you can create an interactive calculator application. Thousands of Spread users apply these concepts for financial calculators, scientific data collection, sales reporting, and much more.</p>
 <p>Here is a link to download the Visual Studio solution for this project:</p>

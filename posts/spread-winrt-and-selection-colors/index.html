@@ -156,31 +156,20 @@
 <p>This example sets the SelectionBorderColor and SelectionBackground properties.<figure id="attachment_664503" style="width: 561px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadWinRTselcolor.png"><img class="size-full wp-image-664503 " alt="SpreadWinRTselcolor" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadWinRTselcolor.png" width="561" height="293" /></a><figcaption class="wp-caption-text">Selection Colors</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">gcSpreadSheet1.Sheets[0].SelectionBackground = new SolidColorBrush(Windows.UI.Colors.Magenta);
-gcSpreadSheet1.Sheets[0].SelectionBorderColor = Windows.UI.Color.FromArgb(150, 10, 100, 99);
-</code></pre>
+<pre><code>gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].SelectionBorderColor = Windows.UI.<span class="hljs-built_in">Color</span>.FromArgb(<span class="hljs-number">150</span>, <span class="hljs-number">10</span>, <span class="hljs-number">100</span>, <span class="hljs-number">99</span>);</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">GcSpreadSheet1.Sheets(0).SelectionBackground = New SolidColorBrush(Windows.UI.Colors.Magenta)
-GcSpreadSheet1.Sheets(0).SelectionBorderColor = Windows.UI.Color.FromArgb(150, 10, 100, 99)
-</code></pre>
+<pre><code>GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span><span class="hljs-class">.SelectionBorderColor</span> = Windows<span class="hljs-class">.UI</span><span class="hljs-class">.Color</span><span class="hljs-class">.FromArgb</span>(<span class="hljs-number">150</span>, <span class="hljs-number">10</span>, <span class="hljs-number">100</span>, <span class="hljs-number">99</span>)</code></pre>
 
 <p>You can set a theme color to one of six accent colors, two dark colors, two light colors, a hyperlink color, or a followed hyperlink color. The color property names are Accent 1-6, BackgroundColor1, BackgroundColor2, TextColor1, TextColor2, FollowedHyperlink, and Hyperlink. You can specify an additional shade with the Accent option (100 to -50). The properties are listed in the ThemeColor class.</p>
 <p>This example sets the SelectionBorderThemeColor property.<figure id="attachment_664504" style="width: 568px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadWinRTselcolor2.png"><img class="size-full wp-image-664504 " alt="SpreadWinRTselcolor2" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadWinRTselcolor2.png" width="568" height="297" /></a><figcaption class="wp-caption-text">Selection Theme</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">gcSpreadSheet1.Sheets[0].SelectionBorderThemeColor = "Accent 3 40";</code></pre>
+<pre><code>VB</code></pre>GcSpreadSheet1.Sheets(0).SelectionBorderThemeColor = "Accent 3 40"<pre><code class="hljs">This example uses the Hyperlink option for the SelectionBorderThemeColor property.&lt;figure <span class="hljs-variable">id=</span><span class="hljs-string">"attachment_664506"</span> <span class="hljs-variable">style=</span><span class="hljs-string">"width: 565px"</span> <span class="hljs-variable">class=</span><span class="hljs-string">"wp-caption aligncenter"</span>&gt;
 
-<p>VB</p>
-<pre><code class="language-csharp">GcSpreadSheet1.Sheets(0).SelectionBorderThemeColor = "Accent 3 40"</code></pre>
+[&lt;img <span class="hljs-variable">class=</span><span class="hljs-string">"size-full wp-image-664506 "</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"SpreadWinRTselcolor1"</span> <span class="hljs-variable">src=</span><span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadWinRTselcolor1.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"565"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"293"</span> /&gt;][<span class="hljs-number">3</span>]&lt;figcaption <span class="hljs-variable">class=</span><span class="hljs-string">"wp-caption-text"</span>&gt;Selection Theme&lt;/figcaption&gt;&lt;/figure&gt; 
 
-<p>This example uses the Hyperlink option for the SelectionBorderThemeColor property.<figure id="attachment_664506" style="width: 565px" class="wp-caption aligncenter"></p>
-<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadWinRTselcolor1.png"><img class="size-full wp-image-664506 " alt="SpreadWinRTselcolor1" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadWinRTselcolor1.png" width="565" height="293" /></a><figcaption class="wp-caption-text">Selection Theme</figcaption></figure> </p>
-<p>C#</p>
-<pre><code class="language-csharp">gcSpreadSheet1.Sheets[0].SelectionBorderThemeColor = "Hyperlink";</code></pre>
-
-<p>VB</p>
-<pre><code class="language-csharp">GcSpreadSheet1.Sheets(0).SelectionBorderThemeColor = "Hyperlink"</code></pre>
+C<span class="hljs-comment">#</span></code></pre>gcSpreadSheet1.Sheets[0].SelectionBorderThemeColor = "Hyperlink";<pre><code class="hljs">VB</code></pre>
 
 
 

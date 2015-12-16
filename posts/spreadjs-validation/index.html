@@ -189,21 +189,18 @@ dv.showInputMessage = true;
 dv.inputMessage = "Value must be Fruit, Vegetable, or Dairy.";
 dv.inputTitle = "tip";
 activeSheet.setDataValidator(-1, 1, dv);
-</code></pre></p> 
+<pre><code>This example uses a text validator, displays an input tip, <span class="hljs-constant">and</span> displays an invalid data image <span class="hljs-keyword">if</span> the incorrect value is entered.&lt;figure <span class="hljs-variable">id=</span><span class="hljs-string">"attachment_665221"</span> <span class="hljs-variable">style=</span><span class="hljs-string">"width: 516px"</span> <span class="hljs-variable">class=</span><span class="hljs-string">"wp-caption aligncenter"</span>&gt;
 
-This example uses a text validator, displays an input tip, and displays an invalid data image if the incorrect value is entered.<figure id="attachment_665221" style="width: 516px" class="wp-caption aligncenter">
-
-[<img class="size-full wp-image-665221 " alt="SpreadJSvalidtext" src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadJSvalidtext.png" width="516" height="149" />][2]<figcaption class="wp-caption-text">Text Validator</figcaption></figure> 
+[&lt;img <span class="hljs-variable">class=</span><span class="hljs-string">"size-full wp-image-665221 "</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"SpreadJSvalidtext"</span> <span class="hljs-variable">src=</span><span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadJSvalidtext.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"516"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"149"</span> /&gt;][<span class="hljs-number">2</span>]&lt;figcaption <span class="hljs-variable">class=</span><span class="hljs-string">"wp-caption-text"</span>&gt;Text Validator&lt;/figcaption&gt;&lt;/figure&gt; 
 
 JavaScript
 
-<pre><code class="language-java">spread.highlightInvalidData(true);
-var dv = GcSpread.Sheets.DefaultDataValidator.createTextLengthValidator(GcSpread.Sheets.ComparisonOperator.GreaterThan, "4", "20");
-dv.showInputMessage = true;
-dv.inputMessage = "Number of characters must be greater than 4.";
-dv.inputTitle = "tip";
-activeSheet.setDataValidator(1, 1, dv);
-</code></pre></p> 
+&lt;pre&gt;&lt;code <span class="hljs-variable">class=</span><span class="hljs-string">"language-java"</span>&gt;spread.highlightInvalidData(<span class="hljs-constant">true</span>);
+var <span class="hljs-variable">dv =</span> GcSpread.Sheets.DefaultDataValidator.createTextLengthValidator(GcSpread.Sheets.ComparisonOperator.GreaterThan, <span class="hljs-string">"4"</span>, <span class="hljs-string">"20"</span>);
+dv.<span class="hljs-variable">showInputMessage =</span> <span class="hljs-constant">true</span>;
+dv.<span class="hljs-variable">inputMessage =</span> <span class="hljs-string">"Number of characters must be greater than 4."</span>;
+dv.<span class="hljs-variable">inputTitle =</span> <span class="hljs-string">"tip"</span>;
+activeSheet.setDataValidator(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, dv);</code></pre></p> 
 
 This example uses a number validator, displays an input tip, and displays an invalid data image if the incorrect value is entered.<figure id="attachment_665222" style="width: 438px" class="wp-caption aligncenter">
 
@@ -217,21 +214,18 @@ dv.showInputMessage = true;
 dv.inputMessage = "Value must be between 5 and 20.";
 dv.inputTitle = "tip";
 activeSheet.setDataValidator(1, 1, dv);
-</code></pre></p> 
+<pre><code>This example creates a date validator.&lt;figure <span class="hljs-variable">id=</span><span class="hljs-string">"attachment_665223"</span> <span class="hljs-variable">style=</span><span class="hljs-string">"width: 519px"</span> <span class="hljs-variable">class=</span><span class="hljs-string">"wp-caption aligncenter"</span>&gt;
 
-This example creates a date validator.<figure id="attachment_665223" style="width: 519px" class="wp-caption aligncenter">
-
-[<img class="size-full wp-image-665223 " alt="SpreadJSvaliddate" src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadJSvaliddate.png" width="519" height="150" />][4]<figcaption class="wp-caption-text">Date Validator</figcaption></figure> 
+[&lt;img <span class="hljs-variable">class=</span><span class="hljs-string">"size-full wp-image-665223 "</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"SpreadJSvaliddate"</span> <span class="hljs-variable">src=</span><span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadJSvaliddate.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"519"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"150"</span> /&gt;][<span class="hljs-number">4</span>]&lt;figcaption <span class="hljs-variable">class=</span><span class="hljs-string">"wp-caption-text"</span>&gt;Date Validator&lt;/figcaption&gt;&lt;/figure&gt; 
 
 JavaScript
 
-<pre><code class="language-java">spread.highlightInvalidData(true);
-var dv = GcSpread.Sheets.DefaultDataValidator.createDateValidator(GcSpread.Sheets.ComparisonOperator.Between, new Date(2012, 11, 31), new Date(2013, 11, 31));
-dv.showInputMessage = true;
-dv.inputMessage = "Enter a date between 12/31/2012 and 12/31/2013.";
-dv.inputTitle = "Tip";
-activeSheet.setDataValidator(1, 1, dv);
-</code></pre></p> 
+&lt;pre&gt;&lt;code <span class="hljs-variable">class=</span><span class="hljs-string">"language-java"</span>&gt;spread.highlightInvalidData(<span class="hljs-constant">true</span>);
+var <span class="hljs-variable">dv =</span> GcSpread.Sheets.DefaultDataValidator.createDateValidator(GcSpread.Sheets.ComparisonOperator.Between, new Date(<span class="hljs-number">2012</span>, <span class="hljs-number">11</span>, <span class="hljs-number">31</span>), new Date(<span class="hljs-number">2013</span>, <span class="hljs-number">11</span>, <span class="hljs-number">31</span>));
+dv.<span class="hljs-variable">showInputMessage =</span> <span class="hljs-constant">true</span>;
+dv.<span class="hljs-variable">inputMessage =</span> <span class="hljs-string">"Enter a date between 12/31/2012 and 12/31/2013."</span>;
+dv.<span class="hljs-variable">inputTitle =</span> <span class="hljs-string">"Tip"</span>;
+activeSheet.setDataValidator(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, dv);</code></pre></p> 
 
 This example creates a formula validator.<figure id="attachment_665224" style="width: 364px" class="wp-caption aligncenter">
 
@@ -246,48 +240,22 @@ dv.showInputMessage = true;
 dv.inputMessage = "Enter a value greater than 0 in A1.";
 dv.inputTitle = "Tip";
 activeSheet.setDataValidator(0, 0, dv);
-</code></pre></p> 
+<pre><code>This example <span class="hljs-keyword">uses</span> the isValid <span class="hljs-function"><span class="hljs-keyword">method</span>.
 
-This example uses the isValid method.
+<span class="hljs-title">JavaScript</span>
 
-JavaScript
-
-<pre><code class="language-java">var nCondition = new GcSpread.Sheets.CellValueCondition();
+&lt;<span class="hljs-title">pre</span>&gt;&lt;<span class="hljs-title">code</span> <span class="hljs-title">class</span>="<span class="hljs-title">language</span>-<span class="hljs-title">java</span>"&gt;<span class="hljs-title">var</span> <span class="hljs-title">nCondition</span> = <span class="hljs-title">new</span> <span class="hljs-title">GcSpread</span>.<span class="hljs-title">Sheets</span>.<span class="hljs-title">CellValueCondition</span><span class="hljs-params">()</span>;</span>
 nCondition.compareType = GcSpread.Sheets.GeneralCompareType.EqualsTo;
-nCondition.expected = 0;
-//When the option is false, the validation fails and the red alert is displayed.
-//When the option is true, the blank cell is treated as zero and the validation is successful.
-nCondition.treatNullValueAsZero = false;
-var validator = new GcSpread.Sheets.DefaultDataValidator(nCondition)
-validator.IgnoreBlank(false);
-activeSheet.getCell(0, 0, GcSpread.Sheets.SheetArea.viewport).dataValidator(validator);
-spread.highlightInvalidData(true);
-activeSheet.setValue(0, 0, null);
-alert(activeSheet.isValid(0, 0, 0));
-</code></pre></p> 
-
-This example uses the ValidationError event.
-
-JavaScript
-
-<pre><code class="language-java">var nCondition = new GcSpread.Sheets.CellValueCondition();
-nCondition.compareType = GcSpread.Sheets.GeneralCompareType.EqualsTo;
-nCondition.expected = 0;
-//When the option is false, the validation fails and the red alert is displayed.
-//When the option is true, the blank cell is treated as zero and the validation is successful.
-nCondition.treatNullValueAsZero = false;
-var validator = new GcSpread.Sheets.DefaultDataValidator(nCondition)
-validator.IgnoreBlank(false);
-activeSheet.getCell(0, 0, GcSpread.Sheets.SheetArea.viewport).dataValidator(validator);
-spread.highlightInvalidData(true);
-activeSheet.setValue(0, 0, null);
-
-//Type different values in cell (0,0). This event fires if the user types an invalid value.
-activeSheet.bind("ValidationError", vError);
- function vError(sender, args) {
-alert("error");
-            }
-</code></pre>
+nCondition.expected = <span class="hljs-number">0</span>;
+<span class="hljs-comment">//When the option is false, the validation fails and the red alert is displayed.</span>
+<span class="hljs-comment">//When the option is true, the blank cell is treated as zero and the validation is successful.</span>
+nCondition.treatNullValueAsZero = <span class="hljs-keyword">false</span>;
+<span class="hljs-keyword">var</span> validator = <span class="hljs-keyword">new</span> GcSpread.Sheets.DefaultDataValidator(nCondition)
+validator.IgnoreBlank(<span class="hljs-keyword">false</span>);
+activeSheet.getCell(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, GcSpread.Sheets.SheetArea.viewport).dataValidator(validator);
+spread.highlightInvalidData(<span class="hljs-keyword">true</span>);
+activeSheet.setValue(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, null);
+alert(activeSheet.isValid(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>));</code></pre>
 
 
 

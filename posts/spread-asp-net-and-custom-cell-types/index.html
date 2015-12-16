@@ -315,79 +315,74 @@
 <p>The RenderClientScriptUrl2 method and the RenderClientScriptUrl and EditorClientScriptUrl properties do not take effect with Internet Explorer 10 or higher or with other browsers such as Firefox or Chrome. They are provided for the older style HTC model.</p>
 <p>This example creates a custom cell from a combo cell and overrides the GetEditorControl method to disable a specific item in the drop-down list.</p>
 <p>C#</p>
-<pre><code class="language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using FarPoint.Web.Spread;
+<pre><code><span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> System.Linq;
+<span class="hljs-keyword">using</span> System.Web;
+<span class="hljs-keyword">using</span> System.Web.UI;
+<span class="hljs-keyword">using</span> System.Web.UI.WebControls;
+<span class="hljs-keyword">using</span> FarPoint.Web.Spread;
 
-namespace SpreadASPNET8CSharp
-{
-    public partial class WebForm1 : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
+<span class="hljs-class"><span class="hljs-keyword">namespace</span> <span class="hljs-title">SpreadASPNET8CSharp</span>
+</span>{
+    <span class="hljs-keyword">public</span> partial <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WebForm1</span> : <span class="hljs-title">System</span>.<span class="hljs-title">Web</span>.<span class="hljs-title">UI</span>.<span class="hljs-title">Page</span>
+    </span>{
+        <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> Page_Load(object sender, EventArgs e)
         {
-            customCombo ComboCell = new customCombo();
-            ComboCell.Items = new String[] { "Jan", "Feb", "March", "April" };
+            customCombo ComboCell = <span class="hljs-keyword">new</span> customCombo();
+            ComboCell.Items = <span class="hljs-keyword">new</span> String[] { <span class="hljs-string">"Jan"</span>, <span class="hljs-string">"Feb"</span>, <span class="hljs-string">"March"</span>, <span class="hljs-string">"April"</span> };
             ComboCell.BackColor = System.Drawing.Color.Aqua;
-            FpSpread1.Sheets[0].Cells[0, 0].CellType = ComboCell;
+            FpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].CellType = ComboCell;
         }
     }
 
     [Serializable()]
-    public class customCombo : FarPoint.Web.Spread.ComboBoxCellType
-    {
-        public override Control GetEditorControl(string id, TableCell parent, Appearance style, Inset margin, object value, bool upperLevel)
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">customCombo</span> : <span class="hljs-title">FarPoint</span>.<span class="hljs-title">Web</span>.<span class="hljs-title">Spread</span>.<span class="hljs-title">ComboBoxCellType</span>
+    </span>{
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> Control GetEditorControl(<span class="hljs-keyword">string</span> id, TableCell parent, Appearance style, Inset margin, object value, <span class="hljs-keyword">bool</span> upperLevel)
         {
             DropDownList ddl = (System.Web.UI.WebControls.DropDownList)base.GetEditorControl(id, parent, style, margin, value, upperLevel);
 
-            if (ddl != null)
+            if (ddl != <span class="hljs-literal">null</span>)
             {
-                foreach (System.Web.UI.WebControls.ListItem item in ddl.Items)
+                <span class="hljs-keyword">foreach</span> (System.Web.UI.WebControls.ListItem item in ddl.Items)
                 {
-                    if (item.Value == "Feb")
+                    if (item.Value == <span class="hljs-string">"Feb"</span>)
                     {
-                        item.Attributes.Add("disabled", "disabled");
+                        item.Attributes.Add(<span class="hljs-string">"disabled"</span>, <span class="hljs-string">"disabled"</span>);
                     }
                 }
             }
-            return ddl;
+            <span class="hljs-keyword">return</span> ddl;
         }
 
     }
-}
-</code></pre>
+}</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Imports FarPoint.Web.Spread
-
-Public Class WebForm1
+<pre><code><span class="hljs-keyword">Public</span> <span class="hljs-keyword">Class</span> WebForm1
     Inherits System.Web.UI.Page
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim ComboCell As New customCombo
-        ComboCell.Items = New String() {"Jan", "Feb", "March", "April"}
+    Protected <span class="hljs-keyword">Sub</span> Page_Load(<span class="hljs-keyword">ByVal</span> sender As Object, <span class="hljs-keyword">ByVal</span> e As System.EventArgs) Handles <span class="hljs-keyword">Me</span>.Load
+        <span class="hljs-keyword">Dim</span> ComboCell As <span class="hljs-keyword">New</span> customCombo
+        ComboCell.Items = <span class="hljs-keyword">New</span> <span class="hljs-built_in">String</span>() {<span class="hljs-string">"Jan"</span>, <span class="hljs-string">"Feb"</span>, <span class="hljs-string">"March"</span>, <span class="hljs-string">"April"</span>}
         ComboCell.BackColor = Drawing.Color.Aqua
-        FpSpread1.Sheets(0).Cells(0, 0).CellType = ComboCell
-    End Sub
-End Class
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).Cells(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>).CellType = ComboCell
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
+<span class="hljs-keyword">End</span> <span class="hljs-keyword">Class</span>
 
-&lt;Serializable()&gt; Public Class customCombo
+&amp;lt;Serializable()&amp;gt; <span class="hljs-keyword">Public</span> <span class="hljs-keyword">Class</span> customCombo
     Inherits FarPoint.Web.Spread.ComboBoxCellType
 
-    Public Overrides Function GetEditorControl(id As String, parent As TableCell, style As Appearance, margin As Inset, value As Object, upperLevel As Boolean) As Control
-        Dim ddl As DropDownList = CType(MyBase.GetEditorControl(id, parent, style, margin, value, upperLevel), System.Web.UI.WebControls.DropDownList)
-        If IsNothing(ddl) Then Exit Function
-        For Each item As System.Web.UI.WebControls.ListItem In ddl.Items
-            If item.Value = "Feb" Then
-                item.Attributes.Add("disabled", "disabled")
-            End If
-        Next
+    <span class="hljs-keyword">Public</span> Overrides <span class="hljs-keyword">Function</span> GetEditorControl(id As <span class="hljs-built_in">String</span>, parent As TableCell, style As Appearance, margin As Inset, value As Object, upperLevel As Boolean) As Control
+        <span class="hljs-keyword">Dim</span> ddl As DropDownList = CType(MyBase.GetEditorControl(id, parent, style, margin, value, upperLevel), System.Web.UI.WebControls.DropDownList)
+        <span class="hljs-keyword">If</span> IsNothing(ddl) <span class="hljs-keyword">Then</span> <span class="hljs-keyword">Exit</span> <span class="hljs-keyword">Function</span>
+        <span class="hljs-keyword">For</span> <span class="hljs-keyword">Each</span> item As System.Web.UI.WebControls.ListItem <span class="hljs-keyword">In</span> ddl.Items
+            <span class="hljs-keyword">If</span> item.Value = <span class="hljs-string">"Feb"</span> <span class="hljs-keyword">Then</span>
+                item.Attributes.Add(<span class="hljs-string">"disabled"</span>, <span class="hljs-string">"disabled"</span>)
+            <span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span>
+        <span class="hljs-keyword">Next</span>
         Return ddl
-    End Function   
-End Class
-</code></pre>
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">Function</span>   
+<span class="hljs-keyword">End</span> <span class="hljs-keyword">Class</span></code></pre>
 
 <p>You can download a larger example that demonstrates custom cells and renderers from this link: <a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/EditorRendererCS.zip">EditorRendererCS.</a> The zip file does not contain the Spread ASP.NET assemblies.</p>
 

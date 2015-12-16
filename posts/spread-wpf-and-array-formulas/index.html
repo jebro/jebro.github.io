@@ -159,80 +159,73 @@
 <p>This example uses the SetArrayFormula method to create an array formula.<figure id="attachment_663863" style="width: 348px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/sumarrary.png"><img class="size-full wp-image-663863 " alt="sumarrary" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/sumarrary.png" width="348" height="143" /></a><figcaption class="wp-caption-text">Result of Sample Code</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">gcSpreadSheet1.Sheets[0].Cells[0, 1].Text = "Value A";
-gcSpreadSheet1.Sheets[0].Cells[0, 2].Text = "Value B";
-gcSpreadSheet1.Sheets[0].Cells[0, 3].Text = "Result";
-gcSpreadSheet1.Sheets[0].Cells[0, 1].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center;
-gcSpreadSheet1.Sheets[0].Cells[0, 2].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center;
-gcSpreadSheet1.Sheets[0].Cells[0, 3].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center;
-gcSpreadSheet1.Sheets[0].Cells[1, 1].Value = 4;
-gcSpreadSheet1.Sheets[0].Cells[1, 2].Value = 3;
-gcSpreadSheet1.Sheets[0].Cells[2, 1].Value = 2;
-gcSpreadSheet1.Sheets[0].Cells[2, 2].Value = 2;
-gcSpreadSheet1.Sheets[0].Cells[3, 1].Value = 5;
-gcSpreadSheet1.Sheets[0].Cells[3, 2].Value = 7;
-gcSpreadSheet1.Sheets[0].Cells[4, 1].Value = 6;
-gcSpreadSheet1.Sheets[0].Cells[4, 2].Value = 2;
-gcSpreadSheet1.Sheets[0].SetArrayFormula(1, 3, 4, 1, "B2:B5*C2:C5");</code></pre>
+<pre><code>gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">0</span>, <span class="hljs-number">2</span>].<span class="hljs-keyword">Text</span> = <span class="hljs-string">"Value B"</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">0</span>, <span class="hljs-number">3</span>].<span class="hljs-keyword">Text</span> = <span class="hljs-string">"Result"</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.<span class="hljs-keyword">Center</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">0</span>, <span class="hljs-number">2</span>].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.<span class="hljs-keyword">Center</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">0</span>, <span class="hljs-number">3</span>].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.<span class="hljs-keyword">Center</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">4</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">3</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">2</span>, <span class="hljs-number">1</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">2</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">2</span>, <span class="hljs-number">2</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">2</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">3</span>, <span class="hljs-number">1</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">5</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">3</span>, <span class="hljs-number">2</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">7</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">4</span>, <span class="hljs-number">1</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">6</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">4</span>, <span class="hljs-number">2</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">2</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].SetArrayFormula(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"B2:B5*C2:C5"</span>);</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">
-GcSpreadSheet1.Sheets(0).Cells(0, 1).Text = "Value A"
-GcSpreadSheet1.Sheets(0).Cells(0, 2).Text = "Value B"
-GcSpreadSheet1.Sheets(0).Cells(0, 3).Text = "Result"
-GcSpreadSheet1.Sheets(0).Cells(0, 1).HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center
-GcSpreadSheet1.Sheets(0).Cells(0, 2).HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center
-GcSpreadSheet1.Sheets(0).Cells(0, 3).HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center
-GcSpreadSheet1.Sheets(0).Cells(1, 1).Value = 4
-GcSpreadSheet1.Sheets(0).Cells(1, 2).Value = 3
-GcSpreadSheet1.Sheets(0).Cells(2, 1).Value = 2
-GcSpreadSheet1.Sheets(0).Cells(2, 2).Value = 2
-GcSpreadSheet1.Sheets(0).Cells(3, 1).Value = 5
-GcSpreadSheet1.Sheets(0).Cells(3, 2).Value = 7
-GcSpreadSheet1.Sheets(0).Cells(4, 1).Value = 6
-GcSpreadSheet1.Sheets(0).Cells(4, 2).Value = 2
-GcSpreadSheet1.Sheets(0).SetArrayFormula(1, 3, 4, 1, "B2:B5*C2:C5")
-</code></pre>
+<pre><code class="hljs">GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"Value A"</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"Value B"</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"Result"</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.HorizontalAlignment</span> = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.CellHorizontalAlignment</span><span class="hljs-class">.Center</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.HorizontalAlignment</span> = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.CellHorizontalAlignment</span><span class="hljs-class">.Center</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>)</span></span><span class="hljs-class">.HorizontalAlignment</span> = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.CellHorizontalAlignment</span><span class="hljs-class">.Center</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">4</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">3</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">2</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">2</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">3</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">5</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">7</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">4</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">6</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">4</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">2</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">SetArrayFormula</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"B2:B5*C2:C5"</span>)</span></span></code></pre>
 
 <p>This example sums two columns if the values in Column B are less than five.<figure id="attachment_663866" style="width: 291px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/arrayform2.png"><img class="size-full wp-image-663866 " alt="arrayform2" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/arrayform2.png" width="291" height="184" /></a><figcaption class="wp-caption-text">Result of Sample Code</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">gcSpreadSheet1.Sheets[0].Cells[0, 1].Text = "Value A";
-gcSpreadSheet1.Sheets[0].Cells[0, 2].Text = "Value B";
-gcSpreadSheet1.Sheets[0].Cells[6, 0].Text = "Sum (B*C if B &lt; 5)";
+<pre><code>gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">0</span>, <span class="hljs-number">2</span>].<span class="hljs-keyword">Text</span> = <span class="hljs-string">"Value B"</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">6</span>, <span class="hljs-number">0</span>].<span class="hljs-keyword">Text</span> = <span class="hljs-string">"Sum (B*C if B &amp;lt; 5)"</span>;
 gcSpreadSheet1.CanCellOverflow = true;
-gcSpreadSheet1.Sheets[0].Cells[0, 1].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center;
-gcSpreadSheet1.Sheets[0].Cells[0, 2].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center;
-gcSpreadSheet1.Sheets[0].Cells[0, 3].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center;
-gcSpreadSheet1.Sheets[0].Cells[1, 1].Value = 4;
-gcSpreadSheet1.Sheets[0].Cells[1, 2].Value = 3;
-gcSpreadSheet1.Sheets[0].Cells[2, 1].Value = 2;
-gcSpreadSheet1.Sheets[0].Cells[2, 2].Value = 2;
-gcSpreadSheet1.Sheets[0].Cells[3, 1].Value = 5;
-gcSpreadSheet1.Sheets[0].Cells[3, 2].Value = 7;
-gcSpreadSheet1.Sheets[0].Cells[4, 1].Value = 6;
-gcSpreadSheet1.Sheets[0].Cells[4, 2].Value = 2;
-gcSpreadSheet1.Sheets[0].SetArrayFormula(6, 2, 1, 1, "Sum(IF(B2:B5&lt;5,B2:B5*C2:C5))");
-</code></pre>
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.<span class="hljs-keyword">Center</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">0</span>, <span class="hljs-number">2</span>].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.<span class="hljs-keyword">Center</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">0</span>, <span class="hljs-number">3</span>].HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.<span class="hljs-keyword">Center</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">4</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">3</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">2</span>, <span class="hljs-number">1</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">2</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">2</span>, <span class="hljs-number">2</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">2</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">3</span>, <span class="hljs-number">1</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">5</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">3</span>, <span class="hljs-number">2</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">7</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">4</span>, <span class="hljs-number">1</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">6</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">4</span>, <span class="hljs-number">2</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">2</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].SetArrayFormula(<span class="hljs-number">6</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"Sum(IF(B2:B5&amp;lt;5,B2:B5*C2:C5))"</span>);</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">GcSpreadSheet1.Sheets(0).Cells(0, 1).Text = "Value A"
-GcSpreadSheet1.Sheets(0).Cells(0, 2).Text = "Value B"
-GcSpreadSheet1.Sheets(0).Cells(6, 0).Text = "Sum (B*C if B &lt; 5)"
-GcSpreadSheet1.CanCellOverflow = True
-GcSpreadSheet1.Sheets(0).Cells(0, 1).HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center
-GcSpreadSheet1.Sheets(0).Cells(0, 2).HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center
-GcSpreadSheet1.Sheets(0).Cells(0, 3).HorizontalAlignment = GrapeCity.Windows.SpreadSheet.Data.CellHorizontalAlignment.Center
-GcSpreadSheet1.Sheets(0).Cells(1, 1).Value = 4
-GcSpreadSheet1.Sheets(0).Cells(1, 2).Value = 3
-GcSpreadSheet1.Sheets(0).Cells(2, 1).Value = 2
-GcSpreadSheet1.Sheets(0).Cells(2, 2).Value = 2
-GcSpreadSheet1.Sheets(0).Cells(3, 1).Value = 5
-GcSpreadSheet1.Sheets(0).Cells(3, 2).Value = 7
-GcSpreadSheet1.Sheets(0).Cells(4, 1).Value = 6
-GcSpreadSheet1.Sheets(0).Cells(4, 2).Value = 2
-GcSpreadSheet1.Sheets(0).SetArrayFormula(6, 2, 1, 1, "Sum(IF(B2:B5&lt;5,B2:B5*C2:C5))")
-</code></pre>
+<pre><code>GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"Value B"</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">6</span>, <span class="hljs-number">0</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"Sum (B*C if B &amp;lt; 5)"</span>
+GcSpreadSheet1<span class="hljs-class">.CanCellOverflow</span> = True
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.HorizontalAlignment</span> = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.CellHorizontalAlignment</span><span class="hljs-class">.Center</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.HorizontalAlignment</span> = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.CellHorizontalAlignment</span><span class="hljs-class">.Center</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>)</span></span><span class="hljs-class">.HorizontalAlignment</span> = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.CellHorizontalAlignment</span><span class="hljs-class">.Center</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">4</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">3</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">2</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">2</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">3</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">5</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">7</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">4</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">6</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">4</span>, <span class="hljs-number">2</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">2</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">SetArrayFormula</span><span class="hljs-params">(<span class="hljs-number">6</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"Sum(IF(B2:B5&amp;lt;5,B2:B5*C2:C5))"</span>)</span></span></code></pre>
 
 <p>Users can enter a formula in a cell by starting with an equals sign (=). Type the equal sign and then the formula such as = sum(A1+B1). Use Ctrl + Shift + Enter to create an array formula after entering the formula.</p>
 <p>The following image was created by typing =B2:B5*C3:C5 in a cell and then using Ctrl + Shift + Enter to change the formula to an array formula.<figure id="attachment_663868" style="width: 414px" class="wp-caption aligncenter"></p>
@@ -240,10 +233,7 @@ GcSpreadSheet1.Sheets(0).SetArrayFormula(6, 2, 1, 1, "Sum(IF(B2:B5&lt;5,B2:B5*C2
 <p>You can double-click on the formula cell to see the array formula and selection area.<figure id="attachment_663867" style="width: 485px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/TypeFormula.png"><img class="size-full wp-image-663867 " alt="TypeFormula" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/TypeFormula.png" width="485" height="289" /></a><figcaption class="wp-caption-text">Selection Area</figcaption></figure> </p>
 <p>You can prevent or allow the user to enter formulas with the CanUserEditFormula property.<br>C#</p>
-<pre><code class="language-csharp">gcSpreadSheet1.CanUserEditFormula = true;</code></pre>
-
-<p>VB</p>
-<pre><code class="language-csharp">GcSpreadSheet1.CanUserEditFormula = True</code></pre>
+<pre><code>VB</code></pre>
 
 
 

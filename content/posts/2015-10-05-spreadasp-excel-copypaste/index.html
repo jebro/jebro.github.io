@@ -20,20 +20,18 @@ categories:</li>
 <p>To start off, we must create an ASP Web Application and add a Spread component to a web page. For more information about adding a Spread component, see the tutorial here: <a href="http://sphelp.grapecity.com/WebHelp/SpreadNet8/ASP2/webframe.html#spweb-startvs2013.html">http://sphelp.grapecity.com/WebHelp/SpreadNet8/ASP2/webframe.html#spweb-startvs2013.html</a></p>
 <h3 id="set-up-the-page">Set Up the Page</h3>
 <p>Once the default page has been set and a Spread component has been added to it, specify a “ContentEditable” div above the Spread component like the code below:</p>
-<pre><code class="language-csharp">&lt;h1&gt;Excel-Spread Copy-Paste&lt;/h1&gt;
-&lt;p&gt;You can copy cells from an Excel file and put them into the Spreadsheet below!&lt;/p&gt;
-&lt;div class="toggle" id="contentEditor" contenteditable style="background: #ffffff"&gt;
-    &lt;p&gt;Paste cells here!&lt;/p&gt;
-&lt;/div&gt;
-&lt;FarPoint:FpSpread ID="FpSpread1" runat="server" BorderColor="#A0A0A0" BorderStyle="Solid" BorderWidth="1px" Height="400px" Width="1000px"&gt;
-    &lt;commandbar backcolor="#F6F6F6" buttonfacecolor="Control" buttonhighlightcolor="ControlLightLight" buttonshadowcolor="ControlDark"&gt;
-    &lt;/commandbar&gt;
-    &lt;sheets&gt;
-        &lt;FarPoint:SheetView SheetName="Sheet1"&gt;
-        &lt;/FarPoint:SheetView&gt;
-    &lt;/sheets&gt;
-&lt;/FarPoint:FpSpread&gt;
-</code></pre>
+<pre><code><span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;p<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;You can copy cells from an Excel file <span class="hljs-literal">and</span> put them <span class="hljs-keyword">into</span> the Spreadsheet below<span class="hljs-subst">!&amp;</span><span class="hljs-literal">lt</span>;/p<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;div class<span class="hljs-subst">=</span><span class="hljs-string">"toggle"</span> id<span class="hljs-subst">=</span><span class="hljs-string">"contentEditor"</span> contenteditable style<span class="hljs-subst">=</span><span class="hljs-string">"background: #ffffff"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+    <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;p<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;Paste cells here<span class="hljs-subst">!&amp;</span><span class="hljs-literal">lt</span>;/p<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/div<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;FarPoint:FpSpread ID<span class="hljs-subst">=</span><span class="hljs-string">"FpSpread1"</span> runat<span class="hljs-subst">=</span><span class="hljs-string">"server"</span> BorderColor<span class="hljs-subst">=</span><span class="hljs-string">"#A0A0A0"</span> BorderStyle<span class="hljs-subst">=</span><span class="hljs-string">"Solid"</span> BorderWidth<span class="hljs-subst">=</span><span class="hljs-string">"1px"</span> Height<span class="hljs-subst">=</span><span class="hljs-string">"400px"</span> Width<span class="hljs-subst">=</span><span class="hljs-string">"1000px"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+    <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;commandbar backcolor<span class="hljs-subst">=</span><span class="hljs-string">"#F6F6F6"</span> buttonfacecolor<span class="hljs-subst">=</span><span class="hljs-string">"Control"</span> buttonhighlightcolor<span class="hljs-subst">=</span><span class="hljs-string">"ControlLightLight"</span> buttonshadowcolor<span class="hljs-subst">=</span><span class="hljs-string">"ControlDark"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+    <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/commandbar<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+    <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;sheets<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+        <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;FarPoint:SheetView SheetName<span class="hljs-subst">=</span><span class="hljs-string">"Sheet1"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+        <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/FarPoint:SheetView<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+    <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/sheets<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/FarPoint:FpSpread<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;</code></pre>
 
 <p>The web page should now look like the following screen shot:<figure id="attachment_665061" style="width: 645px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/10/Figure1.png"><img class=" wp-image-665061  " alt="The default page with content editable div and Spread on it." src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/Figure1-1024x699.png" width="645" height="440" /></a><figcaption class="wp-caption-text">The default page with content editable div and Spread on it.</figcaption></figure> </p>
@@ -48,47 +46,42 @@ window.onload = function () {
 
 &lt;/script&gt;
 
-</code></pre>
+<pre><code class="hljs">The <span class="hljs-property">rest</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> code <span class="hljs-keyword">for</span> this tutorial will be inside <span class="hljs-keyword">of</span> this function. Define <span class="hljs-keyword">the</span> Spread component <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> <span class="hljs-keyword">script</span> <span class="hljs-keyword">by</span> getting <span class="hljs-keyword">the</span> element <span class="hljs-function_start"><span class="hljs-keyword">on</span></span> <span class="hljs-keyword">the</span> page:
 
-<p>The rest of the code for this tutorial will be inside of this function. Define the Spread component in the script by getting the element on the page:</p>
-<pre><code class="”language-javascript”">var spread = document.getElementById("&lt;%=FpSpread1.ClientID %&gt;");</code></pre>
+&lt;pre&gt;&lt;code <span class="hljs-type">class</span>=<span class="hljs-string">"”language-javascript”"</span>&gt;var spread = document.getElementById(<span class="hljs-string">"&amp;lt;%=FpSpread1.ClientID %&amp;gt;"</span>);</code></pre>
 
 <p>The “ContentEditable” div is where the Excel cell ranges are going to be pasted, so define the function for the “onPaste” event:</p>
-<pre><code class="”language-javascript”">$('[contenteditable]').on('paste', function (e) {}):</code></pre>
+<pre><code class="”language-javascript”">$('[contenteditable]').on('paste', function (e) {}):<pre><code class="hljs">The <span class="hljs-property">rest</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> code <span class="hljs-keyword">for</span> this tutorial will be defined within <span class="hljs-keyword">the</span> function specified <span class="hljs-keyword">above</span>. To <span class="hljs-keyword">get</span> <span class="hljs-command">the clipboard</span> data <span class="hljs-keyword">to</span> paste <span class="hljs-keyword">into</span> Spread, define a “<span class="hljs-type">text</span>” variable:
 
-<p>The rest of the code for this tutorial will be defined within the function specified above. To get the clipboard data to paste into Spread, define a “text” variable:</p>
-<pre><code class="”language-javascript”">var text = (e.originalEvent || e).clipboardData.getData('text/html');</code></pre>
+&lt;pre&gt;&lt;code <span class="hljs-type">class</span>=<span class="hljs-string">"”language-javascript”"</span>&gt;var <span class="hljs-type">text</span> = (e.originalEvent || e).clipboardData.getData('<span class="hljs-type">text</span>/html');</code></pre>
 
 <p>A new div element will be created on the page to help with merging the data into spread:</p>
 <pre><code class="”language-javascript”">var newDiv = document.createElement("div");
 newDiv.innerHTML = text;
 newDiv.id = "spreadTable";
-document.getElementById("contentEditor").appendChild(newDiv);</code></pre>
+document.getElementById("contentEditor").appendChild(newDiv);<pre><code class="hljs">Define a <span class="hljs-keyword">function</span> called “addToSpread” that will handle adding the content <span class="hljs-keyword">from</span> that <span class="hljs-keyword">new</span> div <span class="hljs-keyword">to</span> the Spread component <span class="hljs-keyword">with</span> the correct formatting. <span class="hljs-keyword">For</span> simplicity, define a variable called “table” <span class="hljs-keyword">in</span> this <span class="hljs-keyword">function</span> <span class="hljs-keyword">to</span> refer <span class="hljs-keyword">to</span> the table containing the data <span class="hljs-keyword">and</span> formatting <span class="hljs-keyword">from</span> Excel:
 
-<p>Define a function called “addToSpread” that will handle adding the content from that new div to the Spread component with the correct formatting. For simplicity, define a variable called “table” in this function to refer to the table containing the data and formatting from Excel:</p>
-<pre><code class="”language-javascript”">var table = document.getElementById('spreadTable').getElementsByTagName('table')[0];</code></pre>
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-javascript”"</span>&gt;var table = document.getElementById(<span class="hljs-comment">'spreadTable').getElementsByTagName('table')[0];</span></code></pre>
 
 <p>Go through the table to get the values and properties to set in Spread using For loops:</p>
 <pre><code class="”language-javascript”">for (var i = 0, row; row = table.rows[i]; i++) {
     for (var j = 0, cell; cell = row.cells[j]; j++) {}
-}</code></pre>
+}<pre><code class="hljs">Within the inner For loop, <span class="hljs-operator"><span class="hljs-keyword">set</span> the <span class="hljs-keyword">value</span> <span class="hljs-keyword">of</span> the cells <span class="hljs-keyword">in</span> Spread <span class="hljs-keyword">to</span> the <span class="hljs-keyword">table</span> <span class="hljs-keyword">values</span>:
 
-<p>Within the inner For loop, set the value of the cells in Spread to the table values:</p>
-<pre><code class="”language-javascript”">spread.SetValue(I, j, cell.textContent);</code></pre>
+&lt;pre&gt;&lt;code class=<span class="hljs-string">"”language-javascript”"</span>&gt;spread.SetValue(I, j, cell.textContent);</span></code></pre>
 
 <p>Set the column width to match the table:</p>
 <pre><code class="”language-javascript”">if (cell.width &gt; 0) {
     spread.setColWidth(j, cell.width);
-}</code></pre>
+}<pre><code class="hljs">Get <span class="hljs-keyword">the</span> rules <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> css <span class="hljs-keyword">in</span> order <span class="hljs-keyword">to</span> <span class="hljs-keyword">get</span> <span class="hljs-keyword">the</span> background <span class="hljs-keyword">and</span> foreground colors <span class="hljs-keyword">of</span> cells <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> table <span class="hljs-keyword">and</span> apply them <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> Spread component:
 
-<p>Get the rules of the css in order to get the background and foreground colors of cells in the table and apply them to the Spread component:</p>
-<pre><code class="”language-csharp”">var rules = document.styleSheets.item(4);
+&lt;pre&gt;&lt;code <span class="hljs-type">class</span>=<span class="hljs-string">"”language-csharp”"</span>&gt;var rules = document.styleSheets.<span class="hljs-property">item</span>(<span class="hljs-number">4</span>);
 rules = rules.cssRules || rules.rules;
-for (var k = 0; k &lt; rules.length; k++) {
-    if (rules.item(k).selectorText == "." + cell.className) {
+<span class="hljs-keyword">for</span> (var k = <span class="hljs-number">0</span>; k &amp;lt; rules.<span class="hljs-property">length</span>; k++) {
+    <span class="hljs-keyword">if</span> (rules.<span class="hljs-property">item</span>(k).selectorText == <span class="hljs-string">"."</span> + cell.className) {
         var currentCell = spread.Cells(i, j);
-        currentCell.SetBackColor(rules.item(k).style.backgroundColor);
-        currentCell.SetForeColor(rules.item(k).style.color);
+        currentCell.SetBackColor(rules.<span class="hljs-property">item</span>(k).style.backgroundColor);
+        currentCell.SetForeColor(rules.<span class="hljs-property">item</span>(k).style.color);
         break;
     }
 }</code></pre>
@@ -103,17 +96,9 @@ for (var k = 0; k &lt; rules.length; k++) {
     if (spreadTable.rows[i].style.height != null) {
         spreadTable.rows[i].style.height = cell.height + 'px';
     }
-}</code></pre>
+}<pre><code class="hljs">Outside <span class="hljs-keyword">of</span> the <span class="hljs-keyword">For</span> loops, <span class="hljs-keyword">set</span> the range selected <span class="hljs-keyword">in</span> the Spread component <span class="hljs-keyword">to</span> the cells just pasted <span class="hljs-keyword">in</span>:
 
-<p>Outside of the For loops, set the range selected in the Spread component to the cells just pasted in:</p>
-<pre><code class="”language-csharp”">spread.SetSelectedRange(0, 0, i, j);</code></pre>
-
-<p>Then call the function just defined and hide the div element used to paste cells:</p>
-<pre><code class="”language-csharp”">addToSpread();
-var removeDiv = document.getElementById('contentEditor');
-if (removeDiv) {
-    removeDiv.hidden = true;
-}</code></pre>
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-csharp”"</span>&gt;spread.SetSelectedRange(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, i, j);</code></pre>
 
 <p>A user should be able to copy cells from an Excel file and paste them into the “ContentEditable” div on the page. Once they do so, the cells will be copied into the Spread component with some formatting applied to them. This is just one example of how Spread can provide an easy way for users to interact with Spread with no coding knowledge required.<figure id="attachment_665062" style="width: 614px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/10/Figure2.png"><img class=" wp-image-665062 " alt="The Excel file that was copied from." src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/Figure2-1024x528.png" width="614" height="317" /></a><figcaption class="wp-caption-text">The Excel file that was copied from.</figcaption></figure> <figure id="attachment_665063" style="width: 614px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/10/Figure3.png"><img class="wp-image-665063 " alt="The Spread page with the copied Excel cell range pasted into it." src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/Figure3-1024x666.png" width="614" height="400" /></a><figcaption class="wp-caption-text">The Spread page with the copied Excel cell range pasted into it.</figcaption></figure> </p>

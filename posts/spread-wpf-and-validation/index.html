@@ -166,28 +166,26 @@
 <p>The following code uses different types of validators to validate the data in B1, B2, and B3.<figure id="attachment_664842" style="width: 451px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadSLvalid.png"><img class="size-full wp-image-664842 " alt="SpreadSLvalid" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadSLvalid.png" width="451" height="252" /></a><figcaption class="wp-caption-text">Validators</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">gcSpreadSheet1.HighlightInvalidData = true;
-var valid = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateListValidator("5,10,15,20");
-gcSpreadSheet1.Sheets[0].Cells[0, 1].DataValidator = valid;
-gcSpreadSheet1.Sheets[0].Cells[0, 0].Text = "5, 10, 15, and 20 are valid numbers.";
-var valid1 = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateNumberValidator(GrapeCity.Windows.SpreadSheet.Data.ComparisonOperator.GreaterThan, "5", "20", true);
-gcSpreadSheet1.Sheets[0].Cells[1, 1].DataValidator = valid1;
-gcSpreadSheet1.Sheets[0].Cells[1,0].Text = "A number greater than 5 is valid.";
-var valid2 = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateTextLengthValidator(GrapeCity.Windows.SpreadSheet.Data.ComparisonOperator.GreaterThan, "4", "20");
-gcSpreadSheet1.Sheets[0].Cells[2, 1].DataValidator = valid2;
-gcSpreadSheet1.Sheets[0].Cells[2, 0].Text = "Type more than four characters.";</code></pre>
+<pre><code>var <span class="hljs-variable">valid =</span> GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateListValidator(<span class="hljs-string">"5,10,15,20"</span>);
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">DataValidator =</span> valid;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Text =</span> <span class="hljs-string">"5, 10, 15, and 20 are valid numbers."</span>;
+var <span class="hljs-variable">valid1 =</span> GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateNumberValidator(GrapeCity.Windows.SpreadSheet.Data.ComparisonOperator.GreaterThan, <span class="hljs-string">"5"</span>, <span class="hljs-string">"20"</span>, <span class="hljs-constant">true</span>);
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">DataValidator =</span> valid1;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>].<span class="hljs-variable">Text =</span> <span class="hljs-string">"A number greater than 5 is valid."</span>;
+var <span class="hljs-variable">valid2 =</span> GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateTextLengthValidator(GrapeCity.Windows.SpreadSheet.Data.ComparisonOperator.GreaterThan, <span class="hljs-string">"4"</span>, <span class="hljs-string">"20"</span>);
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">2</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">DataValidator =</span> valid2;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">2</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Text =</span> <span class="hljs-string">"Type more than four characters."</span>;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">GcSpreadSheet1.HighlightInvalidData = True
-Dim valid = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateListValidator("5,10,15,20")
-GcSpreadSheet1.Sheets(0).Cells(0, 1).DataValidator = valid
-GcSpreadSheet1.Sheets(0).Cells(0, 0).Text = "5, 10, 15, and 20 are valid numbers."
-Dim valid1 = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateNumberValidator(GrapeCity.Windows.SpreadSheet.Data.ComparisonOperator.GreaterThan, "5", "20", True)
-GcSpreadSheet1.Sheets(0).Cells(1, 1).DataValidator = valid1
-GcSpreadSheet1.Sheets(0).Cells(1, 0).Text = "A number greater than 5 is valid."
-Dim valid2 = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateTextLengthValidator(GrapeCity.Windows.SpreadSheet.Data.ComparisonOperator.GreaterThan, "4", "20")
-GcSpreadSheet1.Sheets(0).Cells(2, 1).DataValidator = valid2
-GcSpreadSheet1.Sheets(0).Cells(2, 0).Text = "Type more than four characters."</code></pre>
+<pre><code>Dim valid = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.DataValidator</span><span class="hljs-class">.CreateListValidator</span>(<span class="hljs-string">"5,10,15,20"</span>)
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.DataValidator</span> = valid
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"5, 10, 15, and 20 are valid numbers."</span>
+Dim valid1 = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.DataValidator</span><span class="hljs-class">.CreateNumberValidator</span>(GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.ComparisonOperator</span><span class="hljs-class">.GreaterThan</span>, <span class="hljs-string">"5"</span>, <span class="hljs-string">"20"</span>, True)
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.DataValidator</span> = valid1
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"A number greater than 5 is valid."</span>
+Dim valid2 = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.DataValidator</span><span class="hljs-class">.CreateTextLengthValidator</span>(GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.ComparisonOperator</span><span class="hljs-class">.GreaterThan</span>, <span class="hljs-string">"4"</span>, <span class="hljs-string">"20"</span>)
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.DataValidator</span> = valid2
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"Type more than four characters."</span></code></pre>
 
 <p>The following code customizes the invalid data image. The following image illustrates a valid value for the cell.<figure id="attachment_664844" style="width: 499px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadSLformlist.png"><img class="size-full wp-image-664844 " alt="SpreadSLformlist" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadSLformlist.png" width="499" height="237" /></a><figcaption class="wp-caption-text">Valid Value</figcaption></figure> </p>
@@ -205,62 +203,56 @@ StrokeThickness=&#8221;2&#8243;
 Margin=&#8221;-6,-3,-6,-3&#8243;  
 /><br></Grid><br></ControlTemplate><br></Setter.Value><br></Setter><br></Style><br></Window.Resources></p>
 <p>C#</p>
-<pre><code class="language-csharp">gcSpreadSheet1.ActiveSheet.Cells["C1"].Value = 1;
-gcSpreadSheet1.ActiveSheet.Cells["C2"].Value = 2;
-gcSpreadSheet1.ActiveSheet.Cells["C3"].Value = 3;
+<pre><code>gcSpreadSheet1.ActiveSheet.<span class="hljs-keyword">Cells</span>[<span class="hljs-string">"C2"</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">2</span>;
+gcSpreadSheet1.ActiveSheet.<span class="hljs-keyword">Cells</span>[<span class="hljs-string">"C3"</span>].<span class="hljs-keyword">Value</span> = <span class="hljs-number">3</span>;
 gcSpreadSheet1.HighlightInvalidData = true;
-var valid = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateFormulaListValidator("C1:C3");
-gcSpreadSheet1.Sheets[0].Cells[1, 1].DataValidator = valid;
-gcSpreadSheet1.Sheets[0].Cells[1, 0].Text = "Formulas";</code></pre>
+var valid = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateFormulaListValidator(<span class="hljs-string">"C1:C3"</span>);
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].DataValidator = valid;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].<span class="hljs-keyword">Cells</span>[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>].<span class="hljs-keyword">Text</span> = <span class="hljs-string">"Formulas"</span>;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">GcSpreadSheet1.ActiveSheet.Cells("C1").Value = 1
-GcSpreadSheet1.ActiveSheet.Cells("C2").Value = 2
-GcSpreadSheet1.ActiveSheet.Cells("C3").Value = 3
-GcSpreadSheet1.HighlightInvalidData = True
-Dim valid = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateFormulaListValidator("C1:C3")
-GcSpreadSheet1.Sheets(0).Cells(1, 1).DataValidator = valid
-GcSpreadSheet1.Sheets(0).Cells(1, 0).Text = "Formulas"</code></pre>
+<pre><code>GcSpreadSheet1<span class="hljs-class">.ActiveSheet</span><span class="hljs-class">.Cells</span>(<span class="hljs-string">"C2"</span>)<span class="hljs-class">.Value</span> = <span class="hljs-number">2</span>
+GcSpreadSheet1<span class="hljs-class">.ActiveSheet</span><span class="hljs-class">.Cells</span>(<span class="hljs-string">"C3"</span>)<span class="hljs-class">.Value</span> = <span class="hljs-number">3</span>
+GcSpreadSheet1<span class="hljs-class">.HighlightInvalidData</span> = True
+Dim valid = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.DataValidator</span><span class="hljs-class">.CreateFormulaListValidator</span>(<span class="hljs-string">"C1:C3"</span>)
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.DataValidator</span> = valid
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"Formulas"</span></code></pre>
 
 <p>This example validates a date with the CreateDateValidator method.<figure id="attachment_664850" style="width: 505px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadSLvaliddate.png"><img class="size-full wp-image-664850 " alt="SpreadSLvaliddate" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadSLvaliddate.png" width="505" height="241" /></a><figcaption class="wp-caption-text">Date Validator</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">//Type a date in cell (0,1)
-gcSpreadSheet1.HighlightInvalidData = true;
-var valid = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateDateValidator(GrapeCity.Windows.SpreadSheet.Data.ComparisonOperator.Between, new System.DateTime(2012, 12, 31), DateTime.Now, false);
-gcSpreadSheet1.Sheets[0].Cells[0, 1].DataValidator = valid;
-gcSpreadSheet1.Sheets[0].Cells[0, 0].Text = "Enter a date between 12/31/2012 and now.";
-gcSpreadSheet1.Sheets[0].SetColumnWidth(0, GrapeCity.Windows.SpreadSheet.Data.SheetArea.ColumnHeader, 300);
-gcSpreadSheet1.Sheets[0].SetColumnWidth(1, GrapeCity.Windows.SpreadSheet.Data.SheetArea.ColumnHeader, 100);</code></pre>
+<pre><code>gcSpreadSheet1.HighlightInvalidData = <span class="hljs-literal">true</span>;
+var valid = GrapeCity.Windows.SpreadSheet.<span class="hljs-built_in">Data</span>.DataValidator.CreateDateValidator(GrapeCity.Windows.SpreadSheet.<span class="hljs-built_in">Data</span>.ComparisonOperator.Between, new System.DateTime(<span class="hljs-number">2012</span>, <span class="hljs-number">12</span>, <span class="hljs-number">31</span>), DateTime.Now, <span class="hljs-literal">false</span>);
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>].DataValidator = valid;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].<span class="hljs-built_in">Text</span> = <span class="hljs-string">"Enter a date between 12/31/2012 and now."</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].SetColumnWidth(<span class="hljs-number">0</span>, GrapeCity.Windows.SpreadSheet.<span class="hljs-built_in">Data</span>.SheetArea.ColumnHeader, <span class="hljs-number">300</span>);
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].SetColumnWidth(<span class="hljs-number">1</span>, GrapeCity.Windows.SpreadSheet.<span class="hljs-built_in">Data</span>.SheetArea.ColumnHeader, <span class="hljs-number">100</span>);</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">'Type a date in cell (0,1)
-GcSpreadSheet1.HighlightInvalidData = True
-Dim valid = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateDateValidator(GrapeCity.Windows.SpreadSheet.Data.ComparisonOperator.Between, New System.DateTime(2012, 12, 31), DateTime.Now, False)
-GcSpreadSheet1.Sheets(0).Cells(0, 1).DataValidator = valid
-GcSpreadSheet1.Sheets(0).Cells(0, 0).Text = "Enter a date between 12/31/2012 and now."
-GcSpreadSheet1.Sheets(0). SetColumnWidth(0, GrapeCity.Windows.SpreadSheet.Data.SheetArea.ColumnHeader, 300)
-GcSpreadSheet1.Sheets(0). SetColumnWidth(1, GrapeCity.Windows.SpreadSheet.Data.SheetArea.ColumnHeader, 100)</code></pre>
+<pre><code>GcSpreadSheet1<span class="hljs-class">.HighlightInvalidData</span> = True
+Dim valid = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.DataValidator</span><span class="hljs-class">.CreateDateValidator</span>(GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.ComparisonOperator</span><span class="hljs-class">.Between</span>, New System.<span class="hljs-function"><span class="hljs-title">DateTime</span><span class="hljs-params">(<span class="hljs-number">2012</span>, <span class="hljs-number">12</span>, <span class="hljs-number">31</span>)</span></span>, DateTime<span class="hljs-class">.Now</span>, False)
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.DataValidator</span> = valid
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"Enter a date between 12/31/2012 and now."</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>. <span class="hljs-function"><span class="hljs-title">SetColumnWidth</span><span class="hljs-params">(<span class="hljs-number">0</span>, GrapeCity.Windows.SpreadSheet.Data.SheetArea.ColumnHeader, <span class="hljs-number">300</span>)</span></span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>. <span class="hljs-function"><span class="hljs-title">SetColumnWidth</span><span class="hljs-params">(<span class="hljs-number">1</span>, GrapeCity.Windows.SpreadSheet.Data.SheetArea.ColumnHeader, <span class="hljs-number">100</span>)</span></span></code></pre>
 
 <p>This example uses a validator to check that the integer value is greater than 0.<figure id="attachment_664851" style="width: 574px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadSLformvalidate.png"><img class="size-full wp-image-664851 " alt="SpreadSLformvalidate" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadSLformvalidate.png" width="574" height="252" /></a><figcaption class="wp-caption-text">Formula Validator</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">gcSpreadSheet1.HighlightInvalidData = true;
-var valid = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateFormulaValidator("B2&gt;0");
-valid.InputMessage = "Enter a value greater than 0 in B2";
-valid.ShowInputMessage = true;
-valid.InputTitle= "Tip";
-gcSpreadSheet1.Sheets[0].Cells[1, 1].DataValidator = valid;
-gcSpreadSheet1.Sheets[0].Cells[1, 0].Text = "Enter a value greater than 0 in B2.";</code></pre>
+<pre><code>var <span class="hljs-variable">valid =</span> GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateFormulaValidator(<span class="hljs-string">"B2&amp;gt;0"</span>);
+valid.<span class="hljs-variable">InputMessage =</span> <span class="hljs-string">"Enter a value greater than 0 in B2"</span>;
+valid.<span class="hljs-variable">ShowInputMessage =</span> <span class="hljs-constant">true</span>;
+valid.<span class="hljs-variable">InputTitle=</span> <span class="hljs-string">"Tip"</span>;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">DataValidator =</span> valid;
+gcSpreadSheet1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Text =</span> <span class="hljs-string">"Enter a value greater than 0 in B2."</span>;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">GcSpreadSheet1.HighlightInvalidData = True
-Dim valid = GrapeCity.Windows.SpreadSheet.Data.DataValidator.CreateFormulaValidator("B2&gt;0")
-valid.InputMessage = "Enter a value greater than 0 in B2"
-valid.ShowInputMessage = True
-valid.InputTitle = "Tip"
-GcSpreadSheet1.Sheets(0).Cells(1, 1).DataValidator = valid
-GcSpreadSheet1.Sheets(0).Cells(1, 0).Text = "Enter a value greater than 0 in B2."</code></pre>
+<pre><code>Dim valid = GrapeCity<span class="hljs-class">.Windows</span><span class="hljs-class">.SpreadSheet</span><span class="hljs-class">.Data</span><span class="hljs-class">.DataValidator</span><span class="hljs-class">.CreateFormulaValidator</span>(<span class="hljs-string">"B2&amp;gt;0"</span>)
+valid<span class="hljs-class">.InputMessage</span> = <span class="hljs-string">"Enter a value greater than 0 in B2"</span>
+valid<span class="hljs-class">.ShowInputMessage</span> = True
+valid<span class="hljs-class">.InputTitle</span> = <span class="hljs-string">"Tip"</span>
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)</span></span><span class="hljs-class">.DataValidator</span> = valid
+GcSpreadSheet1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span><span class="hljs-class">.Text</span> = <span class="hljs-string">"Enter a value greater than 0 in B2."</span></code></pre>
 
 
 

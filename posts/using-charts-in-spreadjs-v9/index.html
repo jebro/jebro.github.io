@@ -161,36 +161,35 @@
     activeSheet = spread.getSheet(1);
     var rowNum = 366;
     var colNum = 
-}</code></pre>
+}<pre><code class="hljs">The <span class="hljs-built_in">data</span> <span class="hljs-keyword">in</span> this example is a series of <span class="hljs-keyword">Max</span> Temperatures, Minimum Temperatures, <span class="hljs-literal">and</span> Precipitation levels over the course of a year<span class="hljs-built_in">.</span> A line graph best fits this <span class="hljs-built_in">data</span>, so create a C3 line chart <span class="hljs-keyword">with</span> the “x” <span class="hljs-built_in">data</span> being the “Month” column <span class="hljs-keyword">in</span> the JSON <span class="hljs-literal">and</span> the other series being the individual lines:
 
-<p>The data in this example is a series of Max Temperatures, Minimum Temperatures, and Precipitation levels over the course of a year. A line graph best fits this data, so create a C3 line chart with the “x” data being the “Month” column in the JSON and the other series being the individual lines:</p>
-<pre><code class="”language-csharp”">chart = c3.generate({
-    bindto: ‘#chart’,
-    data: {
-        type: ‘line’,
+<span class="hljs-subst">&lt;</span>pre<span class="hljs-subst">&gt;&lt;</span>code class<span class="hljs-subst">=</span><span class="hljs-string">"”language-csharp”"</span><span class="hljs-subst">&gt;</span>chart <span class="hljs-subst">=</span> c3<span class="hljs-built_in">.</span>generate({
+    bindto: ‘<span class="hljs-variable">#chart</span>’,
+    <span class="hljs-built_in">data</span>: {
+        <span class="hljs-keyword">type</span>: ‘line’,
         x: ‘Month’,
-        rows: activeSheet.getArray(0, 0, rowNum, colNum),
+        <span class="hljs-keyword">rows</span>: activeSheet<span class="hljs-built_in">.</span>getArray(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, rowNum, colNum),
     },
     axis: {
         x: {
-            type: ‘timeseries’
+            <span class="hljs-keyword">type</span>: ‘timeseries’
         }
     }
 });</code></pre>
 
 <p>The c3.generate code is bound to whatever div has the ID of “chart”, which is the reason for the “bindto: ‘#chart’” attribute.<br>When the page is loaded, this will generate the chart with the lines corresponding to the specified columns in the sheet. To ensure that the graph is updated when the values in those columns change, then put the same code from above in the ValueChanged event on the sheet:</p>
-<pre><code class="”language-csharp”">activeSheet.bind(GcSpread.Sheets.Events.ValueChanged, function (sender, args) {  (code above goes here) }</code></pre>
+<pre><code class="”language-csharp”">activeSheet.bind(GcSpread.Sheets.Events.ValueChanged, function (sender, args) {  (code above goes here) }<pre><code class="hljs">To keep <span class="hljs-keyword">the</span> chart <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> same position <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> Spread widget (regardless <span class="hljs-keyword">of</span> scrolling), a custom floating object can’t be used <span class="hljs-keyword">to</span> <span class="hljs-keyword">contain</span> <span class="hljs-keyword">the</span> graph. Instead, a <span class="hljs-keyword">div</span> element <span class="hljs-keyword">with</span> an absolute position can be placed <span class="hljs-function_start"><span class="hljs-keyword">on</span></span> top <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> Spread, <span class="hljs-keyword">to</span> give <span class="hljs-keyword">the</span> illusion <span class="hljs-keyword">that</span> <span class="hljs-keyword">it</span> <span class="hljs-keyword">is</span> inside <span class="hljs-keyword">of</span> <span class="hljs-keyword">it</span>.  
+To do this, create a parent <span class="hljs-keyword">div</span> <span class="hljs-function_start"><span class="hljs-keyword">on</span></span> <span class="hljs-keyword">the</span> page <span class="hljs-keyword">to</span> <span class="hljs-keyword">contain</span> both <span class="hljs-keyword">the</span> Spread <span class="hljs-keyword">and</span> <span class="hljs-keyword">the</span> graph <span class="hljs-keyword">with</span> a “relative” position attribute:
 
-<p>To keep the chart in the same position in the Spread widget (regardless of scrolling), a custom floating object can’t be used to contain the graph. Instead, a div element with an absolute position can be placed on top of the Spread, to give the illusion that it is inside of it.<br>To do this, create a parent div on the page to contain both the Spread and the graph with a “relative” position attribute:</p>
-<div style=”position:relative; width:1200px; height:550px;”></div>
+&lt;<span class="hljs-keyword">div</span> style=”position:relative; width:<span class="hljs-number">1200</span>px; height:<span class="hljs-number">550</span>px;”&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
 
-<p>Place the SpreadJS widget and a DIV element with the ID of “Chart” inside of that parent DIV element with “absolute” position attributes:</p>
-<pre><code class="language-html">
-&lt;div style=”position:relative; width:1200px; height:550px;”&gt;
-    &lt;div id=”ss” style=”position:absolute; left:0; top:0; width:1200px; height:550px; border:1px solid gray”&gt;&lt;/div&gt;
-    &lt;div id=”chart” style=”position:absolute; left:450px; top:50px; width:700px; height:425px; background:white; border:1px solid gray”&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+Place <span class="hljs-keyword">the</span> SpreadJS widget <span class="hljs-keyword">and</span> a DIV element <span class="hljs-keyword">with</span> <span class="hljs-keyword">the</span> ID <span class="hljs-keyword">of</span> “Chart” inside <span class="hljs-keyword">of</span> <span class="hljs-keyword">that</span> parent DIV element <span class="hljs-keyword">with</span> “absolute” position attributes:
+
+&lt;pre&gt;&lt;code <span class="hljs-type">class</span>=<span class="hljs-string">"language-html"</span>&gt;
+&amp;lt;<span class="hljs-keyword">div</span> style=”position:relative; width:<span class="hljs-number">1200</span>px; height:<span class="hljs-number">550</span>px;”&amp;gt;
+    &amp;lt;<span class="hljs-keyword">div</span> <span class="hljs-property">id</span>=”ss” style=”position:absolute; left:<span class="hljs-number">0</span>; top:<span class="hljs-number">0</span>; width:<span class="hljs-number">1200</span>px; height:<span class="hljs-number">550</span>px; border:<span class="hljs-number">1</span>px solid gray”&amp;gt;&amp;lt;/<span class="hljs-keyword">div</span>&amp;gt;
+    &amp;lt;<span class="hljs-keyword">div</span> <span class="hljs-property">id</span>=”chart” style=”position:absolute; left:<span class="hljs-number">450</span>px; top:<span class="hljs-number">50</span>px; width:<span class="hljs-number">700</span>px; height:<span class="hljs-number">425</span>px; background:white; border:<span class="hljs-number">1</span>px solid gray”&amp;gt;&amp;lt;/<span class="hljs-keyword">div</span>&amp;gt;
+&amp;lt;/<span class="hljs-keyword">div</span>&amp;gt;</code></pre>
 
 <p>The outcome of these settings is that the chart is on top of the Spread widget, but appears to be inside of it. However, it is not affected by scrolling in the widget, so large amounts of data can scrolled through while also showing the graph.<br>More information on using C3 can be found here: <a href="http://c3js.org/gettingstarted.html" title="http://c3js.org/gettingstarted.html">http://c3js.org/gettingstarted.html</a>.<figure id="attachment_665603" style="width: 717px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/Figure1.png"><img class=" wp-image-665603 " alt="The HTML page with SpreadJS and a C3 chart." src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/Figure1-1024x537.png" width="717" height="376" /></a><figcaption class="wp-caption-text">The HTML page with SpreadJS and a C3 chart.</figcaption></figure></p>

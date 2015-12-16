@@ -167,65 +167,57 @@
 <p>This example merges the cells in the first column by setting the Mergeable property to True for the text box cell.<figure id="attachment_665794" style="width: 248px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/MultiRowMergeCode.png"><img class="size-full wp-image-665794 " alt="MultiRowMergeCode" src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/MultiRowMergeCode.png" width="248" height="162" /></a><figcaption class="wp-caption-text">Merged cells</figcaption></figure> </p>
 <p>C#</p>
-<pre><code class="language-csharp">GrapeCity.Win.MultiRow.TextBoxCell text1 = new GrapeCity.Win.MultiRow.TextBoxCell();
-text1.Mergeable = true;
-GrapeCity.Win.MultiRow.CheckBoxCell check2 = new GrapeCity.Win.MultiRow.CheckBoxCell();
-GrapeCity.Win.MultiRow.Template template1 = GrapeCity.Win.MultiRow.Template.CreateGridTemplate(new GrapeCity.Win.MultiRow.Cell[] {text1, check2}, 160, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader | GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber);
-template1.ColumnHeaders[0].Cells[0].Value = "Column1";
-gcMultiRow1.Template = template1;
-gcMultiRow1.RowCount = 6;
-gcMultiRow1[0, 0].Value = 1;
-gcMultiRow1[1, 0].Value = 1;
-gcMultiRow1[2, 0].Value = 1;
-gcMultiRow1[3, 0].Value = 2;
-gcMultiRow1[4, 0].Value = 2;
-gcMultiRow1[5, 0].Value = 2;
-gcMultiRow1.AllowUserToAddRows = false;
-</code></pre>
+<pre><code>text1.<span class="hljs-variable">Mergeable =</span> <span class="hljs-constant">true</span>;
+GrapeCity.Win.MultiRow.CheckBoxCell <span class="hljs-variable">check2 =</span> new GrapeCity.Win.MultiRow.CheckBoxCell();
+GrapeCity.Win.MultiRow.Template <span class="hljs-variable">template1 =</span> GrapeCity.Win.MultiRow.Template.CreateGridTemplate(new GrapeCity.Win.MultiRow.Cell[] {text1, check2}, <span class="hljs-number">160</span>, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader | GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber);
+template1.ColumnHeaders[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-string">"Column1"</span>;
+gcMultiRow1.<span class="hljs-variable">Template =</span> template1;
+gcMultiRow1.<span class="hljs-variable">RowCount =</span> <span class="hljs-number">6</span>;
+gcMultiRow1[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">1</span>;
+gcMultiRow1[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">1</span>;
+gcMultiRow1[<span class="hljs-number">2</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">1</span>;
+gcMultiRow1[<span class="hljs-number">3</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">2</span>;
+gcMultiRow1[<span class="hljs-number">4</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">2</span>;
+gcMultiRow1[<span class="hljs-number">5</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">2</span>;
+gcMultiRow1.<span class="hljs-variable">AllowUserToAddRows =</span> <span class="hljs-constant">false</span>;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Dim text1 As New GrapeCity.Win.MultiRow.TextBoxCell()
-text1.Mergeable = True
+<pre><code>text1.Mergeable = <span class="hljs-keyword">True</span>
 Dim check2 As New GrapeCity.Win.MultiRow.CheckBoxCell()
-Dim template1 As GrapeCity.Win.MultiRow.Template = GrapeCity.Win.MultiRow.Template.CreateGridTemplate(New GrapeCity.Win.MultiRow.Cell() {text1, check2}, 160, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader Or GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber)
-template1.ColumnHeaders(0).Cells(0).Value = "Column1"
+Dim template1 As GrapeCity.Win.MultiRow.Template = GrapeCity.Win.MultiRow.Template.CreateGridTemplate(New GrapeCity.Win.MultiRow.<span class="hljs-keyword">Cell</span>() <span class="hljs-list">{text1, check2}</span>, <span class="hljs-number">160</span>, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader <span class="hljs-keyword">Or</span> GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber)
+template1.ColumnHeaders(<span class="hljs-number">0</span>).<span class="hljs-keyword">Cells</span>(<span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-string">"Column1"</span>
 GcMultiRow1.Template = template1
-GcMultiRow1.RowCount = 6
-GcMultiRow1(0, 0).Value = 1
-GcMultiRow1(1, 0).Value = 1
-GcMultiRow1(2, 0).Value = 1
-GcMultiRow1(3, 0).Value = 2
-GcMultiRow1(4, 0).Value = 2
-GcMultiRow1(5, 0).Value = 2
-GcMultiRow1.AllowUserToAddRows = False
-</code></pre>
+GcMultiRow1.RowCount = <span class="hljs-number">6</span>
+GcMultiRow1(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">1</span>
+GcMultiRow1(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">1</span>
+GcMultiRow1(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">1</span>
+GcMultiRow1(<span class="hljs-number">3</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">2</span>
+GcMultiRow1(<span class="hljs-number">4</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">2</span>
+GcMultiRow1(<span class="hljs-number">5</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">2</span>
+GcMultiRow1.AllowUserToAddRows = <span class="hljs-keyword">False</span></code></pre>
 
 <p>This example merges cells and displays the new row icon.</p>
 <p>C#</p>
-<pre><code class="language-csharp">GrapeCity.Win.MultiRow.TextBoxCell text1 = new GrapeCity.Win.MultiRow.TextBoxCell();
-text1.Mergeable = true;
-GrapeCity.Win.MultiRow.CheckBoxCell check2 = new GrapeCity.Win.MultiRow.CheckBoxCell();
-GrapeCity.Win.MultiRow.Template template1 = GrapeCity.Win.MultiRow.Template.CreateGridTemplate(new GrapeCity.Win.MultiRow.Cell[] {text1, check2}, 160, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader | GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber);
-template1.ColumnHeaders[0].Cells[0].Value = "Column1";
-gcMultiRow1.Template = template1;
-gcMultiRow1.RowCount = 3;
-gcMultiRow1[0, 0].Value = 5;
-gcMultiRow1[1, 0].Value = 5;
-gcMultiRow1[2, 0].Value = 5;
-</code></pre>
+<pre><code>text1.<span class="hljs-variable">Mergeable =</span> <span class="hljs-constant">true</span>;
+GrapeCity.Win.MultiRow.CheckBoxCell <span class="hljs-variable">check2 =</span> new GrapeCity.Win.MultiRow.CheckBoxCell();
+GrapeCity.Win.MultiRow.Template <span class="hljs-variable">template1 =</span> GrapeCity.Win.MultiRow.Template.CreateGridTemplate(new GrapeCity.Win.MultiRow.Cell[] {text1, check2}, <span class="hljs-number">160</span>, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader | GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber);
+template1.ColumnHeaders[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-string">"Column1"</span>;
+gcMultiRow1.<span class="hljs-variable">Template =</span> template1;
+gcMultiRow1.<span class="hljs-variable">RowCount =</span> <span class="hljs-number">3</span>;
+gcMultiRow1[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">5</span>;
+gcMultiRow1[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">5</span>;
+gcMultiRow1[<span class="hljs-number">2</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">5</span>;</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Dim text1 As New GrapeCity.Win.MultiRow.TextBoxCell()
-text1.Mergeable = True
+<pre><code>text1.Mergeable = <span class="hljs-keyword">True</span>
 Dim check2 As New GrapeCity.Win.MultiRow.CheckBoxCell()
-Dim template1 As GrapeCity.Win.MultiRow.Template = GrapeCity.Win.MultiRow.Template.CreateGridTemplate(New GrapeCity.Win.MultiRow.Cell() {text1, check2}, 160, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader Or GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber)
-template1.ColumnHeaders(0).Cells(0).Value = "Column1"
+Dim template1 As GrapeCity.Win.MultiRow.Template = GrapeCity.Win.MultiRow.Template.CreateGridTemplate(New GrapeCity.Win.MultiRow.<span class="hljs-keyword">Cell</span>() <span class="hljs-list">{text1, check2}</span>, <span class="hljs-number">160</span>, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader <span class="hljs-keyword">Or</span> GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber)
+template1.ColumnHeaders(<span class="hljs-number">0</span>).<span class="hljs-keyword">Cells</span>(<span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-string">"Column1"</span>
 GcMultiRow1.Template = template1
-GcMultiRow1.RowCount = 3
-GcMultiRow1(0, 0).Value = 5
-GcMultiRow1(1, 0).Value = 5
-GcMultiRow1(2, 0).Value = 5
-</code></pre>
+GcMultiRow1.RowCount = <span class="hljs-number">3</span>
+GcMultiRow1(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">5</span>
+GcMultiRow1(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">5</span>
+GcMultiRow1(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">5</span></code></pre>
 
 <p>The following conditions must be met for cells to be merged:</p>
 <ul>
@@ -253,54 +245,50 @@ GcMultiRow1(2, 0).Value = 5
 <p>The IsMerged method can be used to check whether two cells are merged.</p>
 <p>This example uses the IsMerged method.</p>
 <p>C#</p>
-<pre><code class="language-csharp">private void Form1_Load(object sender, EventArgs e)
-        {
-            GrapeCity.Win.MultiRow.TextBoxCell text1 = new GrapeCity.Win.MultiRow.TextBoxCell();
-            GrapeCity.Win.MultiRow.TextBoxCell text2 = new GrapeCity.Win.MultiRow.TextBoxCell();
-            text1.Name = "text1";
-            text2.Name = "text2";
-            text1.Mergeable = true;
-            text2.Mergeable = true;
-            text2.Style.Format = "c";
-            GrapeCity.Win.MultiRow.Template template1 = GrapeCity.Win.MultiRow.Template.CreateGridTemplate(new GrapeCity.Win.MultiRow.Cell[] { text1, text2 }, 160, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader | GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber);
-            template1.ColumnHeaders[0].Cells[0].Value = "Column1";
-            template1.ColumnHeaders[0].Cells[1].Value = "Column2";
-            gcMultiRow1.Template = template1;
-            gcMultiRow1.RowCount = 3;
-            gcMultiRow1[1, 1].Value = 5;
-            gcMultiRow1[0, 0].Value = 1;
-            gcMultiRow1[1, 0].Value = 1;
+<pre><code>{
+            GrapeCity.Win.MultiRow.TextBoxCell <span class="hljs-variable">text1 =</span> new GrapeCity.Win.MultiRow.TextBoxCell();
+            GrapeCity.Win.MultiRow.TextBoxCell <span class="hljs-variable">text2 =</span> new GrapeCity.Win.MultiRow.TextBoxCell();
+            text1.<span class="hljs-variable">Name =</span> <span class="hljs-string">"text1"</span>;
+            text2.<span class="hljs-variable">Name =</span> <span class="hljs-string">"text2"</span>;
+            text1.<span class="hljs-variable">Mergeable =</span> <span class="hljs-constant">true</span>;
+            text2.<span class="hljs-variable">Mergeable =</span> <span class="hljs-constant">true</span>;
+            text2.Style.<span class="hljs-variable">Format =</span> <span class="hljs-string">"c"</span>;
+            GrapeCity.Win.MultiRow.Template <span class="hljs-variable">template1 =</span> GrapeCity.Win.MultiRow.Template.CreateGridTemplate(new GrapeCity.Win.MultiRow.Cell[] { text1, text2 }, <span class="hljs-number">160</span>, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader | GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber);
+            template1.ColumnHeaders[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-string">"Column1"</span>;
+            template1.ColumnHeaders[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>].<span class="hljs-variable">Value =</span> <span class="hljs-string">"Column2"</span>;
+            gcMultiRow1.<span class="hljs-variable">Template =</span> template1;
+            gcMultiRow1.<span class="hljs-variable">RowCount =</span> <span class="hljs-number">3</span>;
+            gcMultiRow1[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">5</span>;
+            gcMultiRow1[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">1</span>;
+            gcMultiRow1[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">1</span>;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {           
-            listBox1.Items.Add(gcMultiRow1.IsMerged(new GrapeCity.Win.MultiRow.CellPosition(0, 0), new GrapeCity.Win.MultiRow.CellPosition(1, 0)).ToString());
-        }
-</code></pre>
+            listBox1.Items.Add(gcMultiRow1.IsMerged(new GrapeCity.Win.MultiRow.CellPosition(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), new GrapeCity.Win.MultiRow.CellPosition(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)).ToString());
+        }</code></pre>
 
 <p>VB</p>
-<pre><code class="language-csharp">Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load        
-        Dim text1 As New GrapeCity.Win.MultiRow.TextBoxCell()
+<pre><code>Dim text1 As New GrapeCity.Win.MultiRow.TextBoxCell()
         Dim text2 As New GrapeCity.Win.MultiRow.TextBoxCell()
-        text1.Name = "text1"
-        text2.Name = "text2"
-        text1.Mergeable = True
-        text2.Mergeable = True
-        text2.Style.Format = "c"
-        Dim template1 As GrapeCity.Win.MultiRow.Template = GrapeCity.Win.MultiRow.Template.CreateGridTemplate(New GrapeCity.Win.MultiRow.Cell() {text1, text2}, 160, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader Or GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber)
-        template1.ColumnHeaders(0).Cells(0).Value = "Column1"
-        template1.ColumnHeaders(0).Cells(1).Value = "Column2"
+        text1.Name = <span class="hljs-string">"text1"</span>
+        text2.Name = <span class="hljs-string">"text2"</span>
+        text1.Mergeable = <span class="hljs-keyword">True</span>
+        text2.Mergeable = <span class="hljs-keyword">True</span>
+        text2.<span class="hljs-keyword">Style</span>.<span class="hljs-keyword">Format</span> = <span class="hljs-string">"c"</span>
+        Dim template1 As GrapeCity.Win.MultiRow.Template = GrapeCity.Win.MultiRow.Template.CreateGridTemplate(New GrapeCity.Win.MultiRow.<span class="hljs-keyword">Cell</span>() <span class="hljs-list">{text1, text2}</span>, <span class="hljs-number">160</span>, GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.ColumnHeader <span class="hljs-keyword">Or</span> GrapeCity.Win.MultiRow.AutoGenerateGridTemplateStyles.RowHeaderAutoNumber)
+        template1.ColumnHeaders(<span class="hljs-number">0</span>).<span class="hljs-keyword">Cells</span>(<span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-string">"Column1"</span>
+        template1.ColumnHeaders(<span class="hljs-number">0</span>).<span class="hljs-keyword">Cells</span>(<span class="hljs-number">1</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-string">"Column2"</span>
         GcMultiRow1.Template = template1
-        GcMultiRow1.RowCount = 3
-        GcMultiRow1(1, 1).Value = 5
-        GcMultiRow1(0, 0).Value = 1
-        GcMultiRow1(1, 0).Value = 1
-    End Sub
+        GcMultiRow1.RowCount = <span class="hljs-number">3</span>
+        GcMultiRow1(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">5</span>
+        GcMultiRow1(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">1</span>
+        GcMultiRow1(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">End</span> Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ListBox1.Items.Add(GcMultiRow1.IsMerged(New GrapeCity.Win.MultiRow.CellPosition(0, 0), New GrapeCity.Win.MultiRow.CellPosition(1, 0)).ToString())       
-    End Sub
-</code></pre>
+        ListBox1.Items.Add(GcMultiRow1.IsMerged(New GrapeCity.Win.MultiRow.CellPosition(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), New GrapeCity.Win.MultiRow.CellPosition(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)).<span class="hljs-keyword">ToString</span>())       
+    <span class="hljs-keyword">End</span> Sub</code></pre>
 
 
 

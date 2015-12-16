@@ -163,23 +163,18 @@
 <pre><code class="”language-csharp”">private void insertRowButton_Click(object sender, EventArgs e)
 {
     fpSpread1.ActiveSheet.AddRows(fpSpread1.ActiveSheet.ActiveRowIndex, 1);
-}</code></pre>
+}<pre><code class="hljs">When the user clicks on <span class="hljs-keyword">this</span> button, a row will be inserted at the position of the active row <span class="hljs-keyword">in</span> the spreadsheet.
 
-<p>When the user clicks on this button, a row will be inserted at the position of the active row in the spreadsheet.</p>
-<h3 id="change-styling-of-ribbon">Change Styling of Ribbon</h3>
-<p>The color scheme of this particular ribbon can be customized, and instructions on how to do so can be found in the code project tutorial: <a href="http://www.codeproject.com/Articles/364272/Easily-Add-a-Ribbon-Into-a-WinForms-Application-Cs">http://www.codeproject.com/Articles/364272/Easily-Add-a-Ribbon-Into-a-WinForms-Application-Cs</a>.<br>In this tutorial, a pre-made skin was used. To change the skin, create a new function in the Main form’s source code called “ChangeTheme”:</p>
-<pre><code class="”language-csharp”">private void ChangeTheme()
-{
-    Theme.ColorTable = new RibbonProfesionalRendererColorTablePurple();
+<span class="hljs-preprocessor">### Change Styling of Ribbon</span>
+
+The color scheme of <span class="hljs-keyword">this</span> particular ribbon can be customized, and instructions on how to <span class="hljs-keyword">do</span> so can be found <span class="hljs-keyword">in</span> the code project tutorial: &lt;http:<span class="hljs-comment">//www.codeproject.com/Articles/364272/Easily-Add-a-Ribbon-Into-a-WinForms-Application-Cs&gt;.  </span>
+In <span class="hljs-keyword">this</span> tutorial, a pre-made skin was used. To change the skin, create a <span class="hljs-keyword">new</span> function <span class="hljs-keyword">in</span> the Main form’s source code called “ChangeTheme”:
+
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-csharp”"</span>&gt;<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ChangeTheme</span><span class="hljs-params">()</span>
+</span>{
+    Theme.ColorTable = <span class="hljs-keyword">new</span> RibbonProfesionalRendererColorTablePurple();
     ribbon1.Refresh();
-    this.Refresh();
-}</code></pre>
-
-<p>Then, call that function from the form’s main function:</p>
-<pre><code class="”language-csharp”">public SpreadRibbonForm()
-{
-    InitializeComponent();
-    ChangeTheme();
+    <span class="hljs-keyword">this</span>.Refresh();
 }</code></pre>
 
 <p>The changes aren’t reflected at design time, but can be seen at runtime:<figure id="attachment_665097" style="width: 614px" class="wp-caption aligncenter"></p>

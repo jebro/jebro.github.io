@@ -182,17 +182,17 @@ var vp0tr = sheet.getViewportTopRow(0);
 var vp1tr = sheet.getViewportTopRow(1);
 var vp2tr = sheet.getViewportTopRow(2);
 console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+<pre><code class="hljs">`&lt;br /&gt;`  
+The following code returns “<span class="hljs-number">0</span> : <span class="hljs-number">2</span> : <span class="hljs-number">200</span>”.&lt;figure <span class="hljs-variable">id=</span><span class="hljs-string">"attachment_665888"</span> <span class="hljs-variable">style=</span><span class="hljs-string">"width: 632px"</span> <span class="hljs-variable">class=</span><span class="hljs-string">"wp-caption aligncenter"</span>&gt;
 
-<p><code>&lt;br /&gt;</code><br>The following code returns “0 : 2 : 200”.<figure id="attachment_665888" style="width: 632px" class="wp-caption aligncenter"></p>
-<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowFrozen.png"><img class="size-full wp-image-665888 " alt="SpreadJSTopRowFrozen" src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowFrozen.png" width="632" height="377" /></a><figcaption class="wp-caption-text">Frozen Rows</figcaption></figure> </p>
-<pre><code class="language-java">//Have frozen header line
-sheet.setFrozenRowCount(2);
-vp0tr = sheet.getViewportTopRow(0);
-vp1tr = sheet.getViewportTopRow(1);
-vp2tr = sheet.getViewportTopRow(2);
-console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+[&lt;img <span class="hljs-variable">class=</span><span class="hljs-string">"size-full wp-image-665888 "</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"SpreadJSTopRowFrozen"</span> <span class="hljs-variable">src=</span><span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowFrozen.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"632"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"377"</span> /&gt;][<span class="hljs-number">2</span>]&lt;figcaption <span class="hljs-variable">class=</span><span class="hljs-string">"wp-caption-text"</span>&gt;Frozen Rows&lt;/figcaption&gt;&lt;/figure&gt; 
+
+&lt;pre&gt;&lt;code <span class="hljs-variable">class=</span><span class="hljs-string">"language-java"</span>&gt;//Have frozen header line
+sheet.setFrozenRowCount(<span class="hljs-number">2</span>);
+<span class="hljs-variable">vp0tr =</span> sheet.getViewportTopRow(<span class="hljs-number">0</span>);
+<span class="hljs-variable">vp1tr =</span> sheet.getViewportTopRow(<span class="hljs-number">1</span>);
+<span class="hljs-variable">vp2tr =</span> sheet.getViewportTopRow(<span class="hljs-number">2</span>);
+console.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
 
 <p><code>&lt;br /&gt;</code><br>The following code returns “0 : 0 : 197”.<figure id="attachment_665889" style="width: 628px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowTrailingFrozen.png"><img class="size-full wp-image-665889 " alt="SpreadJSTopRowTrailingFrozen" src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowTrailingFrozen.png" width="628" height="377" /></a><figcaption class="wp-caption-text">Frozen Trailing Rows</figcaption></figure> </p>
@@ -202,15 +202,15 @@ vp0tr = sheet.getViewportTopRow(0);
 vp1tr = sheet.getViewportTopRow(1);
 vp2tr = sheet.getViewportTopRow(2);
 console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+<pre><code class="hljs">`&lt;br /&gt;`  
+<span class="hljs-type">The</span> following examples <span class="hljs-keyword">return</span> the results <span class="hljs-keyword">for</span> the getViewportBottomRow <span class="hljs-keyword">method</span>.
 
-<p><code>&lt;br /&gt;</code><br>The following examples return the results for the getViewportBottomRow method.</p>
-<p>The following code returns “-1 : 13 : 199”.</p>
-<pre><code class="language-java">var vp0tr = activeSheet.getViewportBottomRow(0);
-var vp1tr = activeSheet.getViewportBottomRow(1);
-var vp2tr = activeSheet.getViewportBottomRow(2);
-console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+<span class="hljs-type">The</span> following code returns “-<span class="hljs-number">1</span> : <span class="hljs-number">13</span> : <span class="hljs-number">199</span>”.
+
+&lt;pre&gt;&lt;code class=<span class="hljs-string">"language-java"</span>&gt;<span class="hljs-keyword">var</span> vp0tr = activeSheet.getViewportBottomRow(<span class="hljs-number">0</span>);
+<span class="hljs-keyword">var</span> vp1tr = activeSheet.getViewportBottomRow(<span class="hljs-number">1</span>);
+<span class="hljs-keyword">var</span> vp2tr = activeSheet.getViewportBottomRow(<span class="hljs-number">2</span>);
+console.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
 
 <p><code>&lt;br /&gt;</code><br>The following code returns “1 : 13 : 199”.</p>
 <pre><code class="language-java">activeSheet.setFrozenRowCount(2);
@@ -218,15 +218,14 @@ var vp0tr = activeSheet.getViewportBottomRow(0);
 var vp1tr = activeSheet.getViewportBottomRow(1);
 var vp2tr = activeSheet.getViewportBottomRow(2);
 console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+<pre><code class="hljs">`&lt;br /&gt;`  
+The following code returns “-<span class="hljs-number">1</span> : <span class="hljs-number">10</span> : <span class="hljs-number">199</span>”.
 
-<p><code>&lt;br /&gt;</code><br>The following code returns “-1 : 10 : 199”.</p>
-<pre><code class="language-java">activeSheet.setFrozenTrailingRowCount(3);
-var vp0tr = activeSheet.getViewportBottomRow(0);
-var vp1tr = activeSheet.getViewportBottomRow(1);
-var vp2tr = activeSheet.getViewportBottomRow(2);
-console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"language-java"</span>&gt;activeSheet.setFrozenTrailingRowCount(<span class="hljs-number">3</span>);
+<span class="hljs-keyword">var</span> vp0tr = activeSheet.getViewportBottomRow(<span class="hljs-number">0</span>);
+<span class="hljs-keyword">var</span> vp1tr = activeSheet.getViewportBottomRow(<span class="hljs-number">1</span>);
+<span class="hljs-keyword">var</span> vp2tr = activeSheet.getViewportBottomRow(<span class="hljs-number">2</span>);
+console.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
 
 <p><code>&lt;br /&gt;</code><br>The following examples return the results for the getViewportLeftColumn method.</p>
 <p>The following code returns the result “0 : 0 : 20”.</p>
@@ -234,15 +233,14 @@ console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
 var vp1tr = activeSheet.getViewportLeftColumn(1);
 var vp2tr = activeSheet.getViewportLeftColumn(2);
 console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+<pre><code class="hljs">`&lt;br /&gt;`  
+<span class="hljs-type">The</span> following code returns the <span class="hljs-literal">result</span> “<span class="hljs-number">0</span> : <span class="hljs-number">2</span> : <span class="hljs-number">20</span>”.
 
-<p><code>&lt;br /&gt;</code><br>The following code returns the result “0 : 2 : 20”.</p>
-<pre><code class="language-java">activeSheet.setFrozenColumnCount(2);
-var vp0tr = activeSheet.getViewportLeftColumn(0);
-var vp1tr = activeSheet.getViewportLeftColumn(1);
-var vp2tr = activeSheet.getViewportLeftColumn(2);
-console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+&lt;pre&gt;&lt;code class=<span class="hljs-string">"language-java"</span>&gt;activeSheet.setFrozenColumnCount(<span class="hljs-number">2</span>);
+<span class="hljs-keyword">var</span> vp0tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">0</span>);
+<span class="hljs-keyword">var</span> vp1tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">1</span>);
+<span class="hljs-keyword">var</span> vp2tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">2</span>);
+console.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
 
 <p><code>&lt;br /&gt;</code><br>The following code returns the result “0 : 0 : 17”.<figure id="attachment_665891" style="width: 632px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSFrozenTrailingColumn.png"><img class="size-full wp-image-665891 " alt="SpreadJSFrozenTrailingColumn" src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSFrozenTrailingColumn.png" width="632" height="382" /></a><figcaption class="wp-caption-text">Frozen Trailing Columns</figcaption></figure> </p>
@@ -251,15 +249,15 @@ var vp0tr = activeSheet.getViewportLeftColumn(0);
 var vp1tr = activeSheet.getViewportLeftColumn(1);
 var vp2tr = activeSheet.getViewportLeftColumn(2);
 console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+<pre><code class="hljs">`&lt;br /&gt;`  
+<span class="hljs-type">The</span> following examples <span class="hljs-keyword">return</span> the results <span class="hljs-keyword">for</span> the getViewportRightColumn <span class="hljs-keyword">method</span>.
 
-<p><code>&lt;br /&gt;</code><br>The following examples return the results for the getViewportRightColumn method.</p>
-<p>The following code returns the result “-1 : 7 : 19”.</p>
-<pre><code class="language-java">var vp0tr = activeSheet.getViewportRightColumn(0);
-var vp1tr = activeSheet.getViewportRightColumn(1);
-var vp2tr = activeSheet.getViewportRightColumn(2);
-console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+<span class="hljs-type">The</span> following code returns the <span class="hljs-literal">result</span> “-<span class="hljs-number">1</span> : <span class="hljs-number">7</span> : <span class="hljs-number">19</span>”.
+
+&lt;pre&gt;&lt;code class=<span class="hljs-string">"language-java"</span>&gt;<span class="hljs-keyword">var</span> vp0tr = activeSheet.getViewportRightColumn(<span class="hljs-number">0</span>);
+<span class="hljs-keyword">var</span> vp1tr = activeSheet.getViewportRightColumn(<span class="hljs-number">1</span>);
+<span class="hljs-keyword">var</span> vp2tr = activeSheet.getViewportRightColumn(<span class="hljs-number">2</span>);
+console.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
 
 <p><code>&lt;br /&gt;</code><br>The following code returns the result “1 : 7 : 19”.</p>
 <pre><code class="language-java">activeSheet.setFrozenColumnCount(2);
@@ -267,15 +265,14 @@ var vp0tr = activeSheet.getViewportRightColumn(0);
 var vp1tr = activeSheet.getViewportRightColumn(1);
 var vp2tr = activeSheet.getViewportRightColumn(2);
 console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+<pre><code class="hljs">`&lt;br /&gt;`  
+<span class="hljs-type">The</span> following code returns the <span class="hljs-literal">result</span> “-<span class="hljs-number">1</span> : <span class="hljs-number">4</span> : <span class="hljs-number">19</span>”.
 
-<p><code>&lt;br /&gt;</code><br>The following code returns the result “-1 : 4 : 19”.</p>
-<pre><code class="language-java">activeSheet.setFrozenTrailingColumnCount(3);
-var vp0tr = activeSheet.getViewportRightColumn(0);
-var vp1tr = activeSheet.getViewportRightColumn(1);
-var vp2tr = activeSheet.getViewportRightColumn(2);
-console.log(vp0tr + " : " + vp1tr + " : " + vp2tr);
-</code></pre>
+&lt;pre&gt;&lt;code class=<span class="hljs-string">"language-java"</span>&gt;activeSheet.setFrozenTrailingColumnCount(<span class="hljs-number">3</span>);
+<span class="hljs-keyword">var</span> vp0tr = activeSheet.getViewportRightColumn(<span class="hljs-number">0</span>);
+<span class="hljs-keyword">var</span> vp1tr = activeSheet.getViewportRightColumn(<span class="hljs-number">1</span>);
+<span class="hljs-keyword">var</span> vp2tr = activeSheet.getViewportRightColumn(<span class="hljs-number">2</span>);
+console.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
 
 
 

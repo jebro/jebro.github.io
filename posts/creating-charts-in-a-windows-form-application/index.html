@@ -166,62 +166,65 @@
                 if (ChartModel != null)
                     updateChart();
             }
-        }</code></pre>
+        }<pre><code class="hljs">The MainForm <span class="hljs-keyword">is</span> passed to the GenerateChart form <span class="hljs-keyword">as</span> the parent form. Whenever the user chooses to create a <span class="hljs-keyword">new</span> chart, a form like the following opens up:&lt;figure id=<span class="hljs-string">"attachment_664316"</span> style=<span class="hljs-string">"width: 737px"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"wp-caption aligncenter"</span>&gt;
 
-<p>The MainForm is passed to the GenerateChart form as the parent form. Whenever the user chooses to create a new chart, a form like the following opens up:<figure id="attachment_664316" style="width: 737px" class="wp-caption aligncenter"></p>
-<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/ChartingFigure2.png"><img class="wp-image-664316 " alt="The GenerateChart form." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/ChartingFigure2-1024x570.png" width="737" height="410" /></a><figcaption class="wp-caption-text">The GenerateChart form.</figcaption></figure> </p>
-<p>This form allows the user to choose a chart type from a set list using the drop down menu under “Chart Type”. The user can then add a name to the chart and select the series to use for the chart. Once the information is filled in and “Create Chart” is clicked, a chart with the specified properties is created within the MainForm:<figure id="attachment_664317" style="width: 737px" class="wp-caption aligncenter"></p>
-<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/ChartingFigure3.png"><img class="wp-image-664317 " alt="The MainForm with a chart loaded into it." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/ChartingFigure3-1024x725.png" width="737" height="522" /></a><figcaption class="wp-caption-text">The MainForm with a chart loaded into it.</figcaption></figure> </p>
-<p>In my implementation, I wanted to have the chart displayed neatly within the bounds of the rows and columns that comprised the sheet, so I wrote code to calculate the location and size of the chart plot area:</p>
-<pre><code class="”language-csharp”"> public void placeChart(string chartName, ChartModel model, CellRange[] cellRanges, int seriesType, int rowStart, int rowCount, int colStart, int colCount)
-        {
+[&lt;img <span class="hljs-keyword">class</span>=<span class="hljs-string">"wp-image-664316 "</span> alt=<span class="hljs-string">"The GenerateChart form."</span> src=<span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/08/ChartingFigure2-1024x570.png"</span> width=<span class="hljs-string">"737"</span> height=<span class="hljs-string">"410"</span> /&gt;][<span class="hljs-number">2</span>]&lt;figcaption <span class="hljs-keyword">class</span>=<span class="hljs-string">"wp-caption-text"</span>&gt;The GenerateChart form.&lt;/figcaption&gt;&lt;/figure&gt; 
+
+This form allows the user to choose a chart type <span class="hljs-keyword">from</span> a <span class="hljs-keyword">set</span> list <span class="hljs-keyword">using</span> the drop down menu under “Chart Type”. The user can then add a name to the chart and <span class="hljs-keyword">select</span> the series to use <span class="hljs-keyword">for</span> the chart. Once the information <span class="hljs-keyword">is</span> filled <span class="hljs-keyword">in</span> and “Create Chart” <span class="hljs-keyword">is</span> clicked, a chart with the specified properties <span class="hljs-keyword">is</span> created within the MainForm:&lt;figure id=<span class="hljs-string">"attachment_664317"</span> style=<span class="hljs-string">"width: 737px"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"wp-caption aligncenter"</span>&gt;
+
+[&lt;img <span class="hljs-keyword">class</span>=<span class="hljs-string">"wp-image-664317 "</span> alt=<span class="hljs-string">"The MainForm with a chart loaded into it."</span> src=<span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/08/ChartingFigure3-1024x725.png"</span> width=<span class="hljs-string">"737"</span> height=<span class="hljs-string">"522"</span> /&gt;][<span class="hljs-number">3</span>]&lt;figcaption <span class="hljs-keyword">class</span>=<span class="hljs-string">"wp-caption-text"</span>&gt;The MainForm with a chart loaded <span class="hljs-keyword">into</span> it.&lt;/figcaption&gt;&lt;/figure&gt; 
+
+In my implementation, I wanted to have the chart displayed neatly within the bounds of the rows and columns that comprised the sheet, so I wrote code to calculate the location and size of the chart plot area:
+
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-csharp”"</span>&gt; <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">placeChart</span><span class="hljs-params">(<span class="hljs-keyword">string</span> chartName, ChartModel model, CellRange[] cellRanges, <span class="hljs-keyword">int</span> seriesType, <span class="hljs-keyword">int</span> rowStart, <span class="hljs-keyword">int</span> rowCount, <span class="hljs-keyword">int</span> colStart, <span class="hljs-keyword">int</span> colCount)</span>
+        </span>{
             SeriesType = seriesType;
             ChartModel = model;
-            ChartSizeX = 0;
-            ChartSizeY = 0;
-            RowHeight = 0;
-            if (fpSpread1.Sheets[0].Charts.Count != 0)
-                fpSpread1.Sheets[0].Charts.Clear();
+            ChartSizeX = <span class="hljs-number">0</span>;
+            ChartSizeY = <span class="hljs-number">0</span>;
+            RowHeight = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">if</span> (fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts.Count != <span class="hljs-number">0</span>)
+                fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts.Clear();
 
-            for (int i = colStart; i &lt; colStart + colCount; i++)
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = colStart; i &amp;lt; colStart + colCount; i++)
             {
-                ChartSizeX += (int)fpSpread1.Sheets[0].Columns[i].Width;
+                ChartSizeX += (<span class="hljs-keyword">int</span>)fpSpread1.Sheets[<span class="hljs-number">0</span>].Columns[i].Width;
             }
-            for (int i = rowStart; i &lt; rowStart + rowCount; i++)
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = rowStart; i &amp;lt; rowStart + rowCount; i++)
             {
-                ChartSizeY += (int)fpSpread1.Sheets[0].Rows[i].Height;
+                ChartSizeY += (<span class="hljs-keyword">int</span>)fpSpread1.Sheets[<span class="hljs-number">0</span>].Rows[i].Height;
             }
-            for (int i = 0; i &lt; rowStart; i++)
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &amp;lt; rowStart; i++)
             {
-                RowHeight += (int)fpSpread1.Sheets[0].Rows[i].Height;
+                RowHeight += (<span class="hljs-keyword">int</span>)fpSpread1.Sheets[<span class="hljs-number">0</span>].Rows[i].Height;
             }
-            int size = 0;
-            for (int i = 0; i &lt; cellRanges.Length; i++)
+            <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &amp;lt; cellRanges.Length; i++)
             {
-                if (cellRanges[i] != null)
+                <span class="hljs-keyword">if</span> (cellRanges[i] != <span class="hljs-keyword">null</span>)
                     size++;
             }
-            tempRange = new CellRange[size];
-            int tempIndex = 0;
-            for (int i = 0; i &lt; cellRanges.Length; i++)
+            tempRange = <span class="hljs-keyword">new</span> CellRange[size];
+            <span class="hljs-keyword">int</span> tempIndex = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &amp;lt; cellRanges.Length; i++)
             {
-                if (cellRanges[i] != null)
+                <span class="hljs-keyword">if</span> (cellRanges[i] != <span class="hljs-keyword">null</span>)
                 {
                     tempRange[tempIndex] = cellRanges[i];
                     tempIndex++;
                 }       
             }
 
-            if (SeriesType == ClusteredBar)
-                fpSpread1.Sheets[0].AddChart(tempRange, typeof(ClusteredBarSeries), ChartSizeX, ChartSizeY, (int)fpSpread1.Sheets[0].Columns[0].Width, RowHeight);
-            else if (SeriesType == StackedBar)
-                fpSpread1.Sheets[0].AddChart(tempRange, typeof(StackedBarSeries), ChartSizeX, ChartSizeY, (int)fpSpread1.Sheets[0].Columns[0].Width, RowHeight);
-            else if (SeriesType == Pie)
-                fpSpread1.Sheets[0].AddChart(tempRange, typeof(PieSeries), ChartSizeX, ChartSizeY, (int)fpSpread1.Sheets[0].Columns[0].Width, RowHeight);
-            else if (SeriesType == Line)
-                fpSpread1.Sheets[0].AddChart(tempRange, typeof(LineSeries), ChartSizeX, ChartSizeY, (int)fpSpread1.Sheets[0].Columns[0].Width, RowHeight);
-            else if (SeriesType == Radar)
-                fpSpread1.Sheets[0].AddChart(tempRange, typeof(RadarPointSeries), ChartSizeX, ChartSizeY, (int)fpSpread1.Sheets[0].Columns[0].Width, RowHeight);
+            <span class="hljs-keyword">if</span> (SeriesType == ClusteredBar)
+                fpSpread1.Sheets[<span class="hljs-number">0</span>].AddChart(tempRange, <span class="hljs-keyword">typeof</span>(ClusteredBarSeries), ChartSizeX, ChartSizeY, (<span class="hljs-keyword">int</span>)fpSpread1.Sheets[<span class="hljs-number">0</span>].Columns[<span class="hljs-number">0</span>].Width, RowHeight);
+            <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> <span class="hljs-params">(SeriesType == StackedBar)</span>
+                fpSpread1.Sheets[0].<span class="hljs-title">AddChart</span><span class="hljs-params">(tempRange, <span class="hljs-keyword">typeof</span>(StackedBarSeries)</span>, ChartSizeX, ChartSizeY, <span class="hljs-params">(<span class="hljs-keyword">int</span>)</span>fpSpread1.Sheets[0].Columns[0].Width, RowHeight)</span>;
+            <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> <span class="hljs-params">(SeriesType == Pie)</span>
+                fpSpread1.Sheets[0].<span class="hljs-title">AddChart</span><span class="hljs-params">(tempRange, <span class="hljs-keyword">typeof</span>(PieSeries)</span>, ChartSizeX, ChartSizeY, <span class="hljs-params">(<span class="hljs-keyword">int</span>)</span>fpSpread1.Sheets[0].Columns[0].Width, RowHeight)</span>;
+            <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> <span class="hljs-params">(SeriesType == Line)</span>
+                fpSpread1.Sheets[0].<span class="hljs-title">AddChart</span><span class="hljs-params">(tempRange, <span class="hljs-keyword">typeof</span>(LineSeries)</span>, ChartSizeX, ChartSizeY, <span class="hljs-params">(<span class="hljs-keyword">int</span>)</span>fpSpread1.Sheets[0].Columns[0].Width, RowHeight)</span>;
+            <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> <span class="hljs-params">(SeriesType == Radar)</span>
+                fpSpread1.Sheets[0].<span class="hljs-title">AddChart</span><span class="hljs-params">(tempRange, <span class="hljs-keyword">typeof</span>(RadarPointSeries)</span>, ChartSizeX, ChartSizeY, <span class="hljs-params">(<span class="hljs-keyword">int</span>)</span>fpSpread1.Sheets[0].Columns[0].Width, RowHeight)</span>;
             updateChart();
         }</code></pre>
 
@@ -236,27 +239,26 @@
                 series.CategoryNames.Add(fpSpread1.Sheets[0].Cells[i, 0].Text);
             }
             return series;
-        }</code></pre>
+        }<pre><code class="hljs">A series of a specific type is created out of the range provided by the parameters. The names are added in order to have labels in the charts. Once a series has been created, a chart can be made <span class="hljs-keyword">using</span> <span class="hljs-keyword">this</span> function:
 
-<p>A series of a specific type is created out of the range provided by the parameters. The names are added in order to have labels in the charts. Once a series has been created, a chart can be made using this function:</p>
-<pre><code class="”language-csharp”"> public ChartModel createChart(string name)
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-csharp”"</span>&gt; <span class="hljs-keyword">public</span> ChartModel createChart(<span class="hljs-built_in">string</span> name)
         {
-            LabelArea label = new LabelArea();
+            LabelArea label = <span class="hljs-keyword">new</span> LabelArea();
             label.Text = name;
-            label.Location = new PointF(0.5f, 0.02f);
-            label.AlignmentX = 0.5f;
-            label.AlignmentY = 0.0f;
+            label.Location = <span class="hljs-keyword">new</span> PointF(<span class="hljs-number">0.5f</span>, <span class="hljs-number">0.02f</span>);
+            label.AlignmentX = <span class="hljs-number">0.5f</span>;
+            label.AlignmentY = <span class="hljs-number">0.0f</span>;
 
-            LegendArea legend = new LegendArea();
-            legend.Location = new PointF(0.98f, 0.5f);
-            legend.AlignmentX = 1.0f;
-            legend.AlignmentY = 0.5f;
+            LegendArea legend = <span class="hljs-keyword">new</span> LegendArea();
+            legend.Location = <span class="hljs-keyword">new</span> PointF(<span class="hljs-number">0.98f</span>, <span class="hljs-number">0.5f</span>);
+            legend.AlignmentX = <span class="hljs-number">1.0f</span>;
+            legend.AlignmentY = <span class="hljs-number">0.5f</span>;
 
-            ChartModel model = new ChartModel();
+            ChartModel model = <span class="hljs-keyword">new</span> ChartModel();
             model.LabelAreas.Add(label);
             model.LegendAreas.Add(legend);
 
-            return model;
+            <span class="hljs-keyword">return</span> model;
         }</code></pre>
 
 <p>This function is used to create an initial chart with properties that are changed once cell ranges are created. This can be seen with the button click function in the GenerateChart form:</p>
@@ -304,48 +306,47 @@
                     this.Close();
                 }
             }
-        }</code></pre>
+        }<pre><code class="hljs">These particular charts can handle at most <span class="hljs-number">4</span> series (the <span class="hljs-number">4</span> categories <span class="hljs-keyword">in</span> the spreadsheet). Every chart created can have less than <span class="hljs-number">4</span> series, and the other series could be passed <span class="hljs-keyword">in</span> <span class="hljs-keyword">as</span> <span class="hljs-keyword">null</span> values. Both creating a chart and updating a chart utilized the updateChart function, which gives the chart all of its labels and legend and ensure that the data <span class="hljs-keyword">is</span> displayed correctly:
 
-<p>These particular charts can handle at most 4 series (the 4 categories in the spreadsheet). Every chart created can have less than 4 series, and the other series could be passed in as null values. Both creating a chart and updating a chart utilized the updateChart function, which gives the chart all of its labels and legend and ensure that the data is displayed correctly:</p>
-<pre><code class="”language-csharp”"> public void updateChart()
-        {
-            if (SeriesType == ClusteredBar)
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-csharp”"</span>&gt; <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">updateChart</span><span class="hljs-params">()</span>
+        </span>{
+            <span class="hljs-keyword">if</span> (SeriesType == ClusteredBar)
             {
-                ClusteredBarSeries bars = new ClusteredBarSeries();
-                for (int i = 0; i &lt; tempRange.Length; i++)
-                    bars.Series.Add(createBarSeries(SeriesNames[tempRange[i].Column - 1], tempRange[i].Column, 3, 11));
-                fpSpread1.Sheets[0].Charts[0].Model.PlotAreas[0].Series[0] = bars;
-                YPlotArea barChart = (YPlotArea)fpSpread1.Sheets[0].Charts[0].Model.PlotAreas[0];
-                barChart.Vertical = false;
+                ClusteredBarSeries bars = <span class="hljs-keyword">new</span> ClusteredBarSeries();
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &amp;lt; tempRange.Length; i++)
+                    bars.Series.Add(createBarSeries(SeriesNames[tempRange[i].Column - <span class="hljs-number">1</span>], tempRange[i].Column, <span class="hljs-number">3</span>, <span class="hljs-number">11</span>));
+                fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts[<span class="hljs-number">0</span>].Model.PlotAreas[<span class="hljs-number">0</span>].Series[<span class="hljs-number">0</span>] = bars;
+                YPlotArea barChart = (YPlotArea)fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts[<span class="hljs-number">0</span>].Model.PlotAreas[<span class="hljs-number">0</span>];
+                barChart.Vertical = <span class="hljs-keyword">false</span>;
             }
-            else if (SeriesType == StackedBar)
-            {
-                StackedBarSeries bars = new StackedBarSeries();
-                for (int i = 0; i &lt; tempRange.Length; i++)
-                    bars.Series.Add(createBarSeries(SeriesNames[tempRange[i].Column - 1], tempRange[i].Column, 3, 11));
-                fpSpread1.Sheets[0].Charts[0].Model.PlotAreas[0].Series[0] = bars;
-                YPlotArea barChart = (YPlotArea)fpSpread1.Sheets[0].Charts[0].Model.PlotAreas[0];
-                barChart.Vertical = false;
+            <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> <span class="hljs-params">(SeriesType == StackedBar)</span>
+            </span>{
+                StackedBarSeries bars = <span class="hljs-keyword">new</span> StackedBarSeries();
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &amp;lt; tempRange.Length; i++)
+                    bars.Series.Add(createBarSeries(SeriesNames[tempRange[i].Column - <span class="hljs-number">1</span>], tempRange[i].Column, <span class="hljs-number">3</span>, <span class="hljs-number">11</span>));
+                fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts[<span class="hljs-number">0</span>].Model.PlotAreas[<span class="hljs-number">0</span>].Series[<span class="hljs-number">0</span>] = bars;
+                YPlotArea barChart = (YPlotArea)fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts[<span class="hljs-number">0</span>].Model.PlotAreas[<span class="hljs-number">0</span>];
+                barChart.Vertical = <span class="hljs-keyword">false</span>;
             }
-            else if (SeriesType == Pie)
-            {
-                for (int i = 0; i &lt; tempRange.Length; i++)
-                    fpSpread1.Sheets[0].Charts[0].Model.PlotAreas[0].Series[i] = createPieSeries(SeriesNames[tempRange[i].Column - 1], tempRange[i].Column, 3, 11);
+            <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> <span class="hljs-params">(SeriesType == Pie)</span>
+            </span>{
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &amp;lt; tempRange.Length; i++)
+                    fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts[<span class="hljs-number">0</span>].Model.PlotAreas[<span class="hljs-number">0</span>].Series[i] = createPieSeries(SeriesNames[tempRange[i].Column - <span class="hljs-number">1</span>], tempRange[i].Column, <span class="hljs-number">3</span>, <span class="hljs-number">11</span>);
             }
-            else if (SeriesType == Line)
-            {
-                for (int i = 0; i &lt; tempRange.Length; i++)
-                    fpSpread1.Sheets[0].Charts[0].Model.PlotAreas[0].Series[i] = createLineSeries(SeriesNames[tempRange[i].Column - 1], tempRange[i].Column, 3, 11);
+            <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> <span class="hljs-params">(SeriesType == Line)</span>
+            </span>{
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &amp;lt; tempRange.Length; i++)
+                    fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts[<span class="hljs-number">0</span>].Model.PlotAreas[<span class="hljs-number">0</span>].Series[i] = createLineSeries(SeriesNames[tempRange[i].Column - <span class="hljs-number">1</span>], tempRange[i].Column, <span class="hljs-number">3</span>, <span class="hljs-number">11</span>);
             }
-            else if (SeriesType == Radar)
-            {
-                for (int i = 0; i &lt; tempRange.Length; i++)
-                    fpSpread1.Sheets[0].Charts[0].Model.PlotAreas[0].Series[i] = createRadarPointSeries(SeriesNames[tempRange[i].Column - 1], tempRange[i].Column, 3, 11);
+            <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> <span class="hljs-params">(SeriesType == Radar)</span>
+            </span>{
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &amp;lt; tempRange.Length; i++)
+                    fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts[<span class="hljs-number">0</span>].Model.PlotAreas[<span class="hljs-number">0</span>].Series[i] = createRadarPointSeries(SeriesNames[tempRange[i].Column - <span class="hljs-number">1</span>], tempRange[i].Column, <span class="hljs-number">3</span>, <span class="hljs-number">11</span>);
             }
 
-            fpSpread1.Sheets[0].Charts[0].Model.LabelAreas.Add(ChartModel.LabelAreas[0]);
-            fpSpread1.Sheets[0].Charts[0].CanMove = FarPoint.Win.Spread.DrawingSpace.Moving.None;
-            fpSpread1.Sheets[0].Charts[0].CanSize = FarPoint.Win.Spread.DrawingSpace.Sizing.None;
+            fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts[<span class="hljs-number">0</span>].Model.LabelAreas.Add(ChartModel.LabelAreas[<span class="hljs-number">0</span>]);
+            fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts[<span class="hljs-number">0</span>].CanMove = FarPoint.Win.Spread.DrawingSpace.Moving.None;
+            fpSpread1.Sheets[<span class="hljs-number">0</span>].Charts[<span class="hljs-number">0</span>].CanSize = FarPoint.Win.Spread.DrawingSpace.Sizing.None;
         }</code></pre>
 
 <p>Now whenever a chart is created, a user can edit the values that the chart is based on and click the “Update Chart” button to have the changes reflected in the chart.</p>

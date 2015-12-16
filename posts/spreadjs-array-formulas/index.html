@@ -166,59 +166,53 @@
 <p>This example uses the setArrayFormula method.<figure id="attachment_664178" style="width: 751px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSarray.png"><img class="size-full wp-image-664178 " alt="SpreadJSarray" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSarray.png" width="751" height="312" /></a><figcaption class="wp-caption-text">Array Formula</figcaption></figure> </p>
 <p>JavaScript</p>
-<pre><code class="language-csharp">activeSheet.getCell(0,1).hAlign(GcSpread.Sheets.HorizontalAlign.center);
-activeSheet.getCell(0,2).hAlign(GcSpread.Sheets.HorizontalAlign.center);
-activeSheet.getCell(0,3).hAlign(GcSpread.Sheets.HorizontalAlign.center);
-activeSheet.getCell(0,3).text("Result");
-activeSheet.getCell(0,1).text("Column B");
-activeSheet.getCell(0,2).text("Column C");
-activeSheet.getCell(1,1).value(3);
-activeSheet.getCell(2,1).value(1);
-activeSheet.getCell(3,1).value(3);
-activeSheet.getCell(4,1).value(7);
-activeSheet.getCell(1,2).value(7);
-activeSheet.getCell(2,2).value(7);
-activeSheet.getCell(3,2).value(7);
-activeSheet.getCell(4,2).value(7);
-spread.canUserEditFormula(true);
-activeSheet.setArrayFormula(1, 3, 4, 1, "B2:B5*C2:C5");
-</code></pre>
+<pre><code><span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>).<span class="hljs-function">hAlign</span>(GcSpread.Sheets.HorizontalAlign.center);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">0</span>,<span class="hljs-number">3</span>).<span class="hljs-function">hAlign</span>(GcSpread.Sheets.HorizontalAlign.center);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">0</span>,<span class="hljs-number">3</span>).<span class="hljs-function">text</span>(<span class="hljs-string">"Result"</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>).<span class="hljs-function">text</span>(<span class="hljs-string">"Column B"</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>).<span class="hljs-function">text</span>(<span class="hljs-string">"Column C"</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>).<span class="hljs-function">value</span>(<span class="hljs-number">3</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>).<span class="hljs-function">value</span>(<span class="hljs-number">1</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>).<span class="hljs-function">value</span>(<span class="hljs-number">3</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">4</span>,<span class="hljs-number">1</span>).<span class="hljs-function">value</span>(<span class="hljs-number">7</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>).<span class="hljs-function">value</span>(<span class="hljs-number">7</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>).<span class="hljs-function">value</span>(<span class="hljs-number">7</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>).<span class="hljs-function">value</span>(<span class="hljs-number">7</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">4</span>,<span class="hljs-number">2</span>).<span class="hljs-function">value</span>(<span class="hljs-number">7</span>);
+<span class="hljs-attribute">spread</span>.<span class="hljs-function">canUserEditFormula</span>(true);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">setArrayFormula</span>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"B2:B5*C2:C5"</span>);</code></pre>
 
 <p>This example creates an array formula with the setArrayFormula method.<figure id="attachment_664180" style="width: 758px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSArrayForm1.png"><img class="size-full wp-image-664180 " alt="SpreadJSArrayForm1" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSArrayForm1.png" width="758" height="318" /></a><figcaption class="wp-caption-text">Array Formula</figcaption></figure> </p>
 <p>JavaScript</p>
-<pre><code class="language-csharp">activeSheet.getCell(1,0).text("Quantity");
-activeSheet.getCell(2,0).text("Price");
-activeSheet.getCell(4,0).text("Total Value");
-activeSheet.getColumn(0).width(80);
-activeSheet.getCell(1,1).value(445);
-activeSheet.getCell(1,2).value(100);
-activeSheet.getCell(2,1).value(15);
-activeSheet.getCell(2,2).value(30);
-activeSheet.setArrayFormula(4, 2, 1, 1, "SUM(B2:C2*B3:C3)");
-</code></pre>
+<pre><code><span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>).<span class="hljs-function">text</span>(<span class="hljs-string">"Price"</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">4</span>,<span class="hljs-number">0</span>).<span class="hljs-function">text</span>(<span class="hljs-string">"Total Value"</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getColumn</span>(<span class="hljs-number">0</span>).<span class="hljs-function">width</span>(<span class="hljs-number">80</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>).<span class="hljs-function">value</span>(<span class="hljs-number">445</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>).<span class="hljs-function">value</span>(<span class="hljs-number">100</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>).<span class="hljs-function">value</span>(<span class="hljs-number">15</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>).<span class="hljs-function">value</span>(<span class="hljs-number">30</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">setArrayFormula</span>(<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"SUM(B2:C2*B3:C3)"</span>);</code></pre>
 
 <p>This example creates an array formula with a condition.<figure id="attachment_664181" style="width: 752px" class="wp-caption aligncenter"></p>
 <p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSArrayFormula.png"><img class="size-full wp-image-664181  " alt="SpreadJSArrayFormula" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSArrayFormula.png" width="752" height="312" /></a><figcaption class="wp-caption-text">Array Formula with Condition</figcaption></figure> </p>
 <p>JavaScript</p>
-<pre><code class="language-csharp">activeSheet.getCell(0, 1).text("Value B");
-activeSheet.getCell(0, 2).text("Value C");
-activeSheet.getCell(6, 0).text("Sum (B*C if B &lt; 5)");
-activeSheet.getColumn(0).width(120);
-spread.canUserEditFormula(true);
-activeSheet.getCell(0,1).hAlign(GcSpread.Sheets.HorizontalAlign.center);
-activeSheet.getCell(0,2).hAlign(GcSpread.Sheets.HorizontalAlign.center);
-activeSheet.getCell(0,3).hAlign(GcSpread.Sheets.HorizontalAlign.center);
-activeSheet.getCell(1,1).value(4);
-activeSheet.getCell(1,2).value(3);
-activeSheet.getCell(2,1).value(2);
-activeSheet.getCell(2,2).value(2);
-activeSheet.getCell(3,1).value(5);
-activeSheet.getCell(3,2).value(7);
-activeSheet.getCell(4,1).value(6);
-activeSheet.getCell(4,2).value(2);
-activeSheet.setArrayFormula(6, 2, 1, 1, "Sum(IF(B2:B5&lt;5,B2:B5*C2:C5))");
-</code></pre>
+<pre><code><span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>).<span class="hljs-function">text</span>(<span class="hljs-string">"Value C"</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">6</span>, <span class="hljs-number">0</span>).<span class="hljs-function">text</span>(<span class="hljs-string">"Sum (B*C if B &amp;lt; 5)"</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getColumn</span>(<span class="hljs-number">0</span>).<span class="hljs-function">width</span>(<span class="hljs-number">120</span>);
+<span class="hljs-attribute">spread</span>.<span class="hljs-function">canUserEditFormula</span>(true);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>).<span class="hljs-function">hAlign</span>(GcSpread.Sheets.HorizontalAlign.center);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>).<span class="hljs-function">hAlign</span>(GcSpread.Sheets.HorizontalAlign.center);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">0</span>,<span class="hljs-number">3</span>).<span class="hljs-function">hAlign</span>(GcSpread.Sheets.HorizontalAlign.center);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>).<span class="hljs-function">value</span>(<span class="hljs-number">4</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>).<span class="hljs-function">value</span>(<span class="hljs-number">3</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>).<span class="hljs-function">value</span>(<span class="hljs-number">2</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>).<span class="hljs-function">value</span>(<span class="hljs-number">2</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>).<span class="hljs-function">value</span>(<span class="hljs-number">5</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>).<span class="hljs-function">value</span>(<span class="hljs-number">7</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">4</span>,<span class="hljs-number">1</span>).<span class="hljs-function">value</span>(<span class="hljs-number">6</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">getCell</span>(<span class="hljs-number">4</span>,<span class="hljs-number">2</span>).<span class="hljs-function">value</span>(<span class="hljs-number">2</span>);
+<span class="hljs-attribute">activeSheet</span>.<span class="hljs-function">setArrayFormula</span>(<span class="hljs-number">6</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"Sum(IF(B2:B5&amp;lt;5,B2:B5*C2:C5))"</span>);</code></pre>
 
 <p>You can use Ctrl + Shift + Enter to create an array formula when using the formula text box. The formula text box is displayed when editing or creating formulas at run time.</p>
 <p>Type the formula as shown in the following figure.<figure id="attachment_664182" style="width: 587px" class="wp-caption aligncenter"></p>

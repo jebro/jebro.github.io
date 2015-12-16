@@ -198,38 +198,37 @@ $("#ss").data("spread").getActiveSheet().sortRange(-1, 0, -1, 1, true, [
 &lt;input type="button" id="button1" value="button1"/&gt;
 &lt;input type="button" id="button2" value="button2"/&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/html&gt;<pre><code class="hljs">You can specify multiple sort conditions when sorting.
 
-<p>You can specify multiple sort conditions when sorting.</p>
-<p>This example sorts rows using multiple sort keys.</p>
-<pre><code class="language-javascript">
-$(document).ready(function () 
-{
-var spread = new GcSpread.Sheets.Spread($("#ss").get(0),{sheetCount:3});
-var activeSheet = spread.getActiveSheet();
-activeSheet.setRowCount(6);
-activeSheet.setValue(0, 0, 10);
-activeSheet.setValue(1, 0, 100);
-activeSheet.setValue(2, 0, 100);
-activeSheet.setValue(3, 0, 10);
-activeSheet.setValue(4, 0, 5);
-activeSheet.setValue(5, 0, 10);
-activeSheet.setValue(0, 1, 10);
-activeSheet.setValue(1, 1, 40);
-activeSheet.setValue(2, 1, 10);
-activeSheet.setValue(3, 1, 20);
-activeSheet.setValue(4, 1, 10);
-activeSheet.setValue(5, 1, 40);
+This example sorts rows using multiple sort keys.
 
-$("#button1").click(function(){
-//Create a SortInfo object where 1st Key:Column1/2nd Key:Column2.
-var sortInfo = [
-{index:0, ascending:true},
-{index:1, ascending:true}];
-///Execute sorting which targets all rows based on the created sorting conditions.
-$("#ss").data("spread").getActiveSheet().sortRange(0, -1, 6, -1, true, sortInfo);
-});
-</code></pre>
+&lt;pre&gt;&lt;code <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">language</span>-<span class="hljs-title">javascript</span>"&gt;
+$(<span class="hljs-title">document</span>).<span class="hljs-title">ready</span>(<span class="hljs-title">function</span> () 
+</span>{
+<span class="hljs-keyword">var</span> spread = <span class="hljs-keyword">new</span> GcSpread.Sheets.Spread($(<span class="hljs-string">"#ss"</span>).<span class="hljs-keyword">get</span>(<span class="hljs-number">0</span>),{sheetCount:<span class="hljs-number">3</span>});
+<span class="hljs-keyword">var</span> activeSheet = spread.getActiveSheet();
+activeSheet.setRowCount(<span class="hljs-number">6</span>);
+activeSheet.setValue(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>);
+activeSheet.setValue(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>);
+activeSheet.setValue(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>);
+activeSheet.setValue(<span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>);
+activeSheet.setValue(<span class="hljs-number">4</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>);
+activeSheet.setValue(<span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>);
+activeSheet.setValue(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">10</span>);
+activeSheet.setValue(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">40</span>);
+activeSheet.setValue(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">10</span>);
+activeSheet.setValue(<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">20</span>);
+activeSheet.setValue(<span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">10</span>);
+activeSheet.setValue(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">40</span>);
+
+$(<span class="hljs-string">"#button1"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+<span class="hljs-comment">//Create a SortInfo object where 1st Key:Column1/2nd Key:Column2.</span>
+<span class="hljs-keyword">var</span> sortInfo = [
+{index:<span class="hljs-number">0</span>, ascending:<span class="hljs-literal">true</span>},
+{index:<span class="hljs-number">1</span>, ascending:<span class="hljs-literal">true</span>}];
+<span class="hljs-comment">///Execute sorting which targets all rows based on the created sorting conditions.</span>
+$(<span class="hljs-string">"#ss"</span>).data(<span class="hljs-string">"spread"</span>).getActiveSheet().sortRange(<span class="hljs-number">0</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">6</span>, -<span class="hljs-number">1</span>, <span class="hljs-literal">true</span>, sortInfo);
+});</code></pre>
 
 <p>This example uses the RangeSorted event.</p>
 <pre><code class="language-javascript">
@@ -250,40 +249,38 @@ activeSheet.rowFilter(hideRowFilter);
 $("#ss").data("spread").getActiveSheet().bind(GcSpread.Sheets.Events.RangeSorted, function (e, info) {
 alert("Col (" + info.col + ", " + info.ascending +")");
 });
-</code></pre>
+<pre><code class="hljs">This example uses the sortColumn method.
 
-<p>This example uses the sortColumn method.</p>
-<pre><code class="language-javascript">//Create a custom condition.function CustomFilter(){};
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"language-javascript"</span>&gt;<span class="hljs-comment">//Create a custom condition.function CustomFilter(){};</span>
 CustomFilter.prototype = {
-conditionType: "CustomFilter",
+conditionType: <span class="hljs-string">"CustomFilter"</span>,
 evaluate: function (evaluator, row, col) {
-var value = evaluator.getValue(row, col);if(value !== null && value &gt;= 10 && value &lt;= 50){
-//Return True only when the following conditions are satisfied.
-// (1)Values are entered.
-// (2)Values are not lower than 10.
-// (3)Values are not greater than 50.
-return true;
-}else{
-return false;
+<span class="hljs-keyword">var</span> <span class="hljs-keyword">value</span> = evaluator.getValue(row, col);<span class="hljs-keyword">if</span>(<span class="hljs-keyword">value</span> !== <span class="hljs-keyword">null</span> &amp;&amp; <span class="hljs-keyword">value</span> &amp;gt;= <span class="hljs-number">10</span> &amp;&amp; <span class="hljs-keyword">value</span> &amp;lt;= <span class="hljs-number">50</span>){
+<span class="hljs-comment">//Return True only when the following conditions are satisfied.</span>
+<span class="hljs-comment">// (1)Values are entered.</span>
+<span class="hljs-comment">// (2)Values are not lower than 10.</span>
+<span class="hljs-comment">// (3)Values are not greater than 50.</span>
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}<span class="hljs-keyword">else</span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
 }
 }
 };
-activeSheet.setValue(0, 0, 10);
-activeSheet.setValue(1, 0, 100);
-activeSheet.setValue(2, 0, 50);
-activeSheet.setValue(3, 0, 40);
-activeSheet.setValue(4, 0, 80);
-activeSheet.setValue(5, 0, 1);
-activeSheet.setValue(6, 0, 65);
-activeSheet.setValue(7, 0, 20);
-activeSheet.setValue(8, 0, 30);
-activeSheet.setValue(9, 0, 35);//Set a row Filter.
-var rowFilter = new GcSpread.Sheets.HideRowFilter(new GcSpread.Sheets.Range(0, 0, 7, 1));
+activeSheet.setValue(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>);
+activeSheet.setValue(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>);
+activeSheet.setValue(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">50</span>);
+activeSheet.setValue(<span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">40</span>);
+activeSheet.setValue(<span class="hljs-number">4</span>, <span class="hljs-number">0</span>, <span class="hljs-number">80</span>);
+activeSheet.setValue(<span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
+activeSheet.setValue(<span class="hljs-number">6</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65</span>);
+activeSheet.setValue(<span class="hljs-number">7</span>, <span class="hljs-number">0</span>, <span class="hljs-number">20</span>);
+activeSheet.setValue(<span class="hljs-number">8</span>, <span class="hljs-number">0</span>, <span class="hljs-number">30</span>);
+activeSheet.setValue(<span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">35</span>);<span class="hljs-comment">//Set a row Filter.</span>
+<span class="hljs-keyword">var</span> rowFilter = <span class="hljs-keyword">new</span> GcSpread.Sheets.HideRowFilter(<span class="hljs-keyword">new</span> GcSpread.Sheets.Range(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">7</span>, <span class="hljs-number">1</span>));
 activeSheet.rowFilter(rowFilter);
-rowFilter.addFilterItem(0, new CustomFilter());
-rowFilter.filter(0);
-rowFilter.sortColumn(0, true);
-</code></pre>
+rowFilter.addFilterItem(<span class="hljs-number">0</span>, <span class="hljs-keyword">new</span> CustomFilter());
+rowFilter.filter(<span class="hljs-number">0</span>);
+rowFilter.sortColumn(<span class="hljs-number">0</span>, <span class="hljs-keyword">true</span>);</code></pre>
 
 
 

@@ -164,10 +164,10 @@
     this._sheet = sheet;
 }
 
-AddRowUndoRedoAction.prototype = new GcSpread.Sheets.UndoRedo.ActionBase();</code></pre>
+AddRowUndoRedoAction.prototype = new GcSpread.Sheets.UndoRedo.ActionBase();<pre><code class="hljs"><span class="hljs-type">Adding</span> a row only needs three variables: the original number <span class="hljs-keyword">of</span> rows, the number <span class="hljs-keyword">of</span> rows after adding, <span class="hljs-keyword">and</span> the active sheet. <span class="hljs-type">Other</span> actions could require more variables to keep track <span class="hljs-keyword">of</span>, but <span class="hljs-keyword">for</span> the purposes <span class="hljs-keyword">of</span> this example we will use the simplest action.  
+<span class="hljs-type">Next</span>, define the prototype’s “execute” <span class="hljs-keyword">method</span>, which will be called whenever the action <span class="hljs-keyword">is</span> executed. <span class="hljs-type">In</span> this <span class="hljs-keyword">case</span>, adding a row simply increases the number <span class="hljs-keyword">of</span> rows <span class="hljs-keyword">in</span> the active sheet by one:
 
-<p>Adding a row only needs three variables: the original number of rows, the number of rows after adding, and the active sheet. Other actions could require more variables to keep track of, but for the purposes of this example we will use the simplest action.<br>Next, define the prototype’s “execute” method, which will be called whenever the action is executed. In this case, adding a row simply increases the number of rows in the active sheet by one:</p>
-<pre><code class="”language-javascript”">AddRowUndoRedoAction.prototype.execute = function (args) {
+&lt;pre&gt;&lt;code class=<span class="hljs-string">"”language-javascript”"</span>&gt;<span class="hljs-type">AddRowUndoRedoAction</span>.prototype.execute = function (args) {
     this._sheet.setRowCount(this._rowCount);
 }</code></pre>
 
@@ -177,14 +177,11 @@ AddRowUndoRedoAction.prototype = new GcSpread.Sheets.UndoRedo.ActionBase();</cod
 </ol>
 <pre><code class="”language-javascript”">AddRowUndoRedoAction.prototype.saveState = function () {
     this._oldRowCount = this._sheet.getRowCount();
-}</code></pre>
+}<pre><code class="hljs"><span class="hljs-number">2.</span> Define the &amp;#<span class="hljs-number">8220</span>;undo&amp;#<span class="hljs-number">8221</span>; method of the action, which <span class="hljs-keyword">is</span> called when the user presses Ctrl+Z. In <span class="hljs-keyword">this</span> <span class="hljs-keyword">case</span>, the number of rows <span class="hljs-keyword">is</span> decreased by one:
 
-<ol>
-<li>Define the &#8220;undo&#8221; method of the action, which is called when the user presses Ctrl+Z. In this case, the number of rows is decreased by one:</li>
-</ol>
-<pre><code class="”language-javascript”">AddRowUndoRedoAction.prototype.undo = function (args) {
-    this._sheet.setRowCount(this._oldRowCount - 1);
-    return true;
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-javascript”"</span>&gt;AddRowUndoRedoAction.prototype.undo = <span class="hljs-built_in">function</span> (args) {
+    <span class="hljs-keyword">this</span>._sheet.setRowCount(<span class="hljs-keyword">this</span>._oldRowCount - <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
 }</code></pre>
 
 
@@ -195,12 +192,11 @@ AddRowUndoRedoAction.prototype = new GcSpread.Sheets.UndoRedo.ActionBase();</cod
 <pre><code class="”language-javascript”">$("#ribbon-msofficeButtonAddRow").click(function () {
     activeSheet = spread.getActiveSheet();
     activeSheet.setRowCount(activeSheet.getRowCount() + 1);
-});</code></pre>
+});<pre><code class="hljs"><span class="hljs-keyword">is</span> replaced <span class="hljs-keyword">with</span> <span class="hljs-keyword">this</span> code:
 
-<p>is replaced with this code:</p>
-<pre><code class="”language-javascript”">$("#ribbon-msofficeButtonAddRow").click(function () {
+&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"”language-javascript”"</span>&gt;$(<span class="hljs-string">"#ribbon-msofficeButtonAddRow"</span>).click(<span class="hljs-built_in">function</span> () {
     activeSheet = spread.getActiveSheet();
-    activeSheet.doCommand(new AddRowUndoRedoAction(activeSheet, activeSheet.getRowCount() + 1));
+    activeSheet.doCommand(<span class="hljs-keyword">new</span> AddRowUndoRedoAction(activeSheet, activeSheet.getRowCount() + <span class="hljs-number">1</span>));
     spread.focus();
 });</code></pre>
 
