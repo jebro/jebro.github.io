@@ -140,7 +140,7 @@
     <div class="wrapper">
         <div class="padder clearfix">
             <h1><span class="lnr lnr-book"></span> Spread Windows Forms and the GcTextBox Cell</h1>
-            <h3>12-15-2015</h3>
+            <h3></h3>
         </div>
 </header>
 
@@ -151,122 +151,554 @@
             <div class="padder clearfix">
                 <div class="entry">
 
-                    <h1 id="an-h1-header">An h1 header</h1>
-<p>Paragraphs are separated by a blank line.</p>
-<p>2nd paragraph. <em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. Itemized lists
-look like:</p>
-<ul>
-<li>this one</li>
-<li>that one</li>
-<li>the other one</li>
-</ul>
-<p>Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.</p>
-<blockquote>
-<p>Block quotes are
-written like so.</p>
-<p>They can span multiple paragraphs,
-if you like.</p>
-</blockquote>
-<p>Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., &quot;it&#39;s all
-in chapters 12--14&quot;). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺</p>
-<h2 id="an-h2-header">An h2 header</h2>
-<p>Here&#39;s a numbered list:</p>
-<ol>
-<li>first item</li>
-<li>second item</li>
-<li>third item</li>
-</ol>
-<p>Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here&#39;s a code sample:</p>
-<pre><code># Let me re-iterate ...
-for i in 1 .. 10 { do-something(i) }
-</code></pre><p>As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:</p>
-<pre><code>define foobar() {
-    print &quot;Welcome to flavor country!&quot;;
-}
-</code></pre><p>(which makes copying &amp; pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:</p>
-<pre><code class="lang-python">import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print i
+                    <p>You can create a text cell that displays text and allows you to specify patterns of allowed characters. Text cells are useful if you want to restrict the type of data the user can type in the cell. The GcTextBox cell is part of the GrapeCity.Win.PluginInputMan assembly.</p>
+<p>The GcTextBox cell allows you to specify automatic complete mode and a custom source with the AutoCompleteMode and AutoCompleteCustomSource properties.</p>
+<p>You can set maximum limits for the cell with the MaxLength property.</p>
+<p>You can use the ShortcutKeys property to map keys to actions for the GcTextBox cell. In edit mode, these shortcut keys have precedence over the Spread input maps. The cell uses the Spread input maps when not in edit mode.</p>
+<p>The FormatString property allows you to specify specific characters that are allowed in the cell. The following Spread Designer table displays the available characters.<figure id="attachment_666023" style="width: 471px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/formatstring.png"><img class="size-full wp-image-666023 " alt="formatstring" src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/formatstring.png" width="471" height="544" /></a><figcaption class="wp-caption-text">Characters</figcaption></figure> </p>
+<p>The GcTextBox cell has the following properties:</p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top" width="399">
+      <b>Name</b>
+    </td>
+
+    <td valign="top" width="399">
+      <b>Description</b>
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      AcceptsArrowKeys
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets how arrow keys are processed by the edit control. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      AcceptsCrLf
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets a value that indicates how to process the CrLf characters when copying, cutting, or pasting a string.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      AcceptsTabChar
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets a value that indicates how to process the Tab characters when copying, cutting, or pasting the string.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      AllowSpace
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the allow space settings.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      AlternateText
+    </td>
+
+    <td valign="top" width="399">
+      Gets the alternate text of the GcTextBox control.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      AutoComplete
+    </td>
+
+    <td valign="top" width="399">
+      Gets the automatic complete related settings.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      AutoCompleteCustomSource
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets a custom System.Windows.Forms.AutoCompleteStringCollection to use when the GcTextBox.AutoCompleteSource property is set to CustomSource.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      AutoCompleteMode
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets an option that controls how automatic completion works for the GcTextBox control.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      AutoCompleteSource
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets a value that specifies the source of strings used for automatic completion.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      AutoConvert
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets whether to automatically convert the entered characters according to the input mask.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      BackgroundImage
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the background image for the cell. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      DisplayAlignment
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the text alignment when displaying the horizontal axis when the control does not have input focus.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      DropDown
+    </td>
+
+    <td valign="top" width="399">
+      Gets the drop-down settings used to customize the drop-down function.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      DropDownEditor
+    </td>
+
+    <td valign="top" width="399">
+      Gets the settings for the drop-down editor.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      EditMode
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the edit mode of the control. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      Ellipsis
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets a value that indicates how the ellipsis character (&#8230;) appears, denoting that the GcTextBox text extends beyond the specified length of the GcTextBox cell.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      EllipsisString
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets what is shown as an ellipsis when the text width is longer than the control.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      ExcelExportFormat
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the format string used by Excel when exporting to an Excel file. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      ExitOnLastChar
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets whether the next control in the tab order receives the focus as soon as the control is filled with the last character. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      FocusPosition
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the initial cursor position when the editor gets focus.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      FormatString
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the input format to use in the control.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      GridLine
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets a Line that indicates the grid line style for each line.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      LineSpace
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the line space between two adjacent lines.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      MaxLength
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the maximum number of characters or bytes that the control can hold.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      MaxLengthCodePage
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the code page for the encoding that is used to count the maximum length in bytes.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      MaxLengthUnit
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets whether the maximum number of characters allowed in the control is handled based on bytes, characters, or text elements.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      MaxLineCount
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the maximum number of acceptable lines.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      Multiline
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets whether the control can accept and display multiple lines of text.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      PasswordChar
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the character used as a placeholder for the characters typed by the user.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      PasswordRevelationMode
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the password revelation mode.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      ReadOnly
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets a value that indicates whether this control is read-only. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      RecommendedValue
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the recommended value.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      ScrollBarMode
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets how to display the scroll bars.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      ScrollBars
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets which scroll bars appear in a multiline GcTextBox control.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      ShortcutKeys
+    </td>
+
+    <td valign="top" width="399">
+      Gets the InputMan EditingControl&#8217;s shortcuts. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      ShowRecommendedValue
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets a value that indicates whether to show the recommended value.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      ShowTouchToolBar
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the how to show the InputManCellTypeBase.TouchToolBar. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      SideButtons
+    </td>
+
+    <td valign="top" width="399">
+      Gets the side buttons of this GcTextBox control.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      Static
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets whether the cell is static, which prohibits user interaction. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      SubEditor
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the subeditor. (Inherited from FarPoint.Win.Spread.CellType.BaseCellType)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      TouchContextMenuScale
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets whether the factor applies to the context menu item&#8217;s height while the context menu is open due to a touch action. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      TouchToolBar
+    </td>
+
+    <td valign="top" width="399">
+      Gets the shown InputManCellTypeBase.TouchToolBar by touch operation. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      UseSpreadDropDownButtonRender
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets a value that indicates whether to paint the drop-down button with the spread drop-down button renderer. (Inherited from GrapeCity.Win.Spread.InputMan.CellType.InputManCellTypeBase)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      UseSystemPasswordChar
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets a value that indicates whether to use system password characters.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" width="399">
+      WrapMode
+    </td>
+
+    <td valign="top" width="399">
+      Gets or sets the wrap rule when the GcTextBox control is multiline.
+    </td>
+  </tr>
+</table>
+
+<p>This example uses the ShortcutKeys property. Use Alt + Enter to add a new line while the cell is in edit mode. The following image displays the list of actions that you can use.<figure id="attachment_666024" style="width: 270px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/shortcutkeyactions.png"><img class="size-full wp-image-666024 " alt="shortcutkeyactions" src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/shortcutkeyactions.png" width="270" height="402" /></a><figcaption class="wp-caption-text">Actions</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">// Select Alt + Enter to go to the next line
+GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType gcText = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+gcText.Multiline = true;
+gcText.ShortcutKeys.Add(Keys.Enter | Keys.Alt, "InputNewLine");
+fpSpread1.Sheets[0].Cells[0, 0].CellType = gcText;
 </code></pre>
-<h3 id="an-h3-header">An h3 header</h3>
-<p>Now a nested list:</p>
-<ol>
-<li><p>First, get these ingredients:</p>
-<ul>
-<li>carrots</li>
-<li>celery</li>
-<li>lentils</li>
-</ul>
-</li>
-<li><p>Boil some water.</p>
-</li>
-<li><p>Dump everything in the pot and follow
-this algorithm:</p>
-<pre><code>find wooden spoon
-uncover pot
-stir
-cover pot
-balance wooden spoon precariously on pot handle
-wait 10 minutes
-goto first step (or shut off burner when done)
-</code></pre><p>Do not bump wooden spoon or it will fall.</p>
-</li>
-</ol>
-<p>Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).</p>
-<p>Here&#39;s a link to <a href="http://foo.bar">a website</a>, to a <a href="local-doc.html">local
-doc</a>, and to a <a href="#an-h2-header">section heading in the current
-doc</a>. Here&#39;s a footnote [^1].</p>
-<p>[^1]: Footnote text goes here.</p>
-<p>Tables can look like this:</p>
-<p>size  material      color</p>
-<hr>
-<p>9     leather       brown
-10    hemp canvas   natural
-11    glass         transparent</p>
-<p>Table: Shoes, their sizes, and what they&#39;re made of</p>
-<p>(The above is the caption for the table.) Pandoc also supports
-multi-line tables:</p>
-<hr>
-<p>keyword   text</p>
-<hr>
-<p>red       Sunsets, apples, and
-          other red or reddish
-          things.</p>
-<p>green     Leaves, grass, frogs
-          and other things it&#39;s
-          not easy being.</p>
-<hr>
-<p>A horizontal rule follows.</p>
-<hr>
-<p>Here&#39;s a definition list:</p>
-<p>apples
-  : Good for making applesauce.
-oranges
-  : Citrus!
-tomatoes
-  : There&#39;s no &quot;e&quot; in tomatoe.</p>
-<p>Again, text is indented 4 spaces. (Put a blank line between each
-term/definition pair to spread things out more.)</p>
-<p>Here&#39;s a &quot;line block&quot;:</p>
-<p>| Line one
-|   Line too
-| Line tree</p>
-<p>and images can be specified like so:</p>
-<p><img src="example-image.jpg" alt="example image" title="An exemplary image"></p>
-<p>Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:</p>
-<p>$$I = \int \rho R^{2} dV$$</p>
-<p>And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: `foo`, *bar*, etc.</p>
+
+<p>VB</p>
+<pre><code class="language-csharp">'Select Alt + Enter to go to the next line
+Dim gcText As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType()
+gcText.Multiline = True
+gcText.ShortcutKeys.Add(Keys.Enter Or Keys.Alt, "InputNewLine")
+FpSpread1.Sheets(0).Cells(0, 0).CellType = gcText
+</code></pre>
+
+<p>This example sets the maximum number of characters that can be typed in the cell.<figure id="attachment_666025" style="width: 219px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextMax.png"><img class="size-full wp-image-666025 " alt="SpreadWinGcTextMax" src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextMax.png" width="219" height="84" /></a><figcaption class="wp-caption-text">Maximum Characters</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType inputcell1 = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+inputcell1.MaxLengthUnit = GrapeCity.Win.Spread.InputMan.CellType.LengthUnit.Char;
+inputcell1.MaxLength = 10;
+fpSpread1.Sheets[0].Cells[1, 1].CellType = inputcell1;
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Dim inputcell1 As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType
+inputcell1.MaxLengthUnit = GrapeCity.Win.Spread.InputMan.CellType.LengthUnit.Char
+inputcell1.MaxLength = 10
+FpSpread1.Sheets(0).Cells(1, 1).CellType = inputcell1
+</code></pre>
+
+<p>This example creates a GcTextBox cell and cuts CrLf characters in copied, cut, or pasted strings.</p>
+<p>C#</p>
+<pre><code class="language-csharp">GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType inputcell1 = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+inputcell1.Multiline = true;
+inputcell1.AcceptsCrLf = GrapeCity.Win.Spread.InputMan.CellType.CrLfMode.Cut;
+fpSpread1.Sheets[0].Cells[1, 1].CellType = inputcell1;
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Dim inputcell1 As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType
+inputcell1.Multiline = True
+inputcell1.AcceptsCrLf = GrapeCity.Win.Spread.InputMan.CellType.CrLfMode.Cut
+FpSpread1.Sheets(0).Cells(1, 1).CellType = inputcell1
+</code></pre>
+
+<p>This example uses password characters in place of the typed content.<figure id="attachment_666027" style="width: 219px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextPass.png"><img class="size-full wp-image-666027 " alt="SpreadWinGcTextPass" src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextPass.png" width="219" height="85" /></a><figcaption class="wp-caption-text">Password Characters</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType gctext = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+gctext.PasswordChar = Convert.ToChar("A");
+fpSpread1.Sheets[0].Cells[1, 1].CellType = gctext;
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Dim gctext As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType()
+gctext.PasswordChar = Chr(65)
+FpSpread1.Sheets(0).Cells(1, 1).CellType = gctext
+</code></pre>
+
+<p>This example allows you to type symbols.<figure id="attachment_666028" style="width: 97px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextSym.png"><img class="size-full wp-image-666028 " alt="SpreadWinGcTextSym" src="http://sphelp.grapecity.com/wp-content/uploads/2015/12/SpreadWinGcTextSym.png" width="97" height="49" /></a><figcaption class="wp-caption-text">Symbols</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType inputcell = new GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType();
+//Symbols
+inputcell.FormatString = "@";
+fpSpread1.Sheets[0].Cells[0, 0].CellType = inputcell;
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Dim inputcell As New GrapeCity.Win.Spread.InputMan.CellType.GcTextBoxCellType()
+'Symbols
+inputcell.FormatString = "@"
+FpSpread1.Sheets(0).Cells(0, 0).CellType = inputcell
+</code></pre>
+
 
 
                 </div>
