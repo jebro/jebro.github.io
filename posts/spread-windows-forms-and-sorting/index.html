@@ -168,7 +168,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      fpSpread1.Sheets[0].Columns[0].AllowAutoSort = true;<br /> fpSpread1.ActiveSheet.SetClip(0, 0, 8, 1, &#8220;one\ntwo\nthree\nfour\r\nfive\nsix\nseven\neight&#8221;);
+      fpSpread1.Sheets[0].Columns[0].AllowAutoSort = true; fpSpread1.ActiveSheet.SetClip(0, 0, 8, 1, &#8220;one\ntwo\nthree\nfour\r\nfive\nsix\nseven\neight&#8221;);
     </td>
   </tr>
 
@@ -183,7 +183,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      FpSpread1.Sheets(0).Columns(0).AllowAutoSort = True<br /> FpSpread1.ActiveSheet.SetClip(0, 0, 8, 1, &#8220;one&#8221; + vbCrLf + &#8220;two&#8221; + vbCrLf + &#8220;three&#8221; + vbCrLf + &#8220;four&#8221; + vbCrLf + &#8220;five&#8221; + vbCrLf + &#8220;six&#8221; + vbCrLf + &#8220;seven&#8221; + vbCrLf + &#8220;eight&#8221;)
+      FpSpread1.Sheets(0).Columns(0).AllowAutoSort = True FpSpread1.ActiveSheet.SetClip(0, 0, 8, 1, &#8220;one&#8221; + vbCrLf + &#8220;two&#8221; + vbCrLf + &#8220;three&#8221; + vbCrLf + &#8220;four&#8221; + vbCrLf + &#8220;five&#8221; + vbCrLf + &#8220;six&#8221; + vbCrLf + &#8220;seven&#8221; + vbCrLf + &#8220;eight&#8221;)
     </td>
   </tr>
 </table>
@@ -218,7 +218,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      FarPoint.Win.Spread.SortInfo[] sort = new FarPoint.Win.Spread.SortInfo<a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/autosorting.png">1</a>;<br /> sort[0] = new FarPoint.Win.Spread.SortInfo(0, true, System.Collections.Comparer.Default);<br /> fpSpread1.ActiveSheet.SetValue(0, 0, &#8220;S&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(0, 1, &#8220;E&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(0, 2, &#8220;A&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(1, 0, &#8220;W&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(1, 1, &#8220;G&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(1, 2, &#8220;P&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(2, 0, &#8220;O&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(2, 1, &#8220;L&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(2, 2, &#8220;Q&#8221;);<br /> fpSpread1.ActiveSheet.SortColumns(0, 2, sort);
+      FarPoint.Win.Spread.SortInfo[] sort = new FarPoint.Win.Spread.SortInfo<a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/autosorting.png">1</a>; sort[0] = new FarPoint.Win.Spread.SortInfo(0, true, System.Collections.Comparer.Default); fpSpread1.ActiveSheet.SetValue(0, 0, &#8220;S&#8221;); fpSpread1.ActiveSheet.SetValue(0, 1, &#8220;E&#8221;); fpSpread1.ActiveSheet.SetValue(0, 2, &#8220;A&#8221;); fpSpread1.ActiveSheet.SetValue(1, 0, &#8220;W&#8221;); fpSpread1.ActiveSheet.SetValue(1, 1, &#8220;G&#8221;); fpSpread1.ActiveSheet.SetValue(1, 2, &#8220;P&#8221;); fpSpread1.ActiveSheet.SetValue(2, 0, &#8220;O&#8221;); fpSpread1.ActiveSheet.SetValue(2, 1, &#8220;L&#8221;); fpSpread1.ActiveSheet.SetValue(2, 2, &#8220;Q&#8221;); fpSpread1.ActiveSheet.SortColumns(0, 2, sort);
     </td>
   </tr>
 
@@ -233,7 +233,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      Dim sort(1) As FarPoint.Win.Spread.SortInfo<br /> sort(0) = New FarPoint.Win.Spread.SortInfo(0, True, System.Collections.Comparer.Default)<br /> FpSpread1.ActiveSheet.SetValue(0, 0, &#8220;S&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(0, 1, &#8220;E&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(0, 2, &#8220;A&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(1, 0, &#8220;W&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(1, 1, &#8220;G&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(1, 2, &#8220;P&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(2, 0, &#8220;O&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(2, 1, &#8220;L&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(2, 2, &#8220;Q&#8221;)<br /> FpSpread1.ActiveSheet.SortColumns(0, 2, sort)
+      Dim sort(1) As FarPoint.Win.Spread.SortInfo sort(0) = New FarPoint.Win.Spread.SortInfo(0, True, System.Collections.Comparer.Default) FpSpread1.ActiveSheet.SetValue(0, 0, &#8220;S&#8221;) FpSpread1.ActiveSheet.SetValue(0, 1, &#8220;E&#8221;) FpSpread1.ActiveSheet.SetValue(0, 2, &#8220;A&#8221;) FpSpread1.ActiveSheet.SetValue(1, 0, &#8220;W&#8221;) FpSpread1.ActiveSheet.SetValue(1, 1, &#8220;G&#8221;) FpSpread1.ActiveSheet.SetValue(1, 2, &#8220;P&#8221;) FpSpread1.ActiveSheet.SetValue(2, 0, &#8220;O&#8221;) FpSpread1.ActiveSheet.SetValue(2, 1, &#8220;L&#8221;) FpSpread1.ActiveSheet.SetValue(2, 2, &#8220;Q&#8221;) FpSpread1.ActiveSheet.SortColumns(0, 2, sort)
     </td>
   </tr>
 </table>
@@ -253,7 +253,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      //Add sample data<br /> string conStr = &#8220;Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb&#8221;;<br /> string sqlStr = &#8220;Select CompanyName, ContactName, ContactTitle, Country from Customers&#8221;;<br /> System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);<br /> DataSet ds = new DataSet();<br /> System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);<br /> da.Fill(ds);<br /> fpSpread1.ActiveSheet.DataAutoSizeColumns = true;<br /> fpSpread1.ActiveSheet.DataMember = &#8220;Patients&#8221;;<br /> fpSpread1.ActiveSheet.DataSource = ds;<br /> fpSpread1.ActiveSheet.Columns[0].AllowAutoSort = true;<br /> //Set sort icon image<br /> FarPoint.Win.Spread.SpreadView wrkbk = fpSpread1.GetRootWorkbook();<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImage, Image.FromFile(&#8220;C:\Common\SD.ico&#8221;));<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD1.ico&#8221;));<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImage, Image.FromFile(&#8220;C:\Common\SD2.ico&#8221;));<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD3.ico&#8221;));<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImage, Image.FromFile(&#8220;C:\Common\SD4.ico&#8221;));<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImageDisabled, Image.FromFile(&#8220;C:\Common\SD5.ico&#8221;));
+      //Add sample data string conStr = &#8220;Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb&#8221;; string sqlStr = &#8220;Select CompanyName, ContactName, ContactTitle, Country from Customers&#8221;; System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr); DataSet ds = new DataSet(); System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn); da.Fill(ds); fpSpread1.ActiveSheet.DataAutoSizeColumns = true; fpSpread1.ActiveSheet.DataMember = &#8220;Patients&#8221;; fpSpread1.ActiveSheet.DataSource = ds; fpSpread1.ActiveSheet.Columns[0].AllowAutoSort = true; //Set sort icon image FarPoint.Win.Spread.SpreadView wrkbk = fpSpread1.GetRootWorkbook(); wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImage, Image.FromFile(&#8220;C:\Common\SD.ico&#8221;)); wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD1.ico&#8221;)); wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImage, Image.FromFile(&#8220;C:\Common\SD2.ico&#8221;)); wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD3.ico&#8221;)); wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImage, Image.FromFile(&#8220;C:\Common\SD4.ico&#8221;)); wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImageDisabled, Image.FromFile(&#8220;C:\Common\SD5.ico&#8221;));
     </td>
   </tr>
 
@@ -268,7 +268,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      ‘Add sample data<br /> Dim conStr As String = &#8220;Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb&#8221;<br /> Dim sqlStr As String = &#8220;Select CompanyName, ContactName, ContactTitle, Country from Customers&#8221;<br /> Dim conn As New System.Data.OleDb.OleDbConnection(conStr)<br /> Dim ds As DataSet = New DataSet()<br /> Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)<br /> da.Fill(ds)<br /> FpSpread1.ActiveSheet.DataAutoSizeColumns = True<br /> FpSpread1.ActiveSheet.DataMember = &#8220;Patients&#8221;<br /> FpSpread1.ActiveSheet.DataSource = ds<br /> FpSpread1.ActiveSheet.Columns(0).AllowAutoSort = True<br /> ‘Set sort icon image<br /> Dim wrkbk As FarPoint.Win.Spread.SpreadView = FpSpread1.GetRootWorkbook()<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImage, Image.FromFile(&#8220;C:\Common\SD.ico&#8221;))<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD1.ico&#8221;))<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImage, Image.FromFile(&#8220;C:\Common\SD2.ico&#8221;))<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD3.ico&#8221;))<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImage, Image.FromFile(&#8220;C:\Common\SD4.ico&#8221;))<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImageDisabled, Image.FromFile(&#8220;C:\Common\SD5.ico&#8221;))
+      ‘Add sample data Dim conStr As String = &#8220;Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb&#8221; Dim sqlStr As String = &#8220;Select CompanyName, ContactName, ContactTitle, Country from Customers&#8221; Dim conn As New System.Data.OleDb.OleDbConnection(conStr) Dim ds As DataSet = New DataSet() Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn) da.Fill(ds) FpSpread1.ActiveSheet.DataAutoSizeColumns = True FpSpread1.ActiveSheet.DataMember = &#8220;Patients&#8221; FpSpread1.ActiveSheet.DataSource = ds FpSpread1.ActiveSheet.Columns(0).AllowAutoSort = True ‘Set sort icon image Dim wrkbk As FarPoint.Win.Spread.SpreadView = FpSpread1.GetRootWorkbook() wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImage, Image.FromFile(&#8220;C:\Common\SD.ico&#8221;)) wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD1.ico&#8221;)) wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImage, Image.FromFile(&#8220;C:\Common\SD2.ico&#8221;)) wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD3.ico&#8221;)) wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImage, Image.FromFile(&#8220;C:\Common\SD4.ico&#8221;)) wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImageDisabled, Image.FromFile(&#8220;C:\Common\SD5.ico&#8221;))
     </td>
   </tr>
 </table>
@@ -287,7 +287,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      public class myColumnHeaderRenderer : FarPoint.Win.Spread.CellType.ColumnHeaderRenderer<br /> {override public void PaintSortIndicator(Graphics g, Rectangle r, FarPoint.Win.Spread.Appearance appearance, float zoomFactor)<br /> {<br /> g.FillRectangle(new SolidBrush(Color.Red), r);<br /> }<br /> override public void PaintFilterIndicator(Graphics g, Rectangle r, FarPoint.Win.Spread.Appearance appearance, float zoomFactor)<br /> {<br /> g.FillRectangle(new SolidBrush(Color.Blue), r);<br /> }<br /> }private void SpreadSorting_Load(object sender, EventArgs e)<br /> {<br /> fpSpread1.ActiveSheet.ColumnHeader.DefaultStyle.Renderer = new myColumnHeaderRenderer();<br /> fpSpread1.Sheets[0].Columns[0].AllowAutoSort =true;<br /> fpSpread1.Sheets[0].Columns[0].AllowAutoFilter =true;Random r = new Random();<br /> int row, col = 0;<br /> for (row = 0; row &lt;= 7; row++)<br /> for (col = 0; col&lt;= 7; col++)<br /> {<br /> fpSpread1.ActiveSheet.SetValue(row, col, r.Next().ToString());<br /> }<br /> }
+      public class myColumnHeaderRenderer : FarPoint.Win.Spread.CellType.ColumnHeaderRenderer {override public void PaintSortIndicator(Graphics g, Rectangle r, FarPoint.Win.Spread.Appearance appearance, float zoomFactor) { g.FillRectangle(new SolidBrush(Color.Red), r); } override public void PaintFilterIndicator(Graphics g, Rectangle r, FarPoint.Win.Spread.Appearance appearance, float zoomFactor) { g.FillRectangle(new SolidBrush(Color.Blue), r); } }private void SpreadSorting_Load(object sender, EventArgs e) { fpSpread1.ActiveSheet.ColumnHeader.DefaultStyle.Renderer = new myColumnHeaderRenderer(); fpSpread1.Sheets[0].Columns[0].AllowAutoSort =true; fpSpread1.Sheets[0].Columns[0].AllowAutoFilter =true;Random r = new Random(); int row, col = 0; for (row = 0; row &lt;= 7; row++) for (col = 0; col&lt;= 7; col++) { fpSpread1.ActiveSheet.SetValue(row, col, r.Next().ToString()); } }
     </td>
   </tr>
 
@@ -302,10 +302,10 @@
 
   <tr>
     <td colspan="2" valign="top">
-      Public Class myColumnHeaderRenderer<br /> Inherits FarPoint.Win.Spread.CellType.ColumnHeaderRendererPublic Overrides Sub PaintSortIndicator(ByVal g As Graphics, ByVal r As Rectangle, ByVal appearance As FarPoint.Win.Spread.Appearance,<br /> ByVal zoomFactor As Single)<br /> g.FillRectangle(New SolidBrush(Color.Red), r)<br /> End Sub &#8216;PaintSortIndicatorPublic Overrides Sub PaintFilterIndicator(ByVal g As Graphics, ByVal r As Rectangle, ByVal appearance As FarPoint.Win.Spread.Appearance, ByVal zoomFactor As Single)<br /> g.FillRectangle(New SolidBrush(Color.Blue), r)<br /> End Sub &#8216;PaintFilterIndicator<br /> End Class &#8216;myColumnHeaderRenderer</p> 
+      Public Class myColumnHeaderRenderer Inherits FarPoint.Win.Spread.CellType.ColumnHeaderRendererPublic Overrides Sub PaintSortIndicator(ByVal g As Graphics, ByVal r As Rectangle, ByVal appearance As FarPoint.Win.Spread.Appearance, ByVal zoomFactor As Single) g.FillRectangle(New SolidBrush(Color.Red), r) End Sub &#8216;PaintSortIndicatorPublic Overrides Sub PaintFilterIndicator(ByVal g As Graphics, ByVal r As Rectangle, ByVal appearance As FarPoint.Win.Spread.Appearance, ByVal zoomFactor As Single) g.FillRectangle(New SolidBrush(Color.Blue), r) End Sub &#8216;PaintFilterIndicator End Class &#8216;myColumnHeaderRenderer</p> 
 
       <p>
-        Private Sub SpreadSorting_Load(sender As Object, e As EventArgs) Handles MyBase.Load<br /> FpSpread1.ActiveSheet.ColumnHeader.DefaultStyle.Renderer = New myColumnHeaderRenderer<br /> FpSpread1.Sheets(0).Columns(0).AllowAutoSort = True<br /> FpSpread1.Sheets(0).Columns(0).AllowAutoFilter = True<br /> Dim r As New Random<br /> Dim row, col As Integer<br /> For row = 0 To 7<br /> For col = 0 To 7<br /> FpSpread1.ActiveSheet.SetValue(row, col, r.Next.ToString())<br /> Next col<br /> Next row<br /> End Sub</td> </tr> </tbody> </table>
+        Private Sub SpreadSorting_Load(sender As Object, e As EventArgs) Handles MyBase.Load FpSpread1.ActiveSheet.ColumnHeader.DefaultStyle.Renderer = New myColumnHeaderRenderer FpSpread1.Sheets(0).Columns(0).AllowAutoSort = True FpSpread1.Sheets(0).Columns(0).AllowAutoFilter = True Dim r As New Random Dim row, col As Integer For row = 0 To 7 For col = 0 To 7 FpSpread1.ActiveSheet.SetValue(row, col, r.Next.ToString()) Next col Next row End Sub</td> </tr> </tbody> </table>
 
 
 

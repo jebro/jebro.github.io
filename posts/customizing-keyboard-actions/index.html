@@ -181,7 +181,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      private void Form1_Load(object sender, System.EventArgs e){<br /> FarPoint.Win.Spread.InputMap im = new FarPoint.Win.Spread.InputMap();<br /> // Deactivate F2 key in cells not being edited.<br /> im = fpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused);<br /> im.Put(new FarPoint.Win.Spread.Keystroke(Keys.F2, Keys.None), FarPoint.Win.Spread.SpreadActions.None);<br /> // Deactivate F2 key in cells being edited.<br /> im = fpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused);<br /> im.Put(new FarPoint.Win.Spread.Keystroke(Keys.F2, Keys.None), FarPoint.Win.Spread.SpreadActions.None);<br /> }
+      private void Form1_Load(object sender, System.EventArgs e){ FarPoint.Win.Spread.InputMap im = new FarPoint.Win.Spread.InputMap(); // Deactivate F2 key in cells not being edited. im = fpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused); im.Put(new FarPoint.Win.Spread.Keystroke(Keys.F2, Keys.None), FarPoint.Win.Spread.SpreadActions.None); // Deactivate F2 key in cells being edited. im = fpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused); im.Put(new FarPoint.Win.Spread.Keystroke(Keys.F2, Keys.None), FarPoint.Win.Spread.SpreadActions.None); }
     </td>
   </tr>
 
@@ -196,7 +196,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.LoadDim im As New FarPoint.Win.Spread.InputMap<br /> &#8216; Deactivate F2 key in cells not being edited.<br /> im = FpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused)<br /> im.Put(New FarPoint.Win.Spread.Keystroke(Keys.F2, Keys.None), FarPoint.Win.Spread.SpreadActions.None)<br /> &#8216; Deactivate F2 key in cells being edited.<br /> im = FpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused)<br /> im.Put(New FarPoint.Win.Spread.Keystroke(Keys.F2, Keys.None), FarPoint.Win.Spread.SpreadActions.None)<br /> End Sub
+      Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.LoadDim im As New FarPoint.Win.Spread.InputMap &#8216; Deactivate F2 key in cells not being edited. im = FpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused) im.Put(New FarPoint.Win.Spread.Keystroke(Keys.F2, Keys.None), FarPoint.Win.Spread.SpreadActions.None) &#8216; Deactivate F2 key in cells being edited. im = FpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused) im.Put(New FarPoint.Win.Spread.Keystroke(Keys.F2, Keys.None), FarPoint.Win.Spread.SpreadActions.None) End Sub
     </td>
   </tr>
 </table>
@@ -219,7 +219,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      private void Form1_Load(object sender, System.EventArgs e)<br /> {<br /> FarPoint.Win.Spread.InputMap im = new FarPoint.Win.Spread.InputMap();<br /> // Define the operation of pressing Enter key in cells not being edited as &#8220;Move to the next row&#8221;.<br /> im = fpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused);<br /> im.Put(new FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextRow);<br /> // Define the operation of pressing Enter key in cells being edited as &#8220;Move to the next row&#8221;.<br /> im = fpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused);<br /> im.Put(new FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextRow);<br /> }
+      private void Form1_Load(object sender, System.EventArgs e) { FarPoint.Win.Spread.InputMap im = new FarPoint.Win.Spread.InputMap(); // Define the operation of pressing Enter key in cells not being edited as &#8220;Move to the next row&#8221;. im = fpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused); im.Put(new FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextRow); // Define the operation of pressing Enter key in cells being edited as &#8220;Move to the next row&#8221;. im = fpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused); im.Put(new FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextRow); }
     </td>
   </tr>
 
@@ -234,7 +234,7 @@
 
   <tr>
     <td colspan="2" valign="top">
-      Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load<br /> Dim im As New FarPoint.Win.Spread.InputMap<br /> &#8216; Define the operation of pressing Enter key in cells not being edited as &#8220;Move to the next row&#8221;.<br /> im = FpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused)<br /> im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextRow)<br /> &#8216; Define the operation of pressing Enter key in cells being edited as &#8220;Move to the next row&#8221;.<br /> im = FpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused)<br /> im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextRow)<br /> End Sub
+      Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load Dim im As New FarPoint.Win.Spread.InputMap &#8216; Define the operation of pressing Enter key in cells not being edited as &#8220;Move to the next row&#8221;. im = FpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused) im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextRow) &#8216; Define the operation of pressing Enter key in cells being edited as &#8220;Move to the next row&#8221;. im = FpSpread1.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused) im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextRow) End Sub
     </td>
   </tr>
 </table>

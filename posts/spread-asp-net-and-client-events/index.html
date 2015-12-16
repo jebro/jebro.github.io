@@ -155,36 +155,32 @@
 <p>There are several ways to map events on the client-side. You can use an attribute, map the event to a function, or map the event to the Spread object in the HTML page.</p>
 <p>This example maps the event to the Spread object in the page:</p>
 <p>JavaScript</p>
-<pre><code class="language-java">&lt;script type="text/javascript"&gt;               
-        function show(event) {
-            alert("r" + event.row + ",c" + event.col);            
+<pre><code>function show(event) {
+            alert(<span class="hljs-string">"r"</span> <span class="hljs-subst">+</span> event<span class="hljs-built_in">.</span>row <span class="hljs-subst">+</span> <span class="hljs-string">",c"</span> <span class="hljs-subst">+</span> event<span class="hljs-built_in">.</span>col);            
         }
-        &lt;/script&gt;
+        <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/script<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
 
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;form id="form1" runat="server"&gt;
-    &lt;div&gt;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/head<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;body<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+    <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;form id<span class="hljs-subst">=</span><span class="hljs-string">"form1"</span> runat<span class="hljs-subst">=</span><span class="hljs-string">"server"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+    <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;div<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
 
-    &lt;/div&gt;
-        &lt;FarPoint:FpSpread onDataChanged="show(event)" ID="FpSpread1" runat="server" BorderColor="#A0A0A0" BorderStyle="Solid" BorderWidth="1px" Height="200" Width="400"&gt;
-            &lt;commandbar backcolor="#F6F6F6" buttonfacecolor="Control" buttonhighlightcolor="ControlLightLight" buttonshadowcolor="ControlDark"&gt;
-            &lt;/commandbar&gt;
-            &lt;sheets&gt;
-                &lt;FarPoint:SheetView SheetName="Sheet1"&gt;
-                &lt;/FarPoint:SheetView&gt;
-            &lt;/sheets&gt;
-        &lt;/FarPoint:FpSpread&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+    <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/div<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+        <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;FarPoint:FpSpread onDataChanged<span class="hljs-subst">=</span><span class="hljs-string">"show(event)"</span> ID<span class="hljs-subst">=</span><span class="hljs-string">"FpSpread1"</span> runat<span class="hljs-subst">=</span><span class="hljs-string">"server"</span> BorderColor<span class="hljs-subst">=</span><span class="hljs-string">"#A0A0A0"</span> BorderStyle<span class="hljs-subst">=</span><span class="hljs-string">"Solid"</span> BorderWidth<span class="hljs-subst">=</span><span class="hljs-string">"1px"</span> Height<span class="hljs-subst">=</span><span class="hljs-string">"200"</span> Width<span class="hljs-subst">=</span><span class="hljs-string">"400"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+            <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;commandbar backcolor<span class="hljs-subst">=</span><span class="hljs-string">"#F6F6F6"</span> buttonfacecolor<span class="hljs-subst">=</span><span class="hljs-string">"Control"</span> buttonhighlightcolor<span class="hljs-subst">=</span><span class="hljs-string">"ControlLightLight"</span> buttonshadowcolor<span class="hljs-subst">=</span><span class="hljs-string">"ControlDark"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+            <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/commandbar<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+            <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;sheets<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+                <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;FarPoint:SheetView SheetName<span class="hljs-subst">=</span><span class="hljs-string">"Sheet1"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+                <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/FarPoint:SheetView<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+            <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/sheets<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+        <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/FarPoint:FpSpread<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+    <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/form<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/body<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
+<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;/html<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;</code></pre>
 
-<pre><code class="hljs">This example maps the <span class="hljs-keyword">event</span> to a function.
-
-JavaScript
-
-&lt;pre&gt;&lt;code <span class="hljs-keyword">class</span>=<span class="hljs-string">"language-java"</span>&gt;&amp;lt;script type=<span class="hljs-string">"text/javascript"</span>&amp;gt;
-window.onload = function ()
+<p>This example maps the event to a function.</p>
+<p>JavaScript</p>
+<pre><code>window.onload = function ()
         {           
             <span class="hljs-keyword">var</span> spread1 = document.getElementById(<span class="hljs-string">"&amp;lt;%=FpSpread1.ClientID %&amp;gt;"</span>);
             <span class="hljs-keyword">if</span> (spread1.addEventListener) {
@@ -214,34 +210,31 @@ window.onload = function ()
 <span class="hljs-keyword">End</span> Sub</code></pre>
 
 <p>JavaScript</p>
-<pre><code class="language-java">&lt;script type="text/javascript"&gt;
-function Test(event) {
-            alert("r" + event.row + ",c" + event.col);
-        }&lt;/script&gt;
+<pre><code><span class="hljs-function">function <span class="hljs-title">Test</span><span class="hljs-params">(<span class="hljs-keyword">event</span>)</span> </span>{
+            alert(<span class="hljs-string">"r"</span> + <span class="hljs-keyword">event</span>.row + <span class="hljs-string">",c"</span> + <span class="hljs-keyword">event</span>.col);
+        }&amp;lt;/script&amp;gt;</code></pre>
 
-<pre><code class="hljs"><span class="hljs-type">The</span> following sample code <span class="hljs-keyword">for</span> the <span class="hljs-type">ASPX</span> page uses the built-<span class="hljs-keyword">in</span> <span class="hljs-type">GetValue</span> <span class="hljs-keyword">method</span> to total the values <span class="hljs-keyword">in</span> the cells (all <span class="hljs-keyword">except</span> the last cell) <span class="hljs-keyword">of</span> the first column <span class="hljs-keyword">and</span> uses the <span class="hljs-type">SetValue</span> <span class="hljs-keyword">method</span> to put the <span class="hljs-literal">result</span> <span class="hljs-keyword">in</span> the last cell <span class="hljs-keyword">of</span> that column. <span class="hljs-type">Type</span> a value <span class="hljs-keyword">in</span> a cell <span class="hljs-keyword">and</span> change cells to see the <span class="hljs-literal">result</span>.&lt;figure id=<span class="hljs-string">"attachment_664939"</span> style=<span class="hljs-string">"width: 408px"</span> class=<span class="hljs-string">"wp-caption aligncenter"</span>&gt;
+<p>The following sample code for the ASPX page uses the built-in GetValue method to total the values in the cells (all except the last cell) of the first column and uses the SetValue method to put the result in the last cell of that column. Type a value in a cell and change cells to see the result.<figure id="attachment_664939" style="width: 408px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpASPClientSample.png"><img class="size-full wp-image-664939 " alt="SpASPClientSample" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpASPClientSample.png" width="408" height="209" /></a><figcaption class="wp-caption-text">Total Result</figcaption></figure> </p>
+<p>C#</p>
+<pre><code>{
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.IsPostBack) <span class="hljs-keyword">return</span>;
+            FpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].Value = <span class="hljs-number">4</span>;
+            FpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>].Value = <span class="hljs-number">3</span>;
+            FpSpread1.Attributes.Add(<span class="hljs-string">"onDataChanged"</span>, <span class="hljs-string">"doCalc(event)"</span>);
+        }</code></pre>
 
-[&lt;img class=<span class="hljs-string">"size-full wp-image-664939 "</span> alt=<span class="hljs-string">"SpASPClientSample"</span> src=<span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpASPClientSample.png"</span> width=<span class="hljs-string">"408"</span> height=<span class="hljs-string">"209"</span> /&gt;][<span class="hljs-number">1</span>]&lt;figcaption class=<span class="hljs-string">"wp-caption-text"</span>&gt;<span class="hljs-type">Total</span> <span class="hljs-type">Result</span>&lt;/figcaption&gt;&lt;/figure&gt; 
+<p>VB</p>
+<pre><code><span class="hljs-keyword">If</span> (IsPostBack) Then
+            <span class="hljs-keyword">Return</span>
+        <span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).<span class="hljs-keyword">Cells</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">4</span>
+        FpSpread1.Sheets(<span class="hljs-number">0</span>).<span class="hljs-keyword">Cells</span>(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>).<span class="hljs-keyword">Value</span> = <span class="hljs-number">3</span>
+        FpSpread1.<span class="hljs-keyword">Attributes</span>.Add(<span class="hljs-string">"onDataChanged"</span>, <span class="hljs-string">"doCalc(event)"</span>)
+    <span class="hljs-keyword">End</span> Sub</code></pre>
 
-C<span class="hljs-comment">#</span></code></pre>protected void Page_Load(object sender, EventArgs e)
-        {
-            if (this.IsPostBack) return;
-            FpSpread1.Sheets[0].Cells[0, 0].Value = 4;
-            FpSpread1.Sheets[0].Cells[1, 0].Value = 3;
-            FpSpread1.Attributes.Add("onDataChanged", "doCalc(event)");
-        }
-<pre><code class="hljs">VB</code></pre>Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        If (IsPostBack) Then
-            Return
-        End If
-        FpSpread1.Sheets(0).Cells(0, 0).Value = 4
-        FpSpread1.Sheets(0).Cells(1, 0).Value = 3
-        FpSpread1.Attributes.Add("onDataChanged", "doCalc(event)")
-    End Sub
-<pre><code class="hljs">JavaScript
-
-<span class="hljs-subst">&lt;</span>pre<span class="hljs-subst">&gt;&lt;</span>code class<span class="hljs-subst">=</span><span class="hljs-string">"language-java"</span><span class="hljs-subst">&gt;&amp;</span><span class="hljs-literal">lt</span>;<span class="hljs-subst">%</span>@ Page Language<span class="hljs-subst">=</span><span class="hljs-string">"C#"</span> AutoEventWireup<span class="hljs-subst">=</span><span class="hljs-string">"true"</span> CodeBehind<span class="hljs-subst">=</span><span class="hljs-string">"SpreadASP.aspx.cs"</span> Inherits<span class="hljs-subst">=</span><span class="hljs-string">"SpWeb8CSharp.SpreadASP"</span> <span class="hljs-subst">%&amp;</span><span class="hljs-literal">gt</span>;
-<span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;<span class="hljs-subst">%</span>@ Register assembly<span class="hljs-subst">=</span><span class="hljs-string">"FarPoint.Web.Spread, Version=8.40.20151.0, Culture=neutral, PublicKeyToken=327c3516b1b18457"</span> namespace<span class="hljs-subst">=</span><span class="hljs-string">"FarPoint.Web.Spread"</span> tagprefix<span class="hljs-subst">=</span><span class="hljs-string">"FarPoint"</span> <span class="hljs-subst">%&amp;</span><span class="hljs-literal">gt</span>;
+<p>JavaScript</p>
+<pre><code><span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;<span class="hljs-subst">%</span>@ Register assembly<span class="hljs-subst">=</span><span class="hljs-string">"FarPoint.Web.Spread, Version=8.40.20151.0, Culture=neutral, PublicKeyToken=327c3516b1b18457"</span> namespace<span class="hljs-subst">=</span><span class="hljs-string">"FarPoint.Web.Spread"</span> tagprefix<span class="hljs-subst">=</span><span class="hljs-string">"FarPoint"</span> <span class="hljs-subst">%&amp;</span><span class="hljs-literal">gt</span>;
 <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;<span class="hljs-subst">!</span>DOCTYPE html<span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
 <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;html xmlns<span class="hljs-subst">=</span><span class="hljs-string">"http://www.w3.org/1999/xhtml"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
 <span class="hljs-subst">&amp;</span><span class="hljs-literal">lt</span>;head runat<span class="hljs-subst">=</span><span class="hljs-string">"server"</span><span class="hljs-subst">&amp;</span><span class="hljs-literal">gt</span>;
