@@ -1,0 +1,191 @@
+<hr>
+<p>title: Windows Forms Employee Data Table Binding
+layout: post
+template: post.hbt
+permalink: /2015/08/07/windows-forms-employee-data-table-binding/
+dzsvg_fullscreen:</p>
+<ul>
+<li>none
+dzsvg_extras_featured:</li>
+<li>none
+categories:</li>
+<li>Spread</li>
+<li>Spreadsheets</li>
+<li>Tutorials</li>
+<li>WinForms</li>
+</ul>
+<hr>
+<p>Data tables are a useful tool for organizing information in an easily-accessible manner. Spread incorporates these tables without the use of confusing code and excessive logic, providing a simple and quick way to fill in spreadsheets and keep them updated. This article walks through a sample Windows Forms application that serves as a database of information about employees and shows the ease with which a user can create bound data tables and multiple forms that are connected using Spread.</p>
+<p>To start off, I created five different forms: Employees, EmployeeDetails, AddEmployee, SearchForm, and SearchResult. The Employees form is the main one that starts the application and contains a Spread component, which represents the visualization of the data table. EmployeeDetails is the form that opens when a user wants to view or edit an employee’s information. The AddEmployee form opens when a user adds an employee, and gives the user fields to fill in. The SearchForm allows users to search for an employee by certain categories (ID, First Name, etc.). The SearchResult opens once the user has chosen something to search by, and contains a Spread component with all the details for the employees in the data table that match the criteria.</p>
+<p>After creating those forms, I opened up the Employees form and added a Spread component to it. Once I opened that component in the Spread Designer, I changed the number of rows and columns and created the categories as displayed below:<figure id="attachment_664204" style="width: 655px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure1.png"><img class=" wp-image-664204  " alt="The main Employees Form" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure1-1024x532.png" width="655" height="341" /></a><figcaption class="wp-caption-text">The main Employees Form</figcaption></figure> </p>
+<p>The second sheet is used for formatting of an employee’s information in a row, and is copied over whenever an employee is added. For reference, that sheet looks like this:<figure id="attachment_664205" style="width: 717px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure2.png"><img class=" wp-image-664205 " alt="The second sheet used for formatting." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure2-1024x54.png" width="717" height="38" /></a><figcaption class="wp-caption-text">The second sheet used for formatting.</figcaption></figure> </p>
+<p>Most of the cells are formatted as general cells, with the exception of the salary and bonus which are currency cells, and the “Remove Employee” and “View Details…” cells, which are buttons.</p>
+<p>The next step is to add the functionality behind the buttons as well as the data table to store the information.� The button functionality is added in the ButtonClicked event:</p>
+<pre><code class="language-csharp">private void fpSpread1_ButtonClicked(object sender, FarPoint.Win.Spread.EditorNotifyEventArgs e)
+        {
+            fpSpread1.SuspendLayout();
+            if (fpSpread1.Sheets[0].ActiveCell.Row.Index == 0 && fpSpread1.Sheets[0].ActiveCell.Column.Index == 6)
+            {
+                searchEmployeeDialog();
+            }
+            else if (fpSpread1.Sheets[0].ActiveCell.Row.Index == 1 && fpSpread1.Sheets[0].ActiveCell.Column.Index == 6)
+            {
+                if (addEmployeeForm())
+                {
+                    FarPoint.Win.Spread.Model.CellRange cr = new FarPoint.Win.Spread.Model.CellRange(0, 0, 1, 8);
+                    fpSpread1.Sheets[1].GetClipDataObject(false, cr, FarPoint.Win.Spread.ClipboardCopyOptions.Formatting);
+                    FarPoint.Win.Spread.Model.CellRange cr2 = new FarPoint.Win.Spread.Model.CellRange(fpSpread1.Sheets[0].RowCount - 1, 0, 1, 8);
+                    fpSpread1.Sheets[0].ClipboardPaste(FarPoint.Win.Spread.ClipboardPasteOptions.Formatting, fpSpread1.Sheets[1].GetClipDataObject(false, cr,
+                                                        FarPoint.Win.Spread.ClipboardCopyOptions.Formatting), cr2);
+                }
+            }
+            else if (fpSpread1.Sheets[0].ActiveCell.Column.Index == 7)
+            {
+                viewEmployeeDetailsDialog(dt.Rows[fpSpread1.Sheets[0].ActiveCell.Row.Index - 2][0].ToString());
+            }
+            else if (fpSpread1.Sheets[0].ActiveCell.Column.Index == 6)
+            {
+                DialogResult dr = MessageBox.Show("Are you sure you want to remove " + fpSpread1.Sheets[0].Cells[fpSpread1.Sheets[0].ActiveCell.Row.Index, 1].Text + "?",
+                                                    "Remove Employee",
+                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    fpSpread1.Sheets[0].RemoveRows(fpSpread1.ActiveSheet.ActiveRow.Index, 1);
+                }
+            }
+            fpSpread1.ResumeLayout();
+        }</code></pre>
+
+<p>Which has a corresponding handler in the Designer.cs file:</p>
+<pre><code class="language-csharp">this.fpSpread1.ButtonClicked += new FarPoint.Win.Spread.EditorNotifyEventHandler(this.fpSpread1_ButtonClicked);</code></pre>
+
+<p>When a user clicks on the “Add Employee” button, the addEmployeeForm method is called, which creates a new instance of the AddEmployee form I created earlier:</p>
+<pre><code class="language-csharp">public bool addEmployeeForm()
+        {
+            AddEmployee newEmployee = new AddEmployee();
+            newEmployee.ShowDialog();
+            if (newEmployee.DialogResult == System.Windows.Forms.DialogResult.Cancel)
+                return false;
+            return true;
+        }</code></pre>
+
+<p>The result of this call determines which button the user chose to click and whether to add the employee to the data table:<figure id="attachment_664206" style="width: 573px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure3.png"><img class="wp-image-664206 " alt="The Add Employee form." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure3.png" width="573" height="354" /></a><figcaption class="wp-caption-text">The Add Employee form.</figcaption></figure> </p>
+<p>From here, the user can add information about the employee in the fields listed, with the ID being the key for the data table.� As such, this is the one field that must be unique in order for the table to be searched correctly.� The only functions that are required to make this work are the button_clicked event handlers: one for “Accept” and the other for “Cancel”.</p>
+<p>Once the variables are set via the text boxes, the AddToDataTable function is called with all of the fields passed into it.� This function adds the employee to the data table with their information:</p>
+<pre><code class="language-csharp">public static void addToDataTable(string id, string firstName, string lastName, int salary, int bonus, string department, string hireDate, string phoneNumber, string email)
+        {
+            DataRow row = dt.NewRow();
+            row["id"] = id;
+            row["firstName"] = firstName;
+            row["lastName"] = lastName;
+            row["salary"] = salary;
+            row["bonus"] = bonus;
+            row["department"] = department;
+            row["hireDate"] = hireDate;
+            row["phoneNumber"] = phoneNumber;
+            row["email"] = email;
+            dt.Rows.Add(row);
+        }</code></pre>
+
+<p>A similar form is the EmployeeDetails form, which allows a user to edit an employee’s information, except for the ID because it is the key for the table:<figure id="attachment_664207" style="width: 581px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure4.png"><img class=" wp-image-664207 " alt="The Employee Details Form." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure4.png" width="581" height="353" /></a><figcaption class="wp-caption-text">The Employee Details Form.</figcaption></figure> </p>
+<p>Similar to the AddEmployee form, the only code required here is for the buttons, which edits the specified employee’s information using the EditDataTable function:</p>
+<pre><code class="language-csharp">public static void editDataTable(string id, string firstName, string lastName, int salary, int bonus, string department, string hireDate, string phoneNumber, string email)
+        {
+            DataRow row = dt.Rows.Find(id);
+            row["id"] = id;
+            row["firstName"] = firstName;
+            row["lastName"] = lastName;
+            row["salary"] = salary;
+            row["bonus"] = bonus;
+            row["department"] = department;
+            row["hireDate"] = hireDate;
+            row["phoneNumber"] = phoneNumber;
+            row["email"] = email;
+        }</code></pre>
+
+<p>Once those forms are complete, the base functionality for the spreadsheet is complete.� The only problem is that usually there are a lot of employees that need to have their information retained, and it could take a while to find a specific employee.� In order to make it easier, I added search functionality using two forms: SearchForm and SearchResult.<figure id="attachment_664208" style="width: 465px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure5.png"><img class=" wp-image-664208 " alt="The Search Form used to search for employees." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure5.png" width="465" height="223" /></a><figcaption class="wp-caption-text">The Search Form used to search for employees.</figcaption></figure> </p>
+<p>The SearchForm is the simplest one in this project, with two fields and one button.� The “Category” field on the left is a drop-down list that contains all the categories of information to search by.� The text box on the right is actually a part of a custom text box to display a hint in the text box on what to type, which I have called a CueTextBox.</p>
+<p>As with the other forms, the code for this form is really simple.� It only requires code in the button_clicked event handler, and is used to open up the SearchResult form with the specified parameters (the category to search in and the text to search for):</p>
+<pre><code class="language-csharp">private void button1_Click(object sender, EventArgs e)
+        {
+            SearchResult result = new SearchResult(toCamelCase(this.comboBox1.Text), this.cueTextBox1.Text);
+            result.ShowDialog();
+        }</code></pre>
+
+<p>The “toCamelCase” function is used to convert the user-facing names of the categories into the column names referred to in the data table.� Once the SearchResult form is created, it is populated with the result of the search, which can include multiple results:<figure id="attachment_664209" style="width: 717px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure6.png"><img class=" wp-image-664209 " alt="The Search Result form to display the results of the search." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure6-1024x256.png" width="717" height="179" /></a><figcaption class="wp-caption-text">The Search Result form to display the results of the search.</figcaption></figure> </p>
+<p>Similar to the main form, this has another sheet titled “Employee”, which has a row formatted to the specific columns in the sheet.� � Just like the main form, the formatting of the row is copied over to the main sheet every time an employee is added.� This sheet is also connected to the main data table of the application, so editing an employee’s information or removing them is reflected in the data table and the main form.</p>
+<p>The SearchResult form is initialized with both a column to search in and a string to search for.� Those parameters are taken and a row filter is created out of that:</p>
+<pre><code class="language-csharp">DataView dv = new DataView(Employees.getDataTable());
+            dv.RowFilter = column + " = '" + search +"'";
+
+            FarPoint.Win.Spread.Data.SpreadDataBindingAdapter data = new FarPoint.Win.Spread.Data.SpreadDataBindingAdapter();
+            data.DataSource = dv;
+            data.Spread = fpSpread2;
+            data.SheetName = "Employees Table";
+            data.MapperInfo = new FarPoint.Win.Spread.Data.MapperInfo(1, 0, dv.Count, 6);
+            data.FillSpreadDataByDataSource();</code></pre>
+
+<p>Any row in the data table that has the specified string in the specified column will be added to the data view, which is seen in the SearchResult form.</p>
+<p>After putting together all of the different components, it would be useful to save the information about the employees for use later.� To do this, simply add a “File” toolbar menu item at the top of the main form with buttons for “Open” and “Save”:<figure id="attachment_664211" style="width: 266px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure7.png"><img class=" wp-image-664211 " alt="The File Menu with options for Opening and Saving files." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/EmployeesFigure7.png" width="266" height="222" /></a><figcaption class="wp-caption-text">The File Menu with options for Opening and Saving files.</figcaption></figure> </p>
+<p>In order to save both the sheet and the underlying data table, I have decided to save them as two separate XML files.� Both files have the same name except “DataTable” is added onto the end of the XML file for the data table (In the windows explorer it is an “.XMLDataTable” file).</p>
+<p>To do this, I added an event for clicking the save button:</p>
+<pre><code class="language-csharp">private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filename = "";
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "XML Files (*.xml)|*.xml|All files (*.*)|*.*";
+            DialogResult dr = sfd.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                filename = sfd.FileName;
+            }
+            if (filename != "")
+            {
+                fpSpread1.Save(filename, FarPoint.Win.Spread.SaveXMLOptions.All);
+                dt.WriteXml(filename + "DataTable");
+            }
+        }</code></pre>
+
+<p>This function uses the Data Table’s WriteXml function, which writes the data table to an xml file with the specified name.� To match this functionality, I also added the event for clicking the open button:</p>
+<pre><code class="language-csharp">private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filename = "";
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "XML Files (*.xml)|*.xml|All files (*.*)|*.*";
+            DialogResult dr = ofd.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                filename = ofd.FileName;
+            }
+            if (filename != "")
+            {
+                dt.Clear();
+                dt.ReadXml(filename + "DataTable");
+                fpSpread1.Open(filename);
+
+                FarPoint.Win.Spread.Data.SpreadDataBindingAdapter data = new FarPoint.Win.Spread.Data.SpreadDataBindingAdapter();
+                data.DataSource = dt;
+                data.Spread = fpSpread1;
+                data.SheetName = "Employees Table";
+                data.MapperInfo = new FarPoint.Win.Spread.Data.MapperInfo(2, 0, dt.Rows.Count, 6);
+                data.FillSpreadDataByDataSource();
+
+                for (int i = 2; i &lt; dt.Rows.Count + 2; i++)
+                {
+                    copyFormat(i, 1);
+                }
+            }
+        }</code></pre>
+
+<p>When opening an Employee data table, the previous information is cleared out, so as to prevent duplicate keys from being made.� The data binding adapter is used to bind the new data table to the sheet, and updates the sheet to reflect the changes.</p>
+<p>In this blog, I have gone over the steps for creating an Employee spreadsheet that is bound to a data table.� The data table was created column-by-column and bound to the spreadsheet with just a few lines of code.� New forms were added and initialized by other forms with simple and intuitive code.� Using Visual Studio to create the forms also made it easier to add fields and labels and position them in the exact place that I wanted.� This blog has shown how, with little effort, an employee spreadsheet and bound data table can be created with only a small amount of code and the power of Spread.</p>
+<p>&nbsp;</p>
+<p>Attached is the project that shows these concepts in action.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/Employees.zip">Employees</a></p>

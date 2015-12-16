@@ -1,0 +1,366 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Spread Windows Forms and Sorting</title>
+    <meta name="description" content="Spread Studio is our new cross-platform toolkit that includes components for Windows Forms, ASP.NET, WPF, WinRT, and Silverlight all in one package. This new package includes the new releases of Spread for WinForms and Spread for ASP.NET." name="description" />
+    <meta name="keywords" content="Spread.NET, ASP.NET, WPF, Silverlight, WinRT, .NET, spreadsheets, Data, PDF, Spreadsheet, Grid, Excel, analysis, GrapeCity, ASP.NET Spreadsheet component, .NET Spreadsheet component">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="DC.title" content="GrapeCity Spread" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Raleigh" />
+    <meta name="geo.position" content="40.458677;-79.924935" />
+    <meta name="ICBM" content="40.458677, -79.924935" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="GrapeCity Spread">
+    <meta itemprop="description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta itemprop="image" content="http://spread.grapecity.com/img/spread-photo.png">
+    <link href="https://plus.google.com/103999002053720301182/" rel="publisher" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="GrapeCity Spread">
+    <meta name="twitter:site" content="@gcspread">
+    <meta name="twitter:title" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:creator" content="@gcspread">
+    <meta name="twitter:image" content="http://spread.grapecity.com/img/spread-photo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="GrapeCity Spread" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://spread.grapecity.com/" />
+    <meta property="og:image" content="http://spread.grapecity.com/img/spread-photo.png" />
+    <meta property="og:description" content="Spreadsheet Components for .NET and JavaScript-HTML5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css?v=1" />
+
+</head>
+
+<body class=" page-Spread Windows Forms and Sorting">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+    <main class="body-section">
+        <article class="body-inner">    <div class="nav-bar">
+        <div class="nav-bar-inner">
+            <div class="wrapper">
+                <div class="padder clearfix">
+                    <div class="search-container clearfix">
+                        <input placeholder="Search" type="search" />
+                        <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </div>
+                    <div class="user-container">
+                        <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+                        <ul class="user-list hidden">
+                            <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
+                            <li><a href="#"><span class="lnr lnr-license"></span> Licenses</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Submit An Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<aside class="brand-section">
+        <div class="brand-inner clearfix">
+            <div class="brand-main">
+                <div class="brand-logo">
+                    <div class="padder clearfix">
+                        <h2><a href="/"><img src="/img/sp-icon-white.svg" alt="Spread" /><span class="logo-text">Spread</span> </a></h2>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-main">
+                <div class="nav-section">
+                    <div class="padder clearfix">
+                        <ul class="clearfix">
+                            <li class="studio">
+                                <a href="/products/spread-studio/"><img src="/img/sp-icon.svg" /><span class="menu-text">Spread Studio</span></a>
+                            </li>
+                            <li class="js">
+                                <a href="/products/spreadjs/"><img src="/img/js-icon.svg" /><span class="menu-text">SpreadJS</span></a>
+                            </li>
+                            <li class="com">
+                                <a href="/products/spread-com/"><img src="/img/com-icon.svg" /><span class="menu-text">Spread COM</span></a>
+                            </li>
+                            <li><a href="/pages/downloads/"><span class="lnr lnr-download"></span><span class="menu-text">Downloads</span></a></li>
+                            <li><a href="/pages/demo-gallery/"><span class="lnr lnr-cog"></span><span class="menu-text">Demo Gallery</span></a></li>
+                            <li><a href="/pages/pricing/"><span class="lnr lnr-cart"></span><span class="menu-text">Pricing</span></a></li>
+                            <li><a href="/pages/support-community/"><span class="lnr lnr-bubble"></span><span class="menu-text">Support & Community</span></a></li>
+                            <li><a href="/pages/documentation/"><span class="lnr lnr-book"></span><span class="menu-text">Documentation</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="brand-container">
+                <div class="padder clearfix">
+                    <div class="brand-more">
+                        <a class="brand-more-trigger" href="javascript:void(0);"><span class="lnr lnr-menu"></span> <span class="menu-text">More Tools</span></a>
+                        <ul class="brand-more-list hidden">
+                            <li><a href="#"><span class="lnr lnr-diamond"></span> ActiveReports</a></li>
+                            <li><a href="#"><span class="lnr lnr-poop"></span> ComponentOne</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Wijmo</a></li>
+                            <li><a href="#"><span class="lnr lnr-thumbs-down"></span> Xuni</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside><header>
+    <div class="wrapper">
+        <div class="padder clearfix">
+            <h1><span class="lnr lnr-book"></span> Spread Windows Forms and Sorting</h1>
+            <h3></h3>
+        </div>
+</header>
+
+
+<div class="wrapper-sections">
+    <section class="section-page">
+        <div class="wrapper">
+            <div class="padder clearfix">
+                <div class="entry">
+
+                    <p>You may wish to sort data so that certain types of data are displayed first. Spread Windows Forms allows you to sort data by clicking on a column header or with code.</p>
+<p>You can set the spreadsheet to allow the user to automatically sort the data when a column header is clicked. The first time the column header is clicked (selected) the unsorted icon is displayed. The second click displays the sort icon and sorts the column. If the user clicks successively on the same column, then the direction of the sort is reversed. This does not affect the data model, only how the data is displayed.</p>
+<p>Use the Column object AllowAutoSort property or the SheetView SetColumnAllowAutoSort method to allow the user to perform automatic sorting when the header cell of a column is clicked.</p>
+<p>This example allows the user to sort the first column by clicking on the header.<figure id="attachment_663661" style="width: 98px" class="wp-caption alignnone"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/autosorting.png"><img class="size-full wp-image-663661" alt="autosorting" src="http://sphelp.grapecity.com/wp-content/uploads/2015/06/autosorting.png" width="98" height="183" /></a><figcaption class="wp-caption-text">Clicking on a text column header sorts the values alphabetically</figcaption></figure> </p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      C#
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      fpSpread1.Sheets[0].Columns[0].AllowAutoSort = true;<br /> fpSpread1.ActiveSheet.SetClip(0, 0, 8, 1, &#8220;one\ntwo\nthree\nfour\r\nfive\nsix\nseven\neight&#8221;);
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      VB
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      FpSpread1.Sheets(0).Columns(0).AllowAutoSort = True<br /> FpSpread1.ActiveSheet.SetClip(0, 0, 8, 1, &#8220;one&#8221; + vbCrLf + &#8220;two&#8221; + vbCrLf + &#8220;three&#8221; + vbCrLf + &#8220;four&#8221; + vbCrLf + &#8220;five&#8221; + vbCrLf + &#8220;six&#8221; + vbCrLf + &#8220;seven&#8221; + vbCrLf + &#8220;eight&#8221;)
+    </td>
+  </tr>
+</table>
+
+<p>The following events occur when sorting automatically:</p>
+<ul>
+<li>AutoSortedColumn</li>
+<li>AutoSortingColumn</li>
+</ul>
+<p>You can use the following methods to sort the data programatically:</p>
+<ul>
+<li>SortColumns</li>
+<li>SortRows</li>
+<li>SortRange</li>
+<li>AutoSortColumn</li>
+</ul>
+<p>There are two ways to sort data in a range. For bound data, use the SortRows and SortColumns methods. For unbound data, use the SortRange method.</p>
+<p>Use the SortColumns (or SortRows) method to sort the arrangement of columns (or rows) in a sheet using one or more rows (or columns) as the key. This does not affect the data model, only how the data is displayed. Several overloads provide different ways to sort the columns (or rows). To further customize the way sorting is performed, use the SortInfo object with these methods.</p>
+<p>The SortRange method is for unbound data only. This method sorts the data in a range of cells by moving the data around in the data model and moving the cell-level styles along with it. This method is not intended for bound data, as it moves data (not necessarily by entire row or column) and has the effect of moving the data around in the data source.</p>
+<p>With the sortInfo array of the SortRange method, you can specify multiple criteria for sorting the data. This method gives you the ability to sort (or arrange) data in a smaller subset than entire rows or columns in a sheet.</p>
+<p>This example sorts a range of columns using the SortInfo class.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/sortinfo.png"><img class="alignnone size-full wp-image-663662" alt="sortinfo" src="http://sphelp.grapecity.com/wp-content/uploads/2015/06/sortinfo.png" width="219" height="82" /></a></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      C#
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      FarPoint.Win.Spread.SortInfo[] sort = new FarPoint.Win.Spread.SortInfo<a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/autosorting.png">1</a>;<br /> sort[0] = new FarPoint.Win.Spread.SortInfo(0, true, System.Collections.Comparer.Default);<br /> fpSpread1.ActiveSheet.SetValue(0, 0, &#8220;S&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(0, 1, &#8220;E&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(0, 2, &#8220;A&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(1, 0, &#8220;W&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(1, 1, &#8220;G&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(1, 2, &#8220;P&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(2, 0, &#8220;O&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(2, 1, &#8220;L&#8221;);<br /> fpSpread1.ActiveSheet.SetValue(2, 2, &#8220;Q&#8221;);<br /> fpSpread1.ActiveSheet.SortColumns(0, 2, sort);
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      VB
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      Dim sort(1) As FarPoint.Win.Spread.SortInfo<br /> sort(0) = New FarPoint.Win.Spread.SortInfo(0, True, System.Collections.Comparer.Default)<br /> FpSpread1.ActiveSheet.SetValue(0, 0, &#8220;S&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(0, 1, &#8220;E&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(0, 2, &#8220;A&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(1, 0, &#8220;W&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(1, 1, &#8220;G&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(1, 2, &#8220;P&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(2, 0, &#8220;O&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(2, 1, &#8220;L&#8221;)<br /> FpSpread1.ActiveSheet.SetValue(2, 2, &#8220;Q&#8221;)<br /> FpSpread1.ActiveSheet.SortColumns(0, 2, sort)
+    </td>
+  </tr>
+</table>
+
+<p>You can customize the sorting indicator image that appears in the column header of columns that allow sorting. One way is to override the PaintSortIndicator method in the CellType ColumnHeaderRenderer class and use your own custom indicator. Another way is to use the GetImage and SetImage methods in the SpreadView class.</p>
+<p>This example uses the SetImage method to create a custom indicator.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/sortdatabase.png"><img class="alignnone size-full wp-image-663665" alt="sortdatabase" src="http://sphelp.grapecity.com/wp-content/uploads/2015/06/sortdatabase.png" width="555" height="321" /></a></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      C#
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      //Add sample data<br /> string conStr = &#8220;Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb&#8221;;<br /> string sqlStr = &#8220;Select CompanyName, ContactName, ContactTitle, Country from Customers&#8221;;<br /> System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);<br /> DataSet ds = new DataSet();<br /> System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);<br /> da.Fill(ds);<br /> fpSpread1.ActiveSheet.DataAutoSizeColumns = true;<br /> fpSpread1.ActiveSheet.DataMember = &#8220;Patients&#8221;;<br /> fpSpread1.ActiveSheet.DataSource = ds;<br /> fpSpread1.ActiveSheet.Columns[0].AllowAutoSort = true;<br /> //Set sort icon image<br /> FarPoint.Win.Spread.SpreadView wrkbk = fpSpread1.GetRootWorkbook();<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImage, Image.FromFile(&#8220;C:\Common\SD.ico&#8221;));<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD1.ico&#8221;));<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImage, Image.FromFile(&#8220;C:\Common\SD2.ico&#8221;));<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD3.ico&#8221;));<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImage, Image.FromFile(&#8220;C:\Common\SD4.ico&#8221;));<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImageDisabled, Image.FromFile(&#8220;C:\Common\SD5.ico&#8221;));
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      VB
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      ‘Add sample data<br /> Dim conStr As String = &#8220;Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb&#8221;<br /> Dim sqlStr As String = &#8220;Select CompanyName, ContactName, ContactTitle, Country from Customers&#8221;<br /> Dim conn As New System.Data.OleDb.OleDbConnection(conStr)<br /> Dim ds As DataSet = New DataSet()<br /> Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)<br /> da.Fill(ds)<br /> FpSpread1.ActiveSheet.DataAutoSizeColumns = True<br /> FpSpread1.ActiveSheet.DataMember = &#8220;Patients&#8221;<br /> FpSpread1.ActiveSheet.DataSource = ds<br /> FpSpread1.ActiveSheet.Columns(0).AllowAutoSort = True<br /> ‘Set sort icon image<br /> Dim wrkbk As FarPoint.Win.Spread.SpreadView = FpSpread1.GetRootWorkbook()<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImage, Image.FromFile(&#8220;C:\Common\SD.ico&#8221;))<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortAscendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD1.ico&#8221;))<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImage, Image.FromFile(&#8220;C:\Common\SD2.ico&#8221;))<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortDescendingImageDisabled, Image.FromFile(&#8220;C:\Common\SD3.ico&#8221;))<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImage, Image.FromFile(&#8220;C:\Common\SD4.ico&#8221;))<br /> wrkbk.SetImage(FarPoint.Win.Spread.SpreadView.SortUnsortedImageDisabled, Image.FromFile(&#8220;C:\Common\SD5.ico&#8221;))
+    </td>
+  </tr>
+</table>
+
+<p>This example overrides the PaintSortIndicator method in the CellType ColumnHeaderRenderer class and creates a custom indicator.</p>
+<p><img class="alignnone size-full wp-image-663666" alt="sortind" src="http://sphelp.grapecity.com/wp-content/uploads/2015/06/sortind.png" width="97" height="44" /></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      C#
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      public class myColumnHeaderRenderer : FarPoint.Win.Spread.CellType.ColumnHeaderRenderer<br /> {override public void PaintSortIndicator(Graphics g, Rectangle r, FarPoint.Win.Spread.Appearance appearance, float zoomFactor)<br /> {<br /> g.FillRectangle(new SolidBrush(Color.Red), r);<br /> }<br /> override public void PaintFilterIndicator(Graphics g, Rectangle r, FarPoint.Win.Spread.Appearance appearance, float zoomFactor)<br /> {<br /> g.FillRectangle(new SolidBrush(Color.Blue), r);<br /> }<br /> }private void SpreadSorting_Load(object sender, EventArgs e)<br /> {<br /> fpSpread1.ActiveSheet.ColumnHeader.DefaultStyle.Renderer = new myColumnHeaderRenderer();<br /> fpSpread1.Sheets[0].Columns[0].AllowAutoSort =true;<br /> fpSpread1.Sheets[0].Columns[0].AllowAutoFilter =true;Random r = new Random();<br /> int row, col = 0;<br /> for (row = 0; row &lt;= 7; row++)<br /> for (col = 0; col&lt;= 7; col++)<br /> {<br /> fpSpread1.ActiveSheet.SetValue(row, col, r.Next().ToString());<br /> }<br /> }
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      VB
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      Public Class myColumnHeaderRenderer<br /> Inherits FarPoint.Win.Spread.CellType.ColumnHeaderRendererPublic Overrides Sub PaintSortIndicator(ByVal g As Graphics, ByVal r As Rectangle, ByVal appearance As FarPoint.Win.Spread.Appearance,<br /> ByVal zoomFactor As Single)<br /> g.FillRectangle(New SolidBrush(Color.Red), r)<br /> End Sub &#8216;PaintSortIndicatorPublic Overrides Sub PaintFilterIndicator(ByVal g As Graphics, ByVal r As Rectangle, ByVal appearance As FarPoint.Win.Spread.Appearance, ByVal zoomFactor As Single)<br /> g.FillRectangle(New SolidBrush(Color.Blue), r)<br /> End Sub &#8216;PaintFilterIndicator<br /> End Class &#8216;myColumnHeaderRenderer</p> 
+
+      <p>
+        Private Sub SpreadSorting_Load(sender As Object, e As EventArgs) Handles MyBase.Load<br /> FpSpread1.ActiveSheet.ColumnHeader.DefaultStyle.Renderer = New myColumnHeaderRenderer<br /> FpSpread1.Sheets(0).Columns(0).AllowAutoSort = True<br /> FpSpread1.Sheets(0).Columns(0).AllowAutoFilter = True<br /> Dim r As New Random<br /> Dim row, col As Integer<br /> For row = 0 To 7<br /> For col = 0 To 7<br /> FpSpread1.ActiveSheet.SetValue(row, col, r.Next.ToString())<br /> Next col<br /> Next row<br /> End Sub</td> </tr> </tbody> </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+           <footer>
+                <div class="wrapper clearfix">
+                    <div class="footer-column footer-half">
+                        <div class="padder clearfix">
+                            <h3>About Spread Studio</h3>
+                            <p>Spread Studio is a multi-functional component that combines the utility of a grid with the power and flexibility of a spreadsheet to help developers working in Microsoft® Visual Studio and JavaScript add Microsoft® Excel functionality to their applications or websites. One package delivers a powerful formula engine, input controls, an API, full data import/export for Excel files, advanced charts, print support, and PDF export. Spread Studio is the only component you need in your toolbox for data bound and unbound WinForms, WPF, WinRT, ASP.NET, and JavaScript applications.</p>
+                            <p class="copyright-paragraph">
+                                ©
+                                <span><script>document.write(new Date().getFullYear())</script></span> <img src="/img/company/grapecity_150.png" alt="GrapeCity">, inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="footer-column footer-column-menu">
+                        <div class="padder clearfix">
+                            <h3>Company</h3>
+                            <ul class="footer-menu clearfix">
+                                <li><a href="/about-us/">About Us</a></li>
+                                <li><a href="/contact-us/">Contact Us</a></li>
+                                <li><a href="/legal/">Legal Information</a></li>
+                                <li><a href="/privacy/">Privacy Policy</a></li>
+                                <li><a href="/terms/">Terms of Use</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/dist/jquery.unslider-dist.js"></script>
+    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
+    <script src="/js/dist/jquery.waypoints-dist.js"></script>
+    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
+    <script src="/js/dist/jquery.velocity-dist.js"></script>
+    <script src="/js/dist/jquery.event.move-dist.js"></script>
+    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
+    <script src="/js/dist/init-dist.js"></script>
+
+
+
+</body>
+
+</html> 

@@ -1,0 +1,344 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SpreadJS and Sorting</title>
+    <meta name="description" content="Spread Studio is our new cross-platform toolkit that includes components for Windows Forms, ASP.NET, WPF, WinRT, and Silverlight all in one package. This new package includes the new releases of Spread for WinForms and Spread for ASP.NET." name="description" />
+    <meta name="keywords" content="Spread.NET, ASP.NET, WPF, Silverlight, WinRT, .NET, spreadsheets, Data, PDF, Spreadsheet, Grid, Excel, analysis, GrapeCity, ASP.NET Spreadsheet component, .NET Spreadsheet component">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="DC.title" content="GrapeCity Spread" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Raleigh" />
+    <meta name="geo.position" content="40.458677;-79.924935" />
+    <meta name="ICBM" content="40.458677, -79.924935" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="GrapeCity Spread">
+    <meta itemprop="description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta itemprop="image" content="http://spread.grapecity.com/img/spread-photo.png">
+    <link href="https://plus.google.com/103999002053720301182/" rel="publisher" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="GrapeCity Spread">
+    <meta name="twitter:site" content="@gcspread">
+    <meta name="twitter:title" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:creator" content="@gcspread">
+    <meta name="twitter:image" content="http://spread.grapecity.com/img/spread-photo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="GrapeCity Spread" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://spread.grapecity.com/" />
+    <meta property="og:image" content="http://spread.grapecity.com/img/spread-photo.png" />
+    <meta property="og:description" content="Spreadsheet Components for .NET and JavaScript-HTML5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css?v=1" />
+
+</head>
+
+<body class=" page-SpreadJS and Sorting">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+    <main class="body-section">
+        <article class="body-inner">    <div class="nav-bar">
+        <div class="nav-bar-inner">
+            <div class="wrapper">
+                <div class="padder clearfix">
+                    <div class="search-container clearfix">
+                        <input placeholder="Search" type="search" />
+                        <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </div>
+                    <div class="user-container">
+                        <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+                        <ul class="user-list hidden">
+                            <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
+                            <li><a href="#"><span class="lnr lnr-license"></span> Licenses</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Submit An Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<aside class="brand-section">
+        <div class="brand-inner clearfix">
+            <div class="brand-main">
+                <div class="brand-logo">
+                    <div class="padder clearfix">
+                        <h2><a href="/"><img src="/img/sp-icon-white.svg" alt="Spread" /><span class="logo-text">Spread</span> </a></h2>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-main">
+                <div class="nav-section">
+                    <div class="padder clearfix">
+                        <ul class="clearfix">
+                            <li class="studio">
+                                <a href="/products/spread-studio/"><img src="/img/sp-icon.svg" /><span class="menu-text">Spread Studio</span></a>
+                            </li>
+                            <li class="js">
+                                <a href="/products/spreadjs/"><img src="/img/js-icon.svg" /><span class="menu-text">SpreadJS</span></a>
+                            </li>
+                            <li class="com">
+                                <a href="/products/spread-com/"><img src="/img/com-icon.svg" /><span class="menu-text">Spread COM</span></a>
+                            </li>
+                            <li><a href="/pages/downloads/"><span class="lnr lnr-download"></span><span class="menu-text">Downloads</span></a></li>
+                            <li><a href="/pages/demo-gallery/"><span class="lnr lnr-cog"></span><span class="menu-text">Demo Gallery</span></a></li>
+                            <li><a href="/pages/pricing/"><span class="lnr lnr-cart"></span><span class="menu-text">Pricing</span></a></li>
+                            <li><a href="/pages/support-community/"><span class="lnr lnr-bubble"></span><span class="menu-text">Support & Community</span></a></li>
+                            <li><a href="/pages/documentation/"><span class="lnr lnr-book"></span><span class="menu-text">Documentation</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="brand-container">
+                <div class="padder clearfix">
+                    <div class="brand-more">
+                        <a class="brand-more-trigger" href="javascript:void(0);"><span class="lnr lnr-menu"></span> <span class="menu-text">More Tools</span></a>
+                        <ul class="brand-more-list hidden">
+                            <li><a href="#"><span class="lnr lnr-diamond"></span> ActiveReports</a></li>
+                            <li><a href="#"><span class="lnr lnr-poop"></span> ComponentOne</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Wijmo</a></li>
+                            <li><a href="#"><span class="lnr lnr-thumbs-down"></span> Xuni</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside><header>
+    <div class="wrapper">
+        <div class="padder clearfix">
+            <h1><span class="lnr lnr-book"></span> SpreadJS and Sorting</h1>
+            <h3></h3>
+        </div>
+</header>
+
+
+<div class="wrapper-sections">
+    <section class="section-page">
+        <div class="wrapper">
+            <div class="padder clearfix">
+                <div class="entry">
+
+                    <p>SpreadJS supports sorting data programmatically. Filters and tables have UI sorting options. Sorting data makes it easier to find information in a column or row.</p>
+<p>You can sort data in the widget and specify a column or row index to sort on as well as the sort criteria. You can also specify multiple sort keys (sort by a specified column or row first, then another column or row, and so on). Use the sortRange method to sort data. Use the sortInfo object in the sortRange method to specify sort keys and ascending or descending order and by row or column.</p>
+<p>The row filter has a sort option that allows the user to sort the filtered data or you can use the sortColumn method. Tables also have options that allow the user to sort data as shown in the following image.<figure id="attachment_664004" style="width: 305px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/SpreadJSsort.png"><img class="size-full wp-image-664004 " alt="SpreadJSsort" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/SpreadJSsort.png" width="305" height="466" /></a><figcaption class="wp-caption-text">Table Sorting</figcaption></figure> </p>
+<p>The RangeSorting or RangeSorted event occurs when automatically sorting (with a filter or a table).</p>
+<p>This example sorts the first column in ascending or descending order. Select a button to sort.<figure id="attachment_664005" style="width: 208px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/SpreadJSsort1.png"><img class="size-full wp-image-664005 " alt="SpreadJSsort1" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/SpreadJSsort1.png" width="208" height="409" /></a><figcaption class="wp-caption-text">Column Sorting</figcaption></figure> </p>
+<pre><code class="language-javascript">&lt;!DOCTYPE html&gt;&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;SpreadJS Sorting&lt;/title&gt;
+&lt;link type="text/css" href="./css/gcspread.sheets.8.40.20151.0.css" rel="stylesheet" /&gt;
+&lt;script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./scripts/gcspread.sheets.all.8.40.20151.0.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+$(document).ready(function () {
+var spread = new GcSpread.Sheets.Spread($("#ss").get(0),{sheetCount:3});
+var activeSheet = spread.getActiveSheet();
+activeSheet.setValue(0, 0, 10);
+activeSheet.setValue(1, 0, 100);
+activeSheet.setValue(2, 0, 50);
+activeSheet.setValue(3, 0, 40);
+activeSheet.setValue(4, 0, 80);
+activeSheet.setValue(5, 0, 1);
+activeSheet.setValue(6, 0, 65);
+activeSheet.setValue(7, 0, 20);
+activeSheet.setValue(8, 0, 30);
+activeSheet.setValue(9, 0, 35);
+
+$("#button1").click(function(){
+//Sort Column 1 in ascending order on button click.
+$("#ss").data("spread").getActiveSheet().sortRange(-1, 0, -1, 1, true, [
+{index:0, ascending:true}
+]);
+});
+$("#button2").click(function(){
+//Sort Column 1 in descending order on button click.
+$("#ss").data("spread").getActiveSheet().sortRange(-1, 0, -1, 1, true, [
+{index:0, ascending:false}
+]);
+});
+});&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;&lt;div id="ss" style="width: 500px; height: 300px; border: 1px solid gray"&gt;
+&lt;/div&gt;
+&lt;input type="button" id="button1" value="button1"/&gt;
+&lt;input type="button" id="button2" value="button2"/&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>You can specify multiple sort conditions when sorting.</p>
+<p>This example sorts rows using multiple sort keys.</p>
+<pre><code class="language-javascript">
+$(document).ready(function () 
+{
+var spread = new GcSpread.Sheets.Spread($("#ss").get(0),{sheetCount:3});
+var activeSheet = spread.getActiveSheet();
+activeSheet.setRowCount(6);
+activeSheet.setValue(0, 0, 10);
+activeSheet.setValue(1, 0, 100);
+activeSheet.setValue(2, 0, 100);
+activeSheet.setValue(3, 0, 10);
+activeSheet.setValue(4, 0, 5);
+activeSheet.setValue(5, 0, 10);
+activeSheet.setValue(0, 1, 10);
+activeSheet.setValue(1, 1, 40);
+activeSheet.setValue(2, 1, 10);
+activeSheet.setValue(3, 1, 20);
+activeSheet.setValue(4, 1, 10);
+activeSheet.setValue(5, 1, 40);
+
+$("#button1").click(function(){
+//Create a SortInfo object where 1st Key:Column1/2nd Key:Column2.
+var sortInfo = [
+{index:0, ascending:true},
+{index:1, ascending:true}];
+///Execute sorting which targets all rows based on the created sorting conditions.
+$("#ss").data("spread").getActiveSheet().sortRange(0, -1, 6, -1, true, sortInfo);
+});
+</code></pre>
+
+<p>This example uses the RangeSorted event.</p>
+<pre><code class="language-javascript">
+activeSheet.setValue(0, 0, 10);
+activeSheet.setValue(1, 0, 100);
+activeSheet.setValue(2, 0, 50);
+activeSheet.setValue(3, 0, 40);
+activeSheet.setValue(4, 0, 80);
+activeSheet.setValue(5, 0, 1);
+activeSheet.setValue(6, 0, 65);
+activeSheet.setValue(7, 0, 20);
+activeSheet.setValue(8, 0, 30);
+activeSheet.setValue(9, 0, 35);
+var cellrange =new GcSpread.Sheets.Range(0, 0, 5, 1);
+var hideRowFilter =new GcSpread.Sheets.HideRowFilter(cellrange);
+activeSheet.rowFilter(hideRowFilter);
+
+$("#ss").data("spread").getActiveSheet().bind(GcSpread.Sheets.Events.RangeSorted, function (e, info) {
+alert("Col (" + info.col + ", " + info.ascending +")");
+});
+</code></pre>
+
+<p>This example uses the sortColumn method.</p>
+<pre><code class="language-javascript">//Create a custom condition.function CustomFilter(){};
+CustomFilter.prototype = {
+conditionType: "CustomFilter",
+evaluate: function (evaluator, row, col) {
+var value = evaluator.getValue(row, col);if(value !== null && value &gt;= 10 && value &lt;= 50){
+//Return True only when the following conditions are satisfied.
+// (1)Values are entered.
+// (2)Values are not lower than 10.
+// (3)Values are not greater than 50.
+return true;
+}else{
+return false;
+}
+}
+};
+activeSheet.setValue(0, 0, 10);
+activeSheet.setValue(1, 0, 100);
+activeSheet.setValue(2, 0, 50);
+activeSheet.setValue(3, 0, 40);
+activeSheet.setValue(4, 0, 80);
+activeSheet.setValue(5, 0, 1);
+activeSheet.setValue(6, 0, 65);
+activeSheet.setValue(7, 0, 20);
+activeSheet.setValue(8, 0, 30);
+activeSheet.setValue(9, 0, 35);//Set a row Filter.
+var rowFilter = new GcSpread.Sheets.HideRowFilter(new GcSpread.Sheets.Range(0, 0, 7, 1));
+activeSheet.rowFilter(rowFilter);
+rowFilter.addFilterItem(0, new CustomFilter());
+rowFilter.filter(0);
+rowFilter.sortColumn(0, true);
+</code></pre>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+           <footer>
+                <div class="wrapper clearfix">
+                    <div class="footer-column footer-half">
+                        <div class="padder clearfix">
+                            <h3>About Spread Studio</h3>
+                            <p>Spread Studio is a multi-functional component that combines the utility of a grid with the power and flexibility of a spreadsheet to help developers working in Microsoft® Visual Studio and JavaScript add Microsoft® Excel functionality to their applications or websites. One package delivers a powerful formula engine, input controls, an API, full data import/export for Excel files, advanced charts, print support, and PDF export. Spread Studio is the only component you need in your toolbox for data bound and unbound WinForms, WPF, WinRT, ASP.NET, and JavaScript applications.</p>
+                            <p class="copyright-paragraph">
+                                ©
+                                <span><script>document.write(new Date().getFullYear())</script></span> <img src="/img/company/grapecity_150.png" alt="GrapeCity">, inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="footer-column footer-column-menu">
+                        <div class="padder clearfix">
+                            <h3>Company</h3>
+                            <ul class="footer-menu clearfix">
+                                <li><a href="/about-us/">About Us</a></li>
+                                <li><a href="/contact-us/">Contact Us</a></li>
+                                <li><a href="/legal/">Legal Information</a></li>
+                                <li><a href="/privacy/">Privacy Policy</a></li>
+                                <li><a href="/terms/">Terms of Use</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/dist/jquery.unslider-dist.js"></script>
+    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
+    <script src="/js/dist/jquery.waypoints-dist.js"></script>
+    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
+    <script src="/js/dist/jquery.velocity-dist.js"></script>
+    <script src="/js/dist/jquery.event.move-dist.js"></script>
+    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
+    <script src="/js/dist/init-dist.js"></script>
+
+
+
+</body>
+
+</html> 

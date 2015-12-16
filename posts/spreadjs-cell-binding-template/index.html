@@ -1,0 +1,252 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SpreadJS Cell Binding Template</title>
+    <meta name="description" content="Spread Studio is our new cross-platform toolkit that includes components for Windows Forms, ASP.NET, WPF, WinRT, and Silverlight all in one package. This new package includes the new releases of Spread for WinForms and Spread for ASP.NET." name="description" />
+    <meta name="keywords" content="Spread.NET, ASP.NET, WPF, Silverlight, WinRT, .NET, spreadsheets, Data, PDF, Spreadsheet, Grid, Excel, analysis, GrapeCity, ASP.NET Spreadsheet component, .NET Spreadsheet component">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="DC.title" content="GrapeCity Spread" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Raleigh" />
+    <meta name="geo.position" content="40.458677;-79.924935" />
+    <meta name="ICBM" content="40.458677, -79.924935" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="GrapeCity Spread">
+    <meta itemprop="description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta itemprop="image" content="http://spread.grapecity.com/img/spread-photo.png">
+    <link href="https://plus.google.com/103999002053720301182/" rel="publisher" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="GrapeCity Spread">
+    <meta name="twitter:site" content="@gcspread">
+    <meta name="twitter:title" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:creator" content="@gcspread">
+    <meta name="twitter:image" content="http://spread.grapecity.com/img/spread-photo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="GrapeCity Spread" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://spread.grapecity.com/" />
+    <meta property="og:image" content="http://spread.grapecity.com/img/spread-photo.png" />
+    <meta property="og:description" content="Spreadsheet Components for .NET and JavaScript-HTML5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css?v=1" />
+
+</head>
+
+<body class=" page-SpreadJS Cell Binding Template">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+    <main class="body-section">
+        <article class="body-inner">    <div class="nav-bar">
+        <div class="nav-bar-inner">
+            <div class="wrapper">
+                <div class="padder clearfix">
+                    <div class="search-container clearfix">
+                        <input placeholder="Search" type="search" />
+                        <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </div>
+                    <div class="user-container">
+                        <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+                        <ul class="user-list hidden">
+                            <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
+                            <li><a href="#"><span class="lnr lnr-license"></span> Licenses</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Submit An Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<aside class="brand-section">
+        <div class="brand-inner clearfix">
+            <div class="brand-main">
+                <div class="brand-logo">
+                    <div class="padder clearfix">
+                        <h2><a href="/"><img src="/img/sp-icon-white.svg" alt="Spread" /><span class="logo-text">Spread</span> </a></h2>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-main">
+                <div class="nav-section">
+                    <div class="padder clearfix">
+                        <ul class="clearfix">
+                            <li class="studio">
+                                <a href="/products/spread-studio/"><img src="/img/sp-icon.svg" /><span class="menu-text">Spread Studio</span></a>
+                            </li>
+                            <li class="js">
+                                <a href="/products/spreadjs/"><img src="/img/js-icon.svg" /><span class="menu-text">SpreadJS</span></a>
+                            </li>
+                            <li class="com">
+                                <a href="/products/spread-com/"><img src="/img/com-icon.svg" /><span class="menu-text">Spread COM</span></a>
+                            </li>
+                            <li><a href="/pages/downloads/"><span class="lnr lnr-download"></span><span class="menu-text">Downloads</span></a></li>
+                            <li><a href="/pages/demo-gallery/"><span class="lnr lnr-cog"></span><span class="menu-text">Demo Gallery</span></a></li>
+                            <li><a href="/pages/pricing/"><span class="lnr lnr-cart"></span><span class="menu-text">Pricing</span></a></li>
+                            <li><a href="/pages/support-community/"><span class="lnr lnr-bubble"></span><span class="menu-text">Support & Community</span></a></li>
+                            <li><a href="/pages/documentation/"><span class="lnr lnr-book"></span><span class="menu-text">Documentation</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="brand-container">
+                <div class="padder clearfix">
+                    <div class="brand-more">
+                        <a class="brand-more-trigger" href="javascript:void(0);"><span class="lnr lnr-menu"></span> <span class="menu-text">More Tools</span></a>
+                        <ul class="brand-more-list hidden">
+                            <li><a href="#"><span class="lnr lnr-diamond"></span> ActiveReports</a></li>
+                            <li><a href="#"><span class="lnr lnr-poop"></span> ComponentOne</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Wijmo</a></li>
+                            <li><a href="#"><span class="lnr lnr-thumbs-down"></span> Xuni</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside><header>
+    <div class="wrapper">
+        <div class="padder clearfix">
+            <h1><span class="lnr lnr-book"></span> SpreadJS Cell Binding Template</h1>
+            <h3></h3>
+        </div>
+</header>
+
+
+<div class="wrapper-sections">
+    <section class="section-page">
+        <div class="wrapper">
+            <div class="padder clearfix">
+                <div class="entry">
+
+                    <p>You can use the SpreadJS designer to create a binding relation to the data with a template. This saves time by reducing the amount of coding.</p>
+<p>The Template option in the designer is used to design the cell binding template.</p>
+<p>The Template option is located under the Data tab. Use the template to create field nodes that match the actual data fields. You can also set cell types for the data (Home tab and CellType option). Use the AutoGenerateLabel option to automatically create the binding path label.</p>
+<p>Select the green plus symbol to add a field node. Then type the field name (for example, name). You can specify a field option such as CheckBox using the drop-down arrow.<figure id="attachment_664294" style="width: 273px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate3.png"><img class="size-full wp-image-664294 " alt="Field List for adding nodes" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate3.png" width="273" height="246" /></a><figcaption class="wp-caption-text">Field List for adding nodes</figcaption></figure> </p>
+<p>The following image illustrates the Template option in the SpreadJS designer.<figure id="attachment_664301" style="width: 1137px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate.png"><img class="size-full wp-image-664301 " alt="SpreadJSbindingtemplate" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate.png" width="1137" height="635" /></a><figcaption class="wp-caption-text">SpreadJS Designer</figcaption></figure> </p>
+<p>Drag the nodes to the cell area to generate the layout. You can also use the CellType option to change the cell settings (such as removing a caption from the check box cell).<figure id="attachment_664296" style="width: 1138px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate2.png"><img class="size-full wp-image-664296  " alt="SpreadJSbindingtemplate2" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate2.png" width="1138" height="638" /></a><figcaption class="wp-caption-text">SpreadJS Designer with Layout</figcaption></figure> <figure id="attachment_664297" style="width: 1138px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate11.png"><img class="size-full wp-image-664297 " alt="SpreadJSbindingtemplate1" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate11.png" width="1138" height="638" /></a><figcaption class="wp-caption-text">SpreadJS Completed Layout</figcaption></figure> </p>
+<p>Save to a SpreadJS designer file (ssjson) if you wish to redesign the template later. Save to a js file to use in an HTML page. The JSON object is saved as a variable field. The field name is the same as the file name. Use the Export option under the File tab to save to a SSJSON or Javascript file.<figure id="attachment_664298" style="width: 1073px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate4.png"><img class="size-full wp-image-664298 " alt="SpreadJSbindingtemplate4" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingtemplate4.png" width="1073" height="435" /></a><figcaption class="wp-caption-text">Save Options</figcaption></figure> </p>
+<p>Add code to the page that references the js file. Add code similar to the following:</p>
+<p>JavaScript</p>
+<pre><code class="language-csharp">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;SpreadJS Binding&lt;/title&gt;
+&lt;link type="text/css" href="./css/gcspread.sheets.8.40.20151.0.css" rel="stylesheet" /&gt; 
+&lt;script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./scripts/gcspread.sheets.all.8.40.20151.0.min.js"&gt;&lt;/script&gt;
+
+&lt;script type="text/javascript" src="binding.js"&gt;&lt;/script&gt;
+
+&lt;script type="text/javascript"&gt;  
+
+        $(document).ready(function () {       
+var spread = new GcSpread.Sheets.Spread($("#ss")[0],{sheetCount:3});
+var data = { name: "bob", age: 20, gender: "Male", email: "bob@test.com", married: true }; // customer's data source.
+spread.fromJSON(binding); //Use fromJSON method to load the template, here template variable field is defined in binding.js.
+var sheet = spread.getActiveSheet();
+sheet.setDataSource(new GcSpread.Sheets.CellBindingSource(data)); //setDataSource with CellBindingSource.
+       });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="ss" style="width: 600px; height: 250px; border: 1px solid gray"&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>The completed sample appears as follows:<figure id="attachment_664299" style="width: 608px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingcomplete.png"><img class="size-full wp-image-664299 " alt="SpreadJSbindingcomplete" src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/SpreadJSbindingcomplete.png" width="608" height="261" /></a><figcaption class="wp-caption-text">Completed Sample in Browser</figcaption></figure></p>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+           <footer>
+                <div class="wrapper clearfix">
+                    <div class="footer-column footer-half">
+                        <div class="padder clearfix">
+                            <h3>About Spread Studio</h3>
+                            <p>Spread Studio is a multi-functional component that combines the utility of a grid with the power and flexibility of a spreadsheet to help developers working in Microsoft® Visual Studio and JavaScript add Microsoft® Excel functionality to their applications or websites. One package delivers a powerful formula engine, input controls, an API, full data import/export for Excel files, advanced charts, print support, and PDF export. Spread Studio is the only component you need in your toolbox for data bound and unbound WinForms, WPF, WinRT, ASP.NET, and JavaScript applications.</p>
+                            <p class="copyright-paragraph">
+                                ©
+                                <span><script>document.write(new Date().getFullYear())</script></span> <img src="/img/company/grapecity_150.png" alt="GrapeCity">, inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="footer-column footer-column-menu">
+                        <div class="padder clearfix">
+                            <h3>Company</h3>
+                            <ul class="footer-menu clearfix">
+                                <li><a href="/about-us/">About Us</a></li>
+                                <li><a href="/contact-us/">Contact Us</a></li>
+                                <li><a href="/legal/">Legal Information</a></li>
+                                <li><a href="/privacy/">Privacy Policy</a></li>
+                                <li><a href="/terms/">Terms of Use</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/dist/jquery.unslider-dist.js"></script>
+    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
+    <script src="/js/dist/jquery.waypoints-dist.js"></script>
+    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
+    <script src="/js/dist/jquery.velocity-dist.js"></script>
+    <script src="/js/dist/jquery.event.move-dist.js"></script>
+    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
+    <script src="/js/dist/init-dist.js"></script>
+
+
+
+</body>
+
+</html> 

@@ -1,0 +1,738 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Spread Windows Forms and Grouping</title>
+    <meta name="description" content="Spread Studio is our new cross-platform toolkit that includes components for Windows Forms, ASP.NET, WPF, WinRT, and Silverlight all in one package. This new package includes the new releases of Spread for WinForms and Spread for ASP.NET." name="description" />
+    <meta name="keywords" content="Spread.NET, ASP.NET, WPF, Silverlight, WinRT, .NET, spreadsheets, Data, PDF, Spreadsheet, Grid, Excel, analysis, GrapeCity, ASP.NET Spreadsheet component, .NET Spreadsheet component">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="DC.title" content="GrapeCity Spread" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Raleigh" />
+    <meta name="geo.position" content="40.458677;-79.924935" />
+    <meta name="ICBM" content="40.458677, -79.924935" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="GrapeCity Spread">
+    <meta itemprop="description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta itemprop="image" content="http://spread.grapecity.com/img/spread-photo.png">
+    <link href="https://plus.google.com/103999002053720301182/" rel="publisher" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="GrapeCity Spread">
+    <meta name="twitter:site" content="@gcspread">
+    <meta name="twitter:title" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:creator" content="@gcspread">
+    <meta name="twitter:image" content="http://spread.grapecity.com/img/spread-photo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="GrapeCity Spread" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://spread.grapecity.com/" />
+    <meta property="og:image" content="http://spread.grapecity.com/img/spread-photo.png" />
+    <meta property="og:description" content="Spreadsheet Components for .NET and JavaScript-HTML5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css?v=1" />
+
+</head>
+
+<body class=" page-Spread Windows Forms and Grouping">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+    <main class="body-section">
+        <article class="body-inner">    <div class="nav-bar">
+        <div class="nav-bar-inner">
+            <div class="wrapper">
+                <div class="padder clearfix">
+                    <div class="search-container clearfix">
+                        <input placeholder="Search" type="search" />
+                        <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </div>
+                    <div class="user-container">
+                        <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+                        <ul class="user-list hidden">
+                            <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
+                            <li><a href="#"><span class="lnr lnr-license"></span> Licenses</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Submit An Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<aside class="brand-section">
+        <div class="brand-inner clearfix">
+            <div class="brand-main">
+                <div class="brand-logo">
+                    <div class="padder clearfix">
+                        <h2><a href="/"><img src="/img/sp-icon-white.svg" alt="Spread" /><span class="logo-text">Spread</span> </a></h2>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-main">
+                <div class="nav-section">
+                    <div class="padder clearfix">
+                        <ul class="clearfix">
+                            <li class="studio">
+                                <a href="/products/spread-studio/"><img src="/img/sp-icon.svg" /><span class="menu-text">Spread Studio</span></a>
+                            </li>
+                            <li class="js">
+                                <a href="/products/spreadjs/"><img src="/img/js-icon.svg" /><span class="menu-text">SpreadJS</span></a>
+                            </li>
+                            <li class="com">
+                                <a href="/products/spread-com/"><img src="/img/com-icon.svg" /><span class="menu-text">Spread COM</span></a>
+                            </li>
+                            <li><a href="/pages/downloads/"><span class="lnr lnr-download"></span><span class="menu-text">Downloads</span></a></li>
+                            <li><a href="/pages/demo-gallery/"><span class="lnr lnr-cog"></span><span class="menu-text">Demo Gallery</span></a></li>
+                            <li><a href="/pages/pricing/"><span class="lnr lnr-cart"></span><span class="menu-text">Pricing</span></a></li>
+                            <li><a href="/pages/support-community/"><span class="lnr lnr-bubble"></span><span class="menu-text">Support & Community</span></a></li>
+                            <li><a href="/pages/documentation/"><span class="lnr lnr-book"></span><span class="menu-text">Documentation</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="brand-container">
+                <div class="padder clearfix">
+                    <div class="brand-more">
+                        <a class="brand-more-trigger" href="javascript:void(0);"><span class="lnr lnr-menu"></span> <span class="menu-text">More Tools</span></a>
+                        <ul class="brand-more-list hidden">
+                            <li><a href="#"><span class="lnr lnr-diamond"></span> ActiveReports</a></li>
+                            <li><a href="#"><span class="lnr lnr-poop"></span> ComponentOne</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Wijmo</a></li>
+                            <li><a href="#"><span class="lnr lnr-thumbs-down"></span> Xuni</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside><header>
+    <div class="wrapper">
+        <div class="padder clearfix">
+            <h1><span class="lnr lnr-book"></span> Spread Windows Forms and Grouping</h1>
+            <h3></h3>
+        </div>
+</header>
+
+
+<div class="wrapper-sections">
+    <section class="section-page">
+        <div class="wrapper">
+            <div class="padder clearfix">
+                <div class="entry">
+
+                    <p>You can make data in a spreadsheet easier to read by organizing the data in groups.</p>
+<p>Spread Windows Forms supports grouping and allows you to add group footers. With grouping, you can allow the user to group rows of data according to the column headers that are dragged into the group bar. Special group headings are displayed above the grouped rows.</p>
+<p>By default, the spreadsheet does not allow the user to group the rows of a spreadsheet. You can turn on this feature and allow grouping of rows for an entire sheet. Besides allowing grouping, you also need to allow columns to move, since the user performs grouping by clicking and dragging a column header into the group bar, which is similar to moving a column. Also, the group bar must be visible and the column headers (at least one row) should be visible.</p>
+<p>Use the AllowGroup property of the sheet to turn on grouping. Use the Visible property of the GroupBarInfo class to display the group bar (the area at the top of the sheet into which the user can drag column headers. Set the AllowColumnMove property of the Spread to True to allow the user to click and drag column headers. Unless you are using the default value, set the ColumnHeaderVisible property of the sheet to True to ensure that the column headers are displayed.</p>
+<p>You can set the maximum number of levels of grouping that the end user can set with the GroupMaximumLevel property. This limits the number of column headers that can be dragged consecutively to the group bar. You can set up the display so that the items are shown initially all expanded or all collapsed when grouping is performed with the GroupingPolicy property. The GroupingPolicy property only applies to new groups.</p>
+<p>This example allows grouping. Select a column header and drag the header to the group area.<figure id="attachment_664075" style="width: 578px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/BeforeBasicGroup.png"><img class="size-full wp-image-664075 " alt="BeforeBasicGroup" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/BeforeBasicGroup.png" width="578" height="360" /></a><figcaption class="wp-caption-text">No Groups</figcaption></figure> <figure id="attachment_664076" style="width: 578px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/BasicGroup.png"><img class="size-full wp-image-664076 " alt="BasicGroup" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/BasicGroup.png" width="578" height="360" /></a><figcaption class="wp-caption-text">Spread with Group</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">//Add sample data
+string conStr = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb";
+string sqlStr = "Select CompanyName, ContactName, ContactTitle, Country from Customers";
+System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);
+DataSet ds = new DataSet();
+System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
+da.Fill(ds);
+fpSpread1.ActiveSheet.DataAutoSizeColumns = true;
+fpSpread1.ActiveSheet.DataSource = ds;
+
+FpSpread1.AllowColumnMove = true;
+FpSpread1.ActiveSheet.GroupBarInfo.Visible = true;
+FpSpread1.ActiveSheet.AllowGroup = true;
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Dim conStr As String = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"
+Dim sqlStr As String = "Select CompanyName, ContactName, ContactTitle, Country from Customers"
+Dim conn As New System.Data.OleDb.OleDbConnection(conStr)
+Dim ds As DataSet = New DataSet()
+Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
+da.Fill(ds)
+FpSpread1.ActiveSheet.DataAutoSizeColumns = True
+FpSpread1.ActiveSheet.DataSource = ds
+
+FpSpread1.AllowColumnMove = True
+FpSpread1.ActiveSheet.GroupBarInfo.Visible = True
+FpSpread1.ActiveSheet.AllowGroup = True
+</code></pre>
+
+<p>You can customize the appearance of the grouped rows. The following table describes the members used for customizing the appearance of grouped rows:</p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      Grouping API Member
+    </td>
+
+    <td>
+      Description
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      IGroupSupport interface
+    </td>
+
+    <td valign="top">
+      Interface that supports grouping
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      GroupDataModel class
+    </td>
+
+    <td valign="top">
+      Class of grouping data in the underlying models
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Group class
+    </td>
+
+    <td valign="top">
+      Class in the underlying models that supports grouping
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Grouped and Grouping events
+    </td>
+
+    <td valign="top">
+      Events in FpSpread class
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      GroupInfo class
+    </td>
+
+    <td valign="top">
+      Class that represents grouping information, can use to set appearance options for groups and group footers
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      GroupInfoCollection
+    </td>
+
+    <td valign="top">
+      Collection of grouping information
+    </td>
+  </tr>
+</table>
+
+<p>You can customize the appearance of the group bar at the top of the grouping display with properties in the GroupBarInfo class. The properties on the sheet (GroupBarInfo object) include:</p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      GroupBarInfo Property
+    </td>
+
+    <td>
+      Description
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      BackColor
+    </td>
+
+    <td valign="top">
+      Sets the background color of the grouping bar
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Font
+    </td>
+
+    <td valign="top">
+      Sets the font of the grouping bar
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      ForeColor
+    </td>
+
+    <td valign="top">
+      Sets the text color of the grouping bar
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Height
+    </td>
+
+    <td valign="top">
+      Sets the height of the grouping bar
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      GroupVerticalIndent
+    </td>
+
+    <td valign="top">
+      Sets the vertical distance between group names (when more than one group name is used) in the grouping bar
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Text
+    </td>
+
+    <td valign="top">
+      Sets the text of the grouping bar
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Visible
+    </td>
+
+    <td valign="top">
+      Sets whether to display the grouping bar
+    </td>
+  </tr>
+</table>
+
+<p>You can use GroupInfo to set defaults for each level of grouping. The first GroupInfo added in GroupInfos applies to top-level groups (parent), the next applies to the first child group, and so on.</p>
+<p>You can define a set of properties in an array list called GroupInfo. Set the appearance of grouped rows by adding styles to the array list of appearance properties for grouping. A collection of GroupInfo objects is in the GroupInfoCollection. To set the appearance settings in a GroupInfo to a particular sheet, set the GroupInfos property on that sheet.</p>
+<p>Appearance settings for grouping in the GroupInfo class include:</p>
+<ul>
+<li>Background color</li>
+<li>Border</li>
+<li>Font</li>
+<li>Foreground (text) color</li>
+<li>Horizontal alignment</li>
+<li>Indent</li>
+<li>Indent color</li>
+<li>Vertical alignment</li>
+</ul>
+<p>Only column and sheet appearance settings remain when grouping is turned on. Since rows and cells are moved when the grouping feature is turned on, any style or span settings are ignored.</p>
+<p>This example sets properties for the group bar at the top of the display.<figure id="attachment_664081" style="width: 561px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupbar.png"><img class="size-full wp-image-664081 " alt="groupbar" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupbar.png" width="561" height="292" /></a><figcaption class="wp-caption-text">Group Bar Text</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">//Add sample data
+string conStr = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb";
+string sqlStr = "Select CompanyName, ContactName, ContactTitle, Country from Customers";
+System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);
+DataSet ds = new DataSet();
+System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
+da.Fill(ds);
+fpSpread1.ActiveSheet.DataAutoSizeColumns = true;
+fpSpread1.ActiveSheet.DataSource = ds;
+
+fpSpread1.Sheets.Count = 2;
+fpSpread1.Sheets[0].GroupBarInfo.Visible = true;
+fpSpread1.Sheets[0].GroupBarInfo.Text = "GroupBar for Sheet1";
+fpSpread1.Sheets[0].GroupBarInfo.ForeColor = Color.Green;
+fpSpread1.Sheets[0].GroupBarInfo.Font = new Font("Tahama", 10.0f, FontStyle.Bold | FontStyle.Underline);
+fpSpread1.Sheets[0].GroupBarInfo.Height = 30;
+fpSpread1.Sheets[0].GroupBarInfo.GroupVerticalIndent = 2;
+fpSpread1.Sheets[1].GroupBarInfo.Visible = true;
+fpSpread1.Sheets[1].GroupBarInfo.Text = "GroupBar for Sheet2";
+fpSpread1.Sheets[1].GroupBarInfo.BackColor = Color.GreenYellow;
+fpSpread1.Sheets[1].GroupBarInfo.ForeColor = Color.Blue;
+fpSpread1.Sheets[1].GroupBarInfo.Font = new Font("Tahama", 10.0f, FontStyle.Italic);
+fpSpread1.AllowColumnMove = true;
+fpSpread1.Sheets[0].AllowGroup = true;
+fpSpread1.Sheets[1].AllowGroup = true;
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Dim conStr As String = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"
+Dim sqlStr As String = "Select CompanyName, ContactName, ContactTitle, Country from Customers"
+Dim conn As New System.Data.OleDb.OleDbConnection(conStr)
+Dim ds As DataSet = New DataSet()
+Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
+da.Fill(ds)
+FpSpread1.ActiveSheet.DataAutoSizeColumns = True
+FpSpread1.ActiveSheet.DataSource = ds
+
+FpSpread1.Sheets.Count = 2
+FpSpread1.Sheets(0).GroupBarInfo.Visible = True
+FpSpread1.Sheets(0).GroupBarInfo.Text = "GroupBar for Sheet1"
+FpSpread1.Sheets(0).GroupBarInfo.ForeColor = Color.Green
+FpSpread1.Sheets(0).GroupBarInfo.Font = New Font("Tahama", 10.0F, FontStyle.Bold Or FontStyle.Underline)
+FpSpread1.Sheets(0).GroupBarInfo.Height = 30
+FpSpread1.Sheets(0).GroupBarInfo.GroupVerticalIndent = 2
+FpSpread1.Sheets(1).GroupBarInfo.Visible = True
+FpSpread1.Sheets(1).GroupBarInfo.Text = "GroupBar for Sheet2"
+FpSpread1.Sheets(1).GroupBarInfo.BackColor = Color.GreenYellow
+FpSpread1.Sheets(1).GroupBarInfo.ForeColor = Color.Blue
+FpSpread1.Sheets(1).GroupBarInfo.Font = New Font("Tahama", 10.0F, FontStyle.Italic)
+FpSpread1.AllowColumnMove = True
+FpSpread1.Sheets(0).AllowGroup = True
+FpSpread1.Sheets(1).AllowGroup = True
+</code></pre>
+
+<p>This example specifies the properties of the grouping bar and uses GroupInfo to set colors for parent and child groups.<figure id="attachment_664083" style="width: 584px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupparentchild.png"><img class="size-full wp-image-664083 " alt="groupparentchild" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupparentchild.png" width="584" height="242" /></a><figcaption class="wp-caption-text">Group Bar</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">fpSpread1.AllowColumnMove = true;
+fpSpread1.ActiveSheet.GroupBarInfo.Visible = true;
+fpSpread1.ActiveSheet.GroupBarInfo.BackColor = Color.Aquamarine;
+fpSpread1.ActiveSheet.GroupBarInfo.Height = 75;
+fpSpread1.ActiveSheet.GroupMaximumLevel = 3;
+fpSpread1.ActiveSheet.GroupBarInfo.GroupVerticalIndent = 20;
+fpSpread1.ActiveSheet.AllowGroup = true;
+
+FarPoint.Win.Spread.GroupInfo gi = new FarPoint.Win.Spread.GroupInfo();
+gi.BackColor = Color.Yellow;
+FarPoint.Win.Spread.GroupInfo gi2 = new FarPoint.Win.Spread.GroupInfo();
+gi2.BackColor = Color.Green;
+FarPoint.Win.Spread.GroupInfoCollection gic = new FarPoint.Win.Spread.GroupInfoCollection();
+gic.AddRange(new FarPoint.Win.Spread.GroupInfo[] { gi, gi2 });
+fpSpread1.ActiveSheet.GroupInfos.Add(gic[0]);
+fpSpread1.ActiveSheet.GroupInfos.Add(gic[1]);
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">FpSpread1.AllowColumnMove = True
+FpSpread1.ActiveSheet.GroupBarInfo.Visible = True
+FpSpread1.ActiveSheet.GroupBarInfo.BackColor = Color.Aquamarine
+FpSpread1.ActiveSheet.GroupBarInfo.Height = 75
+FpSpread1.ActiveSheet.GroupMaximumLevel = 3
+FpSpread1.ActiveSheet.GroupBarInfo.GroupVerticalIndent = 20
+FpSpread1.ActiveSheet.AllowGroup = True
+
+Dim gi As New FarPoint.Win.Spread.GroupInfo
+gi.BackColor = Color.Yellow
+Dim gi2 As New FarPoint.Win.Spread.GroupInfo
+gi2.BackColor = Color.Green
+Dim gic As New FarPoint.Win.Spread.GroupInfoCollection()
+gic.AddRange(New FarPoint.Win.Spread.GroupInfo() {gi, gi2})
+FpSpread1.ActiveSheet.GroupInfos.Add(gic(0))
+FpSpread1.ActiveSheet.GroupInfos.Add(gic(1))
+</code></pre>
+
+<p>This example uses the IsGroup method to determine whether the specified row is a group header (also called group node).</p>
+<p>C#</p>
+<pre><code class="language-csharp">//Add sample data
+string conStr = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb";
+string sqlStr = "Select CompanyName, ContactName, ContactTitle, Country from Customers";
+System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);
+DataSet ds = new DataSet();
+System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
+da.Fill(ds);
+fpSpread1.ActiveSheet.DataAutoSizeColumns = true;
+fpSpread1.ActiveSheet.DataSource = ds;
+fpSpread1.AllowColumnMove = true;
+fpSpread1.ActiveSheet.GroupBarInfo.Visible = true;
+fpSpread1.ActiveSheet.AllowGroup = true;
+
+FarPoint.Win.Spread.GroupInfo gi = new FarPoint.Win.Spread.GroupInfo();
+gi.BackColor = Color.Yellow;
+FarPoint.Win.Spread.GroupInfo gi2 = new FarPoint.Win.Spread.GroupInfo();
+gi2.BackColor = Color.Green;
+FarPoint.Win.Spread.GroupInfoCollection gic = new FarPoint.Win.Spread.GroupInfoCollection();
+gic.AddRange(new FarPoint.Win.Spread.GroupInfo[] { gi, gi2 });
+fpSpread1.ActiveSheet.GroupInfos.Add(gic[0]);
+fpSpread1.ActiveSheet.GroupInfos.Add(gic[1]);
+
+private void fpSpread1_Grouped(object sender, EventArgs e)
+        {
+FarPoint.Win.Spread.Model.GroupDataModel gm;
+if ((fpSpread1.ActiveSheet.Models.Data) is FarPoint.Win.Spread.Model.GroupDataModel)
+{
+    gm = (FarPoint.Win.Spread.Model.GroupDataModel)fpSpread1.ActiveSheet.Models.Data;
+    if ((gm.TargetModel) is FarPoint.Win.Spread.Model.IRangeSupport)
+    {
+        FarPoint.Win.Spread.Model.IRangeSupport im = (FarPoint.Win.Spread.Model.IRangeSupport)gm.TargetModel;
+        bool groupvalue;
+        groupvalue = gm.IsGroup(0);        
+        MessageBox.Show(groupvalue.ToString());
+    }
+}              
+        }
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Dim conStr As String = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"
+Dim sqlStr As String = "Select CompanyName, ContactName, ContactTitle, Country from Customers"
+Dim conn As New System.Data.OleDb.OleDbConnection(conStr)
+Dim ds As DataSet = New DataSet()
+Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
+da.Fill(ds)
+FpSpread1.ActiveSheet.DataAutoSizeColumns = True
+FpSpread1.ActiveSheet.DataSource = ds
+FpSpread1.AllowColumnMove = True
+FpSpread1.ActiveSheet.GroupBarInfo.Visible = True
+FpSpread1.ActiveSheet.AllowGroup = True
+
+Dim gi As New FarPoint.Win.Spread.GroupInfo
+gi.BackColor = Color.Yellow
+Dim gi2 As New FarPoint.Win.Spread.GroupInfo
+gi2.BackColor = Color.Green
+
+Dim gic As New FarPoint.Win.Spread.GroupInfoCollection()
+gic.AddRange(New FarPoint.Win.Spread.GroupInfo() {gi, gi2})
+FpSpread1.ActiveSheet.GroupInfos.Add(gic(0))
+FpSpread1.ActiveSheet.GroupInfos.Add(gic(1))
+
+Private Sub FpSpread1_Grouped(sender As Object, e As EventArgs) Handles FpSpread1.Grouped
+Dim gm As FarPoint.Win.Spread.Model.GroupDataModel
+If TypeOf (FpSpread1.ActiveSheet.Models.Data) Is FarPoint.Win.Spread.Model.GroupDataModel Then
+    gm = FpSpread1.ActiveSheet.Models.Data
+    If TypeOf (gm.TargetModel) Is FarPoint.Win.Spread.Model.IRangeSupport Then
+        Dim im As FarPoint.Win.Spread.Model.IRangeSupport = gm.TargetModel
+        Dim groupvalue As Boolean
+        groupvalue = gm.IsGroup(0)
+        MsgBox(groupvalue)
+    End If
+End If
+End Sub
+</code></pre>
+
+<p>The group footer is an extra row that is displayed below the group after grouping by a column header. The GroupFooterVisible property must be set to true after the group has been created. The Grouped event can be used to put information in the group footer after a user has created the group.</p>
+<p>This example uses the IsGroupFooter method to check for a group footer and returns all the group footer rows.<figure id="attachment_664088" style="width: 753px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/group.png"><img class="size-full wp-image-664088 " alt="group" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/group.png" width="753" height="363" /></a><figcaption class="wp-caption-text">Group Footer</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">fpSpread1.AllowColumnMove = true;
+fpSpread1.ActiveSheet.GroupBarInfo.Visible = true;
+fpSpread1.ActiveSheet.AllowGroup = true;
+fpSpread1.ActiveSheet.RowCount = 20;
+fpSpread1.ActiveSheet.ColumnCount = 10;
+
+FarPoint.Win.Spread.GroupInfo gi = new FarPoint.Win.Spread.GroupInfo();
+gi.Font = new Font("MS Sans Serif", 12, FontStyle.Bold);
+gi.ForeColor = Color.Red;
+gi.FooterBackColor = Color.Blue;
+fpSpread1.ActiveSheet.GroupInfos.Add(gi);
+FarPoint.Win.Spread.GroupInfo gi1 = new FarPoint.Win.Spread.GroupInfo();
+gi1.Font = new Font("MS Sans Serif", 12, FontStyle.Bold);
+gi1.ForeColor = Color.Tomato;
+gi1.FooterBackColor = Color.Yellow;
+fpSpread1.ActiveSheet.GroupInfos.Add(gi1);
+
+for (int rowc = 0; rowc &lt; fpSpread1.Sheets[0].RowCount; rowc++)
+{
+    for (int colc = 0; colc &lt; fpSpread1.Sheets[0].ColumnCount; colc++)
+    {
+        fpSpread1.Sheets[0].Models.Data.SetValue(rowc, colc, colc + rowc);
+    }
+}      
+
+private void fpSpread1_Grouped(object sender, EventArgs e)
+        {
+listBox1.Items.Clear();
+FarPoint.Win.Spread.Model.GroupDataModel gdm;
+gdm = (FarPoint.Win.Spread.Model.GroupDataModel)fpSpread1.ActiveSheet.Models.Data;
+gdm.GroupFooterVisible = true;          
+FarPoint.Win.Spread.Model.Group g1 = (FarPoint.Win.Spread.Model.Group)gdm.Groups[1];
+fpSpread1.ActiveSheet.Models.Data = gdm;
+
+int irow;
+for (irow = 0; irow &lt; gdm.RowCount; irow++)
+{
+    if (gdm.IsGroupFooter(irow) == true) {
+   listBox1.Items.Add(irow);
+        }
+}           
+        }
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">FpSpread1.AllowColumnMove = True
+FpSpread1.ActiveSheet.GroupBarInfo.Visible = True
+FpSpread1.ActiveSheet.AllowGroup = True
+FpSpread1.ActiveSheet.RowCount = 20
+FpSpread1.ActiveSheet.ColumnCount = 10
+
+Dim gi As New FarPoint.Win.Spread.GroupInfo()
+gi.Font = New Font("MS Sans Serif", 12, FontStyle.Bold)
+gi.ForeColor = Color.Red
+gi.FooterBackColor = Color.Blue
+FpSpread1.ActiveSheet.GroupInfos.Add(gi)
+Dim gi1 As New FarPoint.Win.Spread.GroupInfo()
+gi1.Font = New Font("MS Sans Serif", 12, FontStyle.Bold)
+gi1.ForeColor = Color.Tomato
+gi1.FooterBackColor = Color.Yellow
+FpSpread1.ActiveSheet.GroupInfos.Add(gi1)
+
+For rowc As Integer = 0 To FpSpread1.Sheets(0).RowCount - 1
+    For colc As Integer = 0 To FpSpread1.Sheets(0).ColumnCount - 1
+        FpSpread1.Sheets(0).Models.Data.SetValue(rowc, colc, colc + rowc)
+    Next
+Next
+
+Private Sub FpSpread1_Grouped(sender As Object, e As EventArgs) Handles FpSpread1.Grouped
+ListBox1.Items.Clear()
+Dim gdm As FarPoint.Win.Spread.Model.GroupDataModel
+Dim g1 As FarPoint.Win.Spread.Model.Group
+gdm = FpSpread1.Sheets(0).Models.Data
+gdm.GroupFooterVisible = True
+g1 = gdm.Groups(1)
+FpSpread1.ActiveSheet.Models.Data = gdm
+
+Dim irow As Integer
+For irow = 0 To gdm.RowCount - 1
+    If gdm.IsGroupFooter(irow) = True Then
+        ListBox1.Items.Add(irow)
+    End If
+Next
+End Sub
+</code></pre>
+
+<p>This example sums the values in the second group and puts them in the group footer.<figure id="attachment_664090" style="width: 589px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupfootersum.png"><img class="size-full wp-image-664090 " alt="groupfootersum" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/groupfootersum.png" width="589" height="428" /></a><figcaption class="wp-caption-text">Group Footer with Sum</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">fpSpread1.AllowColumnMove = true;           
+fpSpread1.Sheets[0].ColumnCount = 15;
+fpSpread1.Sheets[0].GroupBarInfo.Visible = true;
+fpSpread1.Sheets[0].AllowGroup = true;
+fpSpread1.Sheets[0].GroupFooterVisible = true;
+//Value
+for (int rowc = 0; rowc &lt; fpSpread1.Sheets[0].RowCount; rowc++)
+{
+    for (int colc = 0; colc &lt; fpSpread1.Sheets[0].ColumnCount; colc++)
+    {
+        fpSpread1.Sheets[0].Models.Data.SetValue(rowc, colc, colc + rowc * fpSpread1.Sheets[0].ColumnCount);
+    }
+}
+
+private void fpSpread1_Grouped(object sender, EventArgs e)
+        {
+            FarPoint.Win.Spread.Model.GroupDataModel gdm;
+            gdm = (FarPoint.Win.Spread.Model.GroupDataModel)fpSpread1.ActiveSheet.Models.Data;
+            gdm.GroupFooterVisible = true;
+            FarPoint.Win.Spread.Model.Group g1 = (FarPoint.Win.Spread.Model.Group)gdm.Groups[1];
+            ((FarPoint.Win.Spread.Model.IAggregationSupport)g1.GroupFooter.DataModel).SetCellAggregationType(0, 0, FarPoint.Win.Spread.Model.AggregationType.Sum);
+            fpSpread1.ActiveSheet.Models.Data = gdm;
+        }
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">FpSpread1.Sheets(0).RowCount = 8
+FpSpread1.Sheets(0).ColumnCount = 15
+FpSpread1.Sheets(0).GroupBarInfo.Visible = True
+FpSpread1.Sheets(0).AllowGroup = True
+FpSpread1.Sheets(0).GroupFooterVisible = True
+FpSpread1.AllowColumnMove = True
+'Value
+Dim rowc As Integer
+Dim colc As Integer
+For rowc = 0 To FpSpread1.Sheets(0).RowCount
+    For colc = 0 To FpSpread1.Sheets(0).ColumnCount
+        FpSpread1.Sheets(0).Models.Data.SetValue(rowc, colc, colc + rowc * FpSpread1.Sheets(0).ColumnCount)
+    Next colc
+Next rowc
+
+Private Sub FpSpread1_Grouped(sender As Object, e As EventArgs) Handles FpSpread1.Grouped
+Dim gdm As FarPoint.Win.Spread.Model.GroupDataModel
+Dim g1 As FarPoint.Win.Spread.Model.Group
+gdm = FpSpread1.Sheets(0).Models.Data
+gdm.GroupFooterVisible = True
+g1 = gdm.Groups(1)
+CType(g1.GroupFooter.DataModel, FarPoint.Win.Spread.Model.IAggregationSupport).SetCellAggregationType(0, 0, FarPoint.Win.Spread.Model.AggregationType.Sum)
+FpSpread1.ActiveSheet.Models.Data = gdm
+End Sub
+</code></pre>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+           <footer>
+                <div class="wrapper clearfix">
+                    <div class="footer-column footer-half">
+                        <div class="padder clearfix">
+                            <h3>About Spread Studio</h3>
+                            <p>Spread Studio is a multi-functional component that combines the utility of a grid with the power and flexibility of a spreadsheet to help developers working in Microsoft® Visual Studio and JavaScript add Microsoft® Excel functionality to their applications or websites. One package delivers a powerful formula engine, input controls, an API, full data import/export for Excel files, advanced charts, print support, and PDF export. Spread Studio is the only component you need in your toolbox for data bound and unbound WinForms, WPF, WinRT, ASP.NET, and JavaScript applications.</p>
+                            <p class="copyright-paragraph">
+                                ©
+                                <span><script>document.write(new Date().getFullYear())</script></span> <img src="/img/company/grapecity_150.png" alt="GrapeCity">, inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="footer-column footer-column-menu">
+                        <div class="padder clearfix">
+                            <h3>Company</h3>
+                            <ul class="footer-menu clearfix">
+                                <li><a href="/about-us/">About Us</a></li>
+                                <li><a href="/contact-us/">Contact Us</a></li>
+                                <li><a href="/legal/">Legal Information</a></li>
+                                <li><a href="/privacy/">Privacy Policy</a></li>
+                                <li><a href="/terms/">Terms of Use</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/dist/jquery.unslider-dist.js"></script>
+    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
+    <script src="/js/dist/jquery.waypoints-dist.js"></script>
+    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
+    <script src="/js/dist/jquery.velocity-dist.js"></script>
+    <script src="/js/dist/jquery.event.move-dist.js"></script>
+    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
+    <script src="/js/dist/init-dist.js"></script>
+
+
+
+</body>
+
+</html> 

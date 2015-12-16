@@ -1,0 +1,469 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Spread Windows Forms and Undo Redo</title>
+    <meta name="description" content="Spread Studio is our new cross-platform toolkit that includes components for Windows Forms, ASP.NET, WPF, WinRT, and Silverlight all in one package. This new package includes the new releases of Spread for WinForms and Spread for ASP.NET." name="description" />
+    <meta name="keywords" content="Spread.NET, ASP.NET, WPF, Silverlight, WinRT, .NET, spreadsheets, Data, PDF, Spreadsheet, Grid, Excel, analysis, GrapeCity, ASP.NET Spreadsheet component, .NET Spreadsheet component">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="DC.title" content="GrapeCity Spread" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Raleigh" />
+    <meta name="geo.position" content="40.458677;-79.924935" />
+    <meta name="ICBM" content="40.458677, -79.924935" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="GrapeCity Spread">
+    <meta itemprop="description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta itemprop="image" content="http://spread.grapecity.com/img/spread-photo.png">
+    <link href="https://plus.google.com/103999002053720301182/" rel="publisher" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="GrapeCity Spread">
+    <meta name="twitter:site" content="@gcspread">
+    <meta name="twitter:title" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:creator" content="@gcspread">
+    <meta name="twitter:image" content="http://spread.grapecity.com/img/spread-photo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="GrapeCity Spread" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://spread.grapecity.com/" />
+    <meta property="og:image" content="http://spread.grapecity.com/img/spread-photo.png" />
+    <meta property="og:description" content="Spreadsheet Components for .NET and JavaScript-HTML5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css?v=1" />
+
+</head>
+
+<body class=" page-Spread Windows Forms and Undo Redo">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+    <main class="body-section">
+        <article class="body-inner">    <div class="nav-bar">
+        <div class="nav-bar-inner">
+            <div class="wrapper">
+                <div class="padder clearfix">
+                    <div class="search-container clearfix">
+                        <input placeholder="Search" type="search" />
+                        <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </div>
+                    <div class="user-container">
+                        <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+                        <ul class="user-list hidden">
+                            <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
+                            <li><a href="#"><span class="lnr lnr-license"></span> Licenses</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Submit An Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<aside class="brand-section">
+        <div class="brand-inner clearfix">
+            <div class="brand-main">
+                <div class="brand-logo">
+                    <div class="padder clearfix">
+                        <h2><a href="/"><img src="/img/sp-icon-white.svg" alt="Spread" /><span class="logo-text">Spread</span> </a></h2>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-main">
+                <div class="nav-section">
+                    <div class="padder clearfix">
+                        <ul class="clearfix">
+                            <li class="studio">
+                                <a href="/products/spread-studio/"><img src="/img/sp-icon.svg" /><span class="menu-text">Spread Studio</span></a>
+                            </li>
+                            <li class="js">
+                                <a href="/products/spreadjs/"><img src="/img/js-icon.svg" /><span class="menu-text">SpreadJS</span></a>
+                            </li>
+                            <li class="com">
+                                <a href="/products/spread-com/"><img src="/img/com-icon.svg" /><span class="menu-text">Spread COM</span></a>
+                            </li>
+                            <li><a href="/pages/downloads/"><span class="lnr lnr-download"></span><span class="menu-text">Downloads</span></a></li>
+                            <li><a href="/pages/demo-gallery/"><span class="lnr lnr-cog"></span><span class="menu-text">Demo Gallery</span></a></li>
+                            <li><a href="/pages/pricing/"><span class="lnr lnr-cart"></span><span class="menu-text">Pricing</span></a></li>
+                            <li><a href="/pages/support-community/"><span class="lnr lnr-bubble"></span><span class="menu-text">Support & Community</span></a></li>
+                            <li><a href="/pages/documentation/"><span class="lnr lnr-book"></span><span class="menu-text">Documentation</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="brand-container">
+                <div class="padder clearfix">
+                    <div class="brand-more">
+                        <a class="brand-more-trigger" href="javascript:void(0);"><span class="lnr lnr-menu"></span> <span class="menu-text">More Tools</span></a>
+                        <ul class="brand-more-list hidden">
+                            <li><a href="#"><span class="lnr lnr-diamond"></span> ActiveReports</a></li>
+                            <li><a href="#"><span class="lnr lnr-poop"></span> ComponentOne</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Wijmo</a></li>
+                            <li><a href="#"><span class="lnr lnr-thumbs-down"></span> Xuni</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside><header>
+    <div class="wrapper">
+        <div class="padder clearfix">
+            <h1><span class="lnr lnr-book"></span> Spread Windows Forms and Undo Redo</h1>
+            <h3></h3>
+        </div>
+</header>
+
+
+<div class="wrapper-sections">
+    <section class="section-page">
+        <div class="wrapper">
+            <div class="padder clearfix">
+                <div class="entry">
+
+                    <p>Spread Windows Forms allows you to undo or redo various actions performed by the end user. This can be useful for restoring deleted text and other actions.</p>
+<p>You can use the UndoAction class and several specific classes that correspond to user actions. There is also a manager class that keeps track of the end-user actions that can be undone and re-done.</p>
+<p>The SpreadView class and FpSpread class have properties, AllowUndo and UndoManager, which turn on and off the undo or redo feature and return the UndoManager for that SpreadView instance, respectively. Each SpreadView has its own UndoManager.</p>
+<p>The UndoAction class is an abstract class that inherits from Action and adds new methods to the class: Undo and SaveUndoState. It also inherits the PerformAction method from Action.</p>
+<p>SaveUndoState is used to save undo state information (in fields of the class). PerformAction is used to perform the action. Undo is used to reverse the action (using the undo state information in the fields).</p>
+<p>Each of the classes inheriting from UndoAction is designed to do one specific action (for example, edit a cell, resize a column, move a range, and so on), and to undo that action. All relevant information to do that action should be passed into the constructor for the object, and all relevant information to undo that action should be stored in the SaveUndoState implementation. Once the UndoAction object is created, the variables of that specific action are fixed (specified by the values passed to the constructor). For example, edit cell A1 in sheet1 and change the value to &#8220;test&#8221;, resize column B to 24 pixels, and move the range C4:F6 to A1:D3. The action can only do that specific action in that specific way.</p>
+<p>The UndoManager class manages the undo and redo stacks. It keeps track of which actions have been done and undone, and in what order. An UndoAction must be passed into the PerformUndoAction method of UndoManager to do the action in order for it to be undoable by the UndoManager. When that happens, the UndoManager pushes the UndoAction onto the undo stack and calls PerformAction on the UndoAction, and then the CanUndo method returns True (indicating there is something to undo).</p>
+<p>When CanUndo returns False, that means the undo stack is empty, and there is no action ready to undo. You might want to use this to disable the Undo menu item in the Edit menu, for example, if your application has an Edit menu.</p>
+<p>When an action is ready to undo, you can call Undo on the UndoManager, and it moves the last action performed from the undo stack to the redo stack, and calls Undo on the action, and then the CanRedo method returns True (indicating there is something to redo).</p>
+<p>You can call PerformAction on the UndoManager with a sequence of UndoAction objects, and it performs each action in sequence, and remembers each action and the order in which they are done. Then you can call Undo to undo some of those actions, and each can be re-done with Redo (and then un-done again with Undo).</p>
+<p>But, when you call PerformAction to perform a new action, if there are any actions pending in the redo stack, those actions are cleared, and CanRedo returns False (that is, once you perform a new action, you will not be able to redo any actions that you have undone with Undo). That is why the PushUndo method in the UndoManager class has a flag to indicate whether the redo stack should be cleared when the action is pushed onto the undo stack.</p>
+<p>Some of the UndoAction classes will be replacing Action objects in the action maps, so that those actions are routed through the UndoManager and become undoable. Other UndoAction classes will not be part of the action maps, but instead are used in the SheetView or SpreadView code to make the action undoable.</p>
+<p>The input maps include items to map the Ctrl+Z and Ctrl+Y keys to the UndoAction and RedoAction action objects, respectively. These actions make calls into the UndoManager to the Undo and Redo methods.</p>
+<p>You can use the following code to manage Undo. The first three buttons can be used to copy, cut, or paste data. The fourth button uses the Undo method. The PerformUndoAction method causes the action to occur and adds it to the list of actions that can be undone.</p>
+<p>C#</p>
+<pre><code class="language-csharp">private void button1_Click(object sender, EventArgs e)
+        {         
+            fpSpread1.Sheets[0].ClipboardCopy();           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FarPoint.Win.Spread.UndoRedo.ClipboardCutUndoAction cutAction = new FarPoint.Win.Spread.UndoRedo.ClipboardCutUndoAction();
+            fpSpread1.UndoManager.PerformUndoAction(cutAction);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FarPoint.Win.Spread.UndoRedo.ClipboardPasteUndoAction pasteAction = new FarPoint.Win.Spread.UndoRedo.ClipboardPasteUndoAction();
+            fpSpread1.UndoManager.PerformUndoAction(pasteAction);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            fpSpread1.UndoManager.Undo();
+        }
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        FpSpread1.Sheets(0).ClipboardCopy()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim cutAction As New FarPoint.Win.Spread.UndoRedo.ClipboardCutUndoAction()
+        FpSpread1.UndoManager.PerformUndoAction(cutAction)
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim pasteAction As New FarPoint.Win.Spread.UndoRedo.ClipboardPasteUndoAction()
+        FpSpread1.UndoManager.PerformUndoAction(pasteAction)
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        FpSpread1.UndoManager.Undo()
+    End Sub
+</code></pre>
+
+<p>This example gets the CanUndo value, the number of items in the undo list, and the undo actions and displays the result in a list box.</p>
+<p>C#</p>
+<pre><code class="language-csharp"></code>if (fpSpread1.UndoManager.CanUndo == true)
+            {
+            listBox1.Items.Add(fpSpread1.UndoManager.CanUndo);
+            for (int i = 0; i&lt;=fpSpread1.UndoManager.UndoList.Count-1; i++)
+            {
+                listBox1.Items.Add(fpSpread1.UndoManager.UndoList.Count);
+                listBox1.Items.Add(fpSpread1.UndoManager.UndoList[i]);
+            }</pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">If FpSpread1.UndoManager.CanUndo() = True Then
+            ListBox1.Items.Add(FpSpread1.UndoManager.CanUndo())
+            For i = 0 To FpSpread1.UndoManager.UndoList.Count - 1
+                ListBox1.Items.Add(FpSpread1.UndoManager.UndoList.Count)
+                ListBox1.Items.Add(FpSpread1.UndoManager.UndoList.Item(i))
+            Next
+        End If
+</code></pre>
+
+<p>You can undo actions done through code, but you have to set up the UndoAction yourself. Here is code to show you how to set this up. Press the button to undo the sort after sorting the column.<figure id="attachment_663975" style="width: 302px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/undosort.png"><img class="size-full wp-image-663975 " alt="undosort" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/undosort.png" width="302" height="198" /></a><figcaption class="wp-caption-text">Image created from sample code</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">public class SortRowsAction : FarPoint.Win.Spread.UndoRedo.UndoAction
+  {
+
+    FarPoint.Win.Spread.SheetView sheetView;
+    FarPoint.Win.Spread.SortInfo[] sortinfo;
+    System.Collections.ArrayList al;
+
+    public SortRowsAction()
+    {
+
+    }
+
+    public SortRowsAction(FarPoint.Win.Spread.SheetView sheetView, FarPoint.Win.Spread.SortInfo[] si)
+    {
+      this.sheetView = sheetView;
+      this.sortinfo = si;
+    }
+
+    public override bool PerformUndoAction(object sender)
+    {
+      FarPoint.Win.Spread.SpreadView spreadView = null;
+      if (sender is FarPoint.Win.Spread.SpreadView)
+      {
+        spreadView = (FarPoint.Win.Spread.SpreadView)sender;
+      }
+      else
+      {
+        return false;
+      }
+
+      if (sheetView == null)
+      {
+        sheetView = spreadView.GetSheetView();
+      }
+      if ((SaveUndoState()) & (sheetView != null))
+      {
+        sheetView.SortRows(0, sheetView.RowCount, this.sortinfo);
+        return true;
+      }
+      return false;
+    }
+
+    protected override bool SaveUndoState()
+    {
+      if ((sheetView != null))
+      {
+        if (al == null)
+        {
+          al = new System.Collections.ArrayList();
+            for (int i = 0; i&lt;=sheetView.RowCount-1; i++)          
+          {
+            al.Add(sheetView.GetViewRowFromModelRow(i));
+          }
+        }
+      }
+      return (al != null);
+    }
+
+    public override bool Undo(object sender)
+    {
+      FarPoint.Win.Spread.SpreadView spreadView = null;
+      if (sender is FarPoint.Win.Spread.SpreadView)
+      {
+        spreadView = (FarPoint.Win.Spread.SpreadView)sender;
+      }
+      else
+      {
+        return false;
+      }
+
+      if ((al != null))
+      {
+          for (int i = 0; i&lt;=sheetView.RowCount-1; i++)        
+        {
+          sheetView.Models.SetViewRowIndex(i,(int)al[i]);
+        }
+        return true;
+      }
+      return false;
+    }
+  }
+
+        private void Undo_Load(object sender, EventArgs e)
+        {
+            fpSpread1.Sheets[0].Columns[0].AllowAutoSort = true;
+            fpSpread1.Sheets[0].Cells[0, 0].Text = "Z";
+            fpSpread1.Sheets[0].Cells[1, 0].Text = "A";
+            fpSpread1.Sheets[0].Cells[2, 0].Text = "C";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FarPoint.Win.Spread.SortInfo[] si = new FarPoint.Win.Spread.SortInfo[] { new FarPoint.Win.Spread.SortInfo(0, true) };
+            SortRowsAction sra = new SortRowsAction(fpSpread1.Sheets[0], si);
+            fpSpread1.UndoManager.PerformUndoAction(sra);
+        }
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Public Class SortRowsAction
+        Inherits FarPoint.Win.Spread.UndoRedo.UndoAction
+
+        Dim sheetView As FarPoint.Win.Spread.SheetView
+        Dim sortinfo() As FarPoint.Win.Spread.SortInfo
+        Dim al As ArrayList
+
+        Public Sub New()
+
+        End Sub
+
+        Public Sub New(ByVal sheetView As FarPoint.Win.Spread.SheetView, ByVal si() As FarPoint.Win.Spread.SortInfo)
+            Me.sheetView = sheetView
+            Me.sortinfo = si
+        End Sub
+
+        Public Overrides Function PerformUndoAction(ByVal sender As Object) As Boolean
+            Dim spreadView As FarPoint.Win.Spread.SpreadView = Nothing
+            If TypeOf sender Is FarPoint.Win.Spread.SpreadView Then
+                spreadView = CType(sender, FarPoint.Win.Spread.SpreadView)
+            Else
+                Return False
+            End If
+
+            If sheetView Is Nothing Then
+                sheetView = spreadView.GetSheetView
+            End If
+            If (SaveUndoState()) And Not (sheetView Is Nothing) Then
+                sheetView.SortRows(0, sheetView.RowCount, Me.sortinfo)
+                Return True
+            End If
+            Return False
+        End Function
+
+        Protected Overrides Function SaveUndoState() As Boolean
+            If Not (sheetView Is Nothing) Then
+                If al Is Nothing Then
+                    al = New ArrayList
+                    For i As Integer = 0 To sheetView.RowCount - 1
+                        al.Add(sheetView.GetViewRowFromModelRow(i))
+                    Next
+                End If
+            End If
+            Return Not (al Is Nothing)
+        End Function
+
+        Public Overrides Function Undo(ByVal sender As Object) As Boolean
+            Dim spreadView As FarPoint.Win.Spread.SpreadView = Nothing
+            If TypeOf sender Is FarPoint.Win.Spread.SpreadView Then
+                spreadView = CType(sender, FarPoint.Win.Spread.SpreadView)
+            Else
+                Return False
+            End If
+
+            If Not (al Is Nothing) Then
+                For i As Integer = 0 To sheetView.RowCount - 1
+                    sheetView.Models.SetViewRowIndex(i, al(i))
+                Next
+                Return True
+            End If
+            Return False
+        End Function
+    End Class
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim si() As FarPoint.Win.Spread.SortInfo = New FarPoint.Win.Spread.SortInfo() {New FarPoint.Win.Spread.SortInfo(0, True)}
+        Dim sra As New SortRowsAction(FpSpread1.Sheets(0), si)
+        FpSpread1.UndoManager.PerformUndoAction(sra)
+    End Sub
+
+    Private Sub Undo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FpSpread1.Sheets(0).Columns(0).AllowAutoSort = True
+        FpSpread1.Sheets(0).Cells(0, 0).Text = "Z"
+        FpSpread1.Sheets(0).Cells(1, 0).Text = "A"
+        FpSpread1.Sheets(0).Cells(2, 0).Text = "C"
+    End Sub
+</code></pre>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+           <footer>
+                <div class="wrapper clearfix">
+                    <div class="footer-column footer-half">
+                        <div class="padder clearfix">
+                            <h3>About Spread Studio</h3>
+                            <p>Spread Studio is a multi-functional component that combines the utility of a grid with the power and flexibility of a spreadsheet to help developers working in Microsoft® Visual Studio and JavaScript add Microsoft® Excel functionality to their applications or websites. One package delivers a powerful formula engine, input controls, an API, full data import/export for Excel files, advanced charts, print support, and PDF export. Spread Studio is the only component you need in your toolbox for data bound and unbound WinForms, WPF, WinRT, ASP.NET, and JavaScript applications.</p>
+                            <p class="copyright-paragraph">
+                                ©
+                                <span><script>document.write(new Date().getFullYear())</script></span> <img src="/img/company/grapecity_150.png" alt="GrapeCity">, inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="footer-column footer-column-menu">
+                        <div class="padder clearfix">
+                            <h3>Company</h3>
+                            <ul class="footer-menu clearfix">
+                                <li><a href="/about-us/">About Us</a></li>
+                                <li><a href="/contact-us/">Contact Us</a></li>
+                                <li><a href="/legal/">Legal Information</a></li>
+                                <li><a href="/privacy/">Privacy Policy</a></li>
+                                <li><a href="/terms/">Terms of Use</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/dist/jquery.unslider-dist.js"></script>
+    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
+    <script src="/js/dist/jquery.waypoints-dist.js"></script>
+    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
+    <script src="/js/dist/jquery.velocity-dist.js"></script>
+    <script src="/js/dist/jquery.event.move-dist.js"></script>
+    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
+    <script src="/js/dist/init-dist.js"></script>
+
+
+
+</body>
+
+</html> 

@@ -1,0 +1,474 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Spread Windows Forms and Printing</title>
+    <meta name="description" content="Spread Studio is our new cross-platform toolkit that includes components for Windows Forms, ASP.NET, WPF, WinRT, and Silverlight all in one package. This new package includes the new releases of Spread for WinForms and Spread for ASP.NET." name="description" />
+    <meta name="keywords" content="Spread.NET, ASP.NET, WPF, Silverlight, WinRT, .NET, spreadsheets, Data, PDF, Spreadsheet, Grid, Excel, analysis, GrapeCity, ASP.NET Spreadsheet component, .NET Spreadsheet component">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="DC.title" content="GrapeCity Spread" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Raleigh" />
+    <meta name="geo.position" content="40.458677;-79.924935" />
+    <meta name="ICBM" content="40.458677, -79.924935" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="GrapeCity Spread">
+    <meta itemprop="description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta itemprop="image" content="http://spread.grapecity.com/img/spread-photo.png">
+    <link href="https://plus.google.com/103999002053720301182/" rel="publisher" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="GrapeCity Spread">
+    <meta name="twitter:site" content="@gcspread">
+    <meta name="twitter:title" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:creator" content="@gcspread">
+    <meta name="twitter:image" content="http://spread.grapecity.com/img/spread-photo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="GrapeCity Spread" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://spread.grapecity.com/" />
+    <meta property="og:image" content="http://spread.grapecity.com/img/spread-photo.png" />
+    <meta property="og:description" content="Spreadsheet Components for .NET and JavaScript-HTML5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css?v=1" />
+
+</head>
+
+<body class=" page-Spread Windows Forms and Printing">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+    <main class="body-section">
+        <article class="body-inner">    <div class="nav-bar">
+        <div class="nav-bar-inner">
+            <div class="wrapper">
+                <div class="padder clearfix">
+                    <div class="search-container clearfix">
+                        <input placeholder="Search" type="search" />
+                        <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </div>
+                    <div class="user-container">
+                        <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+                        <ul class="user-list hidden">
+                            <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
+                            <li><a href="#"><span class="lnr lnr-license"></span> Licenses</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Submit An Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<aside class="brand-section">
+        <div class="brand-inner clearfix">
+            <div class="brand-main">
+                <div class="brand-logo">
+                    <div class="padder clearfix">
+                        <h2><a href="/"><img src="/img/sp-icon-white.svg" alt="Spread" /><span class="logo-text">Spread</span> </a></h2>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-main">
+                <div class="nav-section">
+                    <div class="padder clearfix">
+                        <ul class="clearfix">
+                            <li class="studio">
+                                <a href="/products/spread-studio/"><img src="/img/sp-icon.svg" /><span class="menu-text">Spread Studio</span></a>
+                            </li>
+                            <li class="js">
+                                <a href="/products/spreadjs/"><img src="/img/js-icon.svg" /><span class="menu-text">SpreadJS</span></a>
+                            </li>
+                            <li class="com">
+                                <a href="/products/spread-com/"><img src="/img/com-icon.svg" /><span class="menu-text">Spread COM</span></a>
+                            </li>
+                            <li><a href="/pages/downloads/"><span class="lnr lnr-download"></span><span class="menu-text">Downloads</span></a></li>
+                            <li><a href="/pages/demo-gallery/"><span class="lnr lnr-cog"></span><span class="menu-text">Demo Gallery</span></a></li>
+                            <li><a href="/pages/pricing/"><span class="lnr lnr-cart"></span><span class="menu-text">Pricing</span></a></li>
+                            <li><a href="/pages/support-community/"><span class="lnr lnr-bubble"></span><span class="menu-text">Support & Community</span></a></li>
+                            <li><a href="/pages/documentation/"><span class="lnr lnr-book"></span><span class="menu-text">Documentation</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="brand-container">
+                <div class="padder clearfix">
+                    <div class="brand-more">
+                        <a class="brand-more-trigger" href="javascript:void(0);"><span class="lnr lnr-menu"></span> <span class="menu-text">More Tools</span></a>
+                        <ul class="brand-more-list hidden">
+                            <li><a href="#"><span class="lnr lnr-diamond"></span> ActiveReports</a></li>
+                            <li><a href="#"><span class="lnr lnr-poop"></span> ComponentOne</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Wijmo</a></li>
+                            <li><a href="#"><span class="lnr lnr-thumbs-down"></span> Xuni</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside><header>
+    <div class="wrapper">
+        <div class="padder clearfix">
+            <h1><span class="lnr lnr-book"></span> Spread Windows Forms and Printing</h1>
+            <h3></h3>
+        </div>
+</header>
+
+
+<div class="wrapper-sections">
+    <section class="section-page">
+        <div class="wrapper">
+            <div class="padder clearfix">
+                <div class="entry">
+
+                    <p>Spread Windows Forms supports printing to a PDF file or previewing the output before printing. This allows you to check the data and layout before printing, which can save paper.</p>
+<p>This example saves the sheets to a PDF file.</p>
+<p>C#</p>
+<pre><code class="language-csharp">private void SpreadWin1_Load(object sender, EventArgs e)
+        {
+            fpSpread1.Sheets.Count = 3;
+            fpSpread1.Sheets[0].RowCount = 10;
+            fpSpread1.Sheets[0].ColumnCount = 10;
+            fpSpread1.Sheets[1].RowCount = 10;
+            fpSpread1.Sheets[1].ColumnCount = 10;
+            fpSpread1.Sheets[2].RowCount = 10;
+            fpSpread1.Sheets[2].ColumnCount = 10;
+            fpSpread1.Sheets[0].SetClip(0, 0, 3, 3, "Sunday\tMonday\tTuesday\r\nWednesday\tThursday\tFriday\r\nSaturday\tSunday\tMonday");
+            fpSpread1.Sheets[1].SetClip(0, 0, 3, 3, "January\tFebruary\tMarch\r\nApril\tMay\tJune\r\nJuly\tAugust\tSeptember");
+            fpSpread1.Sheets[2].SetClip(0, 0, 3, 3, "2012\t2013\t2014\r\n2015\t2016\t2017\r\n2018\t2019\t2020");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Define the printer settings
+            FarPoint.Win.Spread.PrintInfo printset = new FarPoint.Win.Spread.PrintInfo();
+            printset.Header = "Print Job for GrapeCity Inc.";            
+            printset.PdfWriteTo = FarPoint.Win.Spread.PdfWriteTo.File;
+            printset.PdfWriteMode = FarPoint.Win.Spread.PdfWriteMode.Append;            
+            printset.PrintToPdf = true;
+            printset.PdfFileName = "C:\\results.pdf";
+            // Assign the printer settings to the sheet and print to PDF
+            fpSpread1.Sheets[0].PrintInfo = printset;
+            fpSpread1.Sheets[1].PrintInfo = printset;
+            fpSpread1.Sheets[2].PrintInfo = printset;
+            fpSpread1.PrintSheet(-1);
+        }</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Private Sub SpreadWin1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FpSpread1.Sheets.Count = 3
+        FpSpread1.Sheets(0).RowCount = 10
+        FpSpread1.Sheets(0).ColumnCount = 10
+        FpSpread1.Sheets(1).RowCount = 10
+        FpSpread1.Sheets(1).ColumnCount = 10
+        FpSpread1.Sheets(2).RowCount = 10
+        FpSpread1.Sheets(2).ColumnCount = 10
+        FpSpread1.Sheets(0).SetClip(0, 0, 3, 3, "Sunday" + vbTab + "Monday" + vbTab + "Tuesday" + vbCrLf + "Wednesday" + vbTab + "Thursday" + vbTab + "Friday" + vbCrLf + "Saturday" + vbTab + "Sunday" + vbTab + "Monday")
+        FpSpread1.Sheets(1).SetClip(0, 0, 3, 3, "January" + vbTab + "February" + vbTab + "March" + vbCrLf + "April" + vbTab + "May" + vbTab + "June" + vbCrLf + "July" + vbTab + "August" + vbTab + "September")
+        FpSpread1.Sheets(2).SetClip(0, 0, 3, 3, "2012" + vbTab + "2013" + vbTab + "2014" + vbCrLf + "2015" + vbTab + "2016" + vbTab + "2017" + vbCrLf + "2018" + vbTab + "2019" + vbTab + "2020")
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ' Define the printer settings
+        Dim printset As New FarPoint.Win.Spread.PrintInfo()
+        printset.Header = "Print Job for GrapeCity Inc."
+        printset.PdfWriteTo = FarPoint.Win.Spread.PdfWriteTo.File
+        printset.PdfWriteMode = FarPoint.Win.Spread.PdfWriteMode.Append
+        printset.PrintToPdf = True
+        printset.PdfFileName = "C:\results.pdf"
+        ' Assign the printer settings to the sheet And print to PDF
+        FpSpread1.Sheets(0).PrintInfo = printset
+        FpSpread1.Sheets(1).PrintInfo = printset
+        FpSpread1.Sheets(2).PrintInfo = printset
+        FpSpread1.PrintSheet(-1)
+    End Sub
+</code></pre>
+
+<p>This example uses the Preview property in the PrintInfo class to preview a sheet before printing.<figure id="attachment_665084" style="width: 913px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadWinPreview.png"><img class="size-full wp-image-665084 " alt="SpreadWinPreview" src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadWinPreview.png" width="913" height="351" /></a><figcaption class="wp-caption-text">Preview Notes and Shapes</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">private void SpreadWin1_Load(object sender, EventArgs e)
+        {
+            fpSpread1.TextTipPolicy = FarPoint.Win.Spread.TextTipPolicy.Fixed;
+            fpSpread1.Sheets[0].Cells[1, 1].NoteStyle = FarPoint.Win.Spread.NoteStyle.StickyNote;
+            fpSpread1.Sheets[0].Cells[1, 1].Note = "Printing";
+            fpSpread1.Sheets[0].Cells[5, 1].Text = "Print Shape and Note";
+            fpSpread1.AllowCellOverflow = true;
+
+            FarPoint.Win.Spread.DrawingSpace.ArrowShape arrow = new FarPoint.Win.Spread.DrawingSpace.ArrowShape();
+            arrow.BackColor = Color.Red;
+            arrow.ForeColor = Color.DarkRed;
+            arrow.SetBounds(0, 20, 100, 50);
+            fpSpread1.Sheets[0].AddShape(arrow);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FarPoint.Win.Spread.PrintInfo printset = new FarPoint.Win.Spread.PrintInfo();            
+            printset.PrintNotes = FarPoint.Win.Spread.PrintNotes.AsDisplayed;
+            printset.PrintShapes = true;
+            printset.Preview = true;
+            fpSpread1.Sheets[0].PrintInfo = printset;
+            fpSpread1.PrintSheet(0);
+        }
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Private Sub SpreadWin1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FpSpread1.TextTipPolicy = FarPoint.Win.Spread.TextTipPolicy.Fixed
+        FpSpread1.Sheets(0).Cells(1, 1).NoteStyle = FarPoint.Win.Spread.NoteStyle.StickyNote
+        FpSpread1.Sheets(0).Cells(1, 1).Note = "Printing"
+        FpSpread1.Sheets(0).Cells(5, 1).Text = "Print Shape and Note"
+        FpSpread1.AllowCellOverflow = True
+
+        Dim arrow = New FarPoint.Win.Spread.DrawingSpace.ArrowShape()
+        arrow.BackColor = Color.Red
+        arrow.ForeColor = Color.DarkRed
+        arrow.SetBounds(0, 20, 100, 50)
+        FpSpread1.Sheets(0).AddShape(arrow)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim printset As New FarPoint.Win.Spread.PrintInfo()
+        printset.PrintNotes = FarPoint.Win.Spread.PrintNotes.AsDisplayed
+        printset.PrintShapes = True
+        printset.Preview = True
+        FpSpread1.Sheets(0).PrintInfo = printset
+        FpSpread1.PrintSheet(0)
+    End Sub</code></pre>
+
+<p>This example creates headers and footers for the printed sheet.<figure id="attachment_665085" style="width: 554px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadWinpp.png"><img class="size-full wp-image-665085 " alt="SpreadWinpp" src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/SpreadWinpp.png" width="554" height="612" /></a><figcaption class="wp-caption-text">Preview with Header</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">private void SpreadWin1_Load(object sender, EventArgs e)
+{
+//Add sample data
+string conStr = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb";
+string sqlStr = "Select CompanyName, ContactName, ContactTitle, Country from Customers";
+System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);
+DataSet ds = new DataSet();
+System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
+da.Fill(ds);
+fpSpread1.ActiveSheet.DataAutoSizeColumns = true;
+fpSpread1.ActiveSheet.DataMember = "Patients";
+fpSpread1.ActiveSheet.DataSource = ds;
+}
+
+private void button1_Click(object sender, EventArgs e)
+{
+// Create PrintInfo object and set properties.
+FarPoint.Win.Spread.PrintInfo printset = new FarPoint.Win.Spread.PrintInfo();
+printset.Colors = new Color[] { Color.Green, Color.Yellow, Color.Gold, Color.Indigo, Color.Brown };
+printset.Header = "/fn\"Book Antiqua\" /fz\"14\" Print job for GrapeCity./n ";
+printset.Footer = "/r/cl\"4\"This is page /p of /pc";
+printset.Preview = true;
+// Set the PrintInfo property for the first sheet.
+fpSpread1.Sheets[0].PrintInfo = printset;
+// Print the sheet.
+fpSpread1.PrintSheet(0);
+}</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Private Sub SpreadWin1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+Dim conStr As String = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"
+Dim sqlStr As String = "Select CompanyName, ContactName, ContactTitle, Country from Customers"
+Dim conn As New System.Data.OleDb.OleDbConnection(conStr)
+Dim ds As DataSet = New DataSet()
+Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
+da.Fill(ds)
+FpSpread1.ActiveSheet.DataAutoSizeColumns = True
+FpSpread1.ActiveSheet.DataMember = "Patients"
+FpSpread1.ActiveSheet.DataSource = ds
+End Sub
+
+Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+' Create PrintInfo object and set properties.
+Dim printset As New FarPoint.Win.Spread.PrintInfo()
+printset.Colors = New Color() {Color.Green, Color.Yellow, Color.Gold, Color.Indigo, Color.Brown}
+printset.Header = "/fn""Book Antiqua"" /fz""14"" Print job for GrapeCity./n "
+printset.Footer = "/g""1""/r/cl""4""This is page /p of /pc"
+' Set the PrintInfo property for the first sheet.
+printset.Preview = True
+FpSpread1.Sheets(0).PrintInfo = printset
+' Print the sheet.
+FpSpread1.PrintSheet(0)
+End Sub
+</code></pre>
+
+<p>You can also use a print dialog control to preview the printing. You can use a print preview control in the PrintPreviewShowing event or with the SetPrintPreview method.</p>
+<p>This example uses a print preview control in the Spread PrintPreviewShowing event to preview the data.</p>
+<p>C#</p>
+<pre><code class="language-csharp">private void button1_Click(object sender, EventArgs e)
+        {
+            FarPoint.Win.Spread.PrintInfo printset = new FarPoint.Win.Spread.PrintInfo();
+            printset.Preview = true;
+            printset.ShowPrintDialog = true;
+            fpSpread1.Sheets[0].PrintInfo = printset;
+            fpSpread1.PrintSheet(0);            
+        }
+
+        private void fpSpread1_PrintPreviewShowing(object sender, FarPoint.Win.Spread.PrintPreviewShowingEventArgs e)
+        {
+            e.Cancel = true;
+            PrintPreviewDialog printPreviewDialog1  = new PrintPreviewDialog();          
+            printPreviewDialog1.Document = e.PreviewDialog.Document;            
+            printPreviewDialog1.ShowDialog();
+        }</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim printset As New FarPoint.Win.Spread.PrintInfo()
+        printset.Preview = True
+        printset.ShowPrintDialog = True
+        FpSpread1.Sheets(0).PrintInfo = printset
+        FpSpread1.PrintSheet(0)
+    End Sub
+
+    Private Sub FpSpread1_PrintPreviewShowing(sender As Object, e As FarPoint.Win.Spread.PrintPreviewShowingEventArgs) Handles FpSpread1.PrintPreviewShowing
+        e.Cancel = True
+        Dim printPreviewDialog1 As New PrintPreviewDialog()
+        printPreviewDialog1.Document = e.PreviewDialog.Document
+        printPreviewDialog1.ShowDialog()
+    End Sub</code></pre>
+
+<p>This example uses the SetPrintPreview method and sets properties for the print preview control.<figure id="attachment_665086" style="width: 400px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/10/spreadwinsetpreview.png"><img class="size-full wp-image-665086 " alt="spreadwinsetpreview" src="http://sphelp.grapecity.com/wp-content/uploads/2015/10/spreadwinsetpreview.png" width="400" height="331" /></a><figcaption class="wp-caption-text">Custom Preview Settings</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">private void Form1_Load(object sender, EventArgs e)
+        {
+            fpSpread1.Sheets.Count = 3;
+            fpSpread1.Sheets[0].RowCount = 10;
+            fpSpread1.Sheets[0].ColumnCount = 10;
+            fpSpread1.Sheets[1].RowCount = 10;
+            fpSpread1.Sheets[1].ColumnCount = 10;
+            fpSpread1.Sheets[2].RowCount = 10;
+            fpSpread1.Sheets[2].ColumnCount = 10;
+            fpSpread1.Sheets[0].SetClip(0, 0, 3, 3, "Sunday\tMonday\tTuesday\r\nWednesday\tThursday\tFriday\r\nSaturday\tSunday\tMonday");
+            fpSpread1.Sheets[1].SetClip(0, 0, 3, 3, "January\tFebruary\tMarch\r\nApril\tMay\tJune\r\nJuly\tAugust\tSeptember");
+            fpSpread1.Sheets[2].SetClip(0, 0, 3, 3, "2012\t2013\t2014\r\n2015\t2016\t2017\r\n2018\t2019\t2020");
+         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {            
+            PrintPreviewDialog pi = new PrintPreviewDialog();
+            pi.BackColor = Color.Cyan;
+            pi.ForeColor = Color.Red;
+            pi.Text = "My preview dialog";  
+            fpSpread1.SetPrintPreview(pi);
+            fpSpread1.ActiveSheet.PrintInfo.Preview = true;
+            fpSpread1.ActiveSheet.PrintInfo.ZoomFactor = 0.75f;
+            fpSpread1.PrintSheet(fpSpread1.ActiveSheet);
+        }</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FpSpread1.Sheets.Count = 3
+        FpSpread1.Sheets(0).RowCount = 10
+        FpSpread1.Sheets(0).ColumnCount = 10
+        FpSpread1.Sheets(1).RowCount = 10
+        FpSpread1.Sheets(1).ColumnCount = 10
+        FpSpread1.Sheets(2).RowCount = 10
+        FpSpread1.Sheets(2).ColumnCount = 10
+        FpSpread1.Sheets(0).SetClip(0, 0, 3, 3, "Sunday" + vbTab + "Monday" + vbTab + "Tuesday" + vbCrLf + "Wednesday" + vbTab + "Thursday" + vbTab + "Friday" + vbCrLf + "Saturday" + vbTab + "Sunday" + vbTab + "Monday")
+        FpSpread1.Sheets(1).SetClip(0, 0, 3, 3, "January" + vbTab + "February" + vbTab + "March" + vbCrLf + "April" + vbTab + "May" + vbTab + "June" + vbCrLf + "July" + vbTab + "August" + vbTab + "September")
+        FpSpread1.Sheets(2).SetClip(0, 0, 3, 3, "2012" + vbTab + "2013" + vbTab + "2014" + vbCrLf + "2015" + vbTab + "2016" + vbTab + "2017" + vbCrLf + "2018" + vbTab + "2019" + vbTab + "2020")
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim pi As New PrintPreviewDialog()
+        pi.BackColor = Color.Cyan
+        pi.ForeColor = Color.Red
+        pi.Text = "My preview dialog"
+        FpSpread1.SetPrintPreview(pi)
+        FpSpread1.ActiveSheet.PrintInfo.Preview = True
+        FpSpread1.ActiveSheet.PrintInfo.ZoomFactor = 0.75F
+        FpSpread1.PrintSheet(FpSpread1.ActiveSheet)
+    End Sub</code></pre>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+           <footer>
+                <div class="wrapper clearfix">
+                    <div class="footer-column footer-half">
+                        <div class="padder clearfix">
+                            <h3>About Spread Studio</h3>
+                            <p>Spread Studio is a multi-functional component that combines the utility of a grid with the power and flexibility of a spreadsheet to help developers working in Microsoft® Visual Studio and JavaScript add Microsoft® Excel functionality to their applications or websites. One package delivers a powerful formula engine, input controls, an API, full data import/export for Excel files, advanced charts, print support, and PDF export. Spread Studio is the only component you need in your toolbox for data bound and unbound WinForms, WPF, WinRT, ASP.NET, and JavaScript applications.</p>
+                            <p class="copyright-paragraph">
+                                ©
+                                <span><script>document.write(new Date().getFullYear())</script></span> <img src="/img/company/grapecity_150.png" alt="GrapeCity">, inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="footer-column footer-column-menu">
+                        <div class="padder clearfix">
+                            <h3>Company</h3>
+                            <ul class="footer-menu clearfix">
+                                <li><a href="/about-us/">About Us</a></li>
+                                <li><a href="/contact-us/">Contact Us</a></li>
+                                <li><a href="/legal/">Legal Information</a></li>
+                                <li><a href="/privacy/">Privacy Policy</a></li>
+                                <li><a href="/terms/">Terms of Use</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/dist/jquery.unslider-dist.js"></script>
+    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
+    <script src="/js/dist/jquery.waypoints-dist.js"></script>
+    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
+    <script src="/js/dist/jquery.velocity-dist.js"></script>
+    <script src="/js/dist/jquery.event.move-dist.js"></script>
+    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
+    <script src="/js/dist/init-dist.js"></script>
+
+
+
+</body>
+
+</html> 

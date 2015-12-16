@@ -1,0 +1,355 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Winforms Subeditor and Captions</title>
+    <meta name="description" content="Spread Studio is our new cross-platform toolkit that includes components for Windows Forms, ASP.NET, WPF, WinRT, and Silverlight all in one package. This new package includes the new releases of Spread for WinForms and Spread for ASP.NET." name="description" />
+    <meta name="keywords" content="Spread.NET, ASP.NET, WPF, Silverlight, WinRT, .NET, spreadsheets, Data, PDF, Spreadsheet, Grid, Excel, analysis, GrapeCity, ASP.NET Spreadsheet component, .NET Spreadsheet component">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="DC.title" content="GrapeCity Spread" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Raleigh" />
+    <meta name="geo.position" content="40.458677;-79.924935" />
+    <meta name="ICBM" content="40.458677, -79.924935" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="GrapeCity Spread">
+    <meta itemprop="description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta itemprop="image" content="http://spread.grapecity.com/img/spread-photo.png">
+    <link href="https://plus.google.com/103999002053720301182/" rel="publisher" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="GrapeCity Spread">
+    <meta name="twitter:site" content="@gcspread">
+    <meta name="twitter:title" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:creator" content="@gcspread">
+    <meta name="twitter:image" content="http://spread.grapecity.com/img/spread-photo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="GrapeCity Spread" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://spread.grapecity.com/" />
+    <meta property="og:image" content="http://spread.grapecity.com/img/spread-photo.png" />
+    <meta property="og:description" content="Spreadsheet Components for .NET and JavaScript-HTML5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css?v=1" />
+
+</head>
+
+<body class=" page-Winforms Subeditor and Captions">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+    <main class="body-section">
+        <article class="body-inner">    <div class="nav-bar">
+        <div class="nav-bar-inner">
+            <div class="wrapper">
+                <div class="padder clearfix">
+                    <div class="search-container clearfix">
+                        <input placeholder="Search" type="search" />
+                        <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </div>
+                    <div class="user-container">
+                        <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+                        <ul class="user-list hidden">
+                            <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
+                            <li><a href="#"><span class="lnr lnr-license"></span> Licenses</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Submit An Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<aside class="brand-section">
+        <div class="brand-inner clearfix">
+            <div class="brand-main">
+                <div class="brand-logo">
+                    <div class="padder clearfix">
+                        <h2><a href="/"><img src="/img/sp-icon-white.svg" alt="Spread" /><span class="logo-text">Spread</span> </a></h2>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-main">
+                <div class="nav-section">
+                    <div class="padder clearfix">
+                        <ul class="clearfix">
+                            <li class="studio">
+                                <a href="/products/spread-studio/"><img src="/img/sp-icon.svg" /><span class="menu-text">Spread Studio</span></a>
+                            </li>
+                            <li class="js">
+                                <a href="/products/spreadjs/"><img src="/img/js-icon.svg" /><span class="menu-text">SpreadJS</span></a>
+                            </li>
+                            <li class="com">
+                                <a href="/products/spread-com/"><img src="/img/com-icon.svg" /><span class="menu-text">Spread COM</span></a>
+                            </li>
+                            <li><a href="/pages/downloads/"><span class="lnr lnr-download"></span><span class="menu-text">Downloads</span></a></li>
+                            <li><a href="/pages/demo-gallery/"><span class="lnr lnr-cog"></span><span class="menu-text">Demo Gallery</span></a></li>
+                            <li><a href="/pages/pricing/"><span class="lnr lnr-cart"></span><span class="menu-text">Pricing</span></a></li>
+                            <li><a href="/pages/support-community/"><span class="lnr lnr-bubble"></span><span class="menu-text">Support & Community</span></a></li>
+                            <li><a href="/pages/documentation/"><span class="lnr lnr-book"></span><span class="menu-text">Documentation</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="brand-container">
+                <div class="padder clearfix">
+                    <div class="brand-more">
+                        <a class="brand-more-trigger" href="javascript:void(0);"><span class="lnr lnr-menu"></span> <span class="menu-text">More Tools</span></a>
+                        <ul class="brand-more-list hidden">
+                            <li><a href="#"><span class="lnr lnr-diamond"></span> ActiveReports</a></li>
+                            <li><a href="#"><span class="lnr lnr-poop"></span> ComponentOne</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Wijmo</a></li>
+                            <li><a href="#"><span class="lnr lnr-thumbs-down"></span> Xuni</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside><header>
+    <div class="wrapper">
+        <div class="padder clearfix">
+            <h1><span class="lnr lnr-book"></span> Winforms Subeditor and Captions</h1>
+            <h3></h3>
+        </div>
+</header>
+
+
+<div class="wrapper-sections">
+    <section class="section-page">
+        <div class="wrapper">
+            <div class="padder clearfix">
+                <div class="entry">
+
+                    <p>When creating large spreadsheets, information can be hard to convey without enlarging cells or spanning multiple row and columns. It could be useful to hide information from the user until it is necessary, as well as provide a way to easily edit a cell without having to enlarge it if it is too small. Spread provides shape and subeditor functionality that will allow you to accomplish these tasks with little effort. In this blog, I will show you how to use shapes to create captions for cells as well as how to create a subeditor to make editing cells easier, as well as providing rich features or complex UI editors that cannot be displayed inline in a Windows Forms application using Visual Studio 2013.<br>To start off, I created two forms: a MainForm where the application is run from, and a TextSubEditor form that represents the subeditor. The TextSubEditor forms is very simplistic, containing a text box and two buttons:<figure id="attachment_664445" style="width: 463px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions1.png"><img class=" wp-image-664445 " alt="The subeditor form." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions1.png" width="463" height="299" /></a><figcaption class="wp-caption-text">The subeditor form.</figcaption></figure> </p>
+<p>In this example, I named the text box “txt”, and the two buttons “OkButton” and “CancelButton”. To ensure that this was not just a form, I had to implement the ISubEditor interface, and the subsequent methods GetLocation, GetSubEditorControl, GetValue, SetValue, and GetPreferredSize:</p>
+<pre><code class="”language-csharp”"> public Point GetLocation(Rectangle rect)
+ {
+     Point pt = new Point(0);
+     Size sz = GetPreferredSize();
+     pt.Y = (Screen.PrimaryScreen.WorkingArea.Height / 2) - (sz.Height / 2);
+     pt.X = (Screen.PrimaryScreen.WorkingArea.Width / 2) - (sz.Width / 2);
+     return pt;
+ }
+ public Control GetSubEditorControl()
+ {
+    return this;
+ }
+ public object GetValue()
+ {
+     return txt.Text;
+ }
+ public void SetValue(object value)
+ {
+     txt.Text = value.ToString();
+ }
+ public Size GetPreferredSize()
+ {
+     return new Size(310, 200);
+ }</code></pre>
+
+<p>I also had to implement the event handlers for changing the text in the text box as well as clicking the buttons:</p>
+<pre><code class="”language-csharp”"> private void txt_TextChanged(object sender, EventArgs e)
+ {
+     Text = txt.Text;
+ }
+ private void okButton_Click(object sender, EventArgs e)
+ {
+     if (ValueChanged != null)
+         ValueChanged(this, EventArgs.Empty);
+     if (CloseUp != null)
+         CloseUp(this, EventArgs.Empty);
+ }
+ private void cancelButton_Click(object sender, EventArgs e)
+ {
+     if (CloseUp != null)
+         CloseUp(this, EventArgs.Empty);
+ }</code></pre>
+
+<p>Once that was done, I wanted to have a text cell that had an ellipsis button in it that would open the subeditor I had just created. To do this, I implemented my version of a text cell type, with code that only overrode the GetEditorControl method of the TextCellType:</p>
+<pre><code class="”language-csharp”">  public override System.Windows.Forms.Control GetEditorControl(System.Windows.Forms.Control parent, FarPoint.Win.Spread.Appearance appearance, float zoomFactor)
+  {
+     System.Windows.Forms.Control myControl = base.GetEditorControl(parent, appearance, zoomFactor);
+     ((GeneralEditor)myControl).ButtonStyle = FarPoint.Win.ButtonStyle.PopUp;
+     return myControl;
+  }</code></pre>
+
+<p>This completed the pieces I needed to actually start putting the program together. On my MainForm, I added the Spread component from the toolbox and docked it to fit the entire form:<figure id="attachment_664446" style="width: 760px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions2.png"><img class=" wp-image-664446 " alt="The main form." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions2.png" width="760" height="467" /></a><figcaption class="wp-caption-text">The main form.</figcaption></figure> </p>
+<p>To allow a cell to have the subeditor I created, I have to specify the cell type’s cell editor. In this case, I assign the first cell’s CellType and its subeditor to the celltype and subeditor I created:</p>
+<pre><code class="”language-csharp”"> MyTextCellType t = new MyTextCellType();
+ t.MaxLength = 100;
+ t.SubEditor = new TextSubEditor();
+ fpSpread1.ActiveSheet.Cells[0, 0].CellType = t;
+ fpSpread1.ActiveSheet.Cells[0, 0].Text = "This is an example cell with a subeditor.";
+ fpSpread1.ActiveSheet.SetColumnWidth(0, 100);
+ t.SubEditor.SetValue(fpSpread1.ActiveSheet.Cells[0, 0].Text);</code></pre>
+
+<p>Now when I enter edit mode in the first cell, I can click on the ellipsis button (specified as the PopUp button style in the Cell Type’s getEditorControl method that I overrode) and open up the subeditor for the cell. There is one problem with this however: the user might not know that they can open up the subeditor with the ellipsis button. I want a way to show them this information without having it always be visible in the sheet. I can get this functionality by using shapes.<br>Most of the time, tutorials in programs involve speech bubbles or circling certain areas of the window to direct the user’s attention. Spread allows you to create shapes and move them around, serving as the basis for this functionality. To start off, I created two shapes and set their visible property to false:</p>
+<pre><code class="”language-csharp”"> private void CreateShapes()
+ {
+     FarPoint.Win.Spread.DrawingSpace.CaptionBalloonShape balloon = new FarPoint.Win.Spread.DrawingSpace.CaptionBalloonShape();
+     balloon.Parent = fpSpread1;
+     balloon.Name = "customTextBubble";
+     balloon.Height = 75;
+     balloon.Width = 150;
+     balloon.FlipVertical = true;
+     balloon.Text = "\n\nPress the ... to open subeditor";
+     balloon.TextWrap = true;
+     balloon.CanRenderText = true;
+     fpSpread1.ActiveSheet.AddShape(balloon, 0, 0);
+     balloon.Visible = false;
+
+     FarPoint.Win.Spread.DrawingSpace.SquareCaptionBalloonShape squareBalloon = new FarPoint.Win.Spread.DrawingSpace.SquareCaptionBalloonShape();
+     squareBalloon.Parent = fpSpread1;
+     squareBalloon.Name = "numberBubble";
+     squareBalloon.Height = 75;
+     squareBalloon.Width = 150;
+     squareBalloon.FlipVertical = true;
+     squareBalloon.Text = "\n\nThis is a number cell";
+     squareBalloon.TextWrap = true;
+     squareBalloon.CanRenderText = true;
+     fpSpread1.ActiveSheet.AddShape(squareBalloon, 0, 0);
+     squareBalloon.Visible = false;
+ }</code></pre>
+
+<p>For my custom text cell with its subeditor, I want the tutorial message to only be displayed when focus is set to the cell. For this, I have to use the EnterCell and LeaveCell event handlers:</p>
+<pre><code class="”language-csharp”"> private void fpSpread1_EnterCell(object sender, EnterCellEventArgs e)
+ {
+     if (fpSpread1.ActiveSheet.Cells[e.Row, e.Column].CellType is MyTextCellType)
+     {
+         fpSpread1.EditMode = true;
+         Rectangle cell = fpSpread1.GetCellRectangle(0, 0, e.Row, e.Column);
+         fpSpread1.ActiveSheet.GetShape("customTextBubble").Left = cell.X;
+         fpSpread1.ActiveSheet.GetShape("customTextBubble").Top = cell.Y;
+         fpSpread1.ActiveSheet.GetShape("customTextBubble").Visible = true;
+     }
+ }
+
+ private void fpSpread1_LeaveCell(object sender, LeaveCellEventArgs e)
+ {
+     if (fpSpread1.ActiveSheet.Cells[e.Row, e.Column].CellType is MyTextCellType)
+     {
+         fpSpread1.ActiveSheet.GetShape("customTextBubble").Visible = false;
+     }
+ }</code></pre>
+
+<p>When the user enters a cell that has the CellType I created, the customTextBubble shape is moved to its location and it is set to be visible. When the user leaves the cell, that shape is made invisible again.<br>While this functionality is great, it might also be useful to show messages when the user simply hovers over a cell. To do this, I created a number cell to test it on and utilized the TextToolTip functionality of Spread. In order to implement this, I had to set the TextTipPolicy and its delay:</p>
+<pre><code class="”language-csharp”"> NumberCellType nt = new NumberCellType();
+ fpSpread1.ActiveSheet.Cells[2, 0].CellType = nt;
+ fpSpread1.ActiveSheet.Cells[2, 0].Value = 123456;
+
+ fpSpread1.TextTipPolicy = FarPoint.Win.Spread.TextTipPolicy.Floating;
+ fpSpread1.TextTipDelay = 500;</code></pre>
+
+<p>Then, I had to use the TextTipFetch event handler to show the shape I created rather than the text tool tip:</p>
+<pre><code class="”language-csharp”"> private void fpSpread1_TextTipFetch(object sender, TextTipFetchEventArgs e)
+ {
+     e.ShowTip = false;
+     if (fpSpread1.ActiveSheet.Cells[e.Row, e.Column].CellType is NumberCellType)
+     {
+         Rectangle cell = fpSpread1.GetCellRectangle(0, 0, e.Row, e.Column);
+         fpSpread1.ActiveSheet.GetShape("numberBubble").Left = cell.X;
+         fpSpread1.ActiveSheet.GetShape("numberBubble").Top = cell.Y;
+         fpSpread1.ActiveSheet.GetShape("numberBubble").Visible = true;
+     }
+     else
+     {
+         fpSpread1.ActiveSheet.GetShape("numberBubble").Visible = false;
+     }
+ }</code></pre>
+
+<p>Now the user can hover over cells with the NumberCellType and a message bubble will be displayed:<figure id="attachment_664447" style="width: 759px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions3.png"><img class=" wp-image-664447 " alt="The shape that utilizes the text tip fetch event handler." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions3.png" width="759" height="465" /></a><figcaption class="wp-caption-text">The shape that utilizes the text tip fetch event handler.</figcaption></figure> </p>
+<p>Another bubble will also be displayed when the user sets focus to the custom text cell:<figure id="attachment_664448" style="width: 758px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions4.png"><img class=" wp-image-664448 " alt="The shape that uses the enter/leave cell event handlers." src="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditorCaptions4.png" width="758" height="466" /></a><figcaption class="wp-caption-text">The shape that uses the enter/leave cell event handlers.</figcaption></figure> </p>
+<p>In this blog, I have shown you how to create a subeditor to utilize functionality that cannot normally be displayed inline. I have also shown a way to create captions that can be used in many different ways. Spread is a powerful data manipulation tool, but it can also help users view and edit that data without having to know exactly how a particular spreadsheet might work.</p>
+<p>The following is a download link for the files for this project:<br><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/08/WinformsSubeditor.zip">WinformsSubeditor</a></p>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+           <footer>
+                <div class="wrapper clearfix">
+                    <div class="footer-column footer-half">
+                        <div class="padder clearfix">
+                            <h3>About Spread Studio</h3>
+                            <p>Spread Studio is a multi-functional component that combines the utility of a grid with the power and flexibility of a spreadsheet to help developers working in Microsoft® Visual Studio and JavaScript add Microsoft® Excel functionality to their applications or websites. One package delivers a powerful formula engine, input controls, an API, full data import/export for Excel files, advanced charts, print support, and PDF export. Spread Studio is the only component you need in your toolbox for data bound and unbound WinForms, WPF, WinRT, ASP.NET, and JavaScript applications.</p>
+                            <p class="copyright-paragraph">
+                                ©
+                                <span><script>document.write(new Date().getFullYear())</script></span> <img src="/img/company/grapecity_150.png" alt="GrapeCity">, inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="footer-column footer-column-menu">
+                        <div class="padder clearfix">
+                            <h3>Company</h3>
+                            <ul class="footer-menu clearfix">
+                                <li><a href="/about-us/">About Us</a></li>
+                                <li><a href="/contact-us/">Contact Us</a></li>
+                                <li><a href="/legal/">Legal Information</a></li>
+                                <li><a href="/privacy/">Privacy Policy</a></li>
+                                <li><a href="/terms/">Terms of Use</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/dist/jquery.unslider-dist.js"></script>
+    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
+    <script src="/js/dist/jquery.waypoints-dist.js"></script>
+    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
+    <script src="/js/dist/jquery.velocity-dist.js"></script>
+    <script src="/js/dist/jquery.event.move-dist.js"></script>
+    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
+    <script src="/js/dist/init-dist.js"></script>
+
+
+
+</body>
+
+</html> 

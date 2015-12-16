@@ -1,0 +1,132 @@
+<hr>
+<p>title: &#39;What&#8217;s New in Spread 9&#39;
+layout: post
+template: post.hbt
+permalink: /2015/11/17/whats-new-in-spread-9/
+dzsvg_fullscreen:</p>
+<ul>
+<li>none
+dzsvg_extras_featured:</li>
+<li>none
+categories:</li>
+<li>Spread</li>
+<li>SpreadJS</li>
+<li>Spreadsheets</li>
+</ul>
+<hr>
+<p>In this article, you will find new features and enhancements added to Spread v9 categorized by platform.</p>
+<h2 id="all-platforms">All Platforms</h2>
+<h3 id="windows-10-visual-studio-15-and-excel-2016-support">Windows 10, Visual Studio 15, and Excel 2016 Support</h3>
+<ul>
+<li>Spread will work in Visual Studio 15.</li>
+<li>Applications you create with Spread will work in Windows 10 and Edge.</li>
+<li>Spread will import/export Excel 2016 files and includes Office 2016 themes.<figure style="width: 550px" class="wp-caption alignnone"></li>
+</ul>
+<p><img class=" " alt="Spread Studio running in Windows 10 and Visual Studio 15 with an Excel 2016 theme. " src="http://spread.grapecity.com/img/screenshots/win10.png" width="550" /><figcaption class="wp-caption-text">Spread Studio running in Windows 10 and Visual Studio 15 with an Excel 2016 theme.</figcaption></figure> </p>
+<h2 id="javascript-html5">JavaScript-HTML5</h2>
+<h2 id="spreadjs">SpreadJS</h2>
+<h3 id="preview-and-print-data-views">Preview and Print Data Views</h3>
+<p>Include a print button on your page that opens the standard browser print window. SpreadJS supports all the printing options you will need including best fit, gridlines, borders, header, footer, margins, page fit, page size, and page breaks. Print settings are also preserved when importing and exporting Excel files.</p>
+<h3 id="-span-style-font-size-1-17em-table-slicer-span-"><span style="font-size: 1.17em;">Table Slicer</span></h3>
+<p>Filter and analyze data with SpreadJS&#8217;s Excel-like table slicer. You can use the slicer in two ways. Use a standard Excel-like button slicer that gives a convenient set of button filters. Alternately, use the slicer widget to add convenient controls, such as buttons, checkboxes, and sliders, that allow you to slice data by values, date ranges, and number ranges. The first gives a classic Excel experience while the second provides a more interactive experience you expect from a robust data grid. You can even use bar charts as slicer controls to provide drill-down functionality. SpreadJS&#8217;s slicer can be even be used independently.<figure style="width: 550px" class="wp-caption alignnone"></p>
+<p><img class=" " alt="Variations of the SpeadJS Table Slicer" src="http://spread.grapecity.com/img/screenshots/GSPrint_Comp.png" width="550" /><figcaption class="wp-caption-text">Variations of the SpeadJS Table Slicer.</figcaption></figure> </p>
+<h3 id="chinese-localization">Chinese Localization</h3>
+<p>SpreadJS supports Chinese character sets.</p>
+<h3 id="excel-import-export-component">Excel Import/Export Component</h3>
+<p>Until now, SpreadJS&#8217;s Excel Import/Export features required an installed web service. ExcelIO is now a component that enables you to distribute it without license worry and exposes a public API making it easier to work with.</p>
+<h3 id="fixed-position-floating-objects">Fixed Position Floating Objects</h3>
+<p>The floating obect now has a property to fix its position so you can add a chart, image, or other obect that won&#8217;t scroll off the screen as users navigate your spreadsheet.</p>
+<h3 id="designer-improvements">Designer Improvements</h3>
+<ul>
+<li>Enhanced Paste: Choose to paste all, values, formatting, or formulas.</li>
+<li>Tab Color: Change tab color in the designer UI.</li>
+</ul>
+<h3 id="excel-like-behavoir-enhancements">Excel-like Behavoir Enhancements</h3>
+<ul>
+<li>Hidden row and column indicator</li>
+<li>Disable sheet navigation</li>
+<li>Ignore hidden rows and columns when scrolling</li>
+<li>Disable copy for locked cells</li>
+<li>Protect sheets and cells</li>
+</ul>
+<h2 id="winforms">WinForms</h2>
+<h3 id="smoother-more-accurate-scrolling">Smoother, More Accurate Scrolling</h3>
+<p>Rather than scroll by row or column, which can provide a choppy scrolling experience, the view now scrolls by pixel, which provides a smooth experience. Pixel based scrolling also enables the user to leave the view scrolled to a part of a cell. Previously, the view would always snap to a row or column border. This is especially beneficial in touch scenarios.</p>
+<h3 id="diagonal-line-borders">Diagonal Line Borders</h3>
+<p>Enjoy more control over design with diagonal borders that draw lines inside of cells. This is useful for crossing out cells or drawing borders around rotated text.<figure id="attachment_665646" style="width: 550px" class="wp-caption alignnone"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/DiagonalBorders.png"><img class=" wp-image-665646 " alt="Example of diagonal borders in Spread." src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/DiagonalBorders.png" width="550" /></a><figcaption class="wp-caption-text">Example of diagonal borders in Spread.</figcaption></figure> </p>
+<h3 id="enhanced-high-dpi-support">Enhanced High DPI Support</h3>
+<p>Spread and applications created with spread are DPI aware and will automatically scale. Spread also includes two icon sets for interface buttons and other indicators, one for normal DPI and one for high (200% DPI). This ensures interface buttons, such as filter drop downs, and other icons, such as indicators used in conditional formatting, always look the best they can. The screen shot below shows what a conditional formatting scenario looks like before and after this enhancement.<figure id="attachment_665647" style="width: 550px" class="wp-caption alignnone"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/DPIMock.png"><img class=" wp-image-665647 " alt="Comparison of icons with and without high DPI support." src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/DPIMock.png" width="550" /></a><figcaption class="wp-caption-text">Comparison of icons with and without high DPI support.</figcaption></figure> </p>
+<h3 id="enhanced-numerical-cell-types">Enhanced Numerical Cell Types</h3>
+<p>Spread has a new number cell type (GcNumberCellType) that adds many features and properties to numerical cells. Features include:</p>
+<ul>
+<li>Alternate text</li>
+<li>Display fields</li>
+<li>Fields</li>
+<li>Context menu</li>
+<li>Negative color</li>
+<li>Recommended value</li>
+<li>Drop-down window</li>
+<li>Drop-down calculator</li>
+<li>Popup window</li>
+<li>Side buttons</li>
+<li>Toggle sign with minus key</li>
+<li>Japanese keyboard support</li>
+<li>Delete with delete and backspace</li>
+<li>Percentage support</li>
+<li>Improved paste behavior<figure id="attachment_665648" style="width: 550px" class="wp-caption alignnone"></li>
+</ul>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/numberDialog.png"><img class=" wp-image-665648 " alt="New numeric cell type properties." src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/numberDialog.png" width="550" /></a><figcaption class="wp-caption-text">New numeric cell type properties.</figcaption></figure> </p>
+<h3 id="new-chart-line-styles-with-excel-i-o-support-">New Chart Line Styles (with Excel I/O Support)</h3>
+<p>Spread now allows you to set the style of the series in line charts, much like Excel does. You can set these properties in code or use the designer. Supported properties are also preserved when importing Excel files with line charts. Options include:</p>
+<ul>
+<li>Color</li>
+<li>Transparency</li>
+<li>Width</li>
+<li>Compound type</li>
+<li>Dash type</li>
+<li>Arrows (cap type, cap size, arrow size, arrow type)</li>
+<li>Join type<figure style="width: 550px" class="wp-caption alignnone"></li>
+</ul>
+<p><img class=" " alt="Spread's new line chart." src="http://spread.grapecity.com/img/screenshots/linechart.png" width="550" /><figcaption class="wp-caption-text">Spread&#8217;s new line chart.</figcaption></figure> </p>
+<h3 id="touch-friendly-date-picker">Touch-friendly Date Picker</h3>
+<p>Spread now includes a date picker that supports touch interaction.</p>
+<h3 id="new-selection-style-options">New Selection Style Options</h3>
+<p>Spread behaves the same as Excel in order to give users a familiar experience, but sometimes developers want to alter certain behaviors. In this case, we have added optional style properties related to cell selection.</p>
+<ul>
+<li>Choose to highlight the active cell in a selected range or to have� the same background as the others. In Excel, that cell would not have a selection background.</li>
+<li>Choose to not highlight the selected row and cloumn header. In Excel, they would be highlighted.</li>
+<li>Show row editing selector.</li>
+</ul>
+<h3 id="more-enhancements">More Enhancements</h3>
+<ul>
+<li><strong>Enhanced Selection Border:� </strong>When selecting a range, Spread will draw a border around the entire selection by default.</li>
+<li><strong>Optional Filtering Behavior:</strong>� When row filters are set, Spread automatically applies filter rules to any new data or styles entered or edited. This is not the case in Excel. The filter needs to be explicitly executed. Spread now has the option to use Excel-like behavior.</li>
+<li><strong>Editing Cell Keeps Vertical Alignment:</strong>� When editing a cell, its vertical alignment will be preserved. Previously the alignment would change to top when editing.</li>
+<li><strong>Remote Desktop Support:</strong>� Spread fully supports the use of remote desktop in runtime.</li>
+<li><strong>Improved PDF Export Performance:� </strong>PDFs are creates approximately 10% faster.</li>
+<li><strong>Shape Text Alignment:</strong>� Spread now supports alignment of text inside a shape.</li>
+<li><strong>Row/Column Move Performance Improvement:� </strong>When you move, rows and columns in Spread, it shows a clone of your selection while you drag them. Sometimes, that causes a performance issue. You can now disable that indicator or create your own behavior.</li>
+</ul>
+<h2 id="asp-net">ASP.NET</h2>
+<h3 id="touch-support-for-edge-and-chrome">Touch Support for Edge and Chrome</h3>
+<p>Spread&#8217;s web apps will support touch interaction in Microsoft Edge and Google Chrome. In the image below, notice the touch handles on the selected cell range.<figure style="width: 550px" class="wp-caption alignnone"></p>
+<p><img class=" " alt="Range selection with touch handles." src="http://spread.grapecity.com/img/screenshots/touchasp.png" width="550" /><figcaption class="wp-caption-text">Range selection with touch handles.</figcaption></figure> </p>
+<h3 id="support-for-ajax-control-kit-v15-1">Support for AJAX Control Kit v15.1</h3>
+<p>Spread now supports these AJAX Control kit v15.1 extender Cell Types:</p>
+<ul>
+<li>Autocomplete</li>
+<li>Calendar</li>
+<li>Combo box</li>
+<li>Filtered text</li>
+<li>Masked edit</li>
+<li>Mutually exclusive checkbox</li>
+<li>Numeric spinner</li>
+<li>Rating</li>
+<li>Silder</li>
+<li>Slide Show</li>
+<li>Text box with watermark</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

@@ -1,0 +1,83 @@
+<hr>
+<p>title: Automatic Completion and Spread Windows Forms
+layout: post
+template: post.hbt
+permalink: /2015/06/19/automatic-completion-and-spread-windows-forms/
+dzsvg_fullscreen:</p>
+<ul>
+<li>none
+dzsvg_extras_featured:</li>
+<li>none
+categories:</li>
+<li>Spread</li>
+<li>Spreadsheets</li>
+<li>WinForms</li>
+</ul>
+<hr>
+<p>You may wish to provide a list of items for the user to select to speed up typing or data entry. You can use automatic completion (type ahead) for user input in the cell with Spread for Windows Forms.</p>
+<p>Use the IAutoCompleteSupport interface and its properties to provide the automatic completion feature in the editable cell types.</p>
+<p>There are two main properties that need to be set. First set the automatic completion mode. The options include whether to suggest a list of possible completions, a drop-down list of possible completions, both, or none.</p>
+<p>Second, set the source of the suggestions and drop-down list. The source is the list of items that are considered for completion. You can create a custom source and define your own list of items or you can set various system sources. There are two properties in the interface that provide settings for the custom source. The first one sets the list of possible candidates for a custom source. The second sets whether to fill the list with the list of values from other cells in the column. To use the values in the cells in the column, for example, you would set the source to custom and then set automatic fill. The automatic fill only adds items to the custom source if they are above or below the cell without a blank cell in between.</p>
+<p>The following sample uses automatic completion. You can use the combo boxes to choose the fill option, the mode, and the column to apply the automatic completion to. Add three combo boxes to the form named cbAutofillSource, cbAutoCompleteMode, and cbColumn. Add a Spread control. Add a list box named lbCustom. Add the following code and add the appropriate code to the SelectedIndexChanged event for each combo control.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/AutoCompleteExample.png"><img class="alignnone size-full wp-image-663588" alt="AutoCompleteExample" src="http://sphelp.grapecity.com/wp-content/uploads/2015/06/AutoCompleteExample.png" width="795" height="374" /></a></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      C#
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      private void Form1_Load(object sender, EventArgs e)<br /> {<br /> GetSampleData();<br /> InitData();<br /> }public void GetSampleData()<br /> {<br /> //Add sample data<br /> string conStr = &#8220;Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb&#8221;;<br /> string sqlStr = &#8220;Select CompanyName, ContactName, ContactTitle, Country from Customers&#8221;;<br /> System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);<br /> DataSet ds = new DataSet();<br /> System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);<br /> da.Fill(ds);fpSpread1.ActiveSheet.DataAutoSizeColumns = true;<br /> fpSpread1.ActiveSheet.DataMember = &#8220;Patients&#8221;;<br /> fpSpread1.ActiveSheet.DataSource = ds;<br /> //Set the column width to the widest string in the column<br /> for (int i = 0; i &lt; fpSpread1.ActiveSheet.Columns.Count; i++)<br /> fpSpread1.ActiveSheet.Columns[i].Width = fpSpread1.ActiveSheet.Columns[i].GetPreferredWidth();<br /> //Always be in edit mode when entering a cell<br /> fpSpread1.EditModePermanent = true;<br /> //Highlight the text for replacing when going into cell<br /> fpSpread1.EditModeReplace = true;<br /> }public void InitData()<br /> {<br /> //Autofill DataSource options<br /> cbAutofillSource.DataSource = new string[] { &#8220;CustomSource and All Column Items Below Cell&#8221;, &#8220;CustomSource Only&#8221;, &#8220;Column Items Below Cell Only&#8221; };<br /> cbAutofillSource.SelectedIndex = 0;<br /> //AutoComplete Mode options<br /> cbAutoCompleteMode.DataSource = new string[] { &#8220;None&#8221;, &#8220;Suggest&#8221;, &#8220;Append&#8221;, &#8220;SuggestAppend&#8221; };<br /> cbAutoCompleteMode.SelectedIndex = 3;<br /> //Column options<br /> cbColumn.DataSource = new string[] { &#8220;Company (0)&#8221;, &#8220;Contact (1)&#8221;, &#8220;Title (2)&#8221;, &#8220;Country (3)&#8221; };<br /> cbColumn.SelectedIndex = 0;<br /> }public void CustomAutoComplete(int column, int acm, int AutoFillAutoCompleteCustomSource)<br /> {<br /> //INPUTS:<br /> //_AutoCompleteMode options<br /> //� � &#8220;None&#8221;, &#8220;Suggest&#8221;, &#8220;Append&#8221;, &#8220;SuggestAppend&#8221;<br /> //_AutoFillAutoCompleteCustomSource options<br /> //� � &#8220;CustomSource and All Items Below it&#8221;, &#8220;CustomSource Only&#8221;, &#8220;Column Items Below only&#8221;<br /> //Build the custom source suggestion list<br /> string[] mySuggestionList = new string[] {&#8220;Benjamin&#8221;, &#8220;Bruce&#8221;, &#8220;Cheryl&#8221;, &#8220;Daniel&#8221;, &#8220;Dave&#8221;,<br /> &#8220;Eric&#8221;, &#8220;Hana&#8221;, &#8220;Harol&#8221;, &#8220;Henry&#8221;, &#8220;Jane&#8221;, &#8220;Jessica&#8221;, &#8220;John&#8221;, &#8220;Julia&#8221;, &#8220;Kathy&#8221;, &#8220;Lance&#8221;, &#8220;Laura&#8221;,<br /> &#8220;Mark&#8221;, &#8220;Marry&#8221;, &#8220;Meggie&#8221;, &#8220;Mike&#8221;, &#8220;Naomi&#8221;, &#8220;Paul&#8221;, &#8220;Peter&#8221;, &#8220;Roger&#8221;, &#8220;Rose&#8221;, &#8220;Ruth&#8221;, &#8220;Ryan&#8221;,<br /> &#8220;Shirley&#8221;, &#8220;Tan&#8221;, &#8220;Thomas&#8221;, &#8220;Tony&#8221;, &#8220;Varun&#8221;, &#8220;$1234&#8221;, &#8220;VND1234&#8221;, &#8220;12345 %&#8221;, &#8220;13 %&#8221;, &#8220;02/19/1991&#8221;,<br /> &#8220;Sunday, August 08, 2007&#8221;, &#8220;Saturday, March 09, 1997&#8221;, &#8220;February&#8221;, &#8220;0901234567&#8221;, &#8220;0953336650&#8221;};</p> 
+
+      <p>
+        //Bind listbox to show options to user<br /> lbCustom.DataSource = mySuggestionList;<br /> //Add the custom source to the collection<br /> AutoCompleteStringCollection myAutoCompleteStringCollection = new AutoCompleteStringCollection();<br /> myAutoCompleteStringCollection.AddRange(mySuggestionList);<br /> //Create the cell type<br /> FarPoint.Win.Spread.CellType.GeneralCellType myAutoFillCellType = new FarPoint.Win.Spread.CellType.GeneralCellType();<br /> //AutoCompleteSource sets what source to use for the AutoComplete list items<br /> myAutoFillCellType.AutoCompleteSource = AutoCompleteSource.CustomSource;<br /> //AutoCompleteCustomSource specifies a list of items to use when AutoCompleteSource is set to //Custom//<br /> if (AutoFillAutoCompleteCustomSource == 2)� //&#8221;Column Items Below only&#8221;<br /> //Set this to nothing to use the items below in this column only &#8211; no custom lists!<br /> myAutoFillCellType.AutoCompleteCustomSource = null;<br /> else<br /> //Use the custom list in conjunction with AutoFillAutoCompleteCustomSource setting<br /> myAutoFillCellType.AutoCompleteCustomSource = myAutoCompleteStringCollection;<br /> //AutoFillAutoCompleteCustomSource determines whether the custom list is automatically filled with data from the column<br /> //� true = use the custom source AND the column list below it<br /> //� false = use custom source list only<br /> if (AutoFillAutoCompleteCustomSource == 1)� //CustomSource Only<br /> //Use custom source list only<br /> myAutoFillCellType.AutoFillAutoCompleteCustomSource = false;<br /> else<br /> //Use the custom source AND the column list below it<br /> myAutoFillCellType.AutoFillAutoCompleteCustomSource = true;<br /> //AutoCompleteMode specifies what type of auto complete to use<br /> myAutoFillCellType.AutoCompleteMode = (AutoCompleteMode)acm;<br /> //Assign cell type to column<br /> //� � could do a cell instead<br /> //� � FpSpread1.ActiveSheet.Cells(0, 0).CellType = myAutoFillCellType<br /> fpSpread1.ActiveSheet.Columns[column].CellType = myAutoFillCellType;<br /> }
+      </p>
+
+      <p>
+        private void cbAutofillSource_SelectedIndexChanged(object sender, EventArgs e)<br /> {<br /> CustomAutoComplete(cbColumn.SelectedIndex, cbAutoCompleteMode.SelectedIndex, cbAutofillSource.SelectedIndex);<br /> }
+      </p>
+
+      <p>
+        private void cbAutoCompleteMode_SelectedIndexChanged(object sender, EventArgs e)<br /> {<br /> CustomAutoComplete(cbColumn.SelectedIndex, cbAutoCompleteMode.SelectedIndex, cbAutofillSource.SelectedIndex);<br /> }
+      </p>
+
+      <p>
+        private void cbColumn_SelectedIndexChanged(object sender, EventArgs e)<br /> {<br /> CustomAutoComplete(cbColumn.SelectedIndex, cbAutoCompleteMode.SelectedIndex, cbAutofillSource.SelectedIndex);<br /> }</td> </tr> 
+
+        <tr>
+          <td>
+            VB
+          </td>
+
+          <td>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" valign="top">
+            Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load<br /> GetSampleData()<br /> InitData()<br /> End SubPublic Sub GetSampleData()<br /> Dim conStr As String = &#8220;Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb&#8221;<br /> Dim sqlStr As String = &#8220;Select CompanyName, ContactName, ContactTitle, Country from Customers&#8221;<br /> Dim conn As New System.Data.OleDb.OleDbConnection(conStr)<br /> Dim ds As DataSet = New DataSet()<br /> Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)<br /> da.Fill(ds)FpSpread1.ActiveSheet.DataAutoSizeColumns = True<br /> FpSpread1.ActiveSheet.DataMember = &#8220;Patients&#8221;<br /> FpSpread1.ActiveSheet.DataSource = ds<br /> &#8216;Set the column width to the widest string in the column<br /> For i As Integer = 0 To FpSpread1.ActiveSheet.Columns.Count &#8211; 1<br /> FpSpread1.ActiveSheet.Columns(i).Width = FpSpread1.ActiveSheet.Columns(i).GetPreferredWidth()<br /> Next<br /> &#8216;Always be in edit mode when entering a cell<br /> FpSpread1.EditModePermanent = True<br /> &#8216;Highlight the text for replacing when going into cell<br /> FpSpread1.EditModeReplace = True<br /> End SubPublic Sub InitData()<br /> &#8216;Autofill DataSource options<br /> cbAutofillSource.DataSource = New String() {&#8220;CustomSource and All Column Items Below Cell&#8221;, &#8220;CustomSource Only&#8221;, &#8220;Column Items Below Cell Only&#8221;}<br /> cbAutofillSource.SelectedIndex = 0<br /> &#8216;AutoComplete Mode options<br /> cbAutoCompleteMode.DataSource = New String() {&#8220;None&#8221;, &#8220;Suggest&#8221;, &#8220;Append&#8221;, &#8220;SuggestAppend&#8221;}<br /> cbAutoCompleteMode.SelectedIndex = 3<br /> &#8216;Column options<br /> cbColumn.DataSource = New String() {&#8220;Company (0)&#8221;, &#8220;Contact (1)&#8221;, &#8220;Title (2)&#8221;, &#8220;Country (3)&#8221;}<br /> cbColumn.SelectedIndex = 0<br /> End SubPublic Sub CustomAutoComplete(column As Integer, acm As Integer, AutoFillAutoCompleteCustomSource As Integer)<br /> &#8216;INPUTS:<br /> &#8216;_AutoCompleteMode options<br /> &#8216;� � &#8220;None&#8221;, &#8220;Suggest&#8221;, &#8220;Append&#8221;, &#8220;SuggestAppend&#8221;<br /> &#8216;<em>AutoFillAutoCompleteCustomSource options<br /> &#8216;� � &#8220;CustomSource and All Items Below it&#8221;, &#8220;CustomSource Only&#8221;, &#8220;Column Items Below only&#8221;<br /> &#8216;Build the custom source suggestion list<br /> Dim mySuggestionList As String() = New String() {&#8220;Benjamin&#8221;, &#8220;Bruce&#8221;, &#8220;Cheryl&#8221;, &#8220;Daniel&#8221;, &#8220;Dave&#8221;, &#8220;Eric&#8221;, </em><br /> &#8220;Hana&#8221;, &#8220;Harol&#8221;, &#8220;Henry&#8221;, &#8220;Jane&#8221;, &#8220;Jessica&#8221;, &#8220;John&#8221;, <em><br /> &#8220;Julia&#8221;, &#8220;Kathy&#8221;, &#8220;Lance&#8221;, &#8220;Laura&#8221;, &#8220;Mark&#8221;, &#8220;Marry&#8221;, </em><br /> &#8220;Meggie&#8221;, &#8220;Mike&#8221;, &#8220;Naomi&#8221;, &#8220;Paul&#8221;, &#8220;Peter&#8221;, &#8220;Roger&#8221;, <em><br /> &#8220;Rose&#8221;, &#8220;Ruth&#8221;, &#8220;Ryan&#8221;, &#8220;Shirley&#8221;, &#8220;Tan&#8221;, &#8220;Thomas&#8221;, </em><br /> &#8220;Tony&#8221;, &#8220;Varun&#8221;, &#8220;$1234&#8221;, &#8220;VND1234&#8221;, &#8220;12345 %&#8221;, &#8220;13 %&#8221;, _<br /> &#8220;02/19/1991&#8221;, &#8220;Sunday, August 08, 2007&#8221;, &#8220;Saturday, March 09, 1997&#8221;, &#8220;February&#8221;, &#8220;0901234567&#8221;, &#8220;0953336650&#8221;}</p> 
+
+            <p>
+              &#8216;Bind listbox to show options to user<br /> lbCustom.DataSource = mySuggestionList<br /> &#8216;Add the custom source to the collection<br /> Dim myAutoCompleteStringCollection As New AutoCompleteStringCollection()<br /> myAutoCompleteStringCollection.AddRange(mySuggestionList)
+            </p>
+
+            <p>
+              &#8216;Create the cell type<br /> Dim myAutoFillCellType As New FarPoint.Win.Spread.CellType.GeneralCellType()<br /> &#8216;AutoCompleteSource sets what source to use for the AutoComplete list items<br /> myAutoFillCellType.AutoCompleteSource = AutoCompleteSource.CustomSource<br /> &#8216;AutoCompleteCustomSource specifies a list of items to use when AutoCompleteSource is set to //Custom//<br /> If AutoFillAutoCompleteCustomSource = 2 Then<br /> &#8216;&#8221;Column Items Below only&#8221;<br /> &#8216;Set this to nothing to use the items below in this column only &#8211; no custom lists!<br /> myAutoFillCellType.AutoCompleteCustomSource = Nothing<br /> Else<br /> &#8216;Use the custom list in conjunction with AutoFillAutoCompleteCustomSource setting<br /> myAutoFillCellType.AutoCompleteCustomSource = myAutoCompleteStringCollection<br /> End If<br /> &#8216;AutoFillAutoCompleteCustomSource determines whether the custom list is automatically filled with data from the column<br /> &#8216;� true = use the custom source AND the column list below it<br /> &#8216;� false = use custom source list only<br /> If AutoFillAutoCompleteCustomSource = 1 Then<br /> &#8216;CustomSource Only<br /> &#8216;Use custom source list only<br /> myAutoFillCellType.AutoFillAutoCompleteCustomSource = False<br /> Else<br /> &#8216;Use the custom source AND the column list below it<br /> myAutoFillCellType.AutoFillAutoCompleteCustomSource = True<br /> End If<br /> &#8216;AutoCompleteMode specifies what type of auto complete to use<br /> myAutoFillCellType.AutoCompleteMode = DirectCast(acm, AutoCompleteMode)<br /> &#8216;Assign cell type to column<br /> &#8216;� � could do a cell instead<br /> &#8216;� � FpSpread1.ActiveSheet.Cells(0, 0).CellType = myAutoFillCellType<br /> fpSpread1.ActiveSheet.Columns(column).CellType = myAutoFillCellType<br /> End Sub
+            </p>
+
+            <p>
+              Private Sub cbAutofillSource_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAutofillSource.SelectedIndexChanged<br /> CustomAutoComplete(cbColumn.SelectedIndex, cbAutoCompleteMode.SelectedIndex, cbAutofillSource.SelectedIndex)<br /> End Sub
+            </p>
+
+            <p>
+              Private Sub cbAutoCompleteMode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAutoCompleteMode.SelectedIndexChanged<br /> CustomAutoComplete(cbColumn.SelectedIndex, cbAutoCompleteMode.SelectedIndex, cbAutofillSource.SelectedIndex)<br /> End Sub
+            </p>
+
+            <p>
+              Private Sub cbColumn_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbColumn.SelectedIndexChanged<br /> CustomAutoComplete(cbColumn.SelectedIndex, cbAutoCompleteMode.SelectedIndex, cbAutofillSource.SelectedIndex)<br /> End Sub<br /> End Class</td> </tr> </tbody> </table>
+

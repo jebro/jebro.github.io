@@ -1,0 +1,204 @@
+<hr>
+<p>title: Data Bar Rule with Spread Windows Forms
+layout: post
+template: post.hbt
+permalink: /2015/07/07/data-bar-rule-with-spread-windows-forms/
+dzsvg_fullscreen:</p>
+<ul>
+<li>none
+dzsvg_extras_featured:</li>
+<li>none
+categories:</li>
+<li>Spread</li>
+<li>Spreadsheets</li>
+<li>WinForms</li>
+</ul>
+<hr>
+<p>You can use a data bar rule in Spread Windows Forms to make it easier to see differences in the range of data.</p>
+<p>The data bar rule uses a bar that is displayed as the background for each cell. The length of the bar corresponds to the size of the data relative to the other data in the worksheet. The longer the bar is, the greater the value in the cell.</p>
+<p>You can specify the value type and the value to compare in the conditional format for the data bar rule.</p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      Value Type
+    </td>
+
+    <td>
+      Description
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Percent
+    </td>
+
+    <td valign="top">
+      The minimum value in the range of cells that the conditional formatting rule applies to plus� x percent of the difference between the maximum and minimum values in the range of cells that the conditional formatting rule applies to. For example, if the minimum and maximum values in the range are 1 and 10 respectively, and� <i>x</i> is 10, then the value is 1.9.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Highest Value
+    </td>
+
+    <td valign="top">
+      The maximum value in the range of cells that the conditional formatting rule applies to.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Lowest Value
+    </td>
+
+    <td valign="top">
+      The minimum value in the range of cells that the conditional formatting rule applies to.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Formula
+    </td>
+
+    <td valign="top">
+      The result of the formula determines the minimum or maximum value of the cell range that the rule applies to. If the result is not numeric, it is treated as zero.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Percentile
+    </td>
+
+    <td valign="top">
+      The result of the function percentile applied to the range with x.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Automatic
+    </td>
+
+    <td valign="top">
+      The smaller or larger or the minimum or maximum value in the range of cells that the conditional format applies to.
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      Number
+    </td>
+
+    <td valign="top">
+      Number, date, or time value in the range of cells that the conditional formatting rule applies to.
+    </td>
+  </tr>
+</table>
+
+<p>Valid percentiles are from 0 (zero) to 100. A percentile cannot be used if the range of cells contains more than 8,191 data points. Use a percentile when you want to visualize a group of high values (such as the top 20th percentile) in one data bar and low values (such as the bottom 20th percentile) in another data bar. This is useful if you have extreme values that might skew the visualization of your data.</p>
+<p>Valid percent values are from 0 (zero) to 100. Percent values should not use a percent sign. Use a percentage when you want to visualize all values proportionally because the distribution of values is proportional.</p>
+<p>Start formulas with an equal sign (=). Invalid formulas result in no formatting applied.</p>
+<p>The minimum and maximum types can be different. The Maximum property should not be set to a ConditionalFormattingValue value such as ConditionalFormattingValueType.Min or ConditionalFormattingValueType.AutoMin. An exception will occur in this case. The Minimum property should not be set to a ConditionalFormattingValue value such as ConditionalFormattingValueType.Max or ConditionalFormattingValueType.AutoMax. An exception will occur in this case.</p>
+<p>You can also specify borders, colors, and an axis.</p>
+<p>This example code creates a data bar rule and uses the SetConditionalFormatting method to apply the rule.<figure id="attachment_663774" style="width: 149px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/databarblog.png"><img class="size-full wp-image-663774" alt="databarblog" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/databarblog.png" width="149" height="322" /></a><figcaption class="wp-caption-text">Data Bar with Values</figcaption></figure> </p>
+<pre><code class="language-csharp">C#
+private void DataBar_Load(object sender, EventArgs e)
+{
+//Add sample data
+string conStr = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\\Program Files (x86)\\GrapeCity\\Spread Studio 8\\Common\\nwind.mdb";
+string sqlStr = "Select Quantity from [Order Details]";
+System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection(conStr);
+DataSet ds = new DataSet();
+System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(sqlStr, conn);
+da.Fill(ds);
+fpSpread1.ActiveSheet.DataAutoSizeColumns = true;
+fpSpread1.ActiveSheet.DataSource = ds;
+fpSpread1.Sheets[0].RowCount = 15;
+fpSpread1.Sheets[0].Columns[0].Width = 100;
+FarPoint.Win.Spread.DatabarConditionalFormattingRule d = new FarPoint.Win.Spread.DatabarConditionalFormattingRule();
+d.BorderColor = Color.Red;
+d.ShowBorder = true;
+d.Minimum = new FarPoint.Win.Spread.ConditionalFormattingValue(0, FarPoint.Win.Spread.ConditionalFormattingValueType.Number);
+d.Maximum = new FarPoint.Win.Spread.ConditionalFormattingValue(15, FarPoint.Win.Spread.ConditionalFormattingValueType.Max);
+fpSpread1.ActiveSheet.SetConditionalFormatting(0, 0, 15, 1, d);
+fpSpread1.Font = new System.Drawing.Font("Calibri", 11);
+}
+</code></pre>
+
+<pre><code class="language-csharp">VB
+Private Sub DataBar_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+'Add sample data
+Dim conStr As String = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"
+Dim sqlStr As String = "Select Quantity from [Order Details]"
+Dim conn As New System.Data.OleDb.OleDbConnection(conStr)
+Dim ds As DataSet = New DataSet()
+Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
+da.Fill(ds)
+FpSpread1.ActiveSheet.DataAutoSizeColumns = True
+FpSpread1.ActiveSheet.DataSource = ds
+FpSpread1.Sheets(0).RowCount = 15
+FpSpread1.Sheets(0).Columns(0).Width = 100
+Dim d As New FarPoint.Win.Spread.DatabarConditionalFormattingRule()
+d.BorderColor = Color.Red
+d.ShowBorder = True
+d.Minimum = New FarPoint.Win.Spread.ConditionalFormattingValue(0, FarPoint.Win.Spread.ConditionalFormattingValueType.Number)
+d.Maximum = New FarPoint.Win.Spread.ConditionalFormattingValue(15, FarPoint.Win.Spread.ConditionalFormattingValueType.Max)
+FpSpread1.ActiveSheet.SetConditionalFormatting(0, 0, 15, 1, d)
+FpSpread1.Font = New System.Drawing.Font("Calibri", 11)
+End Sub
+</code></pre>
+
+<p>This example sets border and fill colors for negative values.<figure id="attachment_663776" style="width: 200px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/databarnegative.png"><img class="size-full wp-image-663776" alt="Negative Values" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/databarnegative.png" width="200" height="105" /></a><figcaption class="wp-caption-text">Negative Values in Data Bar</figcaption></figure> </p>
+<pre><code class="language-csharp">
+C#
+fpSpread1.Sheets[0].Columns[0].Width = 100;
+fpSpread1.Sheets[0].Cells[0, 0].Value = 2;
+fpSpread1.Sheets[0].Cells[1, 0].Value = -1;
+fpSpread1.Sheets[0].Cells[2, 0].Value = 5;
+fpSpread1.Sheets[0].Cells[3, 0].Value = 3;
+FarPoint.Win.Spread.DatabarConditionalFormattingRule dataBarRule = new FarPoint.Win.Spread.DatabarConditionalFormattingRule();
+dataBarRule.AxisPosition = FarPoint.Win.Spread.DataBarAxisPosition.Automatic;
+dataBarRule.BorderColor = Color.Blue;
+dataBarRule.NegativeFillColor = Color.Red;
+dataBarRule.NegativeBorderColor = Color.Firebrick;
+dataBarRule.Gradient = true;
+dataBarRule.Maximum = new FarPoint.Win.Spread.ConditionalFormattingValue(FarPoint.Win.Spread.ConditionalFormattingValueType.AutoMax);
+dataBarRule.Minimum = new FarPoint.Win.Spread.ConditionalFormattingValue(FarPoint.Win.Spread.ConditionalFormattingValueType.AutoMin);
+dataBarRule.UseNegativeFillColor = true;
+dataBarRule.UseNegativeBorderColor = true;
+dataBarRule.ShowBorder = true;
+FarPoint.Win.Spread.ConditionalFormatting cf = new FarPoint.Win.Spread.ConditionalFormatting(new FarPoint.Win.Spread.Model.CellRange(0, 0, 4, 1));
+cf.Add(dataBarRule);
+fpSpread1.ActiveSheet.Models.ConditionalFormatting.Add(cf);
+fpSpread1.Font = new System.Drawing.Font("Calibri", 11);
+</code></pre>
+
+<pre><code class="language-csharp">VB
+FpSpread1.Sheets(0).Columns(0).Width = 100
+FpSpread1.Sheets(0).Cells(0, 0).Value = 2
+FpSpread1.Sheets(0).Cells(1, 0).Value = -1
+FpSpread1.Sheets(0).Cells(2, 0).Value = 5
+FpSpread1.Sheets(0).Cells(3, 0).Value = 3
+Dim dataBarRule As New FarPoint.Win.Spread.DatabarConditionalFormattingRule()
+dataBarRule.AxisPosition = FarPoint.Win.Spread.DataBarAxisPosition.Automatic
+dataBarRule.BorderColor = Color.Blue
+dataBarRule.NegativeFillColor = Color.Red
+dataBarRule.NegativeBorderColor = Color.Firebrick
+dataBarRule.Gradient = True
+dataBarRule.Maximum = New FarPoint.Win.Spread.ConditionalFormattingValue(FarPoint.Win.Spread.ConditionalFormattingValueType.AutoMax)
+dataBarRule.Minimum = New FarPoint.Win.Spread.ConditionalFormattingValue(FarPoint.Win.Spread.ConditionalFormattingValueType.AutoMin)
+dataBarRule.UseNegativeFillColor = True
+dataBarRule.UseNegativeBorderColor = True
+dataBarRule.ShowBorder = True
+Dim cf As New FarPoint.Win.Spread.ConditionalFormatting(New FarPoint.Win.Spread.Model.CellRange(0, 0, 4, 1))
+cf.Add(dataBarRule)
+FpSpread1.ActiveSheet.Models.ConditionalFormatting.Add(cf)
+FpSpread1.Font = New System.Drawing.Font("Calibri", 11)
+</code></pre>
+

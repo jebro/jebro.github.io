@@ -1,0 +1,347 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Spread ASP.NET and Client Events</title>
+    <meta name="description" content="Spread Studio is our new cross-platform toolkit that includes components for Windows Forms, ASP.NET, WPF, WinRT, and Silverlight all in one package. This new package includes the new releases of Spread for WinForms and Spread for ASP.NET." name="description" />
+    <meta name="keywords" content="Spread.NET, ASP.NET, WPF, Silverlight, WinRT, .NET, spreadsheets, Data, PDF, Spreadsheet, Grid, Excel, analysis, GrapeCity, ASP.NET Spreadsheet component, .NET Spreadsheet component">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="DC.title" content="GrapeCity Spread" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Raleigh" />
+    <meta name="geo.position" content="40.458677;-79.924935" />
+    <meta name="ICBM" content="40.458677, -79.924935" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="GrapeCity Spread">
+    <meta itemprop="description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta itemprop="image" content="http://spread.grapecity.com/img/spread-photo.png">
+    <link href="https://plus.google.com/103999002053720301182/" rel="publisher" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="GrapeCity Spread">
+    <meta name="twitter:site" content="@gcspread">
+    <meta name="twitter:title" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:creator" content="@gcspread">
+    <meta name="twitter:image" content="http://spread.grapecity.com/img/spread-photo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="GrapeCity Spread" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://spread.grapecity.com/" />
+    <meta property="og:image" content="http://spread.grapecity.com/img/spread-photo.png" />
+    <meta property="og:description" content="Spreadsheet Components for .NET and JavaScript-HTML5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css?v=1" />
+
+</head>
+
+<body class=" page-Spread ASP.NET and Client Events">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+    <main class="body-section">
+        <article class="body-inner">    <div class="nav-bar">
+        <div class="nav-bar-inner">
+            <div class="wrapper">
+                <div class="padder clearfix">
+                    <div class="search-container clearfix">
+                        <input placeholder="Search" type="search" />
+                        <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </div>
+                    <div class="user-container">
+                        <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+                        <ul class="user-list hidden">
+                            <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
+                            <li><a href="#"><span class="lnr lnr-license"></span> Licenses</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Submit An Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<aside class="brand-section">
+        <div class="brand-inner clearfix">
+            <div class="brand-main">
+                <div class="brand-logo">
+                    <div class="padder clearfix">
+                        <h2><a href="/"><img src="/img/sp-icon-white.svg" alt="Spread" /><span class="logo-text">Spread</span> </a></h2>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-main">
+                <div class="nav-section">
+                    <div class="padder clearfix">
+                        <ul class="clearfix">
+                            <li class="studio">
+                                <a href="/products/spread-studio/"><img src="/img/sp-icon.svg" /><span class="menu-text">Spread Studio</span></a>
+                            </li>
+                            <li class="js">
+                                <a href="/products/spreadjs/"><img src="/img/js-icon.svg" /><span class="menu-text">SpreadJS</span></a>
+                            </li>
+                            <li class="com">
+                                <a href="/products/spread-com/"><img src="/img/com-icon.svg" /><span class="menu-text">Spread COM</span></a>
+                            </li>
+                            <li><a href="/pages/downloads/"><span class="lnr lnr-download"></span><span class="menu-text">Downloads</span></a></li>
+                            <li><a href="/pages/demo-gallery/"><span class="lnr lnr-cog"></span><span class="menu-text">Demo Gallery</span></a></li>
+                            <li><a href="/pages/pricing/"><span class="lnr lnr-cart"></span><span class="menu-text">Pricing</span></a></li>
+                            <li><a href="/pages/support-community/"><span class="lnr lnr-bubble"></span><span class="menu-text">Support & Community</span></a></li>
+                            <li><a href="/pages/documentation/"><span class="lnr lnr-book"></span><span class="menu-text">Documentation</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="brand-container">
+                <div class="padder clearfix">
+                    <div class="brand-more">
+                        <a class="brand-more-trigger" href="javascript:void(0);"><span class="lnr lnr-menu"></span> <span class="menu-text">More Tools</span></a>
+                        <ul class="brand-more-list hidden">
+                            <li><a href="#"><span class="lnr lnr-diamond"></span> ActiveReports</a></li>
+                            <li><a href="#"><span class="lnr lnr-poop"></span> ComponentOne</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Wijmo</a></li>
+                            <li><a href="#"><span class="lnr lnr-thumbs-down"></span> Xuni</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside><header>
+    <div class="wrapper">
+        <div class="padder clearfix">
+            <h1><span class="lnr lnr-book"></span> Spread ASP.NET and Client Events</h1>
+            <h3></h3>
+        </div>
+</header>
+
+
+<div class="wrapper-sections">
+    <section class="section-page">
+        <div class="wrapper">
+            <div class="padder clearfix">
+                <div class="entry">
+
+                    <p>You can use client events in Spread ASP.NET. Client-side scripting allows the user to interact with the page on the client without the page having to be reloaded from the server. This can be useful if the event relies on run time only information.</p>
+<p>There are several ways to map events on the client-side. You can use an attribute, map the event to a function, or map the event to the Spread object in the HTML page.</p>
+<p>This example maps the event to the Spread object in the page:</p>
+<p>JavaScript</p>
+<pre><code class="language-java">&lt;script type="text/javascript"&gt;               
+        function show(event) {
+            alert("r" + event.row + ",c" + event.col);            
+        }
+        &lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form id="form1" runat="server"&gt;
+    &lt;div&gt;
+
+    &lt;/div&gt;
+        &lt;FarPoint:FpSpread onDataChanged="show(event)" ID="FpSpread1" runat="server" BorderColor="#A0A0A0" BorderStyle="Solid" BorderWidth="1px" Height="200" Width="400"&gt;
+            &lt;commandbar backcolor="#F6F6F6" buttonfacecolor="Control" buttonhighlightcolor="ControlLightLight" buttonshadowcolor="ControlDark"&gt;
+            &lt;/commandbar&gt;
+            &lt;sheets&gt;
+                &lt;FarPoint:SheetView SheetName="Sheet1"&gt;
+                &lt;/FarPoint:SheetView&gt;
+            &lt;/sheets&gt;
+        &lt;/FarPoint:FpSpread&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<p>This example maps the event to a function.</p>
+<p>JavaScript</p>
+<pre><code class="language-java">&lt;script type="text/javascript"&gt;
+window.onload = function ()
+        {           
+            var spread1 = document.getElementById("&lt;%=FpSpread1.ClientID %&gt;");
+            if (spread1.addEventListener) {
+                // IE 9 and above or Chrome or FF
+                  spread1.addEventListener("ActiveCellChanged", cellChanged, false);
+                } else if (spread1.attachEvent) {
+                    spread1.attachEvent("onActiveCellChanged",  cellChanged);
+                } else {
+                    spread1.onActiveCellChanged =  cellChanged;
+} 
+         }
+         function cellChanged(event) {
+            alert("r" + event.row + ",c" + event.col);
+        }        
+&lt;/script&gt;
+
+</code></pre>
+
+<p>This example uses an attribute.</p>
+<p>C#</p>
+<pre><code class="language-csharp">protected void Page_Load(object sender, EventArgs e)
+        {
+            if (this.IsPostBack) return;
+            FpSpread1.Attributes.Add("onDataChanged", "Test(event)");            
+        }
+    }</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+FpSpread1.Attributes.Add("onDataChanged", "Test(event)")
+End Sub
+</code></pre>
+
+<p>JavaScript</p>
+<pre><code class="language-java">&lt;script type="text/javascript"&gt;
+function Test(event) {
+            alert("r" + event.row + ",c" + event.col);
+        }&lt;/script&gt;
+
+</code></pre>
+
+<p>The following sample code for the ASPX page uses the built-in GetValue method to total the values in the cells (all except the last cell) of the first column and uses the SetValue method to put the result in the last cell of that column. Type a value in a cell and change cells to see the result.<figure id="attachment_664939" style="width: 408px" class="wp-caption aligncenter"></p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpASPClientSample.png"><img class="size-full wp-image-664939 " alt="SpASPClientSample" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpASPClientSample.png" width="408" height="209" /></a><figcaption class="wp-caption-text">Total Result</figcaption></figure> </p>
+<p>C#</p>
+<pre><code class="language-csharp">protected void Page_Load(object sender, EventArgs e)
+        {
+            if (this.IsPostBack) return;
+            FpSpread1.Sheets[0].Cells[0, 0].Value = 4;
+            FpSpread1.Sheets[0].Cells[1, 0].Value = 3;
+            FpSpread1.Attributes.Add("onDataChanged", "doCalc(event)");
+        }
+</code></pre>
+
+<p>VB</p>
+<pre><code class="language-csharp">Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If (IsPostBack) Then
+            Return
+        End If
+        FpSpread1.Sheets(0).Cells(0, 0).Value = 4
+        FpSpread1.Sheets(0).Cells(1, 0).Value = 3
+        FpSpread1.Attributes.Add("onDataChanged", "doCalc(event)")
+    End Sub
+</code></pre>
+
+<p>JavaScript</p>
+<pre><code class="language-java">&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SpreadASP.aspx.cs" Inherits="SpWeb8CSharp.SpreadASP" %&gt;
+&lt;%@ Register assembly="FarPoint.Web.Spread, Version=8.40.20151.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" namespace="FarPoint.Web.Spread" tagprefix="FarPoint" %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head runat="server"&gt;
+    &lt;title&gt;Spread ASP.NET&lt;/title&gt;
+
+    &lt;script type="text/javascript"&gt;
+        function doCalc() {
+            var rc = FpSpread1.GetRowCount();
+            var total = 0;
+
+            for (var i = 0; i &lt; rc - 1; i++) {
+                var value = parseFloat(FpSpread1.GetValue( i, 0 ));
+                total += value;
+            }
+            if (!isNaN(total))
+                FpSpread1.SetValue(rc-1, 0, total, true);
+        }
+        &lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form id="form1" runat="server"&gt;
+    &lt;div&gt;
+    &lt;/div&gt;
+        &lt;FarPoint:FpSpread ID="FpSpread1" runat="server" BorderColor="#A0A0A0" BorderStyle="Solid" BorderWidth="1px" Height="200" Width="400"&gt;
+            &lt;commandbar backcolor="#F6F6F6" buttonfacecolor="Control" buttonhighlightcolor="ControlLightLight" buttonshadowcolor="ControlDark"&gt;
+            &lt;/commandbar&gt;
+            &lt;sheets&gt;
+                &lt;FarPoint:SheetView SheetName="Sheet1"&gt;
+                &lt;/FarPoint:SheetView&gt;
+            &lt;/sheets&gt;
+        &lt;/FarPoint:FpSpread&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+           <footer>
+                <div class="wrapper clearfix">
+                    <div class="footer-column footer-half">
+                        <div class="padder clearfix">
+                            <h3>About Spread Studio</h3>
+                            <p>Spread Studio is a multi-functional component that combines the utility of a grid with the power and flexibility of a spreadsheet to help developers working in Microsoft® Visual Studio and JavaScript add Microsoft® Excel functionality to their applications or websites. One package delivers a powerful formula engine, input controls, an API, full data import/export for Excel files, advanced charts, print support, and PDF export. Spread Studio is the only component you need in your toolbox for data bound and unbound WinForms, WPF, WinRT, ASP.NET, and JavaScript applications.</p>
+                            <p class="copyright-paragraph">
+                                ©
+                                <span><script>document.write(new Date().getFullYear())</script></span> <img src="/img/company/grapecity_150.png" alt="GrapeCity">, inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="footer-column footer-column-menu">
+                        <div class="padder clearfix">
+                            <h3>Company</h3>
+                            <ul class="footer-menu clearfix">
+                                <li><a href="/about-us/">About Us</a></li>
+                                <li><a href="/contact-us/">Contact Us</a></li>
+                                <li><a href="/legal/">Legal Information</a></li>
+                                <li><a href="/privacy/">Privacy Policy</a></li>
+                                <li><a href="/terms/">Terms of Use</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/dist/jquery.unslider-dist.js"></script>
+    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
+    <script src="/js/dist/jquery.waypoints-dist.js"></script>
+    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
+    <script src="/js/dist/jquery.velocity-dist.js"></script>
+    <script src="/js/dist/jquery.event.move-dist.js"></script>
+    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
+    <script src="/js/dist/init-dist.js"></script>
+
+
+
+</body>
+
+</html> 

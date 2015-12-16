@@ -1,0 +1,317 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Spread Windows Forms and Filtering</title>
+    <meta name="description" content="Spread Studio is our new cross-platform toolkit that includes components for Windows Forms, ASP.NET, WPF, WinRT, and Silverlight all in one package. This new package includes the new releases of Spread for WinForms and Spread for ASP.NET." name="description" />
+    <meta name="keywords" content="Spread.NET, ASP.NET, WPF, Silverlight, WinRT, .NET, spreadsheets, Data, PDF, Spreadsheet, Grid, Excel, analysis, GrapeCity, ASP.NET Spreadsheet component, .NET Spreadsheet component">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="DC.title" content="GrapeCity Spread" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Raleigh" />
+    <meta name="geo.position" content="40.458677;-79.924935" />
+    <meta name="ICBM" content="40.458677, -79.924935" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="GrapeCity Spread">
+    <meta itemprop="description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta itemprop="image" content="http://spread.grapecity.com/img/spread-photo.png">
+    <link href="https://plus.google.com/103999002053720301182/" rel="publisher" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="GrapeCity Spread">
+    <meta name="twitter:site" content="@gcspread">
+    <meta name="twitter:title" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:description" content="Spreadsheet Components for .NET and JavaScript-HTML5">
+    <meta name="twitter:creator" content="@gcspread">
+    <meta name="twitter:image" content="http://spread.grapecity.com/img/spread-photo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="GrapeCity Spread" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://spread.grapecity.com/" />
+    <meta property="og:image" content="http://spread.grapecity.com/img/spread-photo.png" />
+    <meta property="og:description" content="Spreadsheet Components for .NET and JavaScript-HTML5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css?v=1" />
+
+</head>
+
+<body class=" page-Spread Windows Forms and Filtering">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+    <main class="body-section">
+        <article class="body-inner">    <div class="nav-bar">
+        <div class="nav-bar-inner">
+            <div class="wrapper">
+                <div class="padder clearfix">
+                    <div class="search-container clearfix">
+                        <input placeholder="Search" type="search" />
+                        <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </div>
+                    <div class="user-container">
+                        <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
+                        <ul class="user-list hidden">
+                            <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
+                            <li><a href="#"><span class="lnr lnr-license"></span> Licenses</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Submit An Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<aside class="brand-section">
+        <div class="brand-inner clearfix">
+            <div class="brand-main">
+                <div class="brand-logo">
+                    <div class="padder clearfix">
+                        <h2><a href="/"><img src="/img/sp-icon-white.svg" alt="Spread" /><span class="logo-text">Spread</span> </a></h2>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-main">
+                <div class="nav-section">
+                    <div class="padder clearfix">
+                        <ul class="clearfix">
+                            <li class="studio">
+                                <a href="/products/spread-studio/"><img src="/img/sp-icon.svg" /><span class="menu-text">Spread Studio</span></a>
+                            </li>
+                            <li class="js">
+                                <a href="/products/spreadjs/"><img src="/img/js-icon.svg" /><span class="menu-text">SpreadJS</span></a>
+                            </li>
+                            <li class="com">
+                                <a href="/products/spread-com/"><img src="/img/com-icon.svg" /><span class="menu-text">Spread COM</span></a>
+                            </li>
+                            <li><a href="/pages/downloads/"><span class="lnr lnr-download"></span><span class="menu-text">Downloads</span></a></li>
+                            <li><a href="/pages/demo-gallery/"><span class="lnr lnr-cog"></span><span class="menu-text">Demo Gallery</span></a></li>
+                            <li><a href="/pages/pricing/"><span class="lnr lnr-cart"></span><span class="menu-text">Pricing</span></a></li>
+                            <li><a href="/pages/support-community/"><span class="lnr lnr-bubble"></span><span class="menu-text">Support & Community</span></a></li>
+                            <li><a href="/pages/documentation/"><span class="lnr lnr-book"></span><span class="menu-text">Documentation</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="brand-container">
+                <div class="padder clearfix">
+                    <div class="brand-more">
+                        <a class="brand-more-trigger" href="javascript:void(0);"><span class="lnr lnr-menu"></span> <span class="menu-text">More Tools</span></a>
+                        <ul class="brand-more-list hidden">
+                            <li><a href="#"><span class="lnr lnr-diamond"></span> ActiveReports</a></li>
+                            <li><a href="#"><span class="lnr lnr-poop"></span> ComponentOne</a></li>
+                            <li><a href="#"><span class="lnr lnr-bug"></span> Wijmo</a></li>
+                            <li><a href="#"><span class="lnr lnr-thumbs-down"></span> Xuni</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside><header>
+    <div class="wrapper">
+        <div class="padder clearfix">
+            <h1><span class="lnr lnr-book"></span> Spread Windows Forms and Filtering</h1>
+            <h3></h3>
+        </div>
+</header>
+
+
+<div class="wrapper-sections">
+    <section class="section-page">
+        <div class="wrapper">
+            <div class="padder clearfix">
+                <div class="entry">
+
+                    <p>You can use filtering to display data that meets specific criteria. This makes it easier to find and view a subset of the data.</p>
+<p>Spread Windows Forms supports enhanced row filtering. You can use the default filter menu or display a filter bar. The default filter that is displayed depends on the data in the column. The filter can be a number, text, date, or color filter.</p>
+<p>The following example creates an enhanced filter in the first three columns. The type of filter is based on the type of data in the column.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/numberfilter2.png"><img class="alignnone size-medium wp-image-663487" alt="numberfilter" src="http://sphelp.grapecity.com/wp-content/uploads/2015/06/numberfilter2-300x230.png" width="300" height="230" /></a></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      C#
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      fpSpread1.ActiveSheet.RowCount = 5;<br /> fpSpread1.ActiveSheet.ColumnCount = 5;<br /> FarPoint.Win.Spread.CellType.ColorPickerCellType cp = new FarPoint.Win.Spread.CellType.ColorPickerCellType();<br /> cp.AllowFullOpen = true;<br /> cp.AnyColor = false;<br /> cp.CustomColors = new int[] { 255, 190, 50 };<br /> cp.FullOpen = true;<br /> cp.Style = FarPoint.Win.Spread.CellType.ColorPickerStyle.Boxed;<br /> FarPoint.Win.Spread.CellType.ColorPickerCellType c = new FarPoint.Win.Spread.CellType.ColorPickerCellType(cp);<br /> fpSpread1.ActiveSheet.Columns[0].CellType = c;<br /> fpSpread1.ActiveSheet.Cells[0, 0].Value = System.Drawing.Color.Aqua;<br /> fpSpread1.ActiveSheet.Cells[2, 0].Value = System.Drawing.Color.Purple;FarPoint.Win.Spread.CellType.DateTimeCellType datecell = new FarPoint.Win.Spread.CellType.DateTimeCellType();<br /> datecell.DateTimeFormat = FarPoint.Win.Spread.CellType.DateTimeFormat.ShortDate;<br /> fpSpread1.ActiveSheet.Columns<a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/numberfilter2.png">1</a>.Width = 175;<br /> fpSpread1.ActiveSheet.Columns<a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/numberfilter2.png">1</a>.CellType = datecell;<br /> fpSpread1.ActiveSheet.Cells[1, 1].Value = System.DateTime.Now;<br /> fpSpread1.ActiveSheet.Cells[2, 1].Value = &#8220;5/10/2014&#8221;;FarPoint.Win.Spread.CellType.NumberCellType nmbrcell = new FarPoint.Win.Spread.CellType.NumberCellType();<br /> fpSpread1.ActiveSheet.Columns<a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/filterbar.png">2</a>.CellType = nmbrcell;<br /> fpSpread1.ActiveSheet.Cells[0, 2].Value = 0;<br /> fpSpread1.ActiveSheet.Cells[1, 2].Value = 5;<br /> fpSpread1.ActiveSheet.Cells[2, 2].Value = 1;<br /> fpSpread1.ActiveSheet.Cells[3, 2].Value = 4;<br /> fpSpread1.ActiveSheet.Cells[4, 2].Value = 10;fpSpread1.Sheets[0].Columns[0, 2].AllowAutoFilter = true;<br /> fpSpread1.Sheets[0].AutoFilterMode = FarPoint.Win.Spread.AutoFilterMode.EnhancedContextMenu;
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      VB
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      FpSpread1.ActiveSheet.RowCount = 5<br /> FpSpread1.ActiveSheet.ColumnCount = 5<br /> Dim cp As New FarPoint.Win.Spread.CellType.ColorPickerCellType()<br /> cp.AllowFullOpen = True<br /> cp.AnyColor = False<br /> cp.CustomColors = New Integer() {255, 190, 50}<br /> cp.FullOpen = True<br /> cp.Style = FarPoint.Win.Spread.CellType.ColorPickerStyle.Boxed<br /> Dim c As New FarPoint.Win.Spread.CellType.ColorPickerCellType(cp)<br /> FpSpread1.ActiveSheet.Columns(0).CellType = c<br /> FpSpread1.ActiveSheet.Cells(0, 0).Value = System.Drawing.Color.Aqua<br /> FpSpread1.ActiveSheet.Cells(2, 0).Value = System.Drawing.Color.PurpleDim datecell As New FarPoint.Win.Spread.CellType.DateTimeCellType()<br /> datecell.DateTimeFormat = FarPoint.Win.Spread.CellType.DateTimeFormat.ShortDate<br /> FpSpread1.ActiveSheet.Columns(1).CellType = datecell<br /> FpSpread1.ActiveSheet.Columns(1).Width = 175<br /> FpSpread1.ActiveSheet.Cells(1, 1).CellType = datecell<br /> FpSpread1.ActiveSheet.Cells(1, 1).Value = System.DateTime.Now<br /> FpSpread1.ActiveSheet.Cells(2, 1).Value = &#8220;5/10/2014&#8243;Dim nmbrcell As New FarPoint.Win.Spread.CellType.NumberCellType()<br /> FpSpread1.ActiveSheet.Columns(2).CellType = nmbrcell<br /> FpSpread1.ActiveSheet.Cells(0, 2).Value = 0<br /> FpSpread1.ActiveSheet.Cells(1, 2).Value = 5<br /> FpSpread1.ActiveSheet.Cells(2, 2).Value = 1<br /> FpSpread1.ActiveSheet.Cells(3, 2).Value = 4<br /> FpSpread1.ActiveSheet.Cells(4, 2).Value = 10FpSpread1.ActiveSheet.Columns(0, 2).AllowAutoFilter = True<br /> FpSpread1.ActiveSheet.AutoFilterMode = FarPoint.Win.Spread.AutoFilterMode.EnhancedContextMenu
+    </td>
+  </tr>
+</table>
+
+<p>You can add and customize the appearance of the filter bar. You can change the background and text colors and the grid lines and their color. The filter bar also provides a date picker to pick a date to filter by. Certain filter menu choices will display the date picker (before or after, for example). You can also type the value in the edit portion of the filter after you select a filter menu option.</p>
+<p>Setting the AutoFormat property to True specifies to use the DateTimeFormatInfo, FormatString, and NumberFormatInfo properties to format the value in the filter bar. Set these properties if the format of the data in the cell is different from the format in the filter bar. The Equals filter menu option requires that the cell format and the filter bar format be the same.</p>
+<p>To customize specific cells in the filter bar, set the FilterBar class&#8217;s Cells properties. To customize the filter bar overall, set the FilterBar&#8217;s DefaultStyle, Height, HorizontalGridLine, and VerticalGridLine properties.</p>
+<p>This example sets one cell in the filter bar to display a custom border and background color, and the entire filter bar to display a custom border.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/filterbar.png"><img class="alignnone size-full wp-image-663489" alt="filterbar" src="http://sphelp.grapecity.com/wp-content/uploads/2015/06/filterbar.png" width="283" height="67" /></a></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      C#
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      FarPoint.Win.Spread.SheetView sheetView = fpSpread1.ActiveSheet;<br /> sheetView.AutoFilterMode = FarPoint.Win.Spread.AutoFilterMode.FilterBar;<br /> sheetView.FilterBar.Cells[0].Border = new FarPoint.Win.DoubleLineBorder(Color.Red);<br /> sheetView.FilterBar.Cells[0].BackColor = Color.GreenYellow;<br /> sheetView.FilterBar.DefaultStyle.Border = new FarPoint.Win.DoubleLineBorder(Color.Yellow);<br /> sheetView.Columns[0].Width = 125;
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      VB
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      Dim sheetView As FarPoint.Win.Spread.SheetView = FpSpread1.ActiveSheet<br /> sheetView.AutoFilterMode = FarPoint.Win.Spread.AutoFilterMode.FilterBar<br /> sheetView.FilterBar.Cells(0).Border = New FarPoint.Win.DoubleLineBorder(Color.Red)<br /> sheetView.FilterBar.Cells(0).BackColor = Color.GreenYellow<br /> sheetView.FilterBar.DefaultStyle.Border = New FarPoint.Win.DoubleLineBorder(Color.Yellow)<br /> sheetView.Columns(0).Width = 125
+    </td>
+  </tr>
+</table>
+
+<p>This example displays a date filter icon if you pick a filter option such as “After”.</p>
+<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/datefilterafter.png"><img class="alignnone size-full wp-image-663490" alt="datefilterafter" src="http://sphelp.grapecity.com/wp-content/uploads/2015/06/datefilterafter.png" width="185" height="65" /></a></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      C#
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      FarPoint.Win.Spread.CellType.FilterBarCellType fbcell = new FarPoint.Win.Spread.CellType.FilterBarCellType();<br /> fbcell.AutoFormat = true;<br /> fbcell.ContextMenuType = FarPoint.Win.Spread.CellType.FilterBarContextMenuType.DateTime;<br /> fpSpread1.ActiveSheet.AutoFilterMode = FarPoint.Win.Spread.AutoFilterMode.FilterBar;<br /> fpSpread1.ActiveSheet.FilterBar.Cells[0].CellType = fbcell;FarPoint.Win.Spread.CellType.DateTimeCellType datecell = new FarPoint.Win.Spread.CellType.DateTimeCellType();<br /> fpSpread1.ActiveSheet.Columns[0].Width = 175;<br /> fpSpread1.ActiveSheet.Columns[0].CellType = datecell;<br /> fpSpread1.ActiveSheet.Cells[0, 0].Value = System.DateTime.Now;
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      VB
+    </td>
+
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="top">
+      Dim fbcell As New FarPoint.Win.Spread.CellType.FilterBarCellType()<br /> fbcell.AutoFormat = True<br /> fbcell.ContextMenuType = FarPoint.Win.Spread.CellType.FilterBarContextMenuType.DateTime<br /> FpSpread1.ActiveSheet.AutoFilterMode = FarPoint.Win.Spread.AutoFilterMode.FilterBar<br /> FpSpread1.ActiveSheet.FilterBar.Cells(0).CellType = fbcellDim datecell As New FarPoint.Win.Spread.CellType.DateTimeCellType()<br /> FpSpread1.ActiveSheet.Columns(0).Width = 175<br /> FpSpread1.ActiveSheet.Columns(0).CellType = datecell<br /> FpSpread1.ActiveSheet.Cells(0, 0).Value = System.DateTime.Now
+    </td>
+  </tr>
+</table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+           <footer>
+                <div class="wrapper clearfix">
+                    <div class="footer-column footer-half">
+                        <div class="padder clearfix">
+                            <h3>About Spread Studio</h3>
+                            <p>Spread Studio is a multi-functional component that combines the utility of a grid with the power and flexibility of a spreadsheet to help developers working in Microsoft® Visual Studio and JavaScript add Microsoft® Excel functionality to their applications or websites. One package delivers a powerful formula engine, input controls, an API, full data import/export for Excel files, advanced charts, print support, and PDF export. Spread Studio is the only component you need in your toolbox for data bound and unbound WinForms, WPF, WinRT, ASP.NET, and JavaScript applications.</p>
+                            <p class="copyright-paragraph">
+                                ©
+                                <span><script>document.write(new Date().getFullYear())</script></span> <img src="/img/company/grapecity_150.png" alt="GrapeCity">, inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="footer-column footer-column-menu">
+                        <div class="padder clearfix">
+                            <h3>Company</h3>
+                            <ul class="footer-menu clearfix">
+                                <li><a href="/about-us/">About Us</a></li>
+                                <li><a href="/contact-us/">Contact Us</a></li>
+                                <li><a href="/legal/">Legal Information</a></li>
+                                <li><a href="/privacy/">Privacy Policy</a></li>
+                                <li><a href="/terms/">Terms of Use</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/dist/jquery.unslider-dist.js"></script>
+    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
+    <script src="/js/dist/jquery.waypoints-dist.js"></script>
+    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
+    <script src="/js/dist/jquery.velocity-dist.js"></script>
+    <script src="/js/dist/jquery.event.move-dist.js"></script>
+    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
+    <script src="/js/dist/init-dist.js"></script>
+
+
+
+</body>
+
+</html> 

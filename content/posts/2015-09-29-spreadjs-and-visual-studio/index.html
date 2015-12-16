@@ -1,0 +1,82 @@
+<hr>
+<p>title: SpreadJS and Visual Studio
+layout: post
+template: post.hbt
+permalink: /2015/09/29/spreadjs-and-visual-studio/
+dzsvg_fullscreen:</p>
+<ul>
+<li>none
+dzsvg_extras_featured:</li>
+<li>none
+categories:</li>
+<li>Spread</li>
+<li>SpreadJS</li>
+<li>Spreadsheets</li>
+</ul>
+<hr>
+<p>You can use SpreadJS in a Visual Studio project. This provides access to automatic complete and code checking in Visual Studio.</p>
+<p>Use the following steps to create a project that uses SpreadJS.</p>
+<ol>
+<li><p>Create an ASP.NET project (File, New Project or New Project in Visual Studio).� Select ASP.NET Web Application. Specify the Name, Location, and Solution name. 
+<figure id="attachment_665000" style="width: 943px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSWebProject.png"><img class="size-full wp-image-665000 " alt="SpreadJSWebProject" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSWebProject.png" width="943" height="656" /></a><figcaption class="wp-caption-text">New Project</figcaption></figure></li> </p>
+<ul>
+<li><p>Select a template such as Empty and select OK. 
+<figure id="attachment_665001" style="width: 785px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSEmpty.png"><img class="size-full wp-image-665001 " alt="SpreadJSEmpty" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSEmpty.png" width="785" height="611" /></a><figcaption class="wp-caption-text">Empty Template</figcaption></figure></li> </p>
+<ul>
+<li><p>Select Project, Add New Item. 
+<figure id="attachment_665002" style="width: 668px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSAddNewItem.png"><img class="size-full wp-image-665002 " alt="SpreadJSAddNewItem" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSAddNewItem.png" width="668" height="432" /></a><figcaption class="wp-caption-text">New Item</figcaption></figure></li> </p>
+<ul>
+<li><p>Select HTML page. Specify a name. Select Add. You can also right-click on the HTML file in the Solution Explorer and change the name (Rename menu option). 
+<figure id="attachment_665003" style="width: 940px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSHtml.png"><img class="size-full wp-image-665003 " alt="SpreadJSHtml" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSHtml.png" width="940" height="648" /></a><figcaption class="wp-caption-text">HTML Page</figcaption></figure></li> </p>
+<ul>
+<li>Save the file (File, Save SpreadJSHtml.html).</li>
+<li><p>Add the file to the project (Project, Add Existing Item). 
+<figure id="attachment_665004" style="width: 691px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSAddExisting.png"><img class="size-full wp-image-665004 " alt="SpreadJSAddExisting" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSAddExisting.png" width="691" height="431" /></a><figcaption class="wp-caption-text">Existing Item</figcaption></figure></li> </p>
+<ul>
+<li><p>Select the file in the project folder (SpreadJSHtml.html) and select Add. You can also use the Add Existing Item option to add the gcspread.sheets.all.8.40.20151.5.min.js and gcspread.sheets.all.8.40.20151.5.css files to the project so that you can use relative paths. <figure id="attachment_665014" style="width: 707px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSlocation.png"><img class="size-full wp-image-665014 " alt="SpreadJSlocation" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSlocation.png" width="707" height="471" /></a><figcaption class="wp-caption-text">Add File</figcaption></figure> <p style="text-align: center;">
+  </li> </p>
+<p>  <li></p>
+<pre><code>Use code similar to the following to add the widget to the page. &lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+</code></pre><p>&lt;html lang=&quot;en&quot; xmlns=&quot;<a href="http://www.w3.org/1999/xhtml&quot;&amp;gt">http://www.w3.org/1999/xhtml&quot;&amp;gt</a>;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot; /&gt;
+&lt;title&gt;SpreadJS&lt;/title&gt;
+&lt;script src=&quot;<a href="http://code.jquery.com/jquery-2.0.2.js">http://code.jquery.com/jquery-2.0.2.js</a>&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;gcspread.sheets.all.8.40.20151.5.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;gcspread.sheets.all.8.40.20151.5.css&quot;&gt;&lt;/script&gt;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&lt;script type=&quot;text/javascript&quot;&gt;
+$(function () {
+   var spread = new GcSpread.Sheets.Spread($(&quot;#ss&quot;)[0]);
+   var sheet = spread.getActiveSheet();
+   sheet.setValue(0, 0, &quot;This is a test&quot;);
+   sheet.getCell(0, 0).backColor(&quot;yellow&quot;);
+   sheet.getColumn(0).width(100);</p>
+<pre><code>})
+</code></pre><p>&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;ss&quot; style=&quot;width:600px;height:450px&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></p>
+<pre><code>                   &lt;p&gt;
+                     &lt;figure id=&quot;attachment_665007&quot; style=&quot;width: 998px&quot; class=&quot;wp-caption aligncenter&quot;&gt;&lt;a href=&quot;http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSCode.png&quot;&gt;&lt;img class=&quot;size-full wp-image-665007 &quot; alt=&quot;SpreadJSCode&quot; src=&quot;http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSCode.png&quot; width=&quot;998&quot; height=&quot;471&quot; /&gt;&lt;/a&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Sample Code&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt; 
+
+                     &lt;li&gt;
+                       You can use the View in Browser option to test the page or use the Run option. &lt;p&gt;
+                         &lt;figure id=&quot;attachment_665008&quot; style=&quot;width: 438px&quot; class=&quot;wp-caption aligncenter&quot;&gt;&lt;a href=&quot;http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSViewBrowser.png&quot;&gt;&lt;img class=&quot;size-full wp-image-665008 &quot; alt=&quot;SpreadJSViewBrowser&quot; src=&quot;http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSViewBrowser.png&quot; width=&quot;438&quot; height=&quot;365&quot; /&gt;&lt;/a&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;View in Browser&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt; 
+
+                         &lt;li&gt;
+                           The completed example is illustrated in the following image. &lt;p&gt;
+                             &lt;figure id=&quot;attachment_665009&quot; style=&quot;width: 592px&quot; class=&quot;wp-caption aligncenter&quot;&gt;&lt;a href=&quot;http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSComplete.png&quot;&gt;&lt;img class=&quot;size-full wp-image-665009 &quot; alt=&quot;SpreadJSComplete&quot; src=&quot;http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJSComplete.png&quot; width=&quot;592&quot; height=&quot;465&quot; /&gt;&lt;/a&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Completed Sample&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt; &lt;/ol&gt; &lt;/ol&gt;
+</code></pre></li>
+</ol>
