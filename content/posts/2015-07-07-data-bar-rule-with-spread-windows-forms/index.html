@@ -126,53 +126,51 @@ d.Minimum = <span class="hljs-keyword">new</span> FarPoint.Win.Spread.Conditiona
 d.Maximum = <span class="hljs-keyword">new</span> FarPoint.Win.Spread.ConditionalFormattingValue(<span class="hljs-number">15</span>, FarPoint.Win.Spread.ConditionalFormattingValueType.Max);
 fpSpread1.ActiveSheet.SetConditionalFormatting(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">15</span>, <span class="hljs-number">1</span>, d);
 fpSpread1.Font = <span class="hljs-keyword">new</span> System.Drawing.Font(<span class="hljs-string">"Calibri"</span>, <span class="hljs-number">11</span>);
-}</code></pre>
-
-<pre><code><span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> DataBar_Load(<span class="hljs-keyword">ByVal</span> sender <span class="hljs-keyword">As</span> System.<span class="hljs-built_in">Object</span>, <span class="hljs-keyword">ByVal</span> e <span class="hljs-keyword">As</span> System.EventArgs) <span class="hljs-keyword">Handles</span> <span class="hljs-keyword">MyBase</span>.Load
-<span class="hljs-comment">'Add sample data</span>
-<span class="hljs-keyword">Dim</span> conStr <span class="hljs-keyword">As</span> <span class="hljs-built_in">String</span> = <span class="hljs-string">"Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"</span>
-<span class="hljs-keyword">Dim</span> sqlStr <span class="hljs-keyword">As</span> <span class="hljs-built_in">String</span> = <span class="hljs-string">"Select Quantity from [Order Details]"</span>
-<span class="hljs-keyword">Dim</span> conn <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> System.Data.OleDb.OleDbConnection(conStr)
-<span class="hljs-keyword">Dim</span> ds <span class="hljs-keyword">As</span> DataSet = <span class="hljs-keyword">New</span> DataSet()
-<span class="hljs-keyword">Dim</span> da <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
+}</code></pre>`VB
+Private Sub DataBar_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+'Add sample data
+Dim conStr As String = "Provider=Microsoft.JET.OLEDB.4.0;data source= C:\Program Files (x86)\GrapeCity\Spread Studio 8\Common\nwind.mdb"
+Dim sqlStr As String = "Select Quantity from [Order Details]"
+Dim conn As New System.Data.OleDb.OleDbConnection(conStr)
+Dim ds As DataSet = New DataSet()
+Dim da As New System.Data.OleDb.OleDbDataAdapter(sqlStr, conn)
 da.Fill(ds)
-FpSpread1.ActiveSheet.DataAutoSizeColumns = <span class="hljs-literal">True</span>
+FpSpread1.ActiveSheet.DataAutoSizeColumns = True
 FpSpread1.ActiveSheet.DataSource = ds
-FpSpread1.Sheets(<span class="hljs-number">0</span>).RowCount = <span class="hljs-number">15</span>
-FpSpread1.Sheets(<span class="hljs-number">0</span>).Columns(<span class="hljs-number">0</span>).Width = <span class="hljs-number">100</span>
-<span class="hljs-keyword">Dim</span> d <span class="hljs-keyword">As</span> <span class="hljs-keyword">New</span> FarPoint.Win.Spread.DatabarConditionalFormattingRule()
+FpSpread1.Sheets(0).RowCount = 15
+FpSpread1.Sheets(0).Columns(0).Width = 100
+Dim d As New FarPoint.Win.Spread.DatabarConditionalFormattingRule()
 d.BorderColor = Color.Red
-d.ShowBorder = <span class="hljs-literal">True</span>
-d.Minimum = <span class="hljs-keyword">New</span> FarPoint.Win.Spread.ConditionalFormattingValue(<span class="hljs-number">0</span>, FarPoint.Win.Spread.ConditionalFormattingValueType.Number)
-d.Maximum = <span class="hljs-keyword">New</span> FarPoint.Win.Spread.ConditionalFormattingValue(<span class="hljs-number">15</span>, FarPoint.Win.Spread.ConditionalFormattingValueType.Max)
-FpSpread1.ActiveSheet.SetConditionalFormatting(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">15</span>, <span class="hljs-number">1</span>, d)
-FpSpread1.Font = <span class="hljs-keyword">New</span> System.Drawing.Font(<span class="hljs-string">"Calibri"</span>, <span class="hljs-number">11</span>)
-<span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span></code></pre>
+d.ShowBorder = True
+d.Minimum = New FarPoint.Win.Spread.ConditionalFormattingValue(0, FarPoint.Win.Spread.ConditionalFormattingValueType.Number)
+d.Maximum = New FarPoint.Win.Spread.ConditionalFormattingValue(15, FarPoint.Win.Spread.ConditionalFormattingValueType.Max)
+FpSpread1.ActiveSheet.SetConditionalFormatting(0, 0, 15, 1, d)
+FpSpread1.Font = New System.Drawing.Font("Calibri", 11)
+End Sub
+<pre><code class="hljs">This example sets border <span class="hljs-constant">and</span> fill colors for negative values.&lt;figure <span class="hljs-variable">id=</span><span class="hljs-string">"attachment_663776"</span> <span class="hljs-variable">style=</span><span class="hljs-string">"width: 200px"</span> <span class="hljs-variable">class=</span><span class="hljs-string">"wp-caption aligncenter"</span>&gt;
 
-<p>This example sets border and fill colors for negative values.<figure id="attachment_663776" style="width: 200px" class="wp-caption aligncenter"></p>
-<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/07/databarnegative.png"><img class="size-full wp-image-663776" alt="Negative Values" src="http://sphelp.grapecity.com/wp-content/uploads/2015/07/databarnegative.png" width="200" height="105" /></a><figcaption class="wp-caption-text">Negative Values in Data Bar</figcaption></figure> </p>
-<pre><code class="hljs">C<span class="hljs-comment">#</span>
-fpSpread1.Sheets[<span class="hljs-number">0</span>].Columns[<span class="hljs-number">0</span>].<span class="hljs-variable">Width =</span> <span class="hljs-number">100</span>;
-fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">2</span>;
-fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> -<span class="hljs-number">1</span>;
-fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">2</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">5</span>;
-fpSpread1.Sheets[<span class="hljs-number">0</span>].Cells[<span class="hljs-number">3</span>, <span class="hljs-number">0</span>].<span class="hljs-variable">Value =</span> <span class="hljs-number">3</span>;
-FarPoint.Win.Spread.DatabarConditionalFormattingRule <span class="hljs-variable">dataBarRule =</span> new FarPoint.Win.Spread.DatabarConditionalFormattingRule();
-dataBarRule.<span class="hljs-variable">AxisPosition =</span> FarPoint.Win.Spread.DataBarAxisPosition.Automatic;
-dataBarRule.<span class="hljs-variable">BorderColor =</span> Color.Blue;
-dataBarRule.<span class="hljs-variable">NegativeFillColor =</span> Color.Red;
-dataBarRule.<span class="hljs-variable">NegativeBorderColor =</span> Color.Firebrick;
-dataBarRule.<span class="hljs-variable">Gradient =</span> <span class="hljs-constant">true</span>;
-dataBarRule.<span class="hljs-variable">Maximum =</span> new FarPoint.Win.Spread.ConditionalFormattingValue(FarPoint.Win.Spread.ConditionalFormattingValueType.AutoMax);
-dataBarRule.<span class="hljs-variable">Minimum =</span> new FarPoint.Win.Spread.ConditionalFormattingValue(FarPoint.Win.Spread.ConditionalFormattingValueType.AutoMin);
-dataBarRule.<span class="hljs-variable">UseNegativeFillColor =</span> <span class="hljs-constant">true</span>;
-dataBarRule.<span class="hljs-variable">UseNegativeBorderColor =</span> <span class="hljs-constant">true</span>;
-dataBarRule.<span class="hljs-variable">ShowBorder =</span> <span class="hljs-constant">true</span>;
-FarPoint.Win.Spread.ConditionalFormatting <span class="hljs-variable">cf =</span> new FarPoint.Win.Spread.ConditionalFormatting(new FarPoint.Win.Spread.Model.CellRange(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>));
+[&lt;img <span class="hljs-variable">class=</span><span class="hljs-string">"size-full wp-image-663776"</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"Negative Values"</span> <span class="hljs-variable">src=</span><span class="hljs-string">"http://sphelp.grapecity.com/wp-content/uploads/2015/07/databarnegative.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"200"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"105"</span> /&gt;][<span class="hljs-number">2</span>]&lt;figcaption <span class="hljs-variable">class=</span><span class="hljs-string">"wp-caption-text"</span>&gt;Negative Values <span class="hljs-keyword">in</span> Data Bar&lt;/figcaption&gt;&lt;/figure&gt;</code></pre>
+C#
+fpSpread1.Sheets[0].Columns[0].Width = 100;
+fpSpread1.Sheets[0].Cells[0, 0].Value = 2;
+fpSpread1.Sheets[0].Cells[1, 0].Value = -1;
+fpSpread1.Sheets[0].Cells[2, 0].Value = 5;
+fpSpread1.Sheets[0].Cells[3, 0].Value = 3;
+FarPoint.Win.Spread.DatabarConditionalFormattingRule dataBarRule = new FarPoint.Win.Spread.DatabarConditionalFormattingRule();
+dataBarRule.AxisPosition = FarPoint.Win.Spread.DataBarAxisPosition.Automatic;
+dataBarRule.BorderColor = Color.Blue;
+dataBarRule.NegativeFillColor = Color.Red;
+dataBarRule.NegativeBorderColor = Color.Firebrick;
+dataBarRule.Gradient = true;
+dataBarRule.Maximum = new FarPoint.Win.Spread.ConditionalFormattingValue(FarPoint.Win.Spread.ConditionalFormattingValueType.AutoMax);
+dataBarRule.Minimum = new FarPoint.Win.Spread.ConditionalFormattingValue(FarPoint.Win.Spread.ConditionalFormattingValueType.AutoMin);
+dataBarRule.UseNegativeFillColor = true;
+dataBarRule.UseNegativeBorderColor = true;
+dataBarRule.ShowBorder = true;
+FarPoint.Win.Spread.ConditionalFormatting cf = new FarPoint.Win.Spread.ConditionalFormatting(new FarPoint.Win.Spread.Model.CellRange(0, 0, 4, 1));
 cf.Add(dataBarRule);
 fpSpread1.ActiveSheet.Models.ConditionalFormatting.Add(cf);
-fpSpread1.<span class="hljs-variable">Font =</span> new System.Drawing.Font(<span class="hljs-string">"Calibri"</span>, <span class="hljs-number">11</span>);</code></pre>
-
+fpSpread1.Font = new System.Drawing.Font("Calibri", 11);
 <pre><code>FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Columns</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span><span class="hljs-class">.Width</span> = <span class="hljs-number">100</span>
 FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)</span></span><span class="hljs-class">.Value</span> = <span class="hljs-number">2</span>
 FpSpread1.<span class="hljs-function"><span class="hljs-title">Sheets</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">Cells</span><span class="hljs-params">(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span><span class="hljs-class">.Value</span> = -<span class="hljs-number">1</span>

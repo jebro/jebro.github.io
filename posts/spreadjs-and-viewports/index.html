@@ -180,74 +180,80 @@
 <span class="hljs-keyword">var</span> vp0tr = sheet.getViewportTopRow(<span class="hljs-number">0</span>);
 <span class="hljs-keyword">var</span> vp1tr = sheet.getViewportTopRow(<span class="hljs-number">1</span>);
 <span class="hljs-keyword">var</span> vp2tr = sheet.getViewportTopRow(<span class="hljs-number">2</span>);
-<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following code returns “0 : 2 : 200”.<figure id="attachment_665888" style="width: 632px" class="wp-caption aligncenter">
 
-<p>``<br>The following code returns “0 : 2 : 200”.<figure id="attachment_665888" style="width: 632px" class="wp-caption aligncenter"></p>
-<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowFrozen.png"><img class="size-full wp-image-665888 " alt="SpreadJSTopRowFrozen" src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowFrozen.png" width="632" height="377" /></a><figcaption class="wp-caption-text">Frozen Rows</figcaption></figure> </p>
+[<img class="size-full wp-image-665888 " alt="SpreadJSTopRowFrozen" src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowFrozen.png" width="632" height="377" />][2]<figcaption class="wp-caption-text">Frozen Rows</figcaption></figure> 
+
 <pre><code>sheet.setFrozenRowCount(<span class="hljs-number">2</span>);
 <span class="hljs-variable">vp0tr =</span> sheet.getViewportTopRow(<span class="hljs-number">0</span>);
 <span class="hljs-variable">vp1tr =</span> sheet.getViewportTopRow(<span class="hljs-number">1</span>);
 <span class="hljs-variable">vp2tr =</span> sheet.getViewportTopRow(<span class="hljs-number">2</span>);
-console.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+console.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following code returns “0 : 0 : 197”.<figure id="attachment_665889" style="width: 628px" class="wp-caption aligncenter">
 
-<p>``<br>The following code returns “0 : 0 : 197”.<figure id="attachment_665889" style="width: 628px" class="wp-caption aligncenter"></p>
-<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowTrailingFrozen.png"><img class="size-full wp-image-665889 " alt="SpreadJSTopRowTrailingFrozen" src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowTrailingFrozen.png" width="628" height="377" /></a><figcaption class="wp-caption-text">Frozen Trailing Rows</figcaption></figure> </p>
+[<img class="size-full wp-image-665889 " alt="SpreadJSTopRowTrailingFrozen" src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSTopRowTrailingFrozen.png" width="628" height="377" />][3]<figcaption class="wp-caption-text">Frozen Trailing Rows</figcaption></figure> 
+
 <pre><code>sheet.setFrozenTrailingRowCount(<span class="hljs-number">3</span>); 
 <span class="hljs-variable">vp0tr =</span> sheet.getViewportTopRow(<span class="hljs-number">0</span>);
 <span class="hljs-variable">vp1tr =</span> sheet.getViewportTopRow(<span class="hljs-number">1</span>);
 <span class="hljs-variable">vp2tr =</span> sheet.getViewportTopRow(<span class="hljs-number">2</span>);
-console.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+console.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following examples return the results for the getViewportBottomRow method.
 
-<p>``<br>The following examples return the results for the getViewportBottomRow method.</p>
-<p>The following code returns “-1 : 13 : 199”.</p>
+The following code returns “-1 : 13 : 199”.
+
 <pre><code><span class="hljs-reserved">var</span> vp1tr = activeSheet.getViewportBottomRow(<span class="hljs-number">1</span>);
 <span class="hljs-reserved">var</span> vp2tr = activeSheet.getViewportBottomRow(<span class="hljs-number">2</span>);
-<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following code returns “1 : 13 : 199”.
 
-<p>``<br>The following code returns “1 : 13 : 199”.</p>
 <pre><code><span class="hljs-reserved">var</span> vp0tr = activeSheet.getViewportBottomRow(<span class="hljs-number">0</span>);
 <span class="hljs-reserved">var</span> vp1tr = activeSheet.getViewportBottomRow(<span class="hljs-number">1</span>);
 <span class="hljs-reserved">var</span> vp2tr = activeSheet.getViewportBottomRow(<span class="hljs-number">2</span>);
-<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following code returns “-1 : 10 : 199”.
 
-<p>``<br>The following code returns “-1 : 10 : 199”.</p>
 <pre><code><span class="hljs-reserved">var</span> vp0tr = activeSheet.getViewportBottomRow(<span class="hljs-number">0</span>);
 <span class="hljs-reserved">var</span> vp1tr = activeSheet.getViewportBottomRow(<span class="hljs-number">1</span>);
 <span class="hljs-reserved">var</span> vp2tr = activeSheet.getViewportBottomRow(<span class="hljs-number">2</span>);
-<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following examples return the results for the getViewportLeftColumn method.
 
-<p>``<br>The following examples return the results for the getViewportLeftColumn method.</p>
-<p>The following code returns the result “0 : 0 : 20”.</p>
+The following code returns the result “0 : 0 : 20”.
+
 <pre><code><span class="hljs-reserved">var</span> vp1tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">1</span>);
 <span class="hljs-reserved">var</span> vp2tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">2</span>);
-<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following code returns the result “0 : 2 : 20”.
 
-<p>``<br>The following code returns the result “0 : 2 : 20”.</p>
 <pre><code><span class="hljs-reserved">var</span> vp0tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">0</span>);
 <span class="hljs-reserved">var</span> vp1tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">1</span>);
 <span class="hljs-reserved">var</span> vp2tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">2</span>);
-<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following code returns the result “0 : 0 : 17”.<figure id="attachment_665891" style="width: 632px" class="wp-caption aligncenter">
 
-<p>``<br>The following code returns the result “0 : 0 : 17”.<figure id="attachment_665891" style="width: 632px" class="wp-caption aligncenter"></p>
-<p><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSFrozenTrailingColumn.png"><img class="size-full wp-image-665891 " alt="SpreadJSFrozenTrailingColumn" src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSFrozenTrailingColumn.png" width="632" height="382" /></a><figcaption class="wp-caption-text">Frozen Trailing Columns</figcaption></figure> </p>
+[<img class="size-full wp-image-665891 " alt="SpreadJSFrozenTrailingColumn" src="http://sphelp.grapecity.com/wp-content/uploads/2015/11/SpreadJSFrozenTrailingColumn.png" width="632" height="382" />][4]<figcaption class="wp-caption-text">Frozen Trailing Columns</figcaption></figure> 
+
 <pre><code><span class="hljs-reserved">var</span> vp0tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">0</span>);
 <span class="hljs-reserved">var</span> vp1tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">1</span>);
 <span class="hljs-reserved">var</span> vp2tr = activeSheet.getViewportLeftColumn(<span class="hljs-number">2</span>);
-<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following examples return the results for the getViewportRightColumn method.
 
-<p>``<br>The following examples return the results for the getViewportRightColumn method.</p>
-<p>The following code returns the result “-1 : 7 : 19”.</p>
+The following code returns the result “-1 : 7 : 19”.
+
 <pre><code><span class="hljs-reserved">var</span> vp1tr = activeSheet.getViewportRightColumn(<span class="hljs-number">1</span>);
 <span class="hljs-reserved">var</span> vp2tr = activeSheet.getViewportRightColumn(<span class="hljs-number">2</span>);
-<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following code returns the result “1 : 7 : 19”.
 
-<p>``<br>The following code returns the result “1 : 7 : 19”.</p>
 <pre><code><span class="hljs-reserved">var</span> vp0tr = activeSheet.getViewportRightColumn(<span class="hljs-number">0</span>);
 <span class="hljs-reserved">var</span> vp1tr = activeSheet.getViewportRightColumn(<span class="hljs-number">1</span>);
 <span class="hljs-reserved">var</span> vp2tr = activeSheet.getViewportRightColumn(<span class="hljs-number">2</span>);
-<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>
+<span class="hljs-built_in">console</span>.log(vp0tr + <span class="hljs-string">" : "</span> + vp1tr + <span class="hljs-string">" : "</span> + vp2tr);</code></pre>  
+The following code returns the result “-1 : 4 : 19”.
 
-<p>``<br>The following code returns the result “-1 : 4 : 19”.</p>
 <pre><code><span class="hljs-reserved">var</span> vp0tr = activeSheet.getViewportRightColumn(<span class="hljs-number">0</span>);
 <span class="hljs-reserved">var</span> vp1tr = activeSheet.getViewportRightColumn(<span class="hljs-number">1</span>);
 <span class="hljs-reserved">var</span> vp2tr = activeSheet.getViewportRightColumn(<span class="hljs-number">2</span>);
