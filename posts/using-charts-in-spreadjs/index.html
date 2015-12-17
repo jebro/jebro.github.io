@@ -77,7 +77,7 @@
                         <input placeholder="Search" type="search" />
                         <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
                     </div>
-                    <div class="user-container">
+                    <div class="user-container clearfix">
                         <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
                         <ul class="user-list hidden">
                             <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
@@ -136,20 +136,18 @@
                 </div>
             </div>
         </div>
-    </aside><header>
+    </aside><header class="post-header">
     <div class="wrapper">
         <div class="padder clearfix">
-            <h1><span class="lnr lnr-book"></span> Using Charts in SpreadJS</h1>
-            <h3></h3>
+            <h1>Using Charts in SpreadJS</h1>
         </div>
 </header>
 
 
 <div class="wrapper-sections">
-    <section class="section-page">
+    <section class="post-entry">
         <div class="wrapper">
             <div class="padder clearfix">
-                <div class="entry">
 
                     <p>SpreadJS is a useful tool for adding the power of Spread to webpages using JavaScript. Being able to easily display data in a spreadsheet without having to create html tables by hand is useful for web developers who simply want to convey information. SpreadJS has the concept of Sparklines, which are small graphs contained within cells. While this is useful, it might also be desirable to create large graphs that don’t depend on being inside of a cell. To do this, we can use a Custom Floating Object to wrap a third-party chart into SpreadJS. In this blog, I will show you how to insert a D3-based chart inside of SpreadJS.</p>
 <p>To start off, I needed some sample data to display in the chart, so I created a function that simply generates new data every time the page loads:</p>
@@ -208,7 +206,6 @@ activeSheet.addFloatingObject(floatChart);<pre><code class="hljs"><span class="h
 <p><figure id="attachment_664773" style="width: 622px" class="wp-caption aligncenter"><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/Figure1.png"><img class=" wp-image-664773  " alt="This is the completed webpage with SpreadJS" src="http://sphelp.grapecity.com/wp-content/uploads/2015/09/Figure1.png" width="622" height="513" /></a><figcaption class="wp-caption-text">This is the completed webpage with SpreadJS</figcaption></figure><br><a href="http://sphelp.grapecity.com/wp-content/uploads/2015/09/SpreadJS-Charts.zip">SpreadJS Charts</a></p>
 
 
-                </div>
             </div>
         </div>
     </section>
@@ -249,14 +246,7 @@ activeSheet.addFloatingObject(floatChart);<pre><code class="hljs"><span class="h
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/js/dist/jquery.unslider-dist.js"></script>
-    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
-    <script src="/js/dist/jquery.waypoints-dist.js"></script>
-    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
-    <script src="/js/dist/jquery.velocity-dist.js"></script>
-    <script src="/js/dist/jquery.event.move-dist.js"></script>
-    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
-    <script src="/js/dist/init-dist.js"></script>
+    <script src="/js/app-min.js?v=1"></script>
 
 
 

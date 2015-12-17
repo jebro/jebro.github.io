@@ -77,7 +77,7 @@
                         <input placeholder="Search" type="search" />
                         <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
                     </div>
-                    <div class="user-container">
+                    <div class="user-container clearfix">
                         <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
                         <ul class="user-list hidden">
                             <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
@@ -139,7 +139,7 @@
     </aside><header>
     <div class="wrapper">
         <div class="padder clearfix">
-            <h1><span class="lnr lnr-book"></span> Blog</h1>
+            <h1><span class="lnr lnr-bubble-text"></span> Blog</h1>
         </div>
 </header>
 
@@ -155,10 +155,10 @@
                             <p>A viewport in SpreadJS is the visible area of the sheet (excluding headers, the tab strip, and the scroll bar). You may want to know the&#x2026;<a href="/posts/spreadjs-and-viewports">Read More</a></p>
                             <h3><a href="/posts/multirow-and-merging">MultiRow and Merging</a></h3>  
                             <p>MultiRow allows automatic merging of cells. Cells are merged when the cell values placed in the row are the same in vertically, adjacent&#x2026;<a href="/posts/multirow-and-merging">Read More</a></p>
-                            <h3><a href="/posts/spread-windows-forms-and-diagonal-borders">Spread Windows Forms and Diagonal Borders</a></h3>  
-                            <p>You may wish to draw attention to a cell. You can do this with diagonal lines in a cell or cell border with Spread for WinForms. You can use&#x2026;<a href="/posts/spread-windows-forms-and-diagonal-borders">Read More</a></p>
                             <h3><a href="/posts/spread-windows-forms-designer-and-the-gcnumber-cell">Spread Windows Forms Designer and the GcNumber Cell</a></h3>  
                             <p>You can create a GcNumber cell with the Spread Designer. This saves time when creating a cell. Open the Spread Designer. Select a cell or&#x2026;<a href="/posts/spread-windows-forms-designer-and-the-gcnumber-cell">Read More</a></p>
+                            <h3><a href="/posts/spread-windows-forms-and-diagonal-borders">Spread Windows Forms and Diagonal Borders</a></h3>  
+                            <p>You may wish to draw attention to a cell. You can do this with diagonal lines in a cell or cell border with Spread for WinForms. You can use&#x2026;<a href="/posts/spread-windows-forms-and-diagonal-borders">Read More</a></p>
                             <h3><a href="/posts/spread-windows-forms-and-gcnumber-cell">Spread Windows Forms and GcNumber Cell</a></h3>  
                             <p>Number cells can be used to only allow number values in a cell. This saves time by requiring less validation. Spread for Windows Forms has&#x2026;<a href="/posts/spread-windows-forms-and-gcnumber-cell">Read More</a></p>
                             <h3><a href="/content/posts\2015-11-17-whats-new-in-spread-9"></a></h3>  
@@ -171,10 +171,10 @@
                             <p>Spread installs as a fully functional 30-day trial to give you time to evaluate it and see if it meets your needs. That 30-day period starts&#x2026;<a href="/posts/need-more-time-to-try-spread-no-problem">Read More</a></p>
                             <h3><a href="/content/posts\2015-11-13-getting-the-most-out-of-your-spread-experience"></a></h3>  
                             <p> title: Getting the Most Out of Your Spread Experience layout: post template: post.hbt permalink:&#x2026;<a href="/content/posts\2015-11-13-getting-the-most-out-of-your-spread-experience">Read More</a></p>
-                            <h3><a href="/posts/spread-windows-forms-and-drag-and-drop">Spread Windows Forms and Drag and Drop</a></h3>  
-                            <p>You can drag and drop data from a Spread control to another Spread control using drag events such as DragEnter, DragOver, and DragDrop. Drag&#x2026;<a href="/posts/spread-windows-forms-and-drag-and-drop">Read More</a></p>
                             <h3><a href="/posts/spread-asp-net-and-custom-cell-types">Spread ASP.NET and Custom Cell Types</a></h3>  
                             <p>Spread ASP.NET allows you to create your own custom cell types. This can be useful if a default cell type does not have the feature you need&#x2026;<a href="/posts/spread-asp-net-and-custom-cell-types">Read More</a></p>
+                            <h3><a href="/posts/spread-windows-forms-and-drag-and-drop">Spread Windows Forms and Drag and Drop</a></h3>  
+                            <p>You can drag and drop data from a Spread control to another Spread control using drag events such as DragEnter, DragOver, and DragDrop. Drag&#x2026;<a href="/posts/spread-windows-forms-and-drag-and-drop">Read More</a></p>
                             <h3><a href="/posts/spread-windows-forms-and-visual-studio-2015">Spread Windows Forms and Visual Studio 2015</a></h3>  
                             <p>You can use Spread Windows Forms in Visual Studio 2015. Use the following steps to add a Spread control to a project in Visual Studio 2015&#x2026;<a href="/posts/spread-windows-forms-and-visual-studio-2015">Read More</a></p>
                             <h3><a href="/posts/spread-asp-net-and-visual-studio-2015">Spread ASP.NET and Visual Studio 2015</a></h3>  
@@ -304,14 +304,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/js/dist/jquery.unslider-dist.js"></script>
-    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
-    <script src="/js/dist/jquery.waypoints-dist.js"></script>
-    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
-    <script src="/js/dist/jquery.velocity-dist.js"></script>
-    <script src="/js/dist/jquery.event.move-dist.js"></script>
-    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
-    <script src="/js/dist/init-dist.js"></script>
+    <script src="/js/app-min.js?v=1"></script>
 
 
 

@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     WebFontConfig = {
         google: {
-            families: ['Open+Sans:400,400italic,600italic,600,300,300italic,700,700italic,800,800italic:latin', 'Bitter:400,400italic,700:latin']
+            families: ['Open+Sans:400,400italic,700,700italic']
         }
     };
 
@@ -95,6 +95,5 @@ $(document).ready(function () {
             $('.brand-section .brand-inner').removeClass('brand-inner-scroll');
         }
     });    
-    
-    
+
 });

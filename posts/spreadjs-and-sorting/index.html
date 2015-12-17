@@ -77,7 +77,7 @@
                         <input placeholder="Search" type="search" />
                         <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
                     </div>
-                    <div class="user-container">
+                    <div class="user-container clearfix">
                         <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
                         <ul class="user-list hidden">
                             <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
@@ -136,20 +136,18 @@
                 </div>
             </div>
         </div>
-    </aside><header>
+    </aside><header class="post-header">
     <div class="wrapper">
         <div class="padder clearfix">
-            <h1><span class="lnr lnr-book"></span> SpreadJS and Sorting</h1>
-            <h3></h3>
+            <h1>SpreadJS and Sorting</h1>
         </div>
 </header>
 
 
 <div class="wrapper-sections">
-    <section class="section-page">
+    <section class="post-entry">
         <div class="wrapper">
             <div class="padder clearfix">
-                <div class="entry">
 
                     <p>SpreadJS supports sorting data programmatically. Filters and tables have UI sorting options. Sorting data makes it easier to find information in a column or row.</p>
 <p>You can sort data in the widget and specify a column or row index to sort on as well as the sort criteria. You can also specify multiple sort keys (sort by a specified column or row first, then another column or row, and so on). Use the sortRange method to sort data. Use the sortInfo object in the sortRange method to specify sort keys and ascending or descending order and by row or column.</p>
@@ -284,7 +282,6 @@ rowFilter.sortColumn(<span class="hljs-number">0</span>, <span class="hljs-keywo
 
 
 
-                </div>
             </div>
         </div>
     </section>
@@ -325,14 +322,7 @@ rowFilter.sortColumn(<span class="hljs-number">0</span>, <span class="hljs-keywo
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/js/dist/jquery.unslider-dist.js"></script>
-    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
-    <script src="/js/dist/jquery.waypoints-dist.js"></script>
-    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
-    <script src="/js/dist/jquery.velocity-dist.js"></script>
-    <script src="/js/dist/jquery.event.move-dist.js"></script>
-    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
-    <script src="/js/dist/init-dist.js"></script>
+    <script src="/js/app-min.js?v=1"></script>
 
 
 

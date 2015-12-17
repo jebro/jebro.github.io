@@ -77,7 +77,7 @@
                         <input placeholder="Search" type="search" />
                         <a class="search-trigger" href="#"><span class="lnr lnr-magnifier"></span></a>
                     </div>
-                    <div class="user-container">
+                    <div class="user-container clearfix">
                         <a class="user-trigger" href="#"><span class="lnr lnr-user"></span> <span class="menu-text">Account</span></a>
                         <ul class="user-list hidden">
                             <li><a href="#"><span class="lnr lnr-exit-up"></span> Sign Out</a></li>
@@ -136,20 +136,18 @@
                 </div>
             </div>
         </div>
-    </aside><header>
+    </aside><header class="post-header">
     <div class="wrapper">
         <div class="padder clearfix">
-            <h1><span class="lnr lnr-book"></span> Trim Cell Text with Ellipsis in SpreadJS</h1>
-            <h3></h3>
+            <h1>Trim Cell Text with Ellipsis in SpreadJS</h1>
         </div>
 </header>
 
 
 <div class="wrapper-sections">
-    <section class="section-page">
+    <section class="post-entry">
         <div class="wrapper">
             <div class="padder clearfix">
-                <div class="entry">
 
                     <p>If your text overflows the cell bounds then an ellipsis should be appended to the text and the rest is cut off. With this the user would be well aware of the fact that there is some amount of text that they can not see. Wouldn’t this be a nice feature for the <a href="http://sphelp.grapecity.com/webhelp/SpreadJSWeb/webframe.html#welcome.html" target="_blank">SpreadJS</a> cells as well? </p>
 <p>Unfortunately, SpreadJS doesn&#8217;t provide a built-in function that would show ellipsis in the text when it is too long for the width of the column it is displayed in. i.e. SpreadJS does not cut off text at all even if the text does not fit into cell size.</p>
@@ -193,7 +191,6 @@
 <p>Simple it is! You can <a href="http://sphelp.grapecity.com/wp-content/uploads/2015/06/Ellipsis_JS.html">Download Sample</a> for detailed implementation.</p>
 
 
-                </div>
             </div>
         </div>
     </section>
@@ -234,14 +231,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/js/dist/jquery.unslider-dist.js"></script>
-    <script src="/js/dist/jquery.matchHeight-dist.js"></script>
-    <script src="/js/dist/jquery.waypoints-dist.js"></script>
-    <script src="/js/dist/jquery.nicescroll-dist.js"></script>
-    <script src="/js/dist/jquery.velocity-dist.js"></script>
-    <script src="/js/dist/jquery.event.move-dist.js"></script>
-    <script src="/js/dist/jquery.event.swipe-dist.js"></script>
-    <script src="/js/dist/init-dist.js"></script>
+    <script src="/js/app-min.js?v=1"></script>
 
 
 
