@@ -55,7 +55,7 @@ $(document).ready(function () {
 
     $('.cards .card-container').matchHeight();
     $('.icon-values .padder').matchHeight();
-    $('.three-column-icons .padder').matchHeight();
+    $('.column-icons .padder').matchHeight();
 
     
     var windowHeight = $(window).height();
