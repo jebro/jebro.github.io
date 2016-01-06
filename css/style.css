@@ -4692,6 +4692,16 @@
   position: relative;
 }
 
+.product-page .header-bar .padder .header-bar-nav li .header-bar-item .header-bar-icon, .product-page .header-bar .padder .header-bar-nav li .header-bar-item .header-bar-text {
+  display: inline-block;
+}
+
+.product-page .header-bar .padder .header-bar-nav li .header-bar-item .header-bar-icon {
+  margin-right: 0.4em;
+  position: relative;
+  top: 1px;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .product-page .header-bar .padder .header-bar-nav li .header-bar-item {
     margin: 0 0 0.4em;
